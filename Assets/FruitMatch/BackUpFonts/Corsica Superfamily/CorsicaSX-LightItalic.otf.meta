@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: 8727d25d337794257ac6732342a279e1
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Corsica SX
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 33045f6a393a04a2dbc8358aa1a12e96, type: 3}
+  - {fileID: 12800000, guid: 74737d903f91045e19e10ebfef569f15, type: 3}
+  - {fileID: 12800000, guid: d3783373b35c54a68a16015f16dbe7e4, type: 3}
+  - {fileID: 12800000, guid: 923cbde88be8b4f66901cdb86347aad6, type: 3}
+  - {fileID: 12800000, guid: c625d640097f243e6b9aefb21fb53cdf, type: 3}
+  - {fileID: 12800000, guid: 13625640f49d645ca8119c9a1024ee4b, type: 3}
+  - {fileID: 12800000, guid: 041fa6c4e2bef4883bc44c266797894d, type: 3}
+  - {fileID: 12800000, guid: c5f9db932c91549deb9be6d292b5f885, type: 3}
+  - {fileID: 12800000, guid: d5b622651a70044f899c3d0b0540fc4b, type: 3}
+  - {fileID: 12800000, guid: 0621bde6f66d447fd85f425c23ee0a90, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 107dd7afa82e448b084d1b2c62b4cd50
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Corsica MX
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 009321c61b82242b78c338eb3d4e171d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 9cdb57357db5a4d3a89b73933d24d7ac
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Sword Art
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 293678a02f24b466489f241dbde7abec, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

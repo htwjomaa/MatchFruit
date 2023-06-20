@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: ba42ed4250d1f4f97a3ab8d58013be87
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Wushand Normal
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 75d5a68568a7542ad9a8b8d745c63d16, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

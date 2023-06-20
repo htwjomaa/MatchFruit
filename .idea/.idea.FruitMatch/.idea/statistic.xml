@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Statistic">
+    <option name="excludedDirectories">
+      <list>
+        <option value="$PROJECT_DIR$/.idea" />
+        <option value="$PROJECT_DIR$/.vscode" />
+        <option value="$PROJECT_DIR$/Library" />
+        <option value="$PROJECT_DIR$/Logs" />
+        <option value="$PROJECT_DIR$/obj" />
+        <option value="$PROJECT_DIR$/Packages" />
+        <option value="$PROJECT_DIR$/ProjectSettings" />
+        <option value="$PROJECT_DIR$/Temp" />
+        <option value="$PROJECT_DIR$/UserSettings" />
+        <option value="$PROJECT_DIR$/Assets/2D" />
+        <option value="$PROJECT_DIR$/Assets/Adaptive Performance" />
+        <option value="$PROJECT_DIR$/Assets/Editor" />
+        <option value="$PROJECT_DIR$/Assets/MobileDependencyResolver" />
+        <option value="$PROJECT_DIR$/Assets/Plugins" />
+        <option value="$PROJECT_DIR$/Assets/Resources" />
+        <option value="$PROJECT_DIR$/Assets/FruitMatch/3D" />
+        <option value="$PROJECT_DIR$/Assets/FruitMatch/Animation" />
+        <option value="$PROJECT_DIR$/Assets/FruitMatch/Animation 1" />
+        <option value="$PROJECT_DIR$/Assets/FruitMatch/Art" />
+        <option value="$PROJECT_DIR$/Assets/FruitMatch/Audio" />
+        <option value="$PROJECT_DIR$/Assets/FruitMatch/BackUpFonts" />
+        <option value="$PROJECT_DIR$/Assets/FruitMatch/Data" />
+        <option value="$PROJECT_DIR$/Assets/FruitMatch/Fonts" />
+        <option value="$PROJECT_DIR$/Assets/FruitMatch/Materials" />
+        <option value="$PROJECT_DIR$/Assets/FruitMatch/Prefabs" />
+        <option value="$PROJECT_DIR$/Assets/FruitMatch/Prefabs 1" />
+        <option value="$PROJECT_DIR$/Assets/FruitMatch/Resources" />
+        <option value="$PROJECT_DIR$/Assets/FruitMatch/Scenes" />
+        <option value="$PROJECT_DIR$/Assets/FruitMatch/Scriptable" />
+        <option value="$PROJECT_DIR$/Assets/FruitMatch/Settings" />
+        <option value="$PROJECT_DIR$/Assets/FruitMatch/Textures_png" />
+        <option value="$PROJECT_DIR$/Assets/FruitMatch/VFX" />
+      </list>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 6bf1c8b2722c640758fcf241e4e89e5d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Dank Mono
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 97971b6bc02e845b58ec3596734746c3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

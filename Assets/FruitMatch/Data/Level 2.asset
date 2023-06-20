@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4168d4dd7ea9541aa3ef4f030ab099, type: 3}
+  m_Name: Level 2
+  m_EditorClassIdentifier: 
+  width: 6
+  height: 3
+  boardLayout:
+  - x: 0
+    y: 0
+    tileKind: 2
+  dots:
+  - {fileID: 7488010795282316939, guid: 7bbaf0331a6dc9f428d25bd30f9000e2, type: 3}
+  - {fileID: 7376211358718479612, guid: 9747d5935b7817047abda178646a33e2, type: 3}
+  - {fileID: 5757194868037794364, guid: dd74d2181384a3a429f2d328018eac8b, type: 3}
+  scoreGoals: []
+  endGameRequirements:
+    GameType: 0
+    CounterValue: 0
+  levelGoals:
+  - numberNeeded: 15
+    numberCollected: 0
+    collectionStyle: 1
+    goalSprite: {fileID: 21300000, guid: f93b166ab05c8c9408cd483a277e2eef, type: 3}
+    fruitType: 4
+    fruitColors: 0
+  - numberNeeded: 12
+    numberCollected: 16
+    collectionStyle: 1
+    goalSprite: {fileID: 21300000, guid: c0d4944f0bcd6e247a9bf5cc411c6904, type: 3}
+    fruitType: 0
+    fruitColors: 0
+  - numberNeeded: 20
+    numberCollected: 0
+    collectionStyle: 1
+    goalSprite: {fileID: 21300000, guid: 25db776d120ad0347992fe49a5b30259, type: 3}
+    fruitType: 7
+    fruitColors: 0
+  LevelNameText: Level 2
+  LevelDescriptionText: blub
+  LevelGameTypeDefaultText: 
+  LevelGoalImagesOverlay: []
+  Bombs: 000000000100000002000000030000000400000005000000

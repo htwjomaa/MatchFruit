@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b2f5fb8ce394146168be7f2958fdeaf8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Macloney
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 42ba7e4a936094d058d94fbcc8d583e6, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

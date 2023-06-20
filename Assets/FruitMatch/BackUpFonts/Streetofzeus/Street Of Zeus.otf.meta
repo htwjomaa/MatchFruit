@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 7fbcb71bca3d645ea93198dab0aee0f1
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Street Of Zeus
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2bc7d0b8bb8f4426ea39731578db716f, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

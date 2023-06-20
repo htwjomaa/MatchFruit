@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 297ce505f27a947739aebf6a2a1da4c7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Apotek ExtraWide
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 934e6daad7958413cbbb1188977a5350, type: 3}
+  - {fileID: 12800000, guid: 965911ff44dd546be843b39fd09aab9a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

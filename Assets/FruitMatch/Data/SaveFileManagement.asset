@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc926204020d450c82a24e47e393401, type: 3}
+  m_Name: SaveFileManagement
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 96b98259cefd12146a64b0b68d1ca528, type: 2}
+  world: {fileID: 11400000, guid: d0fe8ba2246d3ce4f9146b2e97a1a06e, type: 2}
+  howManySaveFilesAllowed: 10
+  SaveFileSystemVersioning: 1
+  uniqueIdentifierCounter: 16934
+  autoSave: 60

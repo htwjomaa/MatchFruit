@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 6e700716d5b6843899e08354f874063d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - SpaceBro
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2baea38986cab41bba43a047bdfa03c7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

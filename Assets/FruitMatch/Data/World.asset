@@ -1,0 +1,1041 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8066764499d1ad44808afb3587224ec, type: 3}
+  m_Name: World
+  m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 11400000, guid: 8679f4e6f9d74844eb9165adf74aee10, type: 2}
+  - {fileID: 11400000, guid: fc693e393526a5944893b8e567a0ded6, type: 2}
+  - {fileID: 11400000, guid: c30defdc0a6f7584ab8fb233d08b050f, type: 2}
+  - {fileID: 11400000, guid: 17d0b2b675db3164a96397c51bbec763, type: 2}
+  - {fileID: 11400000, guid: e23d5d7006c220549b7cb09c6d79b891, type: 2}
+  - {fileID: 11400000, guid: 440dc8d739292ca4fb54378f14f6189d, type: 2}
+  - {fileID: 11400000, guid: ce66ae9087e4f0d4081be0897f09229d, type: 2}
+  - {fileID: 11400000, guid: 1f91c2b3788c2c144b91d36d26d8baa0, type: 2}
+  - {fileID: 11400000, guid: 687085946fc217a4180dd662e9d299a8, type: 2}
+  - {fileID: 11400000, guid: 4947c1289d6f2614ea0c4ebbb1f6fb72, type: 2}
+  LevelToLoad: {fileID: 11400000, guid: 17d0b2b675db3164a96397c51bbec763, type: 2}
+  GoalLookUpTable:
+  - Tag: Dark Green Dot
+    Image: {fileID: 21300000, guid: fc48449aa2368c040aae1844c2518bed, type: 3}
+    BackGroundImage: {fileID: 21300000, guid: fecbdebb083be374e9054ecbf6c97917, type: 3}
+  - Tag: Green Dot
+    Image: {fileID: 21300000, guid: 642c7ab023d7d05429fd0812c3006dd3, type: 3}
+    BackGroundImage: {fileID: 21300000, guid: 0d1c1e8aa2114ef4498b66c8387d3251, type: 3}
+  - Tag: Indigo Dot
+    Image: {fileID: 21300000, guid: 25db776d120ad0347992fe49a5b30259, type: 3}
+    BackGroundImage: {fileID: 21300000, guid: 1781d27f45956804f861b48870811d95, type: 3}
+  - Tag: Orange Dot
+    Image: {fileID: 21300000, guid: 0eaaaa9ed97cc6d45bcfabd782e36e6e, type: 3}
+    BackGroundImage: {fileID: 21300000, guid: e563e31fa50d0ed4e9b3184e5f8ae497, type: 3}
+  - Tag: Red Dot
+    Image: {fileID: 21300000, guid: 3200970ffb22c514cb6253a9bf7290ff, type: 3}
+    BackGroundImage: {fileID: 21300000, guid: 1bbc718d39c78844abc4d13470cdca14, type: 3}
+  - Tag: Salmon Dot
+    Image: {fileID: 21300000, guid: 1dcf7bd021995d94ab0dd8943798ec99, type: 3}
+    BackGroundImage: {fileID: 21300000, guid: 3ea4d85e0ed15e745904593c5e9ac1af, type: 3}
+  - Tag: Teal Dot
+    Image: {fileID: 21300000, guid: d50439232a0c04d4694a55a46d793da5, type: 3}
+    BackGroundImage: {fileID: 21300000, guid: 1781d27f45956804f861b48870811d95, type: 3}
+  - Tag: Yellow Dot
+    Image: {fileID: 21300000, guid: f93b166ab05c8c9408cd483a277e2eef, type: 3}
+    BackGroundImage: {fileID: 21300000, guid: 3ea4d85e0ed15e745904593c5e9ac1af, type: 3}
+  - Tag: breakableTile
+    Image: {fileID: 21300000, guid: e780dcdf61f0ef044a5bec0fe79e9424, type: 3}
+    BackGroundImage: {fileID: 21300000, guid: 992c1a8f8a228984bbf2e9fcefb59125, type: 3}
+  - Tag: Chocolate
+    Image: {fileID: 21300000, guid: d30524f4706c0e546bfa0fe16c59b809, type: 3}
+    BackGroundImage: {fileID: 21300000, guid: 1781d27f45956804f861b48870811d95, type: 3}
+  - Tag: Concrete
+    Image: {fileID: 21300000, guid: 7ef23c795fdeff641bcf966ae6f02360, type: 3}
+    BackGroundImage: {fileID: 21300000, guid: 1781d27f45956804f861b48870811d95, type: 3}
+  - Tag: Lock
+    Image: {fileID: 21300000, guid: 4114d38163e1fc34a83a1469ee3f8035, type: 3}
+    BackGroundImage: {fileID: 21300000, guid: 1781d27f45956804f861b48870811d95, type: 3}
+  - Tag: "AlleFr\xFCchte"
+    Image: {fileID: 21300000, guid: e89ce2cbc00954e4f9926125922de64c, type: 3}
+    BackGroundImage: {fileID: 21300000, guid: 3ea4d85e0ed15e745904593c5e9ac1af, type: 3}
+  - Tag: Nothing
+    Image: {fileID: 21300000, guid: 6baf9f071410f8f47814f5585f4f6ef3, type: 3}
+    BackGroundImage: {fileID: 21300000, guid: 3ea4d85e0ed15e745904593c5e9ac1af, type: 3}
+  GoalModifierLookUpTable: []
+  PrefabLookUp:
+  - Tag: Green Dot
+    DefaultGameObject: {fileID: 3350562878444977936, guid: 3446b32c47d09fd4e94403407a56fc1f, type: 3}
+    AllColorPrefabs:
+    - Prefab: {fileID: 0}
+      Color: 1
+    - Prefab: {fileID: 0}
+      Color: 2
+    - Prefab: {fileID: 0}
+      Color: 3
+    - Prefab: {fileID: 0}
+      Color: 4
+    - Prefab: {fileID: 0}
+      Color: 5
+    - Prefab: {fileID: 0}
+      Color: 6
+    - Prefab: {fileID: 0}
+      Color: 7
+    - Prefab: {fileID: 0}
+      Color: 8
+  - Tag: Dark Green Dot
+    DefaultGameObject: {fileID: 7488010795282316939, guid: 7bbaf0331a6dc9f428d25bd30f9000e2, type: 3}
+    AllColorPrefabs:
+    - Prefab: {fileID: 0}
+      Color: 1
+    - Prefab: {fileID: 0}
+      Color: 2
+    - Prefab: {fileID: 0}
+      Color: 3
+    - Prefab: {fileID: 0}
+      Color: 4
+    - Prefab: {fileID: 0}
+      Color: 5
+    - Prefab: {fileID: 0}
+      Color: 6
+    - Prefab: {fileID: 0}
+      Color: 7
+    - Prefab: {fileID: 0}
+      Color: 8
+  - Tag: Red Dot
+    DefaultGameObject: {fileID: 6272411823337864972, guid: 681de2757e529d142b88c055b4b3389d, type: 3}
+    AllColorPrefabs:
+    - Prefab: {fileID: 0}
+      Color: 1
+    - Prefab: {fileID: 0}
+      Color: 2
+    - Prefab: {fileID: 0}
+      Color: 3
+    - Prefab: {fileID: 0}
+      Color: 4
+    - Prefab: {fileID: 0}
+      Color: 5
+    - Prefab: {fileID: 0}
+      Color: 6
+    - Prefab: {fileID: 0}
+      Color: 7
+    - Prefab: {fileID: 0}
+      Color: 8
+  - Tag: Salmon Dot
+    DefaultGameObject: {fileID: 7376211358718479612, guid: 9747d5935b7817047abda178646a33e2, type: 3}
+    AllColorPrefabs:
+    - Prefab: {fileID: 0}
+      Color: 1
+    - Prefab: {fileID: 0}
+      Color: 2
+    - Prefab: {fileID: 0}
+      Color: 3
+    - Prefab: {fileID: 0}
+      Color: 4
+    - Prefab: {fileID: 0}
+      Color: 5
+    - Prefab: {fileID: 0}
+      Color: 6
+    - Prefab: {fileID: 0}
+      Color: 7
+    - Prefab: {fileID: 0}
+      Color: 8
+  - Tag: Yellow Dot
+    DefaultGameObject: {fileID: 6290808858983017608, guid: 279c0145f5b0a2d43874ac89f1174c68, type: 3}
+    AllColorPrefabs:
+    - Prefab: {fileID: 0}
+      Color: 1
+    - Prefab: {fileID: 0}
+      Color: 2
+    - Prefab: {fileID: 0}
+      Color: 3
+    - Prefab: {fileID: 0}
+      Color: 4
+    - Prefab: {fileID: 0}
+      Color: 5
+    - Prefab: {fileID: 0}
+      Color: 6
+    - Prefab: {fileID: 0}
+      Color: 7
+    - Prefab: {fileID: 0}
+      Color: 8
+  - Tag: Orange Dot
+    DefaultGameObject: {fileID: 7518286750939101691, guid: cfc0a4cebb5891e428ed4dc963388ec2, type: 3}
+    AllColorPrefabs:
+    - Prefab: {fileID: 0}
+      Color: 1
+    - Prefab: {fileID: 0}
+      Color: 2
+    - Prefab: {fileID: 0}
+      Color: 3
+    - Prefab: {fileID: 0}
+      Color: 4
+    - Prefab: {fileID: 0}
+      Color: 5
+    - Prefab: {fileID: 0}
+      Color: 6
+    - Prefab: {fileID: 0}
+      Color: 7
+    - Prefab: {fileID: 0}
+      Color: 8
+  - Tag: Teal Dot
+    DefaultGameObject: {fileID: 5757194868037794364, guid: dd74d2181384a3a429f2d328018eac8b, type: 3}
+    AllColorPrefabs:
+    - Prefab: {fileID: 0}
+      Color: 1
+    - Prefab: {fileID: 0}
+      Color: 2
+    - Prefab: {fileID: 0}
+      Color: 3
+    - Prefab: {fileID: 0}
+      Color: 4
+    - Prefab: {fileID: 0}
+      Color: 5
+    - Prefab: {fileID: 0}
+      Color: 6
+    - Prefab: {fileID: 0}
+      Color: 7
+    - Prefab: {fileID: 0}
+      Color: 8
+  - Tag: Indigo Dot
+    DefaultGameObject: {fileID: 4663305242182518307, guid: 1b363114365466d48abc166bf6f60274, type: 3}
+    AllColorPrefabs:
+    - Prefab: {fileID: 0}
+      Color: 1
+    - Prefab: {fileID: 0}
+      Color: 2
+    - Prefab: {fileID: 0}
+      Color: 3
+    - Prefab: {fileID: 0}
+      Color: 4
+    - Prefab: {fileID: 0}
+      Color: 5
+    - Prefab: {fileID: 0}
+      Color: 6
+    - Prefab: {fileID: 0}
+      Color: 7
+    - Prefab: {fileID: 0}
+      Color: 8
+  GoalTypesStringLookUps:
+  - fruitType: 0
+    Tag: Dark Green Dot
+  - fruitType: 1
+    Tag: Green Dot
+  - fruitType: 2
+    Tag: Red Dot
+  - fruitType: 3
+    Tag: Salmon Dot
+  - fruitType: 4
+    Tag: Yellow Dot
+  - fruitType: 5
+    Tag: Orange Dot
+  - fruitType: 6
+    Tag: Teal Dot
+  - fruitType: 7
+    Tag: Indigo Dot
+  - fruitType: 9
+    Tag: breakableTile
+  - fruitType: 10
+    Tag: Lock
+  - fruitType: 11
+    Tag: Chocolate
+  - fruitType: 12
+    Tag: Concrete
+  - fruitType: 8
+    Tag: "AlleFr\xFCchte"
+  - fruitType: 13
+    Tag: Nothing
+  LevelProgresses:
+  - Level: {fileID: 11400000, guid: 8679f4e6f9d74844eb9165adf74aee10, type: 2}
+    Freigeschaltet: 1
+    Sterne: 000000
+    PerfectRun: 0
+    HighScore: 500000
+    ImageActive: {fileID: 21300000, guid: 29096f5f515d9824ca948fb28e5e590b, type: 3}
+    ImageInactive: {fileID: 21300000, guid: 89af11c6d6293634a972a3e733f8c4e8, type: 3}
+    ImageSelection: {fileID: 21300000, guid: ca63f6477a01e634497059eadd50da07, type: 3}
+  - Level: {fileID: 11400000, guid: fc693e393526a5944893b8e567a0ded6, type: 2}
+    Freigeschaltet: 1
+    Sterne: 000000
+    PerfectRun: 1
+    HighScore: 999999
+    ImageActive: {fileID: 21300000, guid: 29096f5f515d9824ca948fb28e5e590b, type: 3}
+    ImageInactive: {fileID: 21300000, guid: 89af11c6d6293634a972a3e733f8c4e8, type: 3}
+    ImageSelection: {fileID: 21300000, guid: ca63f6477a01e634497059eadd50da07, type: 3}
+  - Level: {fileID: 11400000, guid: c30defdc0a6f7584ab8fb233d08b050f, type: 2}
+    Freigeschaltet: 1
+    Sterne: 010101
+    PerfectRun: 0
+    HighScore: 30742
+    ImageActive: {fileID: 21300000, guid: 6bbe00c2d3e46924087eca5b5a05a814, type: 3}
+    ImageInactive: {fileID: 21300000, guid: cce935d5769944f56b020f3f1f0aa8a4, type: 3}
+    ImageSelection: {fileID: 21300000, guid: ca63f6477a01e634497059eadd50da07, type: 3}
+  - Level: {fileID: 11400000, guid: 17d0b2b675db3164a96397c51bbec763, type: 2}
+    Freigeschaltet: 1
+    Sterne: 000000
+    PerfectRun: 1
+    HighScore: 212762
+    ImageActive: {fileID: 21300000, guid: 29096f5f515d9824ca948fb28e5e590b, type: 3}
+    ImageInactive: {fileID: 21300000, guid: 89af11c6d6293634a972a3e733f8c4e8, type: 3}
+    ImageSelection: {fileID: 21300000, guid: ca63f6477a01e634497059eadd50da07, type: 3}
+  - Level: {fileID: 11400000, guid: e23d5d7006c220549b7cb09c6d79b891, type: 2}
+    Freigeschaltet: 1
+    Sterne: 000000
+    PerfectRun: 0
+    HighScore: 50
+    ImageActive: {fileID: 21300000, guid: 383675a985d6ef743914a0d515d8e9d1, type: 3}
+    ImageInactive: {fileID: 21300000, guid: a7f33500fe5834c1aab06c08c48a45f2, type: 3}
+    ImageSelection: {fileID: 21300000, guid: ca63f6477a01e634497059eadd50da07, type: 3}
+  - Level: {fileID: 11400000, guid: 440dc8d739292ca4fb54378f14f6189d, type: 2}
+    Freigeschaltet: 1
+    Sterne: 000000
+    PerfectRun: 0
+    HighScore: 0
+    ImageActive: {fileID: 21300000, guid: 1e830e09a29421742ae6f9d9bf40e241, type: 3}
+    ImageInactive: {fileID: 21300000, guid: 89af11c6d6293634a972a3e733f8c4e8, type: 3}
+    ImageSelection: {fileID: 21300000, guid: ca63f6477a01e634497059eadd50da07, type: 3}
+  - Level: {fileID: 11400000, guid: ce66ae9087e4f0d4081be0897f09229d, type: 2}
+    Freigeschaltet: 1
+    Sterne: 000000
+    PerfectRun: 0
+    HighScore: 0
+    ImageActive: {fileID: 21300000, guid: 29096f5f515d9824ca948fb28e5e590b, type: 3}
+    ImageInactive: {fileID: 21300000, guid: 89af11c6d6293634a972a3e733f8c4e8, type: 3}
+    ImageSelection: {fileID: 21300000, guid: ca63f6477a01e634497059eadd50da07, type: 3}
+  - Level: {fileID: 11400000, guid: 1f91c2b3788c2c144b91d36d26d8baa0, type: 2}
+    Freigeschaltet: 1
+    Sterne: 000000
+    PerfectRun: 0
+    HighScore: 0
+    ImageActive: {fileID: 21300000, guid: 9468f2682afebde49b3471dd871aa50b, type: 3}
+    ImageInactive: {fileID: 21300000, guid: 2221f458e2ff95e4d9fff6c9e44a008e, type: 3}
+    ImageSelection: {fileID: 21300000, guid: ca63f6477a01e634497059eadd50da07, type: 3}
+  - Level: {fileID: 11400000, guid: 687085946fc217a4180dd662e9d299a8, type: 2}
+    Freigeschaltet: 1
+    Sterne: 010101
+    PerfectRun: 0
+    HighScore: 12082
+    ImageActive: {fileID: 21300000, guid: 29096f5f515d9824ca948fb28e5e590b, type: 3}
+    ImageInactive: {fileID: 21300000, guid: 89af11c6d6293634a972a3e733f8c4e8, type: 3}
+    ImageSelection: {fileID: 21300000, guid: ca63f6477a01e634497059eadd50da07, type: 3}
+  - Level: {fileID: 11400000, guid: 4947c1289d6f2614ea0c4ebbb1f6fb72, type: 2}
+    Freigeschaltet: 1
+    Sterne: 010101
+    PerfectRun: 0
+    HighScore: 218313
+    ImageActive: {fileID: 21300000, guid: 29096f5f515d9824ca948fb28e5e590b, type: 3}
+    ImageInactive: {fileID: 21300000, guid: 89af11c6d6293634a972a3e733f8c4e8, type: 3}
+    ImageSelection: {fileID: 21300000, guid: ca63f6477a01e634497059eadd50da07, type: 3}
+  StarsDependOnHighScore: 0
+  UnlockDepensOnStars: 0
+  totalTimePlayedInGame: 18633
+  totalTimeInMenu: 6442
+  totalTimeAppUsedSec: 25075
+  totalTimePlayedToday: 17122
+  userName: 
+  LoadedDay: 12
+  basePieceValue: 1200
+  TimedRunImage: {fileID: 21300000, guid: 9cbe36d74118d10498e084b50481f37b, type: 3}
+  LimitedMoveImage: {fileID: 21300000, guid: fc8b4b5e3a55a95469fed192a57c76b1, type: 3}
+  SpriteNotFound: {fileID: 21300000, guid: f934e5c52101d68499b60367136a0808, type: 3}
+  allBgImageSetDictionaries:
+    m_Keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
+    m_Values:
+    - LevelCategory: 0
+      BgImageList:
+      - BGName: Night Safari
+        BGImage: {fileID: 21300000, guid: 6610b2b000570e448a7bf3f5aeabee1d, type: 3}
+        BackGroundPos: {x: 4.87027, y: 0.9639063, z: 18}
+        BackGroundScale: {x: 1.534595, y: 1.534595, z: 1.534595}
+      - BGName: 'Rainbow Jungle '
+        BGImage: {fileID: 21300000, guid: 55e9395628e789545943a7af2588226b, type: 3}
+        BackGroundPos: {x: 4.87027, y: 0.9639063, z: 18}
+        BackGroundScale: {x: 1.534595, y: 1.534595, z: 1.534595}
+      - BGName: Enchanted Forest Night
+        BGImage: {fileID: 21300000, guid: db38131e9d2806742bfb1dc509735bfe, type: 3}
+        BackGroundPos: {x: 4.87027, y: 0.66, z: 18}
+        BackGroundScale: {x: 1.534595, y: 1.476648, z: 1.534595}
+      - BGName: Luminous Jungle
+        BGImage: {fileID: 21300000, guid: 00e758fcd617ff54c88ad4e8ef10d7d6, type: 3}
+        BackGroundPos: {x: 4.87027, y: -0.8, z: 18}
+        BackGroundScale: {x: 1.477538, y: 1.385572, z: 1.534595}
+      - BGName: Fantasia Jungle
+        BGImage: {fileID: 21300000, guid: 55c7300609be0d84f965c4c9d0a0846b, type: 3}
+        BackGroundPos: {x: 4.87027, y: -0.8, z: 18}
+        BackGroundScale: {x: 1.477538, y: 1.385572, z: 1.534595}
+      - BGName: Radiant Rainforest
+        BGImage: {fileID: 21300000, guid: 11f2629d8e40cba4bbab9e33b7772ede, type: 3}
+        BackGroundPos: {x: 4.87027, y: -0.8, z: 18}
+        BackGroundScale: {x: 1.834871, y: 1.708486, z: 1.751586}
+      - BGName: Mystical Jungle
+        BGImage: {fileID: 21300000, guid: fbf6fd6b1fd16634bb000902da08ab26, type: 3}
+        BackGroundPos: {x: 4.87027, y: -0.8, z: 18}
+        BackGroundScale: {x: 1.834871, y: 1.708486, z: 1.751586}
+      - BGName: Nightfall in the Wilds
+        BGImage: {fileID: 21300000, guid: 3571ccfe1de05554da15dd7e62a2ccfe, type: 3}
+        BackGroundPos: {x: 4.87027, y: -1.86, z: 18}
+        BackGroundScale: {x: 1.58109, y: 1.601233, z: 1.751586}
+      - BGName: Nebula Jungle
+        BGImage: {fileID: 21300000, guid: 73757f086a4bcbd4cb4547ec4988a8a1, type: 3}
+        BackGroundPos: {x: 4.87027, y: -0.79, z: 18}
+        BackGroundScale: {x: 1.504222, y: 1.305133, z: 1.627732}
+      - BGName: Luminous Night
+        BGImage: {fileID: 21300000, guid: 44790543077c6ea499de66527ad36ea6, type: 3}
+        BackGroundPos: {x: 5.1, y: -1.3, z: 18}
+        BackGroundScale: {x: 1.546087, y: 1.404577, z: 1.3872}
+      - BGName: Night Fever
+        BGImage: {fileID: 21300000, guid: 814ee0bb00ebfc84fbdc09839d238fce, type: 3}
+        BackGroundPos: {x: 5.1, y: -1.3, z: 18}
+        BackGroundScale: {x: 1.546087, y: 1.404577, z: 1.3872}
+      - BGName: Darkest Jungle
+        BGImage: {fileID: 21300000, guid: 23e1c82d79428fc41b5e00a5b74c3511, type: 3}
+        BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+        BackGroundScale: {x: 1.571964, y: 1.274397, z: 1.534595}
+    - LevelCategory: 1
+      BgImageList:
+      - BGName: Daybreak in the Wilds
+        BGImage: {fileID: 21300000, guid: 9cd74bcfd60aaee4abf6e82068c5bc59, type: 3}
+        BackGroundPos: {x: 4.87027, y: -0.8, z: 18}
+        BackGroundScale: {x: 1.607562, y: 1.298997, z: 1.534595}
+      - BGName: Sun-kissed Jungle
+        BGImage: {fileID: 21300000, guid: f75036ccbdaf6414986501aae5b3e163, type: 3}
+        BackGroundPos: {x: 4.87027, y: -0.8, z: 18}
+        BackGroundScale: {x: 1.607562, y: 1.298997, z: 1.534595}
+      - BGName: Jungle Fever
+        BGImage: {fileID: 21300000, guid: 31b12172782760c439471efeceb6a9bd, type: 3}
+        BackGroundPos: {x: 4.87027, y: 0.9639063, z: 18}
+        BackGroundScale: {x: 1.534595, y: 1.534595, z: 1.534595}
+      - BGName: Wildlife Wonderland
+        BGImage: {fileID: 21300000, guid: e09d53d942de6964cb555f9810b3f971, type: 3}
+        BackGroundPos: {x: 4.87027, y: 0.9639063, z: 18}
+        BackGroundScale: {x: 1.534595, y: 1.534595, z: 1.534595}
+      - BGName: Tropical Trek
+        BGImage: {fileID: 21300000, guid: c041cc2289d767b41b446c018bce816c, type: 3}
+        BackGroundPos: {x: 4.88, y: 0.28, z: 18}
+        BackGroundScale: {x: 1.480309, y: 1.415915, z: 1.668873}
+      - BGName: Tropical Life
+        BGImage: {fileID: 21300000, guid: 2b0e8e162e700604ab0dfee67608635e, type: 3}
+        BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+        BackGroundScale: {x: 1.514839, y: 1.213481, z: 1.534595}
+    - LevelCategory: 2
+      BgImageList:
+      - BGName: Sheep in the Moonlight
+        BGImage: {fileID: 21300000, guid: 382980f9e382c044dafc7022b9db0790, type: 3}
+        BackGroundPos: {x: 4.91, y: -1.02, z: 18}
+        BackGroundScale: {x: 1.520297, y: 1.368507, z: 1.487618}
+      - BGName: Under The Mooon
+        BGImage: {fileID: 21300000, guid: cba028dd542dbf44b87f6574733fc4d6, type: 3}
+        BackGroundPos: {x: 4.91, y: -1.02, z: 18}
+        BackGroundScale: {x: 1.483826, y: 1.109307, z: 1.388432}
+      - BGName: Lunar Lookout
+        BGImage: {fileID: 21300000, guid: 86d29cec29fcf9b47997f037cef46c1d, type: 3}
+        BackGroundPos: {x: 4.91, y: -1.02, z: 18}
+        BackGroundScale: {x: 1.520297, y: 1.368507, z: 1.487618}
+      - BGName: Aurora at dawn
+        BGImage: {fileID: 21300000, guid: 73bf70caab48aeb418d66563dc9ce24f, type: 3}
+        BackGroundPos: {x: 4.91, y: -1.02, z: 18}
+        BackGroundScale: {x: 1.520297, y: 1.368507, z: 1.487618}
+    - LevelCategory: 3
+      BgImageList:
+      - BGName: Happy Pond
+        BGImage: {fileID: 21300000, guid: e55ab945494278b44867c640323a6e86, type: 3}
+        BackGroundPos: {x: 4.87027, y: -0.29, z: 18}
+        BackGroundScale: {x: 1.611225, y: 1.188957, z: 1.450638}
+      - BGName: In the Pond
+        BGImage: {fileID: 21300000, guid: 1f9674ee0f81985498c29a5335585be7, type: 3}
+        BackGroundPos: {x: 4.87027, y: -0.29, z: 18}
+        BackGroundScale: {x: 1.853393, y: 1.367657, z: 1.668668}
+      - BGName: Majestic Tendril
+        BGImage: {fileID: 21300000, guid: 242ff2375690ba14193ef60828d37f18, type: 3}
+        BackGroundPos: {x: 4.87027, y: -0.29, z: 18}
+        BackGroundScale: {x: 1.853393, y: 1.367657, z: 1.668668}
+      - BGName: Happy Farmland
+        BGImage: {fileID: 21300000, guid: 5015a6bd60af3f94f9eaf186b6712ef1, type: 3}
+        BackGroundPos: {x: 4.87027, y: -0.29, z: 18}
+        BackGroundScale: {x: 1.853393, y: 1.367657, z: 1.668668}
+      - BGName: Simple Trees
+        BGImage: {fileID: 21300000, guid: c341ee0f666583e45bd577db93bf0403, type: 3}
+        BackGroundPos: {x: 4.87027, y: -0.29, z: 18}
+        BackGroundScale: {x: 1.853393, y: 1.367657, z: 1.668668}
+      - BGName: Realm of Magic
+        BGImage: {fileID: 21300000, guid: 5116dd49b8a5a9d48bafff38a09b19b2, type: 3}
+        BackGroundPos: {x: 5.03, y: 0.23, z: 18}
+        BackGroundScale: {x: 1.496918, y: 1.343267, z: 1.475462}
+      - BGName: Floating Island
+        BGImage: {fileID: 21300000, guid: e95895da5290b374e88fb187bf5cc75b, type: 3}
+        BackGroundPos: {x: 5.03, y: -0.01, z: 18}
+        BackGroundScale: {x: 1.496918, y: 1.166323, z: 1.475462}
+      - BGName: Peace of mind
+        BGImage: {fileID: 21300000, guid: fa75eec86b4f06d408f968fde8b2daf6, type: 3}
+        BackGroundPos: {x: 5, y: 0, z: 18}
+        BackGroundScale: {x: 1.478405, y: 1.245653, z: 2.042433}
+      - BGName: Sea
+        BGImage: {fileID: 21300000, guid: 7cada43be89481040ab64c8bfa08d8e9, type: 3}
+        BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+        BackGroundScale: {x: 1.512717, y: 1.16239, z: 1.534595}
+    - LevelCategory: 4
+      BgImageList:
+      - BGName: Underwater Fantasy
+        BGImage: {fileID: 21300000, guid: 9640f05ddd5802e4f82c5ae90c74112b, type: 3}
+        BackGroundPos: {x: 5.03, y: -0.33, z: 18}
+        BackGroundScale: {x: 1.683314, y: 1.273464, z: 1.618877}
+      - BGName: Colorful Sea
+        BGImage: {fileID: 21300000, guid: 4d0f4038cceab534daaccf7670660c91, type: 3}
+        BackGroundPos: {x: 5.03, y: -0.8, z: 18}
+        BackGroundScale: {x: 1.556645, y: 1.385401, z: 1.618877}
+      - BGName: Ghost Ship
+        BGImage: {fileID: 21300000, guid: 4632a0a7669ba3c43bc7e03466720f3c, type: 3}
+        BackGroundPos: {x: 5.03, y: -0.1, z: 18}
+        BackGroundScale: {x: 1.76309, y: 1.234037, z: 1.731925}
+      - BGName: Underwater Kingdom
+        BGImage: {fileID: 21300000, guid: ff429e140fd9a2f47ac0700bdb98e07c, type: 3}
+        BackGroundPos: {x: 5.03, y: -0.1, z: 18}
+        BackGroundScale: {x: 1.484635, y: 1.128931, z: 1.604377}
+      - BGName: Sunken Ship
+        BGImage: {fileID: 21300000, guid: 698f4f65935cd5c4b89b473f29424cd4, type: 3}
+        BackGroundPos: {x: 5.03, y: 2.1, z: 18}
+        BackGroundScale: {x: 1.542702, y: 1.752213, z: 1.604377}
+      - BGName: Majestic Ocean
+        BGImage: {fileID: 21300000, guid: 858d9785848f5d740811d02e359568be, type: 3}
+        BackGroundPos: {x: 5.03, y: -0.1, z: 18}
+        BackGroundScale: {x: 1.76309, y: 1.234037, z: 1.731925}
+      - BGName: Underwater Fun
+        BGImage: {fileID: 21300000, guid: 6ccd3ef51d8a09642bbc84b4e8b998a1, type: 3}
+        BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+        BackGroundScale: {x: 1.571964, y: 1.274397, z: 1.534595}
+    - LevelCategory: 5
+      BgImageList:
+      - BGName: Cotton Candy Kingdom
+        BGImage: {fileID: 21300000, guid: 9fd8667e46c36164ba64ee93ff32aaa4, type: 3}
+        BackGroundPos: {x: 4.91, y: -0.12, z: 18}
+        BackGroundScale: {x: 1.533676, y: 1.328199, z: 1.500709}
+      - BGName: Gummy Galaxy
+        BGImage: {fileID: 21300000, guid: a5e521fef08718e448c000e454279746, type: 3}
+        BackGroundPos: {x: 4.91, y: -0.12, z: 18}
+        BackGroundScale: {x: 1.533676, y: 1.328199, z: 1.500709}
+      - BGName: Pastel Paradise
+        BGImage: {fileID: 21300000, guid: fe863f52c2714da488ac806d8be3eece, type: 3}
+        BackGroundPos: {x: 4.91, y: -0.12, z: 18}
+        BackGroundScale: {x: 1.533676, y: 1.328199, z: 1.500709}
+      - BGName: Sugar Rush
+        BGImage: {fileID: 21300000, guid: 41c8227a86c93cf42a8ebfbaa68e37b7, type: 3}
+        BackGroundPos: {x: 4.91, y: -0.12, z: 18}
+        BackGroundScale: {x: 1.479445, y: 1.216724, z: 1.447644}
+      - BGName: Rosy Sweetscape
+        BGImage: {fileID: 21300000, guid: 52afe8579d36f194e87d8038a4ec8659, type: 3}
+        BackGroundPos: {x: 4.91, y: -0.12, z: 18}
+        BackGroundScale: {x: 1.479445, y: 1.216724, z: 1.447644}
+      - BGName: Cotton Candy Castle
+        BGImage: {fileID: 21300000, guid: 8ce19ee8dcddcd84b8164d95eef92b26, type: 3}
+        BackGroundPos: {x: 4.91, y: -0.12, z: 18}
+        BackGroundScale: {x: 1.479445, y: 1.216724, z: 1.447644}
+      - BGName: The Sugarplum Circus.
+        BGImage: {fileID: 21300000, guid: 123d5782947abb3418e2cf595245ee4f, type: 3}
+        BackGroundPos: {x: 4.91, y: -0.12, z: 18}
+        BackGroundScale: {x: 1.479445, y: 1.216724, z: 1.447644}
+      - BGName: A World Of Sugar And Fun
+        BGImage: {fileID: 21300000, guid: 1018b10a5fbe1724d8c51d132693dc79, type: 3}
+        BackGroundPos: {x: 5.03, y: -0.01, z: 18}
+        BackGroundScale: {x: 1.496918, y: 1.166323, z: 1.475462}
+    - LevelCategory: 6
+      BgImageList:
+      - BGName: Winter Wonderland
+        BGImage: {fileID: 21300000, guid: 71b8372b2b8b4e84ead643b1655da252, type: 3}
+        BackGroundPos: {x: 4.87027, y: -0.18, z: 18}
+        BackGroundScale: {x: 1.510089, y: 1.143167, z: 1.413007}
+      - BGName: Cozy Snowscape
+        BGImage: {fileID: 21300000, guid: ade8d44081de41045be897d3a42b7443, type: 3}
+        BackGroundPos: {x: 4.87027, y: -0.18, z: 18}
+        BackGroundScale: {x: 1.510089, y: 1.143167, z: 1.413007}
+      - BGName: Snowy Magic
+        BGImage: {fileID: 21300000, guid: 75aaf55b3124e7046a57dfc506bc8631, type: 3}
+        BackGroundPos: {x: 4.87027, y: -0.26, z: 18}
+        BackGroundScale: {x: 1.616256, y: 1.178714, z: 1.475462}
+      - BGName: Winter Fairytale
+        BGImage: {fileID: 21300000, guid: 62c7ff0458e52e94ebea26eca20cddcb, type: 3}
+        BackGroundPos: {x: 4.87027, y: -0.26, z: 18}
+        BackGroundScale: {x: 1.535395, y: 1.119519, z: 1.475462}
+    - LevelCategory: 7
+      BgImageList:
+      - BGName: Mysterious Temple
+        BGImage: {fileID: 21300000, guid: f21285c7b814a4c498ad970f2fad0fcf, type: 3}
+        BackGroundPos: {x: 4.4, y: 0.9, z: 18}
+        BackGroundScale: {x: 1.570683, y: 1.442049, z: 1.534595}
+      - BGName: Enchanted Temple
+        BGImage: {fileID: 21300000, guid: de644b73fa7e7254091a00b649c5118f, type: 3}
+        BackGroundPos: {x: 4.4, y: 0.9, z: 18}
+        BackGroundScale: {x: 1.570683, y: 1.442049, z: 1.534595}
+      - BGName: Secret Sorcery
+        BGImage: {fileID: 21300000, guid: e09f466e182cb99458cf376fe9d260ce, type: 3}
+        BackGroundPos: {x: 4.4, y: 0.8, z: 18}
+        BackGroundScale: {x: 1.570683, y: 1.316737, z: 1.534595}
+      - BGName: Enchanted Sanctuary
+        BGImage: {fileID: 21300000, guid: 1f90447a267d3b1459cbe1f8b3d1e990, type: 3}
+        BackGroundPos: {x: 4.6, y: -1.4, z: 18}
+        BackGroundScale: {x: 1.815362, y: 1.522314, z: 1.466003}
+      - BGName: Red Light Mine
+        BGImage: {fileID: 21300000, guid: 67ba3dcbb0b268647bc8bea5ea76b3e5, type: 3}
+        BackGroundPos: {x: 4.8, y: -0.2, z: 18}
+        BackGroundScale: {x: 1.53184, y: 1.580723, z: 1.667188}
+      - BGName: Pink Mine
+        BGImage: {fileID: 21300000, guid: b6fe666aff703114396976b00a868072, type: 3}
+        BackGroundPos: {x: 5.1, y: -1.3, z: 18}
+        BackGroundScale: {x: 1.546087, y: 1.404577, z: 1.3872}
+      - BGName: Hidden Oasis
+        BGImage: {fileID: 21300000, guid: 8557a2a007f4bda4bbef41dda746f782, type: 3}
+        BackGroundPos: {x: 5.1, y: -0.9, z: 18}
+        BackGroundScale: {x: 1.507543, y: 1.303778, z: 1.3872}
+      - BGName: Temple Run
+        BGImage: {fileID: 21300000, guid: 70e8df7ff8a338647a8c894deba5c8c1, type: 3}
+        BackGroundPos: {x: 5.1, y: -0.9, z: 18}
+        BackGroundScale: {x: 1.507543, y: 1.303778, z: 1.3872}
+    - LevelCategory: 8
+      BgImageList:
+      - BGName: Painted City
+        BGImage: {fileID: 21300000, guid: fedee4f0f2c6cc6419d36759f9899f50, type: 3}
+        BackGroundPos: {x: 4.9, y: -0.3, z: 18}
+        BackGroundScale: {x: 1.48555, y: 1.227008, z: 1.490924}
+      - BGName: Cheerful Metropolis
+        BGImage: {fileID: 21300000, guid: 1a2f744462ca06c41a91fe10de4f21aa, type: 3}
+        BackGroundPos: {x: 4.9, y: -0.3, z: 18}
+        BackGroundScale: {x: 1.502635, y: 1.121112, z: 1.490924}
+      - BGName: Simple City
+        BGImage: {fileID: 21300000, guid: 203f75df2003f91489679f709011cb20, type: 3}
+        BackGroundPos: {x: 4.9, y: -0.3, z: 18}
+        BackGroundScale: {x: 1.502635, y: 1.121112, z: 1.490924}
+      - BGName: Sunset City
+        BGImage: {fileID: 21300000, guid: c2df0fb1eb5740248b7f7ae0aa408fa2, type: 3}
+        BackGroundPos: {x: 4.9, y: -0.3, z: 18}
+        BackGroundScale: {x: 1.502635, y: 1.121112, z: 1.490924}
+      - BGName: Akrabar Sun
+        BGImage: {fileID: 21300000, guid: b39ebf7e68d1751409afb80f6305a061, type: 3}
+        BackGroundPos: {x: 4.9, y: -0.4, z: 18}
+        BackGroundScale: {x: 1.483777, y: 1.345557, z: 1.490924}
+      - BGName: Burning Sun
+        BGImage: {fileID: 21300000, guid: ff265fff5d304f54a93e270835c2c440, type: 3}
+        BackGroundPos: {x: 4.9, y: -0.4, z: 18}
+        BackGroundScale: {x: 1.623258, y: 1.563959, z: 1.828209}
+      - BGName: Market
+        BGImage: {fileID: 21300000, guid: b6156b63d4d68004db945eddf90fc151, type: 3}
+        BackGroundPos: {x: 4.9, y: -0.4, z: 18}
+        BackGroundScale: {x: 1.623258, y: 1.563959, z: 1.828209}
+      - BGName: Tower
+        BGImage: {fileID: 21300000, guid: 04086430fa0ea7141b25e763466024ef, type: 3}
+        BackGroundPos: {x: 5, y: 0, z: 18}
+        BackGroundScale: {x: 1.536229, y: 1.245653, z: 2.042433}
+      - BGName: Bella Italia
+        BGImage: {fileID: 21300000, guid: ed78d6a573407064d87521de260b27d7, type: 3}
+        BackGroundPos: {x: 5, y: 0, z: 18}
+        BackGroundScale: {x: 1.536229, y: 1.245653, z: 2.042433}
+      - BGName: Bella Italia
+        BGImage: {fileID: 21300000, guid: ed78d6a573407064d87521de260b27d7, type: 3}
+        BackGroundPos: {x: 5, y: 0, z: 18}
+        BackGroundScale: {x: 1.536229, y: 1.245653, z: 2.042433}
+      - BGName: Smiling Remnants
+        BGImage: {fileID: 21300000, guid: 2565b1025853f1046999a9a2dae13204, type: 3}
+        BackGroundPos: {x: 5, y: 0, z: 18}
+        BackGroundScale: {x: 1.536229, y: 1.245653, z: 2.042433}
+      - BGName: Fruit City
+        BGImage: {fileID: 21300000, guid: 607ff79840091164f809627730e91c8a, type: 3}
+        BackGroundPos: {x: 5, y: 0, z: 18}
+        BackGroundScale: {x: 1.536229, y: 1.245653, z: 2.042433}
+      - BGName: Happy Door
+        BGImage: {fileID: 21300000, guid: 047afbbb526565143994dc8082b0850e, type: 3}
+        BackGroundPos: {x: 4.87027, y: -0.4, z: 18}
+        BackGroundScale: {x: 1.534595, y: 1.202149, z: 1.534595}
+      - BGName: Colorful City
+        BGImage: {fileID: 21300000, guid: a39d6bdecce1dfb41a66084eb96038bf, type: 3}
+        BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+        BackGroundScale: {x: 1.514839, y: 1.213481, z: 1.534595}
+      - BGName: City Set
+        BGImage: {fileID: 21300000, guid: 54a308f679ab87141b6b1f726b4c4789, type: 3}
+        BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+        BackGroundScale: {x: 1.571964, y: 1.274397, z: 1.534595}
+      - BGName: Water City
+        BGImage: {fileID: 21300000, guid: 0e7567c98841dc749896f1c4adcfebd7, type: 3}
+        BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+        BackGroundScale: {x: 1.571964, y: 1.274397, z: 1.534595}
+      - BGName: Setting Sun
+        BGImage: {fileID: 21300000, guid: f3a8b498095c11c43a7bdb704327d0fd, type: 3}
+        BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+        BackGroundScale: {x: 1.512717, y: 1.16239, z: 1.534595}
+    - LevelCategory: 9
+      BgImageList:
+      - BGName: Fruit Kitchen
+        BGImage: {fileID: 21300000, guid: b129ccd17f815c6439c617fbeddf3f6c, type: 3}
+        BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+        BackGroundScale: {x: 1.55271, y: 1.274397, z: 1.534595}
+      - BGName: Time to Eat
+        BGImage: {fileID: 21300000, guid: 32478f91c4ae6d64d95b4ef5f389985b, type: 3}
+        BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+        BackGroundScale: {x: 1.571964, y: 1.274397, z: 1.534595}
+      - BGName: Italian Kitchen
+        BGImage: {fileID: 21300000, guid: 78dbd38c0fc92da4bb7cf5a7468c4310, type: 3}
+        BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+        BackGroundScale: {x: 1.571964, y: 1.274397, z: 1.534595}
+      - BGName: Simple Kitchen
+        BGImage: {fileID: 21300000, guid: 1a4874b91756b314db6052978b5ecdff, type: 3}
+        BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+        BackGroundScale: {x: 1.512717, y: 1.16239, z: 1.534595}
+    - LevelCategory: 10
+      BgImageList:
+      - BGName: WaterFall
+        BGImage: {fileID: 21300000, guid: 0a006e13dcdaedf45b882bb1c3849522, type: 3}
+        BackGroundPos: {x: 4.9, y: 2.4, z: 18}
+        BackGroundScale: {x: 1.488014, y: 1.692605, z: 1.3872}
+      - BGName: Lonely Rock
+        BGImage: {fileID: 21300000, guid: 5808ba1ec26c84945ac0ac9fbb520de4, type: 3}
+        BackGroundPos: {x: 5.3, y: -0.1, z: 18}
+        BackGroundScale: {x: 1.608545, y: 1.143776, z: 1.490924}
+  allBGImageSets:
+  - LevelCategory: 0
+    BgImageList:
+    - BGName: Night Safari
+      BGImage: {fileID: 21300000, guid: 6610b2b000570e448a7bf3f5aeabee1d, type: 3}
+      BackGroundPos: {x: 4.87027, y: 0.9639063, z: 18}
+      BackGroundScale: {x: 1.534595, y: 1.534595, z: 1.534595}
+    - BGName: 'Rainbow Jungle '
+      BGImage: {fileID: 21300000, guid: 55e9395628e789545943a7af2588226b, type: 3}
+      BackGroundPos: {x: 4.87027, y: 0.9639063, z: 18}
+      BackGroundScale: {x: 1.534595, y: 1.534595, z: 1.534595}
+    - BGName: Enchanted Forest Night
+      BGImage: {fileID: 21300000, guid: db38131e9d2806742bfb1dc509735bfe, type: 3}
+      BackGroundPos: {x: 4.87027, y: 0.66, z: 18}
+      BackGroundScale: {x: 1.534595, y: 1.476648, z: 1.534595}
+    - BGName: Luminous Jungle
+      BGImage: {fileID: 21300000, guid: 00e758fcd617ff54c88ad4e8ef10d7d6, type: 3}
+      BackGroundPos: {x: 4.87027, y: -0.8, z: 18}
+      BackGroundScale: {x: 1.477538, y: 1.385572, z: 1.534595}
+    - BGName: Fantasia Jungle
+      BGImage: {fileID: 21300000, guid: 55c7300609be0d84f965c4c9d0a0846b, type: 3}
+      BackGroundPos: {x: 4.87027, y: -0.8, z: 18}
+      BackGroundScale: {x: 1.477538, y: 1.385572, z: 1.534595}
+    - BGName: Radiant Rainforest
+      BGImage: {fileID: 21300000, guid: 11f2629d8e40cba4bbab9e33b7772ede, type: 3}
+      BackGroundPos: {x: 4.87027, y: -0.8, z: 18}
+      BackGroundScale: {x: 1.834871, y: 1.708486, z: 1.751586}
+    - BGName: Mystical Jungle
+      BGImage: {fileID: 21300000, guid: fbf6fd6b1fd16634bb000902da08ab26, type: 3}
+      BackGroundPos: {x: 4.87027, y: -0.8, z: 18}
+      BackGroundScale: {x: 1.834871, y: 1.708486, z: 1.751586}
+    - BGName: Nightfall in the Wilds
+      BGImage: {fileID: 21300000, guid: 3571ccfe1de05554da15dd7e62a2ccfe, type: 3}
+      BackGroundPos: {x: 4.87027, y: -1.86, z: 18}
+      BackGroundScale: {x: 1.58109, y: 1.601233, z: 1.751586}
+    - BGName: Nebula Jungle
+      BGImage: {fileID: 21300000, guid: 73757f086a4bcbd4cb4547ec4988a8a1, type: 3}
+      BackGroundPos: {x: 4.87027, y: -0.79, z: 18}
+      BackGroundScale: {x: 1.504222, y: 1.305133, z: 1.627732}
+    - BGName: Luminous Night
+      BGImage: {fileID: 21300000, guid: 44790543077c6ea499de66527ad36ea6, type: 3}
+      BackGroundPos: {x: 5.1, y: -1.3, z: 18}
+      BackGroundScale: {x: 1.546087, y: 1.404577, z: 1.3872}
+    - BGName: Night Fever
+      BGImage: {fileID: 21300000, guid: 814ee0bb00ebfc84fbdc09839d238fce, type: 3}
+      BackGroundPos: {x: 5.1, y: -1.3, z: 18}
+      BackGroundScale: {x: 1.546087, y: 1.404577, z: 1.3872}
+    - BGName: Darkest Jungle
+      BGImage: {fileID: 21300000, guid: 23e1c82d79428fc41b5e00a5b74c3511, type: 3}
+      BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+      BackGroundScale: {x: 1.571964, y: 1.274397, z: 1.534595}
+  - LevelCategory: 1
+    BgImageList:
+    - BGName: Daybreak in the Wilds
+      BGImage: {fileID: 21300000, guid: 9cd74bcfd60aaee4abf6e82068c5bc59, type: 3}
+      BackGroundPos: {x: 4.87027, y: -0.8, z: 18}
+      BackGroundScale: {x: 1.607562, y: 1.298997, z: 1.534595}
+    - BGName: Sun-kissed Jungle
+      BGImage: {fileID: 21300000, guid: f75036ccbdaf6414986501aae5b3e163, type: 3}
+      BackGroundPos: {x: 4.87027, y: -0.8, z: 18}
+      BackGroundScale: {x: 1.607562, y: 1.298997, z: 1.534595}
+    - BGName: Jungle Fever
+      BGImage: {fileID: 21300000, guid: 31b12172782760c439471efeceb6a9bd, type: 3}
+      BackGroundPos: {x: 4.87027, y: 0.9639063, z: 18}
+      BackGroundScale: {x: 1.534595, y: 1.534595, z: 1.534595}
+    - BGName: Wildlife Wonderland
+      BGImage: {fileID: 21300000, guid: e09d53d942de6964cb555f9810b3f971, type: 3}
+      BackGroundPos: {x: 4.87027, y: 0.9639063, z: 18}
+      BackGroundScale: {x: 1.534595, y: 1.534595, z: 1.534595}
+    - BGName: Tropical Trek
+      BGImage: {fileID: 21300000, guid: c041cc2289d767b41b446c018bce816c, type: 3}
+      BackGroundPos: {x: 4.88, y: 0.28, z: 18}
+      BackGroundScale: {x: 1.480309, y: 1.415915, z: 1.668873}
+    - BGName: Tropical Life
+      BGImage: {fileID: 21300000, guid: 2b0e8e162e700604ab0dfee67608635e, type: 3}
+      BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+      BackGroundScale: {x: 1.514839, y: 1.213481, z: 1.534595}
+  - LevelCategory: 2
+    BgImageList:
+    - BGName: Sheep in the Moonlight
+      BGImage: {fileID: 21300000, guid: 382980f9e382c044dafc7022b9db0790, type: 3}
+      BackGroundPos: {x: 4.91, y: -1.02, z: 18}
+      BackGroundScale: {x: 1.520297, y: 1.368507, z: 1.487618}
+    - BGName: Under The Mooon
+      BGImage: {fileID: 21300000, guid: cba028dd542dbf44b87f6574733fc4d6, type: 3}
+      BackGroundPos: {x: 4.91, y: -1.02, z: 18}
+      BackGroundScale: {x: 1.483826, y: 1.109307, z: 1.388432}
+    - BGName: Lunar Lookout
+      BGImage: {fileID: 21300000, guid: 86d29cec29fcf9b47997f037cef46c1d, type: 3}
+      BackGroundPos: {x: 4.91, y: -1.02, z: 18}
+      BackGroundScale: {x: 1.520297, y: 1.368507, z: 1.487618}
+    - BGName: Aurora at dawn
+      BGImage: {fileID: 21300000, guid: 73bf70caab48aeb418d66563dc9ce24f, type: 3}
+      BackGroundPos: {x: 4.91, y: -1.02, z: 18}
+      BackGroundScale: {x: 1.520297, y: 1.368507, z: 1.487618}
+  - LevelCategory: 3
+    BgImageList:
+    - BGName: Happy Pond
+      BGImage: {fileID: 21300000, guid: e55ab945494278b44867c640323a6e86, type: 3}
+      BackGroundPos: {x: 4.87027, y: -0.29, z: 18}
+      BackGroundScale: {x: 1.611225, y: 1.188957, z: 1.450638}
+    - BGName: In the Pond
+      BGImage: {fileID: 21300000, guid: 1f9674ee0f81985498c29a5335585be7, type: 3}
+      BackGroundPos: {x: 4.87027, y: -0.29, z: 18}
+      BackGroundScale: {x: 1.853393, y: 1.367657, z: 1.668668}
+    - BGName: Majestic Tendril
+      BGImage: {fileID: 21300000, guid: 242ff2375690ba14193ef60828d37f18, type: 3}
+      BackGroundPos: {x: 4.87027, y: -0.29, z: 18}
+      BackGroundScale: {x: 1.853393, y: 1.367657, z: 1.668668}
+    - BGName: Happy Farmland
+      BGImage: {fileID: 21300000, guid: 5015a6bd60af3f94f9eaf186b6712ef1, type: 3}
+      BackGroundPos: {x: 4.87027, y: -0.29, z: 18}
+      BackGroundScale: {x: 1.853393, y: 1.367657, z: 1.668668}
+    - BGName: Simple Trees
+      BGImage: {fileID: 21300000, guid: c341ee0f666583e45bd577db93bf0403, type: 3}
+      BackGroundPos: {x: 4.87027, y: -0.29, z: 18}
+      BackGroundScale: {x: 1.853393, y: 1.367657, z: 1.668668}
+    - BGName: Realm of Magic
+      BGImage: {fileID: 21300000, guid: 5116dd49b8a5a9d48bafff38a09b19b2, type: 3}
+      BackGroundPos: {x: 5.03, y: 0.23, z: 18}
+      BackGroundScale: {x: 1.496918, y: 1.343267, z: 1.475462}
+    - BGName: Floating Island
+      BGImage: {fileID: 21300000, guid: e95895da5290b374e88fb187bf5cc75b, type: 3}
+      BackGroundPos: {x: 5.03, y: -0.01, z: 18}
+      BackGroundScale: {x: 1.496918, y: 1.166323, z: 1.475462}
+    - BGName: Peace of mind
+      BGImage: {fileID: 21300000, guid: fa75eec86b4f06d408f968fde8b2daf6, type: 3}
+      BackGroundPos: {x: 5, y: 0, z: 18}
+      BackGroundScale: {x: 1.478405, y: 1.245653, z: 2.042433}
+    - BGName: Sea
+      BGImage: {fileID: 21300000, guid: 7cada43be89481040ab64c8bfa08d8e9, type: 3}
+      BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+      BackGroundScale: {x: 1.512717, y: 1.16239, z: 1.534595}
+  - LevelCategory: 4
+    BgImageList:
+    - BGName: Underwater Fantasy
+      BGImage: {fileID: 21300000, guid: 9640f05ddd5802e4f82c5ae90c74112b, type: 3}
+      BackGroundPos: {x: 5.03, y: -0.33, z: 18}
+      BackGroundScale: {x: 1.683314, y: 1.273464, z: 1.618877}
+    - BGName: Colorful Sea
+      BGImage: {fileID: 21300000, guid: 4d0f4038cceab534daaccf7670660c91, type: 3}
+      BackGroundPos: {x: 5.03, y: -0.8, z: 18}
+      BackGroundScale: {x: 1.556645, y: 1.385401, z: 1.618877}
+    - BGName: Ghost Ship
+      BGImage: {fileID: 21300000, guid: 4632a0a7669ba3c43bc7e03466720f3c, type: 3}
+      BackGroundPos: {x: 5.03, y: -0.1, z: 18}
+      BackGroundScale: {x: 1.76309, y: 1.234037, z: 1.731925}
+    - BGName: Underwater Kingdom
+      BGImage: {fileID: 21300000, guid: ff429e140fd9a2f47ac0700bdb98e07c, type: 3}
+      BackGroundPos: {x: 5.03, y: -0.1, z: 18}
+      BackGroundScale: {x: 1.484635, y: 1.128931, z: 1.604377}
+    - BGName: Sunken Ship
+      BGImage: {fileID: 21300000, guid: 698f4f65935cd5c4b89b473f29424cd4, type: 3}
+      BackGroundPos: {x: 5.03, y: 2.1, z: 18}
+      BackGroundScale: {x: 1.542702, y: 1.752213, z: 1.604377}
+    - BGName: Majestic Ocean
+      BGImage: {fileID: 21300000, guid: 858d9785848f5d740811d02e359568be, type: 3}
+      BackGroundPos: {x: 5.03, y: -0.1, z: 18}
+      BackGroundScale: {x: 1.76309, y: 1.234037, z: 1.731925}
+    - BGName: Underwater Fun
+      BGImage: {fileID: 21300000, guid: 6ccd3ef51d8a09642bbc84b4e8b998a1, type: 3}
+      BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+      BackGroundScale: {x: 1.571964, y: 1.274397, z: 1.534595}
+  - LevelCategory: 5
+    BgImageList:
+    - BGName: Cotton Candy Kingdom
+      BGImage: {fileID: 21300000, guid: 9fd8667e46c36164ba64ee93ff32aaa4, type: 3}
+      BackGroundPos: {x: 4.91, y: -0.12, z: 18}
+      BackGroundScale: {x: 1.533676, y: 1.328199, z: 1.500709}
+    - BGName: Gummy Galaxy
+      BGImage: {fileID: 21300000, guid: a5e521fef08718e448c000e454279746, type: 3}
+      BackGroundPos: {x: 4.91, y: -0.12, z: 18}
+      BackGroundScale: {x: 1.533676, y: 1.328199, z: 1.500709}
+    - BGName: Pastel Paradise
+      BGImage: {fileID: 21300000, guid: fe863f52c2714da488ac806d8be3eece, type: 3}
+      BackGroundPos: {x: 4.91, y: -0.12, z: 18}
+      BackGroundScale: {x: 1.533676, y: 1.328199, z: 1.500709}
+    - BGName: Sugar Rush
+      BGImage: {fileID: 21300000, guid: 41c8227a86c93cf42a8ebfbaa68e37b7, type: 3}
+      BackGroundPos: {x: 4.91, y: -0.12, z: 18}
+      BackGroundScale: {x: 1.479445, y: 1.216724, z: 1.447644}
+    - BGName: Rosy Sweetscape
+      BGImage: {fileID: 21300000, guid: 52afe8579d36f194e87d8038a4ec8659, type: 3}
+      BackGroundPos: {x: 4.91, y: -0.12, z: 18}
+      BackGroundScale: {x: 1.479445, y: 1.216724, z: 1.447644}
+    - BGName: Cotton Candy Castle
+      BGImage: {fileID: 21300000, guid: 8ce19ee8dcddcd84b8164d95eef92b26, type: 3}
+      BackGroundPos: {x: 4.91, y: -0.12, z: 18}
+      BackGroundScale: {x: 1.479445, y: 1.216724, z: 1.447644}
+    - BGName: The Sugarplum Circus.
+      BGImage: {fileID: 21300000, guid: 123d5782947abb3418e2cf595245ee4f, type: 3}
+      BackGroundPos: {x: 4.91, y: -0.12, z: 18}
+      BackGroundScale: {x: 1.479445, y: 1.216724, z: 1.447644}
+    - BGName: A World Of Sugar And Fun
+      BGImage: {fileID: 21300000, guid: 1018b10a5fbe1724d8c51d132693dc79, type: 3}
+      BackGroundPos: {x: 5.03, y: -0.01, z: 18}
+      BackGroundScale: {x: 1.496918, y: 1.166323, z: 1.475462}
+  - LevelCategory: 6
+    BgImageList:
+    - BGName: Winter Wonderland
+      BGImage: {fileID: 21300000, guid: 71b8372b2b8b4e84ead643b1655da252, type: 3}
+      BackGroundPos: {x: 4.87027, y: -0.18, z: 18}
+      BackGroundScale: {x: 1.510089, y: 1.143167, z: 1.413007}
+    - BGName: Cozy Snowscape
+      BGImage: {fileID: 21300000, guid: ade8d44081de41045be897d3a42b7443, type: 3}
+      BackGroundPos: {x: 4.87027, y: -0.18, z: 18}
+      BackGroundScale: {x: 1.510089, y: 1.143167, z: 1.413007}
+    - BGName: Snowy Magic
+      BGImage: {fileID: 21300000, guid: 75aaf55b3124e7046a57dfc506bc8631, type: 3}
+      BackGroundPos: {x: 4.87027, y: -0.26, z: 18}
+      BackGroundScale: {x: 1.616256, y: 1.178714, z: 1.475462}
+    - BGName: Winter Fairytale
+      BGImage: {fileID: 21300000, guid: 62c7ff0458e52e94ebea26eca20cddcb, type: 3}
+      BackGroundPos: {x: 4.87027, y: -0.26, z: 18}
+      BackGroundScale: {x: 1.535395, y: 1.119519, z: 1.475462}
+  - LevelCategory: 7
+    BgImageList:
+    - BGName: Mysterious Temple
+      BGImage: {fileID: 21300000, guid: f21285c7b814a4c498ad970f2fad0fcf, type: 3}
+      BackGroundPos: {x: 4.4, y: 0.9, z: 18}
+      BackGroundScale: {x: 1.570683, y: 1.442049, z: 1.534595}
+    - BGName: Enchanted Temple
+      BGImage: {fileID: 21300000, guid: de644b73fa7e7254091a00b649c5118f, type: 3}
+      BackGroundPos: {x: 4.4, y: 0.9, z: 18}
+      BackGroundScale: {x: 1.570683, y: 1.442049, z: 1.534595}
+    - BGName: Secret Sorcery
+      BGImage: {fileID: 21300000, guid: e09f466e182cb99458cf376fe9d260ce, type: 3}
+      BackGroundPos: {x: 4.4, y: 0.8, z: 18}
+      BackGroundScale: {x: 1.570683, y: 1.316737, z: 1.534595}
+    - BGName: Enchanted Sanctuary
+      BGImage: {fileID: 21300000, guid: 1f90447a267d3b1459cbe1f8b3d1e990, type: 3}
+      BackGroundPos: {x: 4.6, y: -1.4, z: 18}
+      BackGroundScale: {x: 1.815362, y: 1.522314, z: 1.466003}
+    - BGName: Red Light Mine
+      BGImage: {fileID: 21300000, guid: 67ba3dcbb0b268647bc8bea5ea76b3e5, type: 3}
+      BackGroundPos: {x: 4.8, y: -0.2, z: 18}
+      BackGroundScale: {x: 1.53184, y: 1.580723, z: 1.667188}
+    - BGName: Pink Mine
+      BGImage: {fileID: 21300000, guid: b6fe666aff703114396976b00a868072, type: 3}
+      BackGroundPos: {x: 5.1, y: -1.3, z: 18}
+      BackGroundScale: {x: 1.546087, y: 1.404577, z: 1.3872}
+    - BGName: Hidden Oasis
+      BGImage: {fileID: 21300000, guid: 8557a2a007f4bda4bbef41dda746f782, type: 3}
+      BackGroundPos: {x: 5.1, y: -0.9, z: 18}
+      BackGroundScale: {x: 1.507543, y: 1.303778, z: 1.3872}
+    - BGName: Temple Run
+      BGImage: {fileID: 21300000, guid: 70e8df7ff8a338647a8c894deba5c8c1, type: 3}
+      BackGroundPos: {x: 5.1, y: -0.9, z: 18}
+      BackGroundScale: {x: 1.507543, y: 1.303778, z: 1.3872}
+  - LevelCategory: 8
+    BgImageList:
+    - BGName: Painted City
+      BGImage: {fileID: 21300000, guid: fedee4f0f2c6cc6419d36759f9899f50, type: 3}
+      BackGroundPos: {x: 4.9, y: -0.3, z: 18}
+      BackGroundScale: {x: 1.48555, y: 1.227008, z: 1.490924}
+    - BGName: Cheerful Metropolis
+      BGImage: {fileID: 21300000, guid: 1a2f744462ca06c41a91fe10de4f21aa, type: 3}
+      BackGroundPos: {x: 4.9, y: -0.3, z: 18}
+      BackGroundScale: {x: 1.502635, y: 1.121112, z: 1.490924}
+    - BGName: Simple City
+      BGImage: {fileID: 21300000, guid: 203f75df2003f91489679f709011cb20, type: 3}
+      BackGroundPos: {x: 4.9, y: -0.3, z: 18}
+      BackGroundScale: {x: 1.502635, y: 1.121112, z: 1.490924}
+    - BGName: Sunset City
+      BGImage: {fileID: 21300000, guid: c2df0fb1eb5740248b7f7ae0aa408fa2, type: 3}
+      BackGroundPos: {x: 4.9, y: -0.3, z: 18}
+      BackGroundScale: {x: 1.502635, y: 1.121112, z: 1.490924}
+    - BGName: Akrabar Sun
+      BGImage: {fileID: 21300000, guid: b39ebf7e68d1751409afb80f6305a061, type: 3}
+      BackGroundPos: {x: 4.9, y: -0.4, z: 18}
+      BackGroundScale: {x: 1.483777, y: 1.345557, z: 1.490924}
+    - BGName: Burning Sun
+      BGImage: {fileID: 21300000, guid: ff265fff5d304f54a93e270835c2c440, type: 3}
+      BackGroundPos: {x: 4.9, y: -0.4, z: 18}
+      BackGroundScale: {x: 1.623258, y: 1.563959, z: 1.828209}
+    - BGName: Market
+      BGImage: {fileID: 21300000, guid: b6156b63d4d68004db945eddf90fc151, type: 3}
+      BackGroundPos: {x: 4.9, y: -0.4, z: 18}
+      BackGroundScale: {x: 1.623258, y: 1.563959, z: 1.828209}
+    - BGName: Tower
+      BGImage: {fileID: 21300000, guid: 04086430fa0ea7141b25e763466024ef, type: 3}
+      BackGroundPos: {x: 5, y: 0, z: 18}
+      BackGroundScale: {x: 1.536229, y: 1.245653, z: 2.042433}
+    - BGName: Bella Italia
+      BGImage: {fileID: 21300000, guid: ed78d6a573407064d87521de260b27d7, type: 3}
+      BackGroundPos: {x: 5, y: 0, z: 18}
+      BackGroundScale: {x: 1.536229, y: 1.245653, z: 2.042433}
+    - BGName: Bella Italia
+      BGImage: {fileID: 21300000, guid: ed78d6a573407064d87521de260b27d7, type: 3}
+      BackGroundPos: {x: 5, y: 0, z: 18}
+      BackGroundScale: {x: 1.536229, y: 1.245653, z: 2.042433}
+    - BGName: Smiling Remnants
+      BGImage: {fileID: 21300000, guid: 2565b1025853f1046999a9a2dae13204, type: 3}
+      BackGroundPos: {x: 5, y: 0, z: 18}
+      BackGroundScale: {x: 1.536229, y: 1.245653, z: 2.042433}
+    - BGName: Fruit City
+      BGImage: {fileID: 21300000, guid: 607ff79840091164f809627730e91c8a, type: 3}
+      BackGroundPos: {x: 5, y: 0, z: 18}
+      BackGroundScale: {x: 1.536229, y: 1.245653, z: 2.042433}
+    - BGName: Happy Door
+      BGImage: {fileID: 21300000, guid: 047afbbb526565143994dc8082b0850e, type: 3}
+      BackGroundPos: {x: 4.87027, y: -0.4, z: 18}
+      BackGroundScale: {x: 1.534595, y: 1.202149, z: 1.534595}
+    - BGName: Colorful City
+      BGImage: {fileID: 21300000, guid: a39d6bdecce1dfb41a66084eb96038bf, type: 3}
+      BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+      BackGroundScale: {x: 1.514839, y: 1.213481, z: 1.534595}
+    - BGName: City Set
+      BGImage: {fileID: 21300000, guid: 54a308f679ab87141b6b1f726b4c4789, type: 3}
+      BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+      BackGroundScale: {x: 1.571964, y: 1.274397, z: 1.534595}
+    - BGName: Water City
+      BGImage: {fileID: 21300000, guid: 0e7567c98841dc749896f1c4adcfebd7, type: 3}
+      BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+      BackGroundScale: {x: 1.571964, y: 1.274397, z: 1.534595}
+    - BGName: Setting Sun
+      BGImage: {fileID: 21300000, guid: f3a8b498095c11c43a7bdb704327d0fd, type: 3}
+      BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+      BackGroundScale: {x: 1.512717, y: 1.16239, z: 1.534595}
+  - LevelCategory: 9
+    BgImageList:
+    - BGName: Fruit Kitchen
+      BGImage: {fileID: 21300000, guid: b129ccd17f815c6439c617fbeddf3f6c, type: 3}
+      BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+      BackGroundScale: {x: 1.55271, y: 1.274397, z: 1.534595}
+    - BGName: Time to Eat
+      BGImage: {fileID: 21300000, guid: 32478f91c4ae6d64d95b4ef5f389985b, type: 3}
+      BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+      BackGroundScale: {x: 1.571964, y: 1.274397, z: 1.534595}
+    - BGName: Italian Kitchen
+      BGImage: {fileID: 21300000, guid: 78dbd38c0fc92da4bb7cf5a7468c4310, type: 3}
+      BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+      BackGroundScale: {x: 1.571964, y: 1.274397, z: 1.534595}
+    - BGName: Simple Kitchen
+      BGImage: {fileID: 21300000, guid: 1a4874b91756b314db6052978b5ecdff, type: 3}
+      BackGroundPos: {x: 4.97, y: -0.4, z: 18}
+      BackGroundScale: {x: 1.512717, y: 1.16239, z: 1.534595}
+  - LevelCategory: 10
+    BgImageList:
+    - BGName: WaterFall
+      BGImage: {fileID: 21300000, guid: 0a006e13dcdaedf45b882bb1c3849522, type: 3}
+      BackGroundPos: {x: 4.9, y: 2.4, z: 18}
+      BackGroundScale: {x: 1.488014, y: 1.692605, z: 1.3872}
+    - BGName: Lonely Rock
+      BGImage: {fileID: 21300000, guid: 5808ba1ec26c84945ac0ac9fbb520de4, type: 3}
+      BackGroundPos: {x: 5.3, y: -0.1, z: 18}
+      BackGroundScale: {x: 1.608545, y: 1.143776, z: 1.490924}

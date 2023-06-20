@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: eb51a93d864f94c71a858c0890c587a4
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Nightfate
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 4aa67b1633b4948469e2f9c021ee2fe1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

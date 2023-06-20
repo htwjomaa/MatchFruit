@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 622ba9780b46540088908ba4fabe89fe
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Corsica LX
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 51cee47132982459c951a3ae20ebd415, type: 3}
+  - {fileID: 12800000, guid: a1aa635a44be94ecaaa1a8474babec84, type: 3}
+  - {fileID: 12800000, guid: f069be5ddb36345438ff486907bcb068, type: 3}
+  - {fileID: 12800000, guid: 12be82f0cb6e64850b2134065249a4f1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

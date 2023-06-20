@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 4a7e61e0fc27148389011ab71c20c3ad
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Vope Dome
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 184456f68e4d44f9cabba410895eb3f5, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

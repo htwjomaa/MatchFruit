@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 1cf5c1158dcbc4c7ea0d47d8ce8c0bf4
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Apotek Cond
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 97ab045fca0364d498cb0679bab93093, type: 3}
+  - {fileID: 12800000, guid: d3d32536fe1df41c4822bfdd199cb45b, type: 3}
+  - {fileID: 12800000, guid: 39829b86a3b694f3eb1f78052c7f34e2, type: 3}
+  - {fileID: 12800000, guid: 338db18d45d4e47859f00216221b3b67, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

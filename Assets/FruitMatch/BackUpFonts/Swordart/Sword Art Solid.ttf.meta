@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 199c3b62ab46c4826b8cf2e66f5e9c0c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Sword Art Solid
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c29cd92ffae1a4e8097c16bc3f346581, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

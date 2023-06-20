@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: e340092c13b8b4408bf79c7921e40004
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Apotek Wide
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 21e362c591543422b99c0c82aebff40e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

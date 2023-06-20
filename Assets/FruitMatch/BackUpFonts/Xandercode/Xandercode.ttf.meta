@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 7abae27fa2f1c4b74a9aa111680ad85c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Xandercode
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 277ca303d06e0491b8c0bb118d56af23, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

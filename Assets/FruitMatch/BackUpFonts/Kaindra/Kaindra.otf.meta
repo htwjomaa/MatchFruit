@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: e899b9b31578245b3b8a34d4148c34e7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Kaindra
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 50de1cf4660614d5c9b4e9737b579297, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

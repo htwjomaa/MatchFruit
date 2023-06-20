@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 2e1d50cb261934fb683b6cac3bd8d955
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Los Porttal
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d0e1abaa92dc94ad9b4e31f17ba3beba, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

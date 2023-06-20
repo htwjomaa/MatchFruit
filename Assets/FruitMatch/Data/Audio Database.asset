@@ -1,0 +1,987 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 377a532b3cc35f34299828b525afc038, type: 3}
+  m_Name: Audio Database
+  m_EditorClassIdentifier: 
+  allAudioNames:
+    m_Keys:
+    - heartofthejungle
+    - intothewilderness
+    - serenity
+    - matchfound
+    - swapdot
+    - clickonsidedot
+    - deadlocked
+    - takedamage
+    - audioSettingsButton
+    - restartLevelButton
+    - splashMenuButton
+    - gameStart
+    - splashMenuLevelButton
+    - splashMenuLevelButtonNoAccess
+    - menubgmusic
+    - closeLevelPanel
+    - adminAccess
+    - gameNoStart
+    - acceptLevelSound
+    - tabButtonSound
+    - adminSettingsButtonSound
+    - closeAdminSettingsPanelSound
+    - increaseSound
+    - decreaseSound
+    - acceptGraphicSound
+    - revertGraphicSound
+    - switchButtonColorBlind
+    - revertChangesSound
+    - exitButtonSound
+    - noSideDotMovementPossibleSound
+    - makeSlime
+    - damageSlime
+    - bigSmallPanda
+    - puzzle
+    - closeAdminSettingsLevelPanel
+    - acceptSwitch
+    - resetToMidValueSound
+    - nextRowSound
+    - muteUnmute
+    - sliderHandleSound
+    - languageChange
+    - phaseChangeButton
+    - swapDotAudio2
+    - curiosity
+    - okButtonSound
+    - jellyDestroy
+    - jellyDestroy2
+    - drop4
+    - drop3
+    - _appearStripedColorBomb
+    - explosionSound
+    - stripedExplosion
+    - timeOut
+    - colorBombExpl
+    - click
+    - boostBomb
+    - boostColorReplace
+    - getStarIngr
+    - noMatch
+    - destroyPackage
+    - swish1
+    - swish2
+    - levelComplete
+    - cheers
+    - starWin1
+    - starWin2
+    - starWin3
+    - gameOver1
+    - gameOver2
+    m_Values:
+    - clipName: Heart of the Jungle
+      index: 0
+    - clipName: Into The Wilderness
+      index: 1
+    - clipName: Serenity
+      index: 2
+    - clipName: matchfound
+      index: 3
+    - clipName: zapsplat_multimedia_game_sound_coins_collect_hit_003_73727
+      index: 6
+    - clipName: blub
+      index: 5
+    - clipName: zapsplat_multimedia_game_sound_water_drip_single_short_003_75187
+      index: 7
+    - clipName: takedamage
+      index: 8
+    - clipName: zapsplat_multimedia_game_sound_water_drip_single_short_004_75188
+      index: 9
+    - clipName: zapsplat_multimedia_alert_action_collect_pick_up_point_or_item_79293
+      index: 10
+    - clipName: zapsplat_multimedia_game_sound_padlock_unlock_level_secret_bonus_021_73587
+      index: 11
+    - clipName: zapsplat_multimedia_game_sound_glass_smash_with_eerie_shrill_tone_74609
+      index: 12
+    - clipName: SettingsButton
+      index: 13
+    - clipName: zapsplat_multimedia_game_sound_pop_hit_twinkle_78115
+      index: 14
+    - clipName: menubgmusic
+      index: 15
+    - clipName: closeLevelPanel
+      index: 16
+    - clipName: zapsplat_multimedia_notification_digital_bell_warm_generic_002_53905
+      index: 17
+    - clipName: zapsplat_multimedia_game_sound_water_drip_processed_single_003_58759
+      index: 4
+    - clipName: zapsplat_multimedia_notification_digital_bell_warm_generic_003_53906
+      index: 18
+    - clipName: mixkit-pebbles-click-1128
+      index: 19
+    - clipName: mixkit-old-camera-shutter-click-1137
+      index: 20
+    - clipName: mixkit-game-ball-tap-2073
+      index: 21
+    - clipName: bubble2
+      index: 22
+    - clipName: bubble2Reverse
+      index: 23
+    - clipName: TypeWriter
+      index: 24
+    - clipName: zapsplat_multimedia_button_press_plastic_click_003_36870
+      index: 25
+    - clipName: multimedia_button_click_015
+      index: 26
+    - clipName: zapsplat_household_alarm_clock_button_plastic_switch_003_46350
+      index: 27
+    - clipName: zapsplat_multimedia_button_click_002_53863
+      index: 28
+    - clipName: zapsplat_multimedia_game_sound_water_splosh_movement_lower_pitched_002_74646
+      index: 29
+    - clipName: makeSlime
+      index: 30
+    - clipName: DamageSlimeSound
+      index: 31
+    - clipName: BGM Cute_Play with me!
+      index: 32
+    - clipName: Meditative Puzzle Music  Zen and Calming Royalty-free Video Game
+        Music by WOW Sound
+      index: 33
+    - clipName: zapsplat_cartoon_fast_exit_swipe_swoosh_swish_002_89364
+      index: 34
+    - clipName: button
+      index: 35
+    - clipName: sound_ex_machina_Action+-+Lip+Sound
+      index: 36
+    - clipName: zapsplat_multimedia_alert_menu_select_item_beep_click_002_70848
+      index: 37
+    - clipName: zapsplat_cartoon_pop_bubble_etc_005_77428
+      index: 38
+    - clipName: zapsplat_vehicles_bicycle_gears_lever_click_change_through_several_fast_003_79729
+      index: 39
+    - clipName: click-click-2-38215
+      index: 40
+    - clipName: zapsplat_vehicles_car_dash_button_press_toyota_corolla_2017_004_79116
+      index: 41
+    - clipName: Jelly_destroy_02
+      index: 42
+    - clipName: Curiosity
+      index: 43
+    - clipName: Jelly_crash
+      index: 44
+    - clipName: JellyDestroy
+      index: 45
+    - clipName: JellyDestroy02
+      index: 46
+    - clipName: drop4
+      index: 47
+    - clipName: drop3
+      index: 48
+    - clipName: AppearStripedColorBomb
+      index: 49
+    - clipName: ExplosionSound
+      index: 50
+    - clipName: StripedExplosion
+      index: 51
+    - clipName: timeOut
+      index: 52
+    - clipName: ColorBombExpl
+      index: 53
+    - clipName: Click
+      index: 54
+    - clipName: BoostBomb
+      index: 55
+    - clipName: BoostColorReplaceMent
+      index: 56
+    - clipName: Get_star_ingredient
+      index: 57
+    - clipName: No_match
+      index: 58
+    - clipName: DestroyPackage
+      index: 59
+    - clipName: Swish1
+      index: 60
+    - clipName: Swish2
+      index: 61
+    - clipName: Level_complete
+      index: 62
+    - clipName: Cheers
+      index: 63
+    - clipName: Star_win_01
+      index: 64
+    - clipName: Star_win_02
+      index: 65
+    - clipName: Star_win_03
+      index: 66
+    - clipName: Game_over_1
+      index: 67
+    - clipName: Game_over_2
+      index: 68
+  allAudioSettings:
+  - audioClip: {fileID: 8300000, guid: 0bd23a3b387d9654ea99ae2c7afe31d9, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: c301b1df57916e14f9c075d8968beb18, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: db6004b5172c62d489c5c06302fd7276, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 68f5a7641263984488393738f43f1f24, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: bbcd03b25abdb7548b277bf2451d5594, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 5a2fe5f38f4da7e4eb2d12e599991011, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: de6b627a34adf324e9cc4337c7b76a04, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: f3f9fa214d92c814bbb33dbc4f9f050f, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 30caa8d5bbf964740b61aaff8a9113ca, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 07b08b17d7bf1d049a90ff5d93ef93c2, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 39553c0abbd6e954ea430936096a6ac6, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 2bb979ba6515f614093c0ba23bdf3d12, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.094
+    - -0.053
+    - 0
+    - 0.065
+    - 0.13
+  - audioClip: {fileID: 8300000, guid: 4c02ac31836783d47aee2a46c419ca4e, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: ac2652c84d2d02744a23d185c980c72e, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.04
+    - -0.02
+    - 0
+    - 0.02
+    - 0.03
+  - audioClip: {fileID: 8300000, guid: f1e37c6b5d489984481f37fb253d3011, type: 3}
+    noPitching: 1
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - 0.879
+    - 0.938
+    - 0.996
+    - 0.894
+    - 0.974
+  - audioClip: {fileID: 8300000, guid: e06fadbf80b6c744ead7cd3e257754ee, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.079
+    - -0.026
+    - 0
+    - 0.066
+    - 0.099
+  - audioClip: {fileID: 8300000, guid: 7c4cf6b7405a0b94c87be96320904463, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 4636f5aca92516a48a82d23ead14459a, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 40580867ebe63bf4898a404bbcda5de4, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - 0.023
+    - 0.042
+    - 0.062
+    - 0.065
+    - 0.097
+  - audioClip: {fileID: 8300000, guid: 67bd1311ffc7d584292b203303b18be9, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: ea548537ad08822468ce7dc3f8d49f01, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 24.3
+    fixedVolume: 0
+    pitch:
+    - -0.116
+    - -0.107
+    - -0.027
+    - 0.003
+    - 0.049
+  - audioClip: {fileID: 8300000, guid: 02b3b5a3e0e39834e826861afaf5e6d8, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 49.9
+    fixedVolume: 0
+    pitch:
+    - -0.182
+    - -0.089
+    - 0
+    - 0.02
+    - 0.087
+  - audioClip: {fileID: 8300000, guid: 9f8e958ca924dec4a9ed9b6dca0363d3, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 38
+    fixedVolume: 0
+    pitch:
+    - 0
+    - 0.02
+    - 0.04
+    - 0.06
+    - 0.08
+  - audioClip: {fileID: 8300000, guid: 4b64bfc8f1643bb4992d98dd38e78587, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 38
+    fixedVolume: 0
+    pitch:
+    - -0.015
+    - 0.005
+    - 0.025
+    - 0.054
+    - 0.091
+  - audioClip: {fileID: 8300000, guid: 0d52a17d258b0f943b6f33599bacd4d2, type: 3}
+    noPitching: 1
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 30a4fb59fb273b545921ea801446bc9d, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 8da3d38a08b421d4c846be34c7f7e89f, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 40
+    fixedVolume: 0
+    pitch:
+    - -0.297
+    - -0.215
+    - -0.134
+    - 0.079
+    - 0.106
+  - audioClip: {fileID: 8300000, guid: b07bba68faa3b5e429497a62a47ad902, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - 0
+    - 0.109
+    - 0.157
+    - 0.212
+    - 0.349
+  - audioClip: {fileID: 8300000, guid: a5a403f6f619e284f9202e96e9e3a62d, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.048
+    - -0.04
+    - 0
+    - 0.034
+    - 0.051
+  - audioClip: {fileID: 8300000, guid: b39f5c36b5ef6af41866ec2dcc14286d, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: c591ce1cff0f0c848bd1d2601a968f3a, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 1
+    volume: 50.4
+    fixedVolume: 0
+    pitch:
+    - -0.115
+    - -0.058
+    - 0.021
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 0b38338c8bfaf9742a7b415e2c80edc0, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 94e7d8cb1c0392c4e8675148ba9b541a, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.072
+    - 0.008
+    - 0
+    - 0.036
+    - 0.064
+  - audioClip: {fileID: 8300000, guid: 21e91b75aac35ce4badd226073b8c53b, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 3639999844844ce4bbc9bc84aebeaa59, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: e978a00f5125bc94abd88a7edd638199, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 36
+    fixedVolume: 0
+    pitch:
+    - -0.033
+    - -0.02
+    - 0
+    - 0.006
+    - 0.017
+  - audioClip: {fileID: 8300000, guid: a7c47126c938f814c88422c55c8ca026, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 51.5
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: e86913f67ace9e74e94178dc8276a0d6, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 39.4
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 7e9beae46dee69648bbbd4b2ed011a15, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 15.2
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 65bea8044be4fc54f936cf9100e72e84, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 48395e5e16f993744aee56f32c1c3d88, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 37
+    fixedVolume: 0
+    pitch:
+    - -0.003
+    - 0.071
+    - 0.13
+    - 0.204
+    - 0.237
+  - audioClip: {fileID: 8300000, guid: fe1e95388508fe54ab1629bfd8843148, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 54
+    fixedVolume: 0
+    pitch:
+    - 0.022
+    - 0.068
+    - 0.107
+    - 0.129
+    - 0.179
+  - audioClip: {fileID: 8300000, guid: 18272ffae93a8694db367069bf5d860f, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 82.3
+    fixedVolume: 0
+    pitch:
+    - -0.197
+    - -0.131
+    - 0
+    - 0.099
+    - 0.169
+  - audioClip: {fileID: 8300000, guid: 674f420cbfbfbc64eb0a72f3ceec122a, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.007
+    - 0.047
+    - 0.113
+    - 0.169
+    - 0.236
+  - audioClip: {fileID: 8300000, guid: 1aba1a257b4630f4092e8e04b31a68aa, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 77.7
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 1caed9a6c812ccc45a239c953c8dd2cc, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: b9feee7564d7fe74498fc6a9fe059031, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 180f69b1840fc704cb96b010f4e22715, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 438b77601682ac143936c90c5dbdc43c, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 7eec7fef5401ff446896db206f64ce5a, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: cbf3cd2064d30e34cadb56c84ff067ef, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: efcea8d4d809e5a49a88cb6bcd22e0ef, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 9760ac51cda94064d967239cb8e54110, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 53a82dadcae8aee489a59de08c6fcdf7, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 1153f01c18676f448929c14cd51ed9b4, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 05afec5fb8964ab4d960ace00953db89, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 057efb50ee3e53f469f40c2fa460b63c, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 4111cae201742ab42a8f8c7232b7f2b8, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: b490f266258c54f4b92be29ff1bc86af, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: ff50ce15df285d8439647ee563a30b94, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 297ed8fcf16a86b46a715116603627d4, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 28003a025d9a7774987f2c04962a3b5d, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: fb6d43cb1b878cd478450f5f71ca3ab2, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: a3fd88a2b1a6b8a4dba7aabab447f7d7, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 1e65efd3b5d6b63478d7c8d5ee5b2977, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: e02ca95355b9a094c8a1060246f0708f, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 5f692f847f752964e918adc9e3909820, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 41894925ebba24048bf2bf938b052ed3, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  - audioClip: {fileID: 8300000, guid: 3c0e5cd16e437284f837c6e49810b582, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 100
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  input: showItems
+  audioClip: {fileID: 8300000, guid: a7c47126c938f814c88422c55c8ca026, type: 3}

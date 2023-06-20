@@ -1,0 +1,302 @@
+"key", "en", "de", "fr", "es", "swe", "tr", "pl", "it", 
+life_after,life after,Leben danach,la vie après,la vida después,Livet efter,SONRA HAYAT,życie po,la vita dopo
+any_purchase,Any purchase will remove all ads,Jeder Kauf entfernt alle Anzeigen,Tout achat supprimera toutes les publicités,Cualquier compra eliminará todos los anuncios,Alla köp kommer att ta bort alla annonser,Herhangi bir satın alma işlemi tüm reklamları kaldıracaktır,Każdy zakup usunie wszystkie reklamy,Ogni acquisto rimuoverà tutti gli annunci
+want_continue,Target not reached :(,Ziel nicht erreicht :(,Objectif non atteint :(,Objetivo no alcanzado :(,Målet har inte uppnåtts :(,Hedefe ulaşılamadı :(,Cel nie został osiągnięty :(,Obiettivo non raggiunto :(
+SPIN,SPIN,SPIN,DREHEN,GIRAR,SPIN,DÖNÜŞ,SPIN,SPIN
+coins_shop,Coins Shop,Münzen Shop,Boutique de pièces,Tienda de monedas,Myntbutik,Madeni Para Dükkanı,Sklep z monetami,Negozio di monete
+play,Play,Spielen,Jouer à,Juega a,Spela,Oyun,Zagraj w,Gioca
+you_win,You WIN!,Du gewinnst!,Vous GAGNEZ !,¡GANA!,Du vinner!,Sen kazandın!,Wygrywasz!,Vinci!
+you_lose,You lose!,Du verlierst!,Vous perdez !,¡Pierdes!,Du förlorar!,Kaybettin!,Przegrywasz!,Hai perso!
+lost_all_lives,Lost all lives?,Alle Leben verloren?,Vous avez perdu toutes vos vies ?,¿Has perdido todas las vidas?,Har du förlorat alla liv?,Tüm canlarınızı mı kaybettiniz?,Straciłeś wszystkie życia?,Hai perso tutte le vite?
+select_boosters,Select Boosters:,Wählen Sie Booster:,Sélectionnez Boosters :,Selecciona potenciadores:,Välj Boosters:,Güçlendiricileri seçin:,Wybierz Boostery:,Seleziona i Booster:
+NEXT,NEXT,NÄCHSTE,SUIVANT,SIGUIENTE,NÄSTA,İLERİ,NEXT,AVANTI
+choco_spiral,Choco Spiral,Schoko-Spirale,Spirale Choco,Espiral de chocolate,Choco Spiral,Çikolatalı Spiral,Choco Spiral,Spirale di cioccolato
+spread_the_jelly,Spread the Jelly,Verteile das Gelee,Répandre la gelée,Esparce la gelatina,Sprid gelén,Jöleyi Dağıtın,Rozprowadź galaretkę,Diffondi la gelatina
+boom!,BOOM!,BUMM!,BOOM !,¡BOOM!,BOOM!,BOOM!,BOOM!,BOOM!
+multicolor_bomb,Multicolor Bomb,Multicolor-Bombe,Bombe multicolore,Bomba multicolor,Multicolor Bomb,Çok Renkli Bomba,Wielokolorowa bomba,Bomba Multicolore
+tag,DAY,TAG,JOURNÉE,DÍA,DAG,GÜN,DZIEŃ,GIORNO
+watch_video,Watch VIDEO,Video ansehen,Regarder la vidéo,Ver VIDEO,Titta på VIDEO,VİDEOYU İZLE,Zobacz VIDEO,Guarda il video
+SHARE,SHARE,TEILEN,PARTAGEZ,COMPARTIR,DELA,PAYLAŞ,SHARE,CONDIVIDI
+level_completed,Level COMPLETED!,Level ABGESCHLOSSEN!,Niveau COMPLÉTÉ !,¡Nivel COMPLETADO!,Nivån är slutförd!,Seviye TAMAMLANDI!,Poziom ukończony!,Livello completato!
+level_failed,Level FAILED!,Level FEHLGESCHLAGEN!,Niveau ÉCHOUÉ !,¡Nivel FALLIDO!,Nivå misslyckad!,Seviye BAŞARISIZ!,Poziom nieudany!,Livello fallito!
+MAP,MAP,KARTE,MAP,MAPA,KARTA,HARİTA,MAPA,MAPPA
+AGAIN,AGAIN,WIEDER,ENCORE,OTRA VEZ,IGEN,TEKRAR,AGAIN,DI NUOVO
+goal,Goal,Ziel,Objectif,Objetivo,Mål,Hedef,Cel,Obiettivo
+refill_all_lives,Refill all lives!,Fülle alle Leben wieder auf!,Remplir toutes les vies !,¡Recarga todas las vidas!,Fyll på alla liv!,Tüm canları doldurun!,Uzupełnij wszystkie życia!,Riempi tutte le vite!
+your_target,Your Target:,Dein Ziel:,Votre cible :,Tu objetivo:,Ditt mål:,Hedefiniz:,Twój cel:,Il tuo obiettivo:
+thanks,Thanks!,Danke!,Merci !,¡Gracias!,Tack!,Teşekkürler!,Dzięki!,Grazie!
+congratulation,Congratulation!,Herzlichen Glückwunsch!,Félicitations !,¡Felicidades!,Grattis!,Tebrikler!,Gratulacje!,Congratulazioni!
+extra_moves,Extra moves,Extra Züge,Mouvements supplémentaires,Movimientos extra,Extra drag,Ekstra hareketler,Dodatkowe ruchy,Mosse extra
+extra_time,Extra time,Extra Zeit,Temps supplémentaire,Tiempo extra,Extra tid,Ekstra zaman,Dodatkowy czas,Tempo extra
+how_to_play,How to play,Wie man spielt,Comment jouer,Cómo jugar,Hur man spelar,Nasıl oynanır,Jak grać,Come giocare
+striped_candy,Striped Candy,Gestreifte Bonbons,Bonbon rayé,Caramelo a rayas,Randig godis,Çizgili Şeker,Cukierki w paski,Caramelle a strisce
+package,Package,Paket,Paquet,Paquete,Paket,Paket,Zapakuj,Pacchetto
+collect_all_items,Collect all ITEMS,Sammle alle ITEMS,Recueillir tous les ITEMS,Recoge todos los OBJETOS,Samla alla föremål,Tüm ÖĞELERİ toplayın,Zbierz wszystkie przedmioty,Raccogli tutti gli ARTICOLI
+multicolor_candy,Multicolor CANDY,Mehrfarbige CANDY,Bonbons multicolores,caramelos multicolor,Multicolor CANDY,Çok Renkli ŞEKER,Wielokolorowe CANDY,Caramelle multicolori
+logout,Logout,Abmelden,Déconnexion,Cerrar sesión,Logga ut,Oturum Kapatma,Wyloguj się,Disconnettersi
+connect,Connect,Verbinden,Se connecter,Conectar,Anslut,Bağlan,Połącz się,Connettersi
+invite,Invite,Einladen,Inviter,Invitar a,Bjud in,Davetiye,Zaproś,Invita
+FULL,FULL,FULL,COMPLET,COMPLETO,FULL,TAM,PEŁNA,COMPLETO
+use_to_get_multicolor,Use it to get Multicolor Candy,"Verwenden Sie es, um Multicolor Candy zu bekommen",Utilisez-la pour obtenir des bonbons multicolores,Úsalo para conseguir Multicolor Candy,Använd den för att få Multicolor Candy,Çok Renkli Şeker elde etmek için kullanın,"Użyj go, aby otrzymać Multicolor Candy",Usalo per ottenere Candy Multicolore
+BUY,BUY,KAUFEN,ACHETER,COMPRAR,KÖP,SATIN AL,KUP,ACQUISTO
+MOVES,MOVES,ZÜGE,MOUVEMENTS,MOVIMIENTOS,MOVES,HAREKETLER,RUCHY,MOVIMENTI
+combine_more_candies,Combine more candies the same color for WIN!,Kombiniere mehr Bonbons der gleichen Farbe für WIN!,Combinez plus de bonbons de la même couleur pour GAGNER !,¡Combina más caramelos del mismo color para GANAR!,Kombinera fler godis av samma färg för att vinna!,KAZANMAK için aynı renkte daha fazla şekeri birleştirin!,"Połącz więcej cukierków tego samego koloru, aby wygrać!",Combina più caramelle dello stesso colore per vincere!
+SCORE,SCORE,Score,SCORE,PUNTUACIÓN,SCORE,PUAN,SCORE,PUNTEGGIO
+buy_Booster!,Buy Booster!,Kaufe Booster!,Acheter Booster !,¡Comprar Refuerzo!,Köp Booster!,Booster al!,Kup Booster!,Compra Booster!
+you_didnt_fill_jelly,You didn't fill JELLY everywhere,Du hast JELLY nicht überall aufgefüllt,Vous n'avez pas mis de la JELLY partout,No has llenado de gelatina todas partes,Du fyllde inte JELLY överallt,Her yere Jöle doldurmadın,Nie wszędzie wypełniłeś JELLY,Non hai riempito la gelatina ovunque
+spread_the_jelly,Spread the jelly everywhere,Verteile das Gelee überall,Répandez la gelée partout,Esparce la gelatina por todas partes,Sprid ut gelén överallt,Jöleyi her yere sürün,Rozłóż galaretkę wszędzie,Distribuisci la gelatina ovunque
+you_got_coins,You got coins,Du hast Münzen,Vous avez des pièces,Tienes monedas,Du har mynt,Paralarınız var.,Masz monety,Hai ottenuto delle monete
+combine_5_chocolates_in_one,"Combine 5 chocolates in one row, to create a bomb. It destroys all items on the field with the same color.","Kombiniere 5 Pralinen in einer Reihe, um eine Bombe zu erzeugen. Sie zerstört alle Gegenstände auf dem Spielfeld, die die gleiche Farbe haben.","Combinez 5 chocolats dans une rangée, pour créer une bombe. Elle détruit tous les objets de la même couleur sur le terrain.","Combina 5 chocolatinas en una fila, para crear una bomba. Destruye todos los objetos del campo con el mismo color.",Kombinera 5 chokladbitar i en rad för att skapa en bomb. Den förstör alla föremål på fältet med samma färg.,Bir bomba oluşturmak için 5 çikolatayı tek bir sırada birleştirin. Alandaki aynı renkteki tüm öğeleri yok eder.,"Połącz 5 czekoladek w jednym rzędzie, aby stworzyć bombę. Niszczy ona wszystkie przedmioty na polu o tym samym kolorze.",Combina 5 cioccolatini in fila per creare una bomba. Distrugge tutti gli oggetti sul campo dello stesso colore.
+combine_more_candies_same_color,Combine more candies the same colors for WIN!,"Kombiniere mehr gleichfarbige Bonbons, um zu gewinnen!",Combinez plus de bonbons de la même couleur pour GAGNER !,Combina más chocolates del mismo color para ¡GANAR!,Kombinera fler godis med samma färger för att vinna!,KAZANMAK için aynı renkte daha fazla şekeri birleştirin!,"Połącz więcej cukierków o tych samych kolorach, aby wygrać!",Combina più caramelle dello stesso colore per vincere!
+you_can_switch_choco_spiral,You can switch Choco Spiral with any candy on the game field.,Du kannst Choco Spiral mit jeder beliebigen Süßigkeit auf dem Spielfeld austauschen.,Vous pouvez échanger le Choco Spiral avec n'importe quel bonbon sur le terrain de jeu.,Puedes cambiar Choco Spiral con cualquier caramelo en el campo de juego.,Du kan byta Choco Spiral med vilket godis som helst på spelplanen.,Choco Spiral'i oyun alanındaki herhangi bir şekerle değiştirebilirsiniz.,Możesz zamienić Choco Spiral z dowolnym cukierkiem na polu gry.,È possibile scambiare Choco Spiral con qualsiasi caramella sul campo di gioco.
+combine_an_item_above_the_jelly,Combine an item above the Jelly with others to spread Jelly more.,"Kombiniere einen Gegenstand oberhalb des Gelees mit anderen, um mehr Gelee zu verteilen.",Combinez un élément au-dessus de la gelée avec d'autres pour répandre davantage la gelée.,Combina un elemento sobre la gelatina con otros para esparcir más gelatina.,Kombinera ett föremål ovanför gelén med andra för att sprida gelén mer.,Jöleyi daha fazla yaymak için Jölenin üzerindeki bir öğeyi diğerleriyle birleştirin.,"Połącz przedmiot nad galaretką z innymi, aby rozprowadzić galaretkę bardziej.",Combina un elemento sopra la gelatina con altri per diffondere maggiormente la gelatina.
+combine_4_candies_to_create,Combine 4 candies to create it. Striped candy can destroy all row.,"Kombiniere 4 Bonbons, um sie zu erstellen. Gestreifte Bonbons können alle Reihen zerstören.",Combinez 4 bonbons pour le créer. Le bonbon rayé peut détruire toutes les rangées.,Combina 4 caramelos para crearla. El caramelo rayado puede destruir toda la fila.,Kombinera 4 godis för att skapa den. Randigt godis kan förstöra alla rader.,Oluşturmak için 4 şekeri birleştirin. Çizgili şeker tüm sırayı yok edebilir.,"Połącz 4 cukierki, aby go stworzyć. Striped candy może zniszczyć cały rząd.",Combina 4 caramelle per crearla. La caramella a strisce può distruggere tutte le file.
+combine_5_candies_like_below,Combine 5 candies like below to create it. Packaged candy can destroy all items around itself.,"Kombiniere 5 Bonbons wie unten, um sie zu erzeugen. Verpackte Bonbons können alle Gegenstände um sich herum zerstören.",Combinez 5 bonbons comme ci-dessous pour le créer. Les bonbons emballés peuvent détruire tous les objets qui les entourent.,Combina 5 caramelos como los de abajo para crearlo. El caramelo empaquetado puede destruir todos los objetos a su alrededor.,Kombinera 5 godis som nedan för att skapa den. Förpackat godis kan förstöra alla föremål runt omkring sig själv.,Oluşturmak için aşağıdaki gibi 5 şekeri birleştirin. Paketlenmiş şeker kendi etrafındaki tüm öğeleri yok edebilir.,"Połącz 5 cukierków jak poniżej, aby go stworzyć. Zapakowany cukierek może zniszczyć wszystkie przedmioty wokół siebie.",Combina 5 caramelle come quelle qui sotto per crearla. La caramella confezionata può distruggere tutti gli oggetti intorno a sé.
+multicolor_candy,Multicolor CANDY,Mehrfarbige KANDIDEN,Bonbons multicolores,caramelo multicolor,Flerfärgat godis,Çok Renkli Şeker,Wielokolorowe cukierki,Caramelle multicolori
+collect_the_items,Collect the items,Sammle die Gegenstände,Collectez les objets,Recoge los objetos,Samla in föremålen,Öğeleri toplayın,Zbierz przedmioty,Raccogliere gli oggetti
+you_didnt_collect_the_items,You didn't collect the items,Du hast die Gegenstände nicht eingesammelt,Vous n'avez pas collecté les objets,No has recogido los objetos,Du har inte samlat in föremålen.,Eşyaları toplamadınız,Nie zebrałeś elementów,Non hai raccolto gli oggetti
+collect_ingredients,Collect Ingredients,Sammle die Zutaten,Collecter les ingrédients,Recoge los ingredientes,Samla ingredienser,Malzemeleri Toplayın,Zbierz składniki,Raccogli gli ingredienti
+you_didnt_collect_ingredients,You didn't collect the ingredients,Du hast die Zutaten nicht eingesammelt,Vous n'avez pas collecté les ingrédients,No has recogido los ingredientes,Du samlade inte in ingredienserna.,Malzemeleri toplamamışsın,Nie zebrałeś składników,Non hai raccolto gli ingredienti
+destroy_sugar_squares,Destroy sugar squares,Zuckerquadrate zerstören,Détruire les carrés de sucre,Destruye los cuadrados de azúcar,Förstör sockerrutor,Şeker karelerini yok et,Zniszcz kwadraty z cukru,Distruggi i quadratini di zucchero
+you_didnt_destroy_the_sugar,You didn't destroy the sugar squares,Du hast die Zuckerquadrate nicht zerstört,Vous n'avez pas détruit les carrés de sucre,No has destruido los cuadrados de azúcar,Du förstörde inte sockerrutorna,Şeker karelerini yok etmedin.,Nie zniszczyłeś kwadratów z cukru.,Non hai distrutto i quadratini di zucchero
+spread_the_jelly,Spread the jelly everywhere,Verteile das Gelee überall,Répandre la gelée partout,Esparce la gelatina por todas partes,Sprid ut gelén överallt,Jöleyi her yere sürün,Rozprowadź wszędzie galaretkę,Spalma la gelatina ovunque
+you_didnt_spread_the_jelly,You didn't spread the jelly,Du hast das Gelee nicht verteilt,Vous n'avez pas répandu la gelée,No has esparcido la gelatina,Du spred inte gelén,Jöleyi yaymamışsın.,Nie rozsmarowałeś galaretki,Non hai sparso la gelatina
+destroy_solid_blocks,Destroy solid blocks,Feste Blöcke zerstören,Détruire les blocs solides,Destruir bloques sólidos,Förstör fasta block,Katı blokları yok et,Zniszcz stałe bloki,Distruggi i blocchi solidi
+you_didnt_destroy_all_blocks,You didn't destroy all blocks,Du hast nicht alle Blöcke zerstört,Vous n'avez pas détruit tous les blocs,No has destruido todos los bloques,Du förstörde inte alla block,Bütün blokları yok etmedin.,Nie zniszczyłeś wszystkich bloków.,Non hai distrutto tutti i blocchi
+gives_you_the_5_extra_moves,Gives you the 5 extra moves,Du bekommst die 5 Extrazüge,Vous donne les 5 coups supplémentaires,Te da 5 movimientos extra,Ger dig 5 extra drag,Size 5 ekstra hareket verir,Daje ci 5 dodatkowych ruchów,Ti dà le 5 mosse extra
+places_a_package_item,Places a package item on the game field,Legt einen verpackten Gegenstand auf das Spielfeld,Place un objet en paquet sur le terrain de jeu,Coloca un objeto paquete en el campo de juego,Placerar ett paket på spelplanen.,Oyun alanına bir paket öğesi yerleştirir,Umieszcza na polu gry przedmiot w opakowaniu,Colloca un oggetto a pacchetto sul campo di gioco
+places_a_striped_item,Places a striped item on the game field,Legt einen gestreiften Gegenstand auf das Spielfeld,Placer un objet rayé sur le terrain de jeu,Coloca un objeto rayado en el campo de juego,Placerar ett randigt föremål på spelplanen.,Oyun alanına çizgili bir öğe yerleştirir,Umieszcza element w paski na polu gry,Colloca un oggetto a strisce sul campo di gioco
+gives_you_the_30,Gives you the 30 extra seconds,Gibt dir die 30 zusätzlichen Sekunden,Vous donne les 30 secondes supplémentaires,Te da 30 segundos extra,Ger dig 30 extra sekunder.,Size fazladan 30 saniye verir,Daje Ci 30 dodatkowych sekund,Dà 30 secondi in più
+destroy_one_item,Destroys one item,Zerstört einen Gegenstand,Détruit un objet,Destruye un objeto,Förstör ett föremål.,Bir öğeyi yok eder,Zniszczy jeden element,Distrugge un oggetto
+places_a_multicolor_item,Places a multicolor item on the game field,Legt einen mehrfarbigen Gegenstand auf das Spielfeld,Place un objet multicolore sur le terrain de jeu,Coloca un objeto multicolor en el campo de juego,Placerar ett mångfärgat föremål på spelplanen.,Oyun alanına çok renkli bir öğe yerleştirir,Umieszcza wielokolorowy przedmiot na polu gry,Posiziona un oggetto multicolore sul campo di gioco
+free_item_switch,Free item switch,Freier Gegenstandstausch,Changement d'objet gratuit,Cambio de objeto libre,Gratis byte av föremål,Ücretsiz ürün değiştirme,Darmowy przełącznik przedmiotów,Scambio gratuito di oggetti
+destroy_the_items_in_an_area,Destroys the items in an area,Zerstört die Gegenstände in einem Gebiet,Détruit les objets dans une zone,Destruye los objetos de un área,Förstör föremålen i ett område.,Bir alandaki öğeleri yok eder,Niszczy przedmioty znajdujące się na danym obszarze,Distrugge gli oggetti in un'area
+places_a_marmalade,Places a marmalade item on the game field,Legt einen Marmeladengegenstand auf das Spielfeld,Place un objet marmelade sur le terrain de jeu.,Coloca un objeto de mermelada en el campo de juego,Placerar ett marmeladföremål på spelplanen.,Oyun alanına bir marmelat öğesi yerleştirir,Umieszcza na polu gry przedmiot w kolorze marmolady.,Mette un oggetto di marmellata sul campo di gioco
+PLAY,PLAY,SPIELEN,JOUER,JUGAR,SPEL,OYUN,PLAY,GIOCARE
+privacy,Privacy,Datenschutz,Confidentialité,Privacidad,Integritet,Gizlilik,Prywatność,Privacy
+loading,Loading...,Laden...,Chargement...,Cargando...,Laddar...,Yükleniyor...,Ładowanie...,Caricamento...
+TIME,TIME,ZEIT,TEMPS,TIEMPO,TIME,ZAMAN,TIME,TEMPO
+Bomb,Bomb,Bombe,Bombe,Bomba,Bomb,Bomba,Bomba,Bomba
+fre_moves,Free move,Freie Bewegung,Mouvement libre,Movimiento libre,Fria rörelser,Serbest hareket,Swobodny ruch,Mossa libera
+explodes_area,Explodes area,Explodiert Bereich,Explose la zone,Explota la zona,Exploderar området,Alanı patlatır,Wybuchnie obszar,Esplode in un'area
+marmalade,Marmalade,Marmelade,Marmelade,Mermelada,Marmelad,Marmelat,Marmolada,Marmellata
+free,Free,Frei,Gratuit,Gratis,Gratis,Ücretsiz,Darmowy,Gratuito
+get_at_least_one_star,Get at least one star,Mindestens einen Stern erhalten,Obtenir au moins une étoile,Consigue al menos una estrella,Få minst en stjärna,En az bir yıldız alın,Zdobądź co najmniej jedną gwiazdkę,Ottieni almeno una stella
+you_didnt_get_a_star,You didn't get a star,Du hast keinen Stern bekommen,Tu n'as pas obtenu d'étoile,No has conseguido ninguna estrella,Du fick ingen stjärna,Bir yıldız alamadın.,Nie dostałeś gwiazdki,Non hai ottenuto una stella
+you_got_the_boost,You got the boost,Du hast den Boost bekommen,Tu as eu le boost,Has conseguido el impulso,Du fick en boost,Destek aldın,Dostałeś impuls,Hai ottenuto la spinta
+you_got_life,You got life,Du hast Leben,Tu as la vie,Has conseguido vida,Du fick liv,Hayatın var,Masz życie,Hai ottenuto la vita
+coins,Coins,Münzen,Pièces,Monedas,Mynt,Madeni Paralar,Monety,Monete
+life,Life,Leben,Vie,Vida,Liv,Yaşam,Życie,Vita
+level,Level,Level,Niveau,Nivel,Nivå,Seviye,Poziom,Livello
+tab_to_skip,Tap to Skip,Tippen Sie zum Überspringen,Tapez pour passer,Toca para saltar,Tryck för att hoppa över,Atlamak için dokunun,"Stuknij, aby pominąć",Tocca per saltare
+"perfect_run", "Perfect run", "Perfektes Spiel", "Jeu parfait", "Juego perfecto", "Perfekt spel", "Mükemmel oyun", "Doskonała gra", "Gioco perfetto",
+"new_level", "New","Neu", "Nouveau", "Nuevo", "Ny", "Yeni","Nowy","Nuovo",
+"limited_moves", "Limited Moves", "Begrenze Aktionen", "Moves limités", "Movimientos limitados", "Begränsade rörelser", "Sınırlı Hareketler", "Ograniczone ruchy", "Ograniczone ruchy",
+"timed_run", "Timed run", "Zeitlich limitiert!", "Chronométré", "Cronometrado", "Tidsinställd", "Zamanlanmış", "czasowy", "temporizzato",
+"float_marker", ".", ",", ".", ",", ",", ".", ",", ",",
+"thousand_marker", "k", "tsd", "mil", "mil", "tus", "bin", "tys", "mil",
+"play_button", "Play", "Start", "Jouer", "Jugar", "Spela", "Oyun", "Odtwórz", "Gioco",
+"choose_level", "Choose a level", "Suche ein Level aus", "Choisissez un niveau", "Elija un nivel", "Välj en nivå", "Bir seviye seçin", "Wybierz poziom", "Scegliere un livello",
+"first_select_level", "First select a level", "Klicke zuerst ein Level an", "Sélectionnez d'abord une niveau", "Seleccione primero una etapa", "Välj först en etapp","Önce bir aşama seçin", "Najpierw wybierz etap", "Selezionare un livello",
+"sound_setting", "Sound", "Ton", "Son", "Sonar", "ljud", "ses", "dźwięk", "suono",
+"animation_setting", "Animation", "Animation", "L'animation", "Animación", "Animation", "Animasyon", "Animacja", "Animazione",
+"display_setting", "Screen", "Bildschirm", "Écran", "Pantalla", "Skärm", "Ekran", "Ekran", "Schermo",
+"message_setting", "Message", "Nachricht", "Message", "Mensaje", "Meddelande", "Mesaj", "Wiadomość", "Messaggio",
+"master_volume_setting", "Master volume", "Gesamtlautstärke", "Volume maître", "Volumen maestro", "Huvudvolym", "Ana ses seviyesi", "Głośność główna", "Volume master",
+"music_volume_setting", "Music volume", "Musiklautstärke", "Volume musical", "Volumen musical", "Musikvolym", "Müzik sesi", "Głośność muzyki", "Volume musicale",
+"sfx_volume_setting", "Effect volume", "Effektlautstärke", "Volume des effets", "Efecto volumen", "Effektvolym", "Efekt hacmi", "Głośność efektu", "Volume effetto",
+"ui_volume_setting", "UI volume", "UI-Lautstärke", "UI volume sonore", "Volumen de IU","UI-volym", "UI hacmi", "Wielkość UI","Volume UI",
+"texture_quality_setting", "Texture quality", "Textur Qualität", "Qualité de texture", "Calidad de textura", "Texturkvalitet", "Doku kalitesi", "Jakość tekstury", "Qualità della texture",
+"effect_quality_setting", "Effect quality", "Effekt Qualität", "Qualité des effets", "Calidad del efecto", "Effektkvalitet", "Etki kalitesi", "Jakość efektu", "Qualità dell'effetto",
+"colorblind_setting", "Colorblind", "Farbschwäche", "Daltonien", "Daltónico", "Färgblind", "Renk körü", "Slepy kolor", "daltonico",
+"swipe_resistance_setting", "Swipe resistance", "Swipe-Widerstand", "Résistance au frottement", "Resistencia al deslizamiento", "Motstånd mot strykningar", "Kaydırma direnci", "Odporność na machnięcia", "Resistenza alle strisciate",
+"animation_speed_setting", "Animation speed", "Animationsgeschwindigkeit", "Vitesse d'animation", "Velocidad de animación", "Animationens hastighet", "Animasyon hızı", "Prędkość animacji", "Velocità di animazione",
+"swap_back_speed_setting", "Swap-Back speed", "Swap-Back Geschwindigkeit", "Vitesse d'échange", "Velocidad de retroceso", "Hastighet för byte tillbaka", "Geri takas hızı", "Szybkość wymiany wstecznej", "Velocità di swap-back",
+"refill_delay_setting", "Refill delay", "Nachfüllverzögerung", "Délai de réapprovisionnement", "Retardo de rellenado", "Fördröjning av påfyllning", "Dolum gecikmesi", "opóźnienie uzupełnienia", "Ritardo di ricarica" ,
+"shuffle_delay_setting", "Shuffle delay", "Mischverzögerung", "Retard de mélange", "Retardo de mezcla", "Blandningsfördröjning", "Karıştırma gecikmesi", "Opóźnienie mieszania", "Ritardo di miscelazione",
+"vibration_setting", "Vibration", "Vibration", "Vibration", "Vibración", "Vibrationer", "Titreşim", "Wibracje", "Vibrazioni",
+"goal", "Goal", "Ziel", "Objectif", "Objetivo", "Mål", "Hedef", "Goal", "Obiettivo",
+"goals_panel", "Goals:", "Ziele: ", "Objectifs:", "Objetivos: ", "Mål: ", "Hedefler: ", "Cele: ", "Obiettivi: ",
+"score", "Score", "Punktzahl", "Score", "Puntuación", "Poäng", "Skor", "Wynik", "Punteggio",
+"row", "Row", "Reihe", "Rangée", "Fila", "Rad", "Sıra", "Wersz", "Fila",
+"column", "Column", "Spalte", "Colonne", "Columna", "Kolumn", "Sütun", "Kolumna", "Colonna",
+"bomb", "Bomb", "Bombe", "Bombe", "Bomba", "Bomb", "Bomba", "Bomba", "Bomba",
+"bombs", "Bombs", "Bomben", "Bombes", "Bombas", "Bomber", "Bombalar", "bomby", "bombe",
+"fruit", "Fruit", "Frucht", "Fruit", "Fruta", "Frukt", "Meyve", "Owoce", "Frutta",
+"Fruit", "Fruit", "Frucht", "Fruit", "Fruta", "Frukt", "Meyve", "Owoce", "Frutta",
+"fruits", "Fruits", "Früchte", "Fruits", "Frutas", "Frukter", "Meyveler", "Owoce", "Frutta",
+"color", "Color", "Farbe", "Couleur", "Color", "Färg", "Renk", "kolor", "Colore",
+"home_setting", "To level select", "Zur Levelauswahl", "Vers le choix du niveau", "A la selección de nivel", "Seviye seçimine", "Till val av nivå", "Do wyboru poziomu", "Alla selezione del livello",
+"highscore", "Highscore", "Höchstpunktzahl", "Score élevé", "Alta puntuación", "Hög oäng", "Yüksek puan", "Wysoki wynik", "Punteggio elevato",
+"minutes", "Minutes", "Minuten", "Minutes", "Minutas", "Minut", "dakika", "Protokół", "Minuto",
+"hour", "Hour", "Stunde", "Heure", "Hora", "Timme", "Saat", "Godzina", "Ora",
+"general_setting", "General", "Allgemein", "Général", "General", "Allmän", "Genel", "Ogólne", "Generale",
+"archieve_setting", "Archieve", "Erreichen", "Archivage", "Archivo", "Arkivering", "ARŞİVLEME", "Archiwizacja", "Archivio",
+"luck_setting", "Luck", "Glück", "Chance", "Suerte", "Tur", "Şans", "Szczęście", "Fortuna",
+"board_setting", "Board", "Brett", "Planche", "Junta", "Styrelse", "Tahta", "Tablica", "Bordo",
+"tiles_setting", "Tiles", "Felder", "Tuiles", "Tejas", "Plattor", "Fayans", "Płytki", "Piastrelle",
+layout_setting,Layout,Layout,Mise en page,Diseño,Layout,Düzen,Układ,Layout,
+"restart_level", "Restart Level", "Level Neustart", "Redémarrage", "Reinicio", "Omstart", "Yeniden Başlat", "Restartu", "Riavvio",
+"moves", "Moves", "Züge", "Mouvements", "Mueve", "Flyttar", "Hareketler", "Ruchy", "Movimenti",
+"time","Time", "Zeit", "Temps", "Tiempo", "Tid", "Zaman","Czas", "Tempo",
+"ok_button", "Okay", "Okay", "D'accord", "Vale", "Okej", "Tamam", "Dobra", "Ok",
+activate_hor_bombs, "Horizontal bombs", "Horizontale Bomben", "Bombes horizontales", "Bombes horizontales", "Horisontella bomber", "Yatay bombaları",Bomb poziomych,Bombe orizzontali,
+activate_vert_bombs, "Vertical bombs", "Verticale Bomben", "Bombes verticales", "Bombas verticales", "Vertikala bomber", "Dikey bombaları",Bomb pionowych,Bombe verticali,
+activate_diag_bombs, "Diagonal bombs", "Diagonale Bomben", "Bombes diagonales", "Bombas diagonales", "Diagonala bomber", "Çapraz bombaları",Bomb ukośnych,Bombe diagonali,
+activate_fruit_bombs, "Same fruits bombs", "Selbe Frucht-Bombe", "Bombes de fruits", "Bombas de fruta", "Fruktbomber", "Meyve bombalarını",Bomby owocowe,Bbombe di frutta,
+activate_color_bombs,Same color bombs,Selbe Farbe-Bombe, "Bombes de même couleur", "Bombas mismo color", "Bomber av samma färg", "Aynı renk bombaları",Bomby tego samego koloru, "Bombe dello stesso colore",
+bombs_enabled, "Bombs enabled", "Bomben erlaubt", "Bombes activées",Bombas activadas, "Bomber aktiverade",Bombalar etkinleştirildi,Bomby włączone,Bombe abilitate,
+"stars", "Stars", "Sterne", "Etoiles", "Estrellas", "Stjärnor", "Yıldızlar", "Gwiazdy", "Stelle",
+"trophy", "Trophy", "Trophäe", "Trophée", "Trofeo", "Trofé", "Kupa", "Trofeum", "Trofeo",
+"points_needed", "Points needed", "Punkte benötigt", "Points requis", "puntos necesarios", "Poäng behövs", "Puan gerekli", "Potrzebne punkty", "Punti necessari",
+"need_for_next_level", "Need to get to next level", "Für das nächste Level benötigt", "Le niveau suivant nécessite", "Para el siguiente nivel necesitas", "Bir sonraki seviye için ihtiyacınız olan", "Do następnego poziomu potrzebujesz", "Per il livello successivo è necessario",
+"points_seconds_moves", "Points are seconds or moves", "Punkte sind Sekunden oder Züge", "Les points sont des secondes ou des mouvements", "Los puntos son segundos o movimientos", "Poäng är sekunder eller rörelser", "Puanlar saniyeler veya hamlelerdir", "Punkty to sekundy lub ruchy", "I punti sono secondi o movimenti",
+"no_empty", "No empty Move", "Kein leerer Zug", "Pas de vide", "No vacío", "Ingen tom", "Boş yok", "Brak pustki", "Nessun vuoto",
+"unlock_all_levels", "Unlock all levels", "Alle Level freischalten", "Débloquer tous les niveaux", "Desbloquea todos los niveles", "Lås upp alla nivåer", "Tüm seviyelerin kilidini aç", "Odblokuj wszystkie poziomy", "Sbloccare tutti i livelli",
+"keep_admin_access", "Keep admin access enabled", "Admin-Zugang aktiviert lassen", "Maintenir l'accès admin activé", "Mantener habilitado el acceso de administrador", "Håll administratörsåtkomst aktiverad", "Yönetici erişimini etkin tutun", "Zachowaj dostęp administratora", "Mantenere l'accesso dell'amministratore",
+"deactivate_admin_access", "Deactivate admin access now", "Admin-Zugang jetzt deaktivieren", "Désactiver l'accès admin maintenant", "Desactivar el acceso de administrador ahora", "Inaktivera administratörsåtkomst nu", "Yönetici erişimini şimdi devre dışı bırakın", "Dezaktywuj dostęp administratora teraz", "Disattivare ora l'accesso dell'amministratore",
+"level_name", "Level name", "Level Name", "Nom du niveau", "Nombre del nivel", "Namn på nivå", "Seviye adı", "Nazwa poziomu", "Nome del livello",
+"description_text", "Description Text", "Beschreibungs-Text", "Texte de description", "Descripción Texto", "Beskrivning Text", "Açıklama Metni", "Opis Tekst", "Descrizione Testo",
+"default_mode_text", "Default mode text", "Standard modus text", "Texte en mode standard", "Texto en modo normal", "Standardläge text", "Standart mod metni", "Tekst normalnego", "Testo modalità standard",
+"game_mode_text", "Game mode text", "Spielmodus-Text", "Texte mode de jeu", "Texto del modo de juego", "Text för spelläge", "Oyun modu metni", "Tekst trybu gry", "Testo modalità di gioco",
+"enabled", "Enabled ", "Aktivieren", "Activé", "Habilitado", "Aktiverad", "Etkin", "Włączony", "Abilitato",
+"dark_green", "Dark Green", "Dunkelgrün", "Vert foncé", "Verde oscuro", "Mörkgrön", "Koyu yeşil", "Ciemna zieleń", "Verde scuro",
+"light_green", "Light Green", "Hellgrün", "Vert clair", "Verde claro", "Ljusgrön", "Açık yeşil", "Jasnozielony", "Verde chiaro",
+"dark_red", "Dark Red", "Dunkelrot", "Rouge foncé", "Rojo oscuro", "Mörkröd", "Koyu kırmızı", "Ciemnoczerwony", "Rosso scuro",
+"light_red", "Light red", "Hellrot","Rouge clair", "Rojo claro", "Ljusröd", "Açık kırmızı", "Jasnoczerwony", "Rosso chiaro",
+"yellow", "Yellow", "Gelb", "Jaune", "Amarillo", "Gul", "Sarı", "Żółty", "Giallo",
+"orange", "Orange", "Orange", "Orange", "Naranja", "Orange", "Turuncu", "Orange", "Arancio",
+"purple", "Purple", "lila", "Pourpre", "Morado", "Lila", "Mor", "Purpura", "Viola",
+"blue", "Blue", "Blau", "Bleu", "Azul", "blå", "Mavi", "Niebieski", "Blu",
+"start", "Start", "Start", "Début", "Inicio", "Starta", "Başla", "Start", "Inizio",
+"end", "End", "Ende", "Fin", "Fin", "Slut", "Bitiş", "Koniec", "Fine",
+"cross", "Cross", "Kreuz", "Croix", "Cruz", "Cross", "Çapraz", "Cross", "Croce",
+"x", "X", "X", "X", "X", "X", "X", "X", "X",
+"block", "Block", "Block", "Bloc", "Bloque", "Blocka", "Blok", "Blok", "Blocco",
+"diagonal", "Diagonal", "Diagonal", "Diagonale", "Diagonal", "Diagonalt", "Diyagonal", "Przekątna", "Diagonale",
+"rain", "Rain", "Regen", "Pluie", "Lluvia", "Regn", "Yağmur", "Deszcz", "Pioggia",
+"last_messages", "Last messages", "Letzte Nachrichten", "Messages récents", "Últimos mensajes", "Senaste meddelanden", "Son mesajlar", "Ostatnie wiadomości", "Ultimi messaggi",
+"no_messages", "No messages received yet.", "Bisher keine Nachrichten erhalten.", "Aucun message reçu pour le moment.", "Aún no se han recibido mensajes.", "Inga meddelanden har ännu mottagits.", "Henüz mesaj alınmadı.", "Nie otrzymano jeszcze żadnych wiadomości.", "Non sono ancora stati ricevuti messaggi.",
+"english_language", "English", "Englisch", "Anglais", "IÍnglés", "Engelska", "İngilizce", "Angielski", "Inglese",
+"german_language", "German", "Deutsch", "Allemand", "Alemán", "Tyska", "Almanca", "Niemiecki", "Tedesco",
+"french_language", "French", "Französisch", "Français", "Francés", "Franska", "Fransızca", "Francuski", "Francese",
+"spanish_language", "Spanish", "Spanisch", "Espagnol", "Español", "Spanska", "İspanyolca", "Hiszpański", "Spagnolo",
+"swedish_language", "Swedish", "Schwedisch", "Suédois", "Sueco", "Svenska", "İsveç", "Szwedzki", "Svedese",
+"turkish_language", "Turkish", "Türkisch", "Turc", "Turco", "Turkiska", "Türkçe", "Turecki", "Turco",
+"polish_language", "Polish", "Polnisch", "Polonais", "Polaco", "Polska", "Lehçe", "Polska", "Polacco",
+"italian_language", "Italian", "Italienisch", "Italien", "Italiano", "Italienska", "İtalyan", "Włoski", "Italiano",
+"malicious_extras", "Malicious extras", "Tückische Extras", "Suppléments malveillants", "Extras malintencionados", "Skadliga extrafunktioner", "Kötü niyetli ekstralar", "Złośliwe dodatki", "Extra dannosi",
+"malicious_extras_time", "Malicious extras over time", "Tückische Extras im Spielverlauf", "Les extras malveillants au fil du temps", "Extras malintencionados a lo largo del tiempo", "Skadliga extrafunktioner över tid", "Zaman içinde kötü niyetli ekstralar", "Złośliwe dodatki w czasie", "Extra malevoli nel tempo",
+"beneficial_extras", "Beneficial extras", "Nützliche Extras", "Extras bénéfiques", "Extras benéficos", "Venetiösa extrafunktioner", "Veneficial ekstralar", "Korzystne dodatki", "Extra venefici",
+"beneficial_extras_time", "Beneficial extras over time", "Nützliche Extras im Spielverlauf", "Suppléments bénéfiques au fil du temps", "Extras beneficiosos a lo largo del tiempo", "Förmånliga extrafunktioner över tid", "Zaman içinde faydalı ekstralar", "Korzystne dodatki z czasem", "Extra benefici nel tempo",
+"needed_pieces", "Needed pieces", "Benötigte Elemente", "Pièces nécessaires", "Piezas necesarias", "Behövliga delar", "Gerekli parçalar", "Potrzebne kawałki", "Pezzi necessari",
+"needed_pieces_time", "Needed pieces over time", "Benötigte Elemente im Spielverlauf", "Pièces nécessaires au fil du temps", "Piezas necesarias a lo largo del tiempo", "Behövda delar över tid", "Zaman içinde ihtiyaç duyulan parçalar", "Potrzebne kawałki w czasie", "Pezzi necessari nel tempo",
+"zoom_out", "Zoom out", "Rauszoomen", "Zoom arrière", "Alejar", "Zooma ut", "Uzaklaştır", "Pomniejszenie", "Riduzione dello zoom",
+"left_padding", "Left padding", "Linkes Padding", "Rembourrage gauche", "Relleno izquierdo", "Vänster fyllning", "Sol dolgu", "Lewy padding", "Imbottitura a sinistra",
+"right_padding", "Right padding", "Rechtes Padding", "Rembourrage à droite", "Relleno derecho", "Höger utfyllnad", "Sağ dolgu", "Prawy padding", "Imbottitura destra",
+"top_padding", "Top padding", "Oberes Padding", "Rembourrage supérieur", "Relleno superior", "Övre stoppning", "Üst dolgu", "Wypełnienie padding", "Imbottitura superiore",
+"bottom_padding","Bottom padding", "Unteres Padding",Rembourrage inférieur, "Relleno inferior", "Nedre stoppning", "Alt dolgu", "Dolny padding", "Imbottitura inferiore",
+"board_width","Board width","Breite des Spielfelds","Largeur du terrain de jeu","Anchura del terreno de juego","Spelplanens planen","Alan genişliği","Szerokość boiska","Larghezza del campo da gioco"
+"board_height","Board height","Höhe des Spielfelds","Hauteur du terrain de jeu","Altura del terreno de juego","Spelplanens höjd","Saha yüksekliği","Wysokość pola gry","Altezza del campo da gioco"
+"border_graphic","Border graphic","Umrandungsgraphik","Graphique d'encadrement","Gráfico de bordes","Grafisk gräns","Sınır grafiği","Grafika graniczna","Grafica del bordo"
+"gametype_p1","Gametype P1","Spieltyp P1","Type de jeu P1","Tipo de juego P1","Spel typ P1","Oyun türü P1","Typ gry P1","Tipo di gioco P1"
+"gametype_p2","Gametype P2","Spieltyp P2","Type de jeu P2","Tipo de juego P2","Spel typ P2","Oyun türü P2","Typ gry P2","Tipo di gioco P2"
+"Time","Time", "Zeit", "Temps", "Tiempo", "Tid", "Zaman","Czas", "Tempo",
+"Moves", "Moves", "Züge", "Mouvements", "Mueve", "Flyttar", "Hareketler", "Ruchy", "Movimenti",
+"Nothing","Nothing","Nichts","Rien","Nada","Ingenting","Hiçbir şey","Nic","Nulla"
+"EmptyMoves","Empty Moves","Leerzüge","Mouvements vides","Movimientos vacíos","Tomma flyttningar","Boş hamleler","Puste ruchy","Movimenti a vuoto"
+NoEmptyMoves,"No Empty Moves","Keine Leerzüge",Pas de mouvements vides,"Sin movimientos vacíos","Ingen tomma flyttningar","Boş hamle yok","Brak pustych ruchów","Nessun movimento a vuoto"
+Blank,Blank,Leer,En blanc,En blanco,Blank,Boş,Blank,Vuoto
+Breakable,Breakable,Zerstörbar,Cassable,Rompible,Brytbar,Kırılabilir,Złamany,Infrangibile
+Lock,Lock,Sperre,Verrouillé,Cerradura,Lås,Kilitle,Blokada,Blocco
+Bubble,Bubble,Blase,Bulle,Burbuja,Bubbla,Baloncuk,Bańka,Bolla
+Normal,Normal,Normal,Normal,Normal,Normal,Normal,Normalne,Normale
+animation_info,The Animationssettings might be overriden by the level itself.,Die Animationseinstellungen könnten durch das Level selbst überschrieben werden.,Les paramètres d'animation peuvent être remplacés par le niveau lui-même.,La configuración de las animaciones puede ser anulada por el propio nivel.,Animationssettings kan åsidosättas av själva nivån.,Animasyon ayarları seviyenin kendisi tarafından geçersiz kılınabilir,Ustawienia animacji mogą zostać zastąpione przez sam poziom.,Le impostazioni delle animazioni possono essere sovrascritte dal livello stesso.
+T_Pattern,T-Pattern,T-Muster,Motif-T,Patrón-T,T-mönster,T-Desen,T-Wzór ,Modello-T
+L_Pattern,L-Pattern,L-Muster,Motif-L,Patrón-L,L-mönster,L-Desen,L-Wzór,Modello-L
+Horizontal,Horizontal,Horizontal,Horizontal,Horizontal,Horisontell,Yatay,Poziomo,Orizzontale
+Vertical,Vertical,Vertikal,Vertical,Vertical,Vertikal,Dikey,Pionowo,Verticale
+Diagonal,Diagonal,Diagonal,Diagonale,Diagonal,Diagonal,Diyagonal,Ukośnie,Diagonale
+X_Pattern,X-Pattern,X-Muster,X-Pattern,Patrón-X,X-mönster,X-Pattern,Wzór-X,Modello-X
+match_cross,Cross,Kreuz,Croix,Cruz,Cross,Çapraz,Cross,Croce
+pattern_1,Pattern 1,Muster 1,Patronage 1,Patrón 1,Mönster 1,Desen 1,Wzór 1,Modello 1
+pattern_2,Pattern 2,Muster 2,Patronage 2,Patrón 2,Mönster 2,Desen 2,Wzór 2,Modello 2
+Both,Both,Beide,Les deux,Ambos,Båda,Her ikisi de,Obie,Entrambi
+LeftUp,LeftUp,LinksHoch,GaucheHaut,IzquierdaArriba,Vänsterupp,Sol yukarı,W lewo w górę,Sinistra su
+RightUp,RightUp,RechtsHoch,DroiteHaut,DerechaArriba,Högerupp,Hemen yukarı,Prawa w górę,Destra in alto
+Block,Block,Block,Blocage,Bloqueo,Blockering,Engelleme,Blokowanie,Blocco
+Corners,Corners,Ecken,Coins,Esquinas,Hörn,Köşe,Narożnik,Angolo
+Cross,Cross,Kreuz,Croix,Cruz,Cross,Çapraz,Krzyż,Croce
+rules_setting,Rules,Regeln,Règles,Reglas,Regler,Kurallar,Zasady,Regole
+sides_setting,Sides,Seiten,Côtés,Lados,Sidor,Taraflar,Boki,Fianchi
+config_setting,Config,Konfig,Config,Configuración,Konfiguration,Konfigürasyon,Konfiguracja,Configurazione
+design_setting,Design,Gestaltung,Design,Diseño,Utformning,Tasarım,Projekt,Design
+left_bar,Left bar,Linke Leiste,Barre gauche,Barra izquierda,Vänster bar,Sol çubuk,Lewa belka,Barra sinistra
+right_bar,Right bar,Rechte Leiste,Barre droite,Barra derecha,Höger bar,Sağ çubuk,Prawy pasek,Barra destra
+top_bar,Top bar,Obere Leiste,Barre supérieure,Barra superior,Översta raden,Üst çubuk,Górny pasek,Barra superiore
+bottom_bar,Bototm bar,Untere Leiste,Barre inférieure,Barra inferior,Nedre stapel,Alt çubuk,Dolny pasek,Barra inferiore
+phase_one,First Phase,Phase Eins,Première phase,Primera fase,Första fasen,Birinci aşama,Faza pierwsza,Prima fase
+phase_two,Second Phase,Phase Zwei,Deuxième phase,Segunda fase,Andra fasen,İkinci aşama,Faza druga,Seconda fase
+AlleFarben, All Colors, Alle Farben,Toutes les couleurs, Todos los colores,Alla färger,Tüm renkler,Wszystkie kolory,Tutti i colori
+DunkelGrün,Dark Green, Dunkelgrün,Vert foncé, Verde oscuro,Mörkgrön,Koyu yeşil,Ciemna zieleń,Verde scuro
+HellGrüne,Light Green,Hellgrün,Vert clair, Verde claro,Ljusgrön,Açık yeşil,Jasnozielony,Verde chiaro
+DunkelRot,Dark Red,Dunkelrot,Rouge foncé, Rojo oscuro,Mörkröd,Koyu kırmızı,Ciemnoczerwony,Rosso scuro
+HellRot,Light Red,Hellrot,Rouge clair, Rojo claro,Ljusröd,Açık kırmızı,Jasnoczerwony,Rosso chiaro
+Gelb,Yellow,Gelb,Jaune, Amarillo,Gul,Sarı,Żółty,Giallo
+Orange,Orange,Orange,Orange, Naranja,Orange,Turuncu,Orange,Arancione
+Blaue,Blue,Blau,Bleus, Azul,Blå,Mavi,Niebieski,Blu
+Lila,Purple,Lila,violet, Púrpura,Lila,Mor,Fioletowy,Viola
+Truhe,Chest,Truhe,Coffre,Pecho,Bröstkorg,Göğüs,Klatka piersiowa,Petto
+Chest,Chest,Truhe,Coffre,Pecho,Bröstkorg,Göğüs,Klatka piersiowa,Petto
+Jelly,Jelly,Jelly,Jelly,Jelly,Gelé,Jöle,Jelly,Gelatina
+DunkelGrüneFrucht,Melon,Melone,Melon,Melón,Melon,Kavun,Melon,Melone
+HellGrüneFrucht,Apple,Apfel,Pomme,Manzana,Apple,Elma,Jabłko,Mela
+DunkelRoteFrucht,Strawberry,Erdbeere,Fraise,Fresa,Jordgubbar,Çilekli,Truskawka,Fragola
+HellRoteFrucht,Onion,Zwiebel,Oignon,Cebolla,Lök,Soğan,Cebula,Cipolla
+GelbeFrucht,lemon,Zitrone,Citron,Limón,Citron,Limon,Cytryna,Limone
+OrangeFrucht,Pumpkin,Kürbis,Courge,Calabaza,Pumpa,Balkabağı,Dynia,Zucca
+BlaueFrucht,Plum,Pflaume,Prune,Ciruela,Plommon,Erik,Śliwka,Prugna
+LilaFrucht,Grape,Traube,Raisin,Uva,Druva,Üzüm,Winogrono,Uva
+AlleFrüchte,AllFruits,Alle Früchte,Tous les fruits,Todas las frutas,Alla frukter,Tüm meyveler,Wszystkie owoce,Tutti i frutti
+not_applicable,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+variation,Variation	,Variation,Variation,Variación,Variation,Varyasyon,Wariant,Variazione
+allow_similar,Allow similar,Ähnliches erlauben,Permettre des,Permitir similares,Tillåt liknande,Benzerlerine izin ver,Pozwolić na podobne,Consentite simili
+Collect,Collect,Sammeln,Collecter,Recoger,Samla in,Toplamak,Odbierz,Raccogliere
+Avoid,Avoid,Meiden,Éviter,Evite,Undvik,Kaçının,Unikaj,Evitare
+loop,Loop,Schleife,Boucle,Bucle,Slinga,Döngü,Pętla,Anello
+randomize,Randomize,Zufällig,Randomiser,Aleatorizar,Randomisera,Rastgele,Randomizuj,Randomizzare
+Destroy,Destroy,Zerstören,Détruire,Destruye,Förstör,Yok etmek,Zniszcz,Distruggere
+goal_only,Goal Only,Nur Ziel,Goal Only,Sólo gol,Goal Only,Sadece Hedef,Goal Only,Solo obiettivo
+Empty,Empty,Leeren,Vide,Vacío,Tomt,Boş,Puste,Vuoto
+SelbeFarbe,Same Color,Selbe Farbe,Même couleur,Mismo color,Samma färg,Aynı renk,Ten sam kolor,Stesso colore
+Unstuck,Unstuck,Unstuck,Décrochage,Despegada,"Loss","Cözülmüş","Odlepiony",Disincagliato
+additive,Additive,Additiv,Additif,Aditivo,Tillsatsmedel,Katkı maddesi,Dodatek,Additivo
+done,done,fertig,fait,hecho,gjort,bitti,zrobione,fatto
+quarter_res,1/4 Resolution,1/4 Auflösung,1/4 Résolution,1/4 Resolución,1/4 Upplösning,1/4 Çözünürlük,1/4 Rezolucja,1/4 Risoluzione
+half_res,2/4 Resolution,2/4 Auflösung,2/4 Résolution,2/4 Resolución,2/4 Upplösning,2/4 Çözünürlük,2/4 Rezolucja,2/4 Risoluzione
+threequarter_res,3/4 Resolution,3/4 Auflösung,3/4 Résolution,3/4 Resolución,3/4 Upplösning,3/4 Çözünürlük,3/4 Rezolucja,3/4 Risoluzione
+fullres,4/4 Resolution,4/4 Auflösung,4/4 Résolution,4/4 Resolución,4/4 Upplösning,4/4 Çözünürlük,4/4 Rezolucja,4/4 Risoluzione
+1DAY,1 DAY,1 DAY,1 DAY,1 DAY,1 DAY,1 DAY,1 DAY,1 DAY
+Active,Active,Aktiv,Actif,Activo,Aktiv,Aktif,Aktywny,Attivo
+InActive,Inactive,Inaktiv,Inactif,Inactivo,Inaktiv,Aktif değil,Nieaktywny,Inattivo
+OnlyLine,Line only,Nur Linie,Ligne uniquement,Sólo línea,Endast linje,Sadece hat,Tylko linia,Solo linea
+OnlyTurnA,Only turn A,Nur Wende A,Virement A uniquement,Sólo giro A,Endast sväng A,Yalnızca A dönüşü,Tylko obrót A,Solo turno A
+OnlyTurnB,Only turn B,Nur Wende B,Tournant B uniquement,Sólo giro B,Endast sväng B,Sadece B'yi çevirin,Tylko obrót B,Solo giro B
+EmptyTile,EmptyTile,Leeres Feld,Carreau vide,Baldosa vacía,Tomma kakelplattor,Boş Karo,Pusta płytka,Piastrella vuota
+Undestroyable,Undestroyable,Unzerstörbar,Indestructible,Destruible,Oförstörbar,Yıkılamaz,Niezniszczalny,Indistruttibile
+BigBlock,Big Block,Großer Block,Gros Bloc,Gran bloque,Big Block,Büyük Blok,Duży blok,Blocco grande
+Ingredient,Ingredient,Zutat,Ingrédient,Ingrediente,Ingrediens,Malzeme,Składnik,Ingrediente
+None,None,Nichts,Aucun,Ninguno,Ingen,Hiçbiri,Brak,Nessuno
+From,From,Von,De,Desde,Från,Kimden,Z,Da
+To,To,Zu,A,A,Till,için,Do,A
+Tiles,Tiles,Kacheln,Carreaux,Baldosas,Plattor,Fayanslar,Płytki,Piastrelle
+Vectors,Vectors,Vektoren,Vecteurs,Vectores,Vektorer,Vektörler,Wektory,Vettori
+Teleports,Teleports,Teleports,Téléports,Telepuertos,Teleporter,Teleportlar,Teleporty,Teletrasporti
+top,Top,Oben,Haut,Arriba,Överst,Üst,Góra,In alto
+bottom,Bottom,Unten,En bas,Abajo,Botten,Alt,Dół,In basso
+left,Left,Links,Gauche,Izquierda,Vänster,Sol,Lewa,A sinistra
+right,Right,Rechts,A droite,Derecha,Höger,Doğru,Prawo,A destra
+LockedChest,Locked Chest,Verriegelte Truhe,Coffre fermé,Arcón cerrado,Låst kista,Kilitli Sandık,Zamykana skrzynia,Forziere chiuso
+NoTeleport,No Teleport,Kein Teleporter,Pas de téléportation,Sin teletransporte,Ingen teleport,Işınlanma Yok,Brak teleportu,Nessun teletrasporto
+TeleportFrom,Teleport From,Teleporter von,Téléportation de,Teletransporte desde,Teleport från,Işınlanma Noktası,Teleportuj się z,Teletrasporto da
+TeleportTo,Teleport To,Teleporter nach,Téléportation vers,Teletransportarse a,Teleport till,Işınlanma,Teleportuj się do,Teletrasporto a

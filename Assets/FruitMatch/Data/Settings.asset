@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712562a0c1362324b9e2fd97560d3389, type: 3}
+  m_Name: Settings
+  m_EditorClassIdentifier: 
+  ColorBlind: 1
+  SwipeRejection: 3
+  SideDotAlpha: 4
+  SwapBackSpeed: 3
+  AnimationSpeedLinePush: 2
+  RefillDelay: 6
+  ShuffleDelay: 6
+  MasterVolume: 60
+  MusicVolume: 40
+  SFXVolume: 62
+  UISoundVolume: 62
+  MasterMuted: 0
+  MusicMuted: 0
+  SFXMuted: 0
+  UIMuted: 0
+  leftPaddingX: 0.48
+  leftPaddingY: 0.32
+  rightPaddingX: 0.48
+  rightPaddingY: 0.32
+  topPaddingX: 0.32
+  topPaddingY: 0.48
+  bottomPaddingX: 0.32
+  bottomPaddingY: 0.48
+  Resolution: 3
+  GetSwipeRejection: 3
+  GetSwapBackSpeed: {x: 5, y: 5}
+  GetAnimationSpeedLinePush: 0.125
+  GetSideDotAlpha: 0.9
+  GetShuffleDelay: 1.6
+  GetRefillDelay: 1.8
+  GetMasterVolume: 0.6
+  GetMusicVolume: 0.4
+  GetSFXVolume: 0.62
+  GetUISoundVolume: 0.62
+  GetLeftPaddingX: 0.48
+  GetLeftPaddingY: 0.32
+  GetRightPaddingX: 0.48
+  GetRightPaddingY: 0.32
+  GetTopPaddingX: 0.32
+  GetTopPaddingY: 0.48
+  GetBottomPaddingX: 0.32
+  GetBottomPaddingY: 0.48
+  GetResolution:
+    Ipads:
+    - iPad 7
+    - iPad 8
+    - iPad 9
+    Width: 1620
+    Height: 2160
+  FullResolution: 0
+  EffectsQuality: 3
+  KeepAdminAccess: 1

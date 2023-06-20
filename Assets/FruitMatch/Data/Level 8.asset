@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4168d4dd7ea9541aa3ef4f030ab099, type: 3}
+  m_Name: Level 8
+  m_EditorClassIdentifier: 
+  width: 4
+  height: 4
+  boardLayout: []
+  dots:
+  - {fileID: 6272411823337864972, guid: 681de2757e529d142b88c055b4b3389d, type: 3}
+  - {fileID: 3350562878444977936, guid: 3446b32c47d09fd4e94403407a56fc1f, type: 3}
+  - {fileID: 7518286750939101691, guid: cfc0a4cebb5891e428ed4dc963388ec2, type: 3}
+  - {fileID: 6290808858983017608, guid: 279c0145f5b0a2d43874ac89f1174c68, type: 3}
+  scoreGoals: []
+  endGameRequirements:
+    GameType: 0
+    CounterValue: 0
+  levelGoals:
+  - numberNeeded: 16
+    numberCollected: 0
+    collectionStyle: 1
+    goalSprite: {fileID: 21300000, guid: e780dcdf61f0ef044a5bec0fe79e9424, type: 3}
+    fruitType: 8
+    fruitColors: 0
+  - numberNeeded: 49
+    numberCollected: 0
+    collectionStyle: 1
+    goalSprite: {fileID: 21300000, guid: 569bd12cf3698d3499c81a3aa30e4990, type: 3}
+    fruitType: 2
+    fruitColors: 0
+  - numberNeeded: 13
+    numberCollected: 0
+    collectionStyle: 1
+    goalSprite: {fileID: 21300000, guid: 097409d0896081e428b620bf560c3d76, type: 3}
+    fruitType: 4
+    fruitColors: 0
+  LevelNameText: Gold Level
+  LevelDescriptionText: blablub
+  LevelGameTypeDefaultText: 
+  LevelGoalImagesOverlay: []
+  Bombs: 000000000100000002000000030000000400000005000000

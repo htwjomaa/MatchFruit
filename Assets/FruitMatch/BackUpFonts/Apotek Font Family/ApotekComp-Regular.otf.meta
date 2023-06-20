@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 7ab0260c652e446a081a2220305fad34
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Apotek Comp
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 73cdd19d6070a43e5bd641a244e4b623, type: 3}
+  - {fileID: 12800000, guid: 856698858623a4c5093c873e01a6429c, type: 3}
+  - {fileID: 12800000, guid: f84b905e2710d48eca64c59f09eb5368, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

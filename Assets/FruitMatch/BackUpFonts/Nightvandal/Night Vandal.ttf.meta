@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 2ad588e5718ef44739628cce30bfe1cf
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - NIghtvandals
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 53a7a2c35ecce414cb4483a2b8e5b311, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
