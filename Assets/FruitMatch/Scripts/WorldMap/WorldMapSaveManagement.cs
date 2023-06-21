@@ -100,7 +100,7 @@ public sealed class WorldMapSaveManagement : ScriptableObject
         {
            // GameObject worldNodeObj = new GameObject();
             //worldNodeObj.AddComponent<WorldNode>();
-            WorldNode loadedWorldNode  = (WorldNode)GenericSettingsFunctions.GetCopy( worldStructure.WorldNodes[i]);
+            WorldNode loadedWorldNode  = (WorldNode)GenericSettingsFunctions.GetDeepCopy( worldStructure.WorldNodes[i]);
             Instantiate(loadedWorldNode , loadedWorldNode .WorldPos, Quaternion.identity);
            // WorldNode n = worldNodeObj.GetComponent<WorldNode>() = loadedWorldNode;
            // newWorldNode.UniqueIdentifier = loadedWorldNode.UniqueIdentifier;

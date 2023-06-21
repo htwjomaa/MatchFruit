@@ -380,24 +380,25 @@ namespace FruitMatch.Scripts.Level
 
             for (int i = 0; i < levelData.fields.Count; i++)
             {
-                levelData.fields[i].levelSquares = CutOutBlocks(levelData.fields[i].levelSquares, LevelConfig.BoardDimensionsConfig.Width, LevelConfig.BoardDimensionsConfig.Height);
+                levelData.fields[i].levelSquares = CutOutBlocks(levelData.fields[i].levelSquares, LevelConfig.BoardDimensionsConfig.Width[i], LevelConfig.BoardDimensionsConfig.Height[i]);
             }
             void TranslateData()
             {
                 for (int i = 0; i < levelData.fields.Count; i++)
                 {
-                    levelData.fields[i].maxCols = LevelConfig.BoardDimensionsConfig.Width;
-                    levelData.fields[i].maxRows = LevelConfig.BoardDimensionsConfig.Height;
-                    LoadingHelper.THIS.height = LevelConfig.BoardDimensionsConfig.Height;
-                    LoadingHelper.THIS.width = LevelConfig.BoardDimensionsConfig.Width;
+                    levelData.fields[i].maxCols = LevelConfig.BoardDimensionsConfig.Width[i];
+                    levelData.fields[i].maxRows = LevelConfig.BoardDimensionsConfig.Height[i];
+                    LoadingHelper.THIS.height = LevelConfig.BoardDimensionsConfig.Height[i];
+                    LoadingHelper.THIS.width = LevelConfig.BoardDimensionsConfig.Width[i];
                     levelData.fields[i].noRegenLevel = false;
+                    levelData.fields[i].noMatches = LevelConfig.BoardDimensionsConfig.NoMatches[i];
                 }
                 
             
 
                 LIMIT limit = LIMIT.MOVES;
                 GameType gameType = GameType.Moves;
-                if (LevelConfig.BoardDimensionsConfig.GameTypeP1.GameType == GameType.Time)
+                if (LevelConfig.BoardDimensionsConfig.GameTypeP1[0].GameType == GameType.Time)
                 {
                     limit = LIMIT.TIME;
                     gameType = GameType.Time;
@@ -411,7 +412,7 @@ namespace FruitMatch.Scripts.Level
                 levelData.star3 =
                     GenericSettingsFunctions.GetConstvaluesMovesTime(LevelConfig.ScoreGoalsConfig.Star3Value,
                         gameType);
-                levelData.limit = GenericSettingsFunctions.GetConstvaluesMovesTime(LevelConfig.BoardDimensionsConfig.GameTypeP1.CounterValue, gameType);
+                levelData.limit = GenericSettingsFunctions.GetConstvaluesMovesTime(LevelConfig.BoardDimensionsConfig.GameTypeP1[0].CounterValue, gameType);
                 
                 levelData.limitType = limit;
                 levelData.enableMarmalade = true;

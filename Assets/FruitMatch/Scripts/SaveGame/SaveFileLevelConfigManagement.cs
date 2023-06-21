@@ -173,8 +173,8 @@ public sealed class SaveFileLevelConfigManagement : ScriptableObject
     }
     private void LoadBoardDimensions(ref Level level, BoardDimensionsConfig boardDimensionsConfig)
     {
-        level.width = boardDimensionsConfig.Width;
-        level.height = boardDimensionsConfig.Height;
+//        level.width = boardDimensionsConfig.Width[0];
+     //   level.height = boardDimensionsConfig.Height[0];
         
         List<GameObject> fruits = new List<GameObject>();
 

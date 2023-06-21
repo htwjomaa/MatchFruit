@@ -40,11 +40,11 @@ public sealed class EndGameManager : MonoBehaviour
         Debug.Log("P2-Started");
         GameType gameTypeP2 =  Rl.saveFileLevelConfigManagement
             .AllSaveFileLevelConfigs.LevelConfigs[Rl.board.level]
-            .BoardDimensionsConfig.GameTypeP2.GameType;
+            .BoardDimensionsConfig.GameTypeP2[0].GameType;
 
         float counterValueP2 =    Rl.saveFileLevelConfigManagement
             .AllSaveFileLevelConfigs.LevelConfigs[Rl.board.level]
-            .BoardDimensionsConfig.GameTypeP2.CounterValue;
+            .BoardDimensionsConfig.GameTypeP2[0].CounterValue;
         
         Rl.world.levels[Rl.board.level].endGameRequirements.CounterValue = GenericSettingsFunctions.GetConstvaluesMovesTime(counterValueP2, gameTypeP2);
         Rl.world.levels[Rl.board.level].endGameRequirements.GameType = gameTypeP2;
@@ -63,11 +63,11 @@ public sealed class EndGameManager : MonoBehaviour
 
         GameType gameTypeP1 =  Rl.saveFileLevelConfigManagement
             .AllSaveFileLevelConfigs.LevelConfigs[Rl.board.level]
-            .BoardDimensionsConfig.GameTypeP1.GameType;
+            .BoardDimensionsConfig.GameTypeP1[0].GameType;
 
         float counterValueP1 =    Rl.saveFileLevelConfigManagement
             .AllSaveFileLevelConfigs.LevelConfigs[Rl.board.level]
-            .BoardDimensionsConfig.GameTypeP1.CounterValue;
+            .BoardDimensionsConfig.GameTypeP1[0].CounterValue;
         
         Rl.world.levels[Rl.board.level].endGameRequirements.CounterValue = GenericSettingsFunctions.GetConstvaluesMovesTime(counterValueP1, gameTypeP1);
         Rl.world.levels[Rl.board.level].endGameRequirements.GameType = gameTypeP1;

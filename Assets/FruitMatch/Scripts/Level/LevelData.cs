@@ -392,7 +392,8 @@ using System.Linq;
     {
         public int maxRows;
         public int maxCols;
-        public bool noRegenLevel; //no regenerate level if no matches possible
+        public bool noRegenLevel;
+        public bool noMatches; //no regenerate level if no matches possible
         public SquareBlocks[] levelSquares = new SquareBlocks[81];
         public int bombTimer = 15;
         public int layers;

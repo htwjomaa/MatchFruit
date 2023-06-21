@@ -75,6 +75,7 @@ public sealed class AdminLevelSettingsTiles : MonoBehaviour
         LoadField();
         Rl.BoardPreview.ResetLastClicked();
         Rl.BoardPreview.StartDrawBoard();
+        LoadFromDisk(Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[Rl.adminLevelSettingsPanel.LevelAdminLevelSettingsLevelNumber].TileSettingFieldConfigs);
     }
 
     public void ClipBoardToTiles(byte column, ref TT tileType, ref Directions directions, ref sbyte teleportTarget)
@@ -139,11 +140,11 @@ public sealed class AdminLevelSettingsTiles : MonoBehaviour
 
         ResizeTileConfig(ref tileSettingFieldConfigs);
         ResizeTileConfig(ref Rl.saveClipBoard.TileSettingFieldConfigs);
-        Rl.saveClipBoard.TileSettingFieldConfigs = (TileSettingFieldConfig[])GenericSettingsFunctions.GetCopy(tileSettingFieldConfigs);
+        Rl.saveClipBoard.TileSettingFieldConfigs = (TileSettingFieldConfig[])GenericSettingsFunctions.GetDeepCopy(tileSettingFieldConfigs);
         LoadFromDiskEvent?.Invoke();
     }
     public TileSettingFieldConfig[] SaveTileSettings() 
-        => (TileSettingFieldConfig[])GenericSettingsFunctions.GetCopy(Rl.saveClipBoard.TileSettingFieldConfigs);
+        => (TileSettingFieldConfig[])GenericSettingsFunctions.GetDeepCopy(Rl.saveClipBoard.TileSettingFieldConfigs);
 
     private int GetID(byte row, byte column) => (row * 9) + column;
 
@@ -428,7 +429,7 @@ public sealed class AdminLevelSettingsTiles : MonoBehaviour
    public void CopyField(byte fieldOne, byte fieldTwo)
    {
        Rl.saveClipBoard.TileSettingFieldConfigs[fieldTwo].TileSettingConfigs =
-           (TileSettingConfig[])GenericSettingsFunctions.GetCopy(Rl.saveClipBoard.TileSettingFieldConfigs[fieldOne].TileSettingConfigs);
+           (TileSettingConfig[])GenericSettingsFunctions.GetDeepCopy(Rl.saveClipBoard.TileSettingFieldConfigs[fieldOne].TileSettingConfigs);
        LoadCurrentField();
    }
 }

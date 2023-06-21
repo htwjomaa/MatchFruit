@@ -827,7 +827,7 @@ namespace FruitMatch.Scripts.Core
         //No matches detected, regenerate level
         public void NoMatches()
         {
-            if (field.fieldData.noRegenLevel) return;
+            if (field.fieldData.noRegenLevel || !field.fieldData.noMatches) return;
             StartCoroutine(NoMatchesCor());
         }
 

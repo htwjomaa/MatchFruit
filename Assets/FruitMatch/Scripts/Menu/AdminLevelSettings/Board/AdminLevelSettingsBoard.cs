@@ -42,34 +42,53 @@ public class AdminLevelSettingsBoard : MonoBehaviour
     {
         P1.SetActive(!p1);
         P1P2.SetActive(p1);
-        Rl.saveClipBoard.P1P2 = p1;
+        Rl.saveClipBoard.P1P2[FieldState.CurrentField] = p1;
         if(!playNoSoundAcceptSwitch)  Rl.GameManager.PlayAudio(Rl.soundStrings.AcceptSwitchSound, Random.Range(0,4), Rl.settings.GetUISoundVolume, Rl.uiSounds.audioSource);
     }
-    
+
+    private void RemoveListeners() => GenericSettingsFunctions.RemoveListeners(BoardHeightSlider, BoardWidthSlider, P1CounterValueSlider, P2CounterValueSlider);
+private void AddListener() => GenericSettingsFunctions.Addlisteners(delegate { ValueChangeCheck(); }, BoardHeightSlider, BoardWidthSlider, P1CounterValueSlider, P2CounterValueSlider);
     public void LoadBoardSettings(BoardDimensionsConfig boardDimensionsConfig)
     {
-        GenericSettingsFunctions.RemoveListeners(BoardHeightSlider, BoardWidthSlider, P1CounterValueSlider, P2CounterValueSlider);
+        CheckArrays();
+        RemoveListeners();
         Rl.BoardPreview.RemoveBoardPreviewListeners();
         LoadBoardSettingsToClipBoard(boardDimensionsConfig);
-        ClipBoardToSlider(); 
-        GenericSettingsFunctions.Addlisteners(delegate { ValueChangeCheck(); }, BoardHeightSlider, BoardWidthSlider, P1CounterValueSlider, P2CounterValueSlider);
+        ClipBoardToSlider();
+        AddListener();
         ValueChangeCheck();
         playNoSoundAcceptSwitch = true;
-        SetP1P2(Rl.saveClipBoard.P1P2);
+        SetP1P2(Rl.saveClipBoard.P1P2[FieldState.CurrentField]);
         playNoSoundAcceptSwitch = false;
         LoadGameType(true, false);
         LoadGameType(false, false);
     }
-    
-    
+
+    public void CheckArrays()
+    {
+        // if (Rl.saveClipBoard.BoardWidth.Length < 4 || Rl.saveClipBoard.BoardHeight.Length < 4 ||
+        //     Rl.saveClipBoard.GameTypeP1.Length < 4 || Rl.saveClipBoard.GameTypeP2.Length < 4 ||
+        //     Rl.saveClipBoard.NoMatches.Length < 4 || Rl.saveClipBoard.P1P2.Length < 4)
+        // {
+            Array.Resize(ref Rl.saveClipBoard.BoardWidth,4);
+            Array.Resize(ref Rl.saveClipBoard.BoardHeight,4);
+            Array.Resize(ref Rl.saveClipBoard.NoMatches,4);
+            
+            Array.Resize(ref Rl.saveClipBoard.P1P2,4);
+            Array.Resize(ref Rl.saveClipBoard.GameTypeP2,4);
+            Array.Resize(ref Rl.saveClipBoard.GameTypeP1,4);
+            
+      //  }
+    }
     public void ClipBoardToSlider()
     {
-        BoardWidthSlider.value =  Rl.saveClipBoard.BoardWidth;
-        BoardHeightSlider.value = Rl.saveClipBoard.BoardHeight;
-        P1CounterValueSlider.value = Rl.saveClipBoard.GameTypeP1.CounterValue;
-        P2CounterValueSlider.value = Rl.saveClipBoard.GameTypeP2.CounterValue;
+        CheckArrays();
+        BoardWidthSlider.value =  Rl.saveClipBoard.BoardWidth[FieldState.CurrentField];
+        BoardHeightSlider.value = Rl.saveClipBoard.BoardHeight[FieldState.CurrentField];
+        P1CounterValueSlider.value = Rl.saveClipBoard.GameTypeP1[FieldState.CurrentField].CounterValue;
+        P2CounterValueSlider.value = Rl.saveClipBoard.GameTypeP2[FieldState.CurrentField].CounterValue;
 
-        if (!Rl.saveClipBoard.BorderGraphic) ActivateSwitch(true);
+        if (Rl.saveClipBoard.NoMatches[FieldState.CurrentField]) ActivateSwitch(true);
         else DeactivateSwitch(true);
     }
 
@@ -96,34 +115,32 @@ public class AdminLevelSettingsBoard : MonoBehaviour
         SwitchGraphicOff.SetActive(!active);
         SwitchGraphicBackgroundOff.SetActive(!active);
         
-        Rl.saveClipBoard.BorderGraphic = active;
+        Rl.saveClipBoard.NoMatches[FieldState.CurrentField] = active;
     }
     public void LoadBoardSettingsToClipBoard(BoardDimensionsConfig boardDimensionsConfig)
     {
-        Rl.saveClipBoard.BoardWidth = boardDimensionsConfig.Width;
-        Rl.saveClipBoard.BoardHeight = boardDimensionsConfig.Height;
-        Rl.saveClipBoard.BorderGraphic = Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs
-            .LevelConfigs[Rl.adminLevelSettingsPanel.LevelAdminLevelSettingsLevelNumber].GraphicConfig
-            .AllowBorderGraphic;
-        Rl.saveClipBoard.P1P2 = boardDimensionsConfig.P1P2;
-        Rl.saveClipBoard.GameTypeP1 = boardDimensionsConfig.GameTypeP1;
-        Rl.saveClipBoard.GameTypeP2 = boardDimensionsConfig.GameTypeP2;
+        Rl.saveClipBoard.BoardWidth = (int[])GenericSettingsFunctions.GetDeepCopy(boardDimensionsConfig.Width);
+        Rl.saveClipBoard.BoardHeight = (int[])GenericSettingsFunctions.GetDeepCopy(boardDimensionsConfig.Height);
+        Rl.saveClipBoard.NoMatches = (bool[])GenericSettingsFunctions.GetDeepCopy(boardDimensionsConfig.NoMatches); 
+        Rl.saveClipBoard.P1P2 = (bool[])GenericSettingsFunctions.GetDeepCopy(boardDimensionsConfig.P1P2);
+        Rl.saveClipBoard.GameTypeP1 = (EndGameRequirements[])GenericSettingsFunctions.GetDeepCopy(boardDimensionsConfig.GameTypeP1);
+        Rl.saveClipBoard.GameTypeP2 = (EndGameRequirements[])GenericSettingsFunctions.GetDeepCopy(boardDimensionsConfig.GameTypeP2);
     }
 
     public void ValueChangeCheck()
     {
-        Rl.saveClipBoard.BoardHeight = (int)BoardHeightSlider.value;
-        Rl.saveClipBoard.BoardWidth = (int)BoardWidthSlider.value;
+        Rl.saveClipBoard.BoardHeight[FieldState.CurrentField] = (int)BoardHeightSlider.value;
+        Rl.saveClipBoard.BoardWidth[FieldState.CurrentField] = (int)BoardWidthSlider.value;
         
-        Rl.saveClipBoard.GameTypeP1.CounterValue = P1CounterValueSlider.value;
-        Rl.saveClipBoard.GameTypeP2.CounterValue = P2CounterValueSlider.value;
+        Rl.saveClipBoard.GameTypeP1[FieldState.CurrentField].CounterValue = P1CounterValueSlider.value;
+        Rl.saveClipBoard.GameTypeP2[FieldState.CurrentField].CounterValue = P2CounterValueSlider.value;
         
         GenericSettingsFunctions.UpdateTextFields(
             ref _valueDisplayList, 
             ((int)BoardHeightSlider.value).ToString(),
             ((int)BoardWidthSlider.value).ToString(),
-            GenericSettingsFunctions.TranslateTimeConstValues(GenericSettingsFunctions.GetConstvaluesMovesTime(Rl.saveClipBoard.GameTypeP1.CounterValue, Rl.saveClipBoard.GameTypeP1.GameType),Rl.saveClipBoard.GameTypeP1.GameType),
-            GenericSettingsFunctions.TranslateTimeConstValues(GenericSettingsFunctions.GetConstvaluesMovesTime(Rl.saveClipBoard.GameTypeP2.CounterValue, Rl.saveClipBoard.GameTypeP2.GameType),Rl.saveClipBoard.GameTypeP2.GameType));
+            GenericSettingsFunctions.TranslateTimeConstValues(GenericSettingsFunctions.GetConstvaluesMovesTime(Rl.saveClipBoard.GameTypeP1[FieldState.CurrentField].CounterValue, Rl.saveClipBoard.GameTypeP1[FieldState.CurrentField].GameType),Rl.saveClipBoard.GameTypeP1[FieldState.CurrentField].GameType),
+            GenericSettingsFunctions.TranslateTimeConstValues(GenericSettingsFunctions.GetConstvaluesMovesTime(Rl.saveClipBoard.GameTypeP2[FieldState.CurrentField].CounterValue, Rl.saveClipBoard.GameTypeP2[FieldState.CurrentField].GameType),Rl.saveClipBoard.GameTypeP2[FieldState.CurrentField].GameType));
         Rl.BoardPreview.StartDrawBoard();
     }
 
@@ -131,6 +148,7 @@ public class AdminLevelSettingsBoard : MonoBehaviour
     (
         Rl.saveClipBoard.BoardWidth,
         Rl.saveClipBoard.BoardHeight,
+        Rl.saveClipBoard.NoMatches,
         Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs
             .LevelConfigs[Rl.adminLevelSettingsPanel.LevelAdminLevelSettingsLevelNumber].BoardDimensionsConfig
             .FruitsConfigParent,
@@ -142,7 +160,7 @@ public class AdminLevelSettingsBoard : MonoBehaviour
     public GraphicConfig SaveBorderGraphicSetting()
     {
         return new GraphicConfig(
-            Rl.saveClipBoard.BorderGraphic,
+            Rl.saveClipBoard.BorderGraphic[FieldState.CurrentField],
         Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs
             .LevelConfigs[Rl.adminLevelSettingsPanel.LevelAdminLevelSettingsLevelNumber].GraphicConfig.LevelCategory,
         Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs
@@ -162,15 +180,14 @@ public class AdminLevelSettingsBoard : MonoBehaviour
 
         if (width)
         {
-            Rl.saveClipBoard.BoardWidth= Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[level]
-                .BoardDimensionsConfig.Width;
-            BoardWidthSlider.value = Rl.saveClipBoard.BoardWidth;
+            Rl.saveClipBoard.BoardWidth[FieldState.CurrentField]= Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[level]
+                .BoardDimensionsConfig.Width[FieldState.CurrentField];
+            BoardWidthSlider.value = Rl.saveClipBoard.BoardWidth[FieldState.CurrentField];
         }
         else
         {
-            Rl.saveClipBoard.BoardHeight = Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[level]
-                .BoardDimensionsConfig.Height;
-            BoardHeightSlider.value = Rl.saveClipBoard.BoardHeight;
+            Rl.saveClipBoard.BoardHeight[FieldState.CurrentField] = Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[level].BoardDimensionsConfig.Height[FieldState.CurrentField];
+            BoardHeightSlider.value = Rl.saveClipBoard.BoardHeight[FieldState.CurrentField];
         }
     }
     
@@ -188,17 +205,17 @@ public class AdminLevelSettingsBoard : MonoBehaviour
         switch (p1)
         {
             case true:
-                if (nextGameType) gameType = NextGameType((int)Rl.saveClipBoard.GameTypeP1.GameType);
-                else gameType = Rl.saveClipBoard.GameTypeP1.GameType;
+                if (nextGameType) gameType = NextGameType((int)Rl.saveClipBoard.GameTypeP1[FieldState.CurrentField].GameType);
+                else gameType = Rl.saveClipBoard.GameTypeP1[FieldState.CurrentField].GameType;
                 gameTypeP1Button.text = LocalisationSystem.GetLocalisedString(StringMatchStyle(gameType));
-                Rl.saveClipBoard.GameTypeP1.GameType= gameType;
+                Rl.saveClipBoard.GameTypeP1[FieldState.CurrentField].GameType= gameType;
                 break;
             
             case false:
-                if (nextGameType) gameType = NextGameType((int)Rl.saveClipBoard.GameTypeP2.GameType);
-                else gameType = Rl.saveClipBoard.GameTypeP2.GameType;
+                if (nextGameType) gameType = NextGameType((int)Rl.saveClipBoard.GameTypeP2[FieldState.CurrentField].GameType);
+                else gameType = Rl.saveClipBoard.GameTypeP2[FieldState.CurrentField].GameType;
                 gameTypeP2Button.text = LocalisationSystem.GetLocalisedString(StringMatchStyle(gameType));
-                Rl.saveClipBoard.GameTypeP2.GameType = gameType;
+                Rl.saveClipBoard.GameTypeP2[FieldState.CurrentField].GameType = gameType;
                 break;
         }
         ValueChangeCheck();
@@ -230,4 +247,20 @@ public class AdminLevelSettingsBoard : MonoBehaviour
     }
     private string StringMatchStyle(GameType gameType) => Enum.GetName(typeof(GameType), (int)gameType);
     
+    
+    // public void LoadCurrentField()
+    // {
+    //     RemoveListeners();
+    //
+    //     Addlisteners();
+    // }
+    public void LoadCurrentField()
+    {
+        RemoveListeners();
+        ClipBoardToSlider();
+        ValueChangeCheck();
+        Rl.BoardPreview.ResetLastClicked();
+        Rl.BoardPreview.StartDrawBoard();
+        AddListener();
+    }
 }

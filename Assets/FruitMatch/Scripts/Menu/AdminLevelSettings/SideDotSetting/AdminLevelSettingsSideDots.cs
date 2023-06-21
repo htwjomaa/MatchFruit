@@ -154,7 +154,7 @@ public class AdminLevelSettingsSideDots : MonoBehaviour
       Rl.saveClipBoard.SideFruitsFieldConfigs.SideFruitsConfig[FieldState.CurrentField].BottomActive = SideFruitsFieldConfig.SideFruitsConfig[FieldState.CurrentField].BottomActive;
    }
 
-   public SideFruitsFieldConfig  SaveSideDotSettings() => (SideFruitsFieldConfig)GenericSettingsFunctions.GetCopy(Rl.saveClipBoard.SideFruitsFieldConfigs);
+   public SideFruitsFieldConfig  SaveSideDotSettings() => (SideFruitsFieldConfig)GenericSettingsFunctions.GetDeepCopy(Rl.saveClipBoard.SideFruitsFieldConfigs);
 
    private void SwitchEnabledBar(bool on, bool playNoSound, bool animation)
    {
@@ -249,7 +249,7 @@ public class AdminLevelSettingsSideDots : MonoBehaviour
    public void CopyField(byte fieldOne, byte fieldTwo)
    {
       Rl.saveClipBoard.SideFruitsFieldConfigs.SideFruitsConfig[fieldTwo] =
-         (SideFruitsConfig)GenericSettingsFunctions.GetCopy(Rl.saveClipBoard.SideFruitsFieldConfigs.SideFruitsConfig[fieldOne]);
+         (SideFruitsConfig)GenericSettingsFunctions.GetDeepCopy(Rl.saveClipBoard.SideFruitsFieldConfigs.SideFruitsConfig[fieldOne]);
       LoadCurrentField();
    }
 

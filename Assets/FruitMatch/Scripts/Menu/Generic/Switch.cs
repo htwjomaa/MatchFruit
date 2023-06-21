@@ -8,7 +8,6 @@ public sealed class Switch : MonoBehaviour
     [SerializeField] private GameObject SwitchBackgroundOn;
     [SerializeField] private GameObject SwitchButtonOff;
     [SerializeField] private GameObject SwitchBackgroundOff;
-  
     [SerializeField] public string UniqueIdentifier;
     
     public void SwitchButton(bool on, bool playNoSound, bool animation = true)

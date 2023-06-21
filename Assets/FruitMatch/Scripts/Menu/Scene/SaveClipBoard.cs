@@ -33,12 +33,13 @@ public class SaveClipBoard : ScriptableObject
     public void InitPhaseGoalList() => GenericSettingsFunctions.InitPhaseGoalList(ref PhaseGoalsList);
     
     [Header("Board Settings")]
-    public int BoardWidth;
-    public int BoardHeight;
-    public bool P1P2;
-    public EndGameRequirements GameTypeP1;
-    public EndGameRequirements GameTypeP2;
-    public bool BorderGraphic;
+    public int[] BoardWidth;
+    public int[] BoardHeight;
+    public bool[] P1P2;
+    public bool[] NoMatches;
+    public EndGameRequirements[] GameTypeP1;
+    public EndGameRequirements[] GameTypeP2;
+    public bool[] BorderGraphic;
     
     [Header("TileKinds")] 
     

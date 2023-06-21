@@ -502,8 +502,8 @@ public sealed class Board : MonoBehaviour
     }
     private void GetLevelDimensionFromSaveData(ref Level level, int levelNumber)
     {
-        level.height = Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[levelNumber].BoardDimensionsConfig.Height;
-        level.width = Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[levelNumber].BoardDimensionsConfig.Width;
+        level.height = Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[levelNumber].BoardDimensionsConfig.Height[0];
+        level.width = Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[levelNumber].BoardDimensionsConfig.Width[0];
         
     }
     private void LoseCoupling()

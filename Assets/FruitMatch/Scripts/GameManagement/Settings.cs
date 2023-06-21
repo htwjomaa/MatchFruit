@@ -282,7 +282,7 @@ if(Rl.GameManager != null && Rl.GameManager.gameManagerAudioSource !=null )    R
   UpdateSideDotAlphaLive();
   if (Application.isPlaying)
   {
-   Rl.GameManager.gameManagerAudioSource.volume = GetMusicVolume * GetMasterVolume;
+if(Rl.GameManager != null && Rl.GameManager.gameManagerAudioSource != null)   Rl.GameManager.gameManagerAudioSource.volume = GetMusicVolume * GetMasterVolume;
    Rl.effects.audioSource.volume = GetSFXVolume * GetMasterVolume;
    Rl.uiSounds.audioSource.volume = GetUISoundVolume * GetMasterVolume;
   }

@@ -25,7 +25,7 @@ public static class SwitchButtonFruitsManager
   }
     public  static void LoadAllFruitSettings(BoardDimensionsConfig boardDimensionsConfig)
     {
-        Rl.saveClipBoard.FruitClipboardParent = (FruitsConfigParent[])GenericSettingsFunctions.GetCopy(boardDimensionsConfig.FruitsConfigParent);
+        Rl.saveClipBoard.FruitClipboardParent = (FruitsConfigParent[])GenericSettingsFunctions.GetDeepCopy(boardDimensionsConfig.FruitsConfigParent);
         InvokeLoadEvent();
     }
     
@@ -183,7 +183,7 @@ public static class SwitchButtonFruitsManager
                     .AllSaveFileLevelConfigs.LevelConfigs[level].BoardDimensionsConfig.FruitsConfigParent);
             Array.Resize(ref Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[level].BoardDimensionsConfig.FruitsConfigParent[i].fruitClipboards, Rl.saveClipBoard.FruitClipboardParent[i].fruitClipboards.Length);
             Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[level].BoardDimensionsConfig.FruitsConfigParent[i]
-                = (FruitsConfigParent)GenericSettingsFunctions.GetCopy(Rl.saveClipBoard.FruitClipboardParent[i]);
+                = (FruitsConfigParent)GenericSettingsFunctions.GetDeepCopy(Rl.saveClipBoard.FruitClipboardParent[i]);
         }
     }
 }

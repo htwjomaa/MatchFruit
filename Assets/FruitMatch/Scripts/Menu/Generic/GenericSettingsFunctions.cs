@@ -163,7 +163,7 @@ public sealed class GenericSettingsFunctions : MonoBehaviour, IPointerUpHandler
         for (int i = 0; i < parent.transform.childCount; i++) Destroy(parent.transform.GetChild(i).gameObject);
         return true;
     }
-    public static object GetCopy(object input)
+    public static object GetDeepCopy(object input)
     {
         using (MemoryStream stream = new MemoryStream())
         {

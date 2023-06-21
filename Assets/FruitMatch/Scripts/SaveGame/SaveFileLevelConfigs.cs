@@ -443,17 +443,19 @@ public struct LayoutConfig
 [Serializable]
 public struct BoardDimensionsConfig
 {
-    public int Width;
-    public int Height;
+    public int[] Width;
+    public int[] Height;
+    public bool[] NoMatches;
     public FruitsConfigParent[] FruitsConfigParent;
-    public bool P1P2;
-    public EndGameRequirements GameTypeP1;
-    public EndGameRequirements GameTypeP2;
+    public bool[] P1P2;
+    public EndGameRequirements[] GameTypeP1;
+    public EndGameRequirements[] GameTypeP2;
 
-    public BoardDimensionsConfig(int width, int height, FruitsConfigParent[] fruitsConfigParent, bool p1P2, EndGameRequirements gameTypeP1, EndGameRequirements gameTypeP2)
+    public BoardDimensionsConfig(int[] width, int[] height, bool[] noMatches, FruitsConfigParent[] fruitsConfigParent, bool[] p1P2, EndGameRequirements[] gameTypeP1, EndGameRequirements[] gameTypeP2)
     {
         Width = width;
         Height = height;
+        NoMatches = noMatches;
         FruitsConfigParent = fruitsConfigParent;
         P1P2 = p1P2;
         GameTypeP1 = gameTypeP1;

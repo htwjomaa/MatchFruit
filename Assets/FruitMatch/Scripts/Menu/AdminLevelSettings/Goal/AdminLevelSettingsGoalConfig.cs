@@ -286,12 +286,12 @@ public class AdminLevelSettingsGoalConfig : MonoBehaviour
     }
     public void LoadToClipboard(GoalConfig goalConfig)
     {
-        Rl.saveClipBoard.PhaseGoalsList = (List<PhaseGoals>)GenericSettingsFunctions.GetCopy(goalConfig.PhaseGoalsList);
+        Rl.saveClipBoard.PhaseGoalsList = (List<PhaseGoals>)GenericSettingsFunctions.GetDeepCopy(goalConfig.PhaseGoalsList);
     }
 
     public GoalConfig SaveGoalConfigs()
     {
-        return new GoalConfig((List<PhaseGoals>)GenericSettingsFunctions.GetCopy(Rl.saveClipBoard.PhaseGoalsList));
+        return new GoalConfig((List<PhaseGoals>)GenericSettingsFunctions.GetDeepCopy(Rl.saveClipBoard.PhaseGoalsList));
     }
     public static bool PlayNoSound = false;
     public void SetSwitches()
@@ -324,14 +324,14 @@ public class AdminLevelSettingsGoalConfig : MonoBehaviour
 
     private void SwitchAdditiveAndGoalOnly(bool isadditiveButton, bool on, bool playNoSound)
     {
-        if (isadditiveButton) SwitchButtonAdditive.SwitchButton(on, playNoSound);
-        else SwitchButtonGoalOnly.SwitchButton(on, playNoSound);
+        if (isadditiveButton) SwitchButtonAdditive.SwitchButton(on, playNoSound, false);
+        else SwitchButtonGoalOnly.SwitchButton(on, playNoSound, false);
     }
     
     private void SwitchEnabledAndAllowSimilar(bool isAllowSimilarButton, bool on, bool playNoSound)
     {
-        if (isAllowSimilarButton) SwitchButtonAllowSimilar.SwitchButton(on, playNoSound);
-        else SwitchButtonEnabledGoal.SwitchButton(on, playNoSound);
+        if (isAllowSimilarButton) SwitchButtonAllowSimilar.SwitchButton(on, playNoSound, false);
+        else SwitchButtonEnabledGoal.SwitchButton(on, playNoSound, false);
     }
 
     public void ClickNextFruitOrColor(GoalNumber goalNumber, bool isFruitNotColor, ref TextMeshProUGUI buttonToChangeTheText,  ref TextMeshProUGUI sibling)

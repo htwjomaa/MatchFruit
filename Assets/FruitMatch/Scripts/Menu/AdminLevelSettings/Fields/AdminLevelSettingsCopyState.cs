@@ -4,7 +4,7 @@ using System;
 public static class FieldState
 {
     
-    private static byte _currentField;
+    private static byte _currentField = 0;
     public static byte CurrentField
     {
         get => _currentField;
@@ -30,6 +30,7 @@ public static class FieldState
             case CopySection.NotApplicable:
                 break;
             case CopySection.BoardSettings:
+                Rl.adminLevelSettingsBoard.LoadCurrentField();
                 break;
             case CopySection.TileSettings:
                 Rl.adminLevelSettingsTiles.LoadCurrentField();
