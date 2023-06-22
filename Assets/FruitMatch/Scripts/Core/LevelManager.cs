@@ -674,7 +674,8 @@ namespace FruitMatch.Scripts.Core
             gameStatus = GameState.Win;
         }
 
-        private IEnumerator PreWinLoop(int limit)
+        
+          private IEnumerator PreWinLoop(int limit)
         {
             var items = field.GetRandomItems(levelData.limitType == LIMIT.MOVES ? limit : 5);
             var list = new List<object>();
@@ -742,10 +743,7 @@ namespace FruitMatch.Scripts.Core
         private void Update()
         {
             //  AvctivatedBoostView = ActivatedBoost;
-            if (Input.GetKeyDown(DebugSettings.Regen) && DebugSettings.enableHotkeys)
-            {
-                NoMatches();
-            }
+            if (Input.GetKeyDown(DebugSettings.Regen) && DebugSettings.enableHotkeys) NoMatches();
 
             if (Input.GetKeyDown(DebugSettings.Win) && DebugSettings.enableHotkeys)
             {
@@ -1054,12 +1052,13 @@ namespace FruitMatch.Scripts.Core
 
         private IEnumerator FallingDown()
         {
+           // avoided = false;
             findMatchesStarted = true;
 //        Debug.Log("@@@ Next Move search matches @@@");
             THIS.thrivingBlockDestroyed = false;
             combo = 0;
             AI.THIS.allowShowTip = false;
-            var it = field.GetItems();
+            List<Item> it = field.GetItems();
             for (var i = 0; i < it.Count; i++)
             {
                 var item = it[i];
@@ -1078,25 +1077,28 @@ namespace FruitMatch.Scripts.Core
                 var destroyItemsListed = field.GetItems().Where(i => i.destroyNext).ToList();
                 if (destroyItemsListed.Count > 0)
                 {
-                    avoided = false;
+                  //  avoided = false;
                     yield return new WaitWhileDestroyPipeline(destroyItemsListed, new Delays());
                 }
                   
-                else avoided = true;
+              //  else avoided = true;
                 yield return new WaitWhileDestroying();
                 yield return new WaitWhile(()=>StopFall);
                 yield return new WaitWhileFall();
                 yield return new WaitWhileCollect();
 //            yield return new WaitWhileFallSide();
                 var combineCount = CombineManager.GetCombines(field);
-                if ((combineCount.Count <= 0 || !combineCount.SelectMany(i => i.items).Any()) && !field.DestroyingItemsExist() && !field.GetEmptySquares().Any() &&
+                if ((combineCount.Count <= 0 || !combineCount.SelectMany(i => i.items).Any()) &&
+                    !field.DestroyingItemsExist() && !field.GetEmptySquares().Any() &&
                     !checkMatchesAgain)
                 {
                     break;
                 }
+              
 
                 if(destLoopIterations > 1)
                 {
+                  //  avoided = false;
                     var combines = combineCount.Where(i=>i.items.All(x=>!x.dontDestroyForThisCombine)).ToList();
                     foreach (var combine in combines)
                     {
@@ -1112,6 +1114,7 @@ namespace FruitMatch.Scripts.Core
 
             if (combo > 2 && gameStatus == GameState.Playing)
             {
+               // avoided = false;
                 gratzWords[Random.Range(0, gratzWords.Length)].SetActive(true);
                 combo = 0;
                 OnCombo?.Invoke();
@@ -1121,11 +1124,11 @@ namespace FruitMatch.Scripts.Core
             DragBlocked = false;
             findMatchesStarted = false;
             checkMatchesAgain = false;
-            if (avoided && !GenericFunctions.IsSubstractiveState(levelData.limitType))
-            {
-                avoided = false;
-                avoidedLateUpdate = true;
-            }
+          //  if (avoided && !GenericFunctions.IsSubstractiveState(levelData.limitType))
+           // {
+             //   avoided = false;
+            //    avoidedLateUpdate = true;
+          //  }
             if (gameStatus == GameState.Playing)
                 StartCoroutine(AI.THIS.CheckPossibleCombines());
 
@@ -1144,17 +1147,21 @@ namespace FruitMatch.Scripts.Core
                     THIS.CheckWinLose();
                 }
             }
-            
-        }
 
-        private void LateUpdate()
-        {
             if (avoidedLateUpdate)
             {
-                levelData.limit++;
-                avoidedLateUpdate = false;
+                //levelData.limit--;
             }
-            
+            else levelData.limit++;
+
+            avoidedLateUpdate = false;
+           // StartCoroutine(AvoidedCo(0.00001f));
+        }
+
+        private IEnumerator AvoidedCo(float sec)
+        {
+            yield return new WaitForSeconds(sec);
+        
         }
 
         /// <summary>

@@ -106,19 +106,12 @@ using System.Linq;
 
         }
 
-        public Target GetTargetObject()
-        {
-            return targetObject;
-        }
-        public SquareBlocks GetBlock(int row, int col)
-        {
-            return GetField().levelSquares[row * GetField().maxCols + col];
-        }
+        public Target GetTargetObject() => targetObject;
 
-        public SquareBlocks GetBlock(Vector2Int vec)
-        {
-            return GetBlock(vec.y, vec.x);
-        }
+        public SquareBlocks GetBlock(int row, int col) => GetField().levelSquares[row * GetField().maxCols + col];
+
+        public SquareBlocks GetBlock(Vector2Int vec) => GetBlock(vec.y, vec.x);
+
         public FieldData AddNewField()
         {
             var fieldData = new FieldData();
@@ -185,8 +178,7 @@ using System.Linq;
             if (skipStars) return TargetCounters.Where(i => !i.IsTargetStars()).TryGetElement(0)?.targetLevel;
             return TargetCounters.First().targetLevel;
         }
-
-
+        
         public void SetTargetFromArray()
         {
             SetTarget(targetEditorArray.FindIndex(x => x.name == target.name));

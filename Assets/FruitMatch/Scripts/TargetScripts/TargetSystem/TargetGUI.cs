@@ -134,6 +134,8 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
 
         public static Vector2 GetTargetGUIPosition(string SpriteName)
         {
+            if (!GenericFunctions.IsSubstractiveState())
+                LevelManager.avoidedLateUpdate = true;
             var pos = Vector2.zero;
             var list = FindObjectsOfType(typeof(TargetGUI)) as TargetGUI[];
             foreach (var item in list)

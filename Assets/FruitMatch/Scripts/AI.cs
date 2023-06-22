@@ -186,10 +186,14 @@ namespace FruitMatch.Scripts
                 if (LevelManager.THIS.gameStatus != GameState.Playing && LevelManager.THIS.gameStatus != GameState.Tutorial)
                     yield break;
 
+                void CombineActionStack(int color)
+                {
+                    
+                }
 
                 //Iteration for search possible combination 
                 if (itemSprites != null)
-                    for (var COLOR = 0; COLOR < itemSprites.GetSprites(LevelManager.THIS.currentLevel).Length; COLOR++)
+                    for (int COLOR = 0; COLOR < itemSprites.GetSprites(LevelManager.THIS.currentLevel).Length; COLOR++)
                     {
                         if (changeTipAI && Random.Range(0, 2) == 1) continue;
                         for (var col = 0; col < LevelManager.THIS.levelData.maxCols; col++)
