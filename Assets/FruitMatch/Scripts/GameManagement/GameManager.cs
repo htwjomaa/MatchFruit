@@ -19,7 +19,6 @@ public sealed class GameManager : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         SetResIOS();
     }
-
     private void SetResIOS()
     {
         int height = Rl.settings.GetResolution.Height;

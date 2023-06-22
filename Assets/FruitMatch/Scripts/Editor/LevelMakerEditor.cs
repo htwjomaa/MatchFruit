@@ -1544,25 +1544,7 @@ namespace FruitMatch.Scripts.Editor
             //GUILayout.EndVertical();
             GUILayout.EndHorizontal();
         }
-
-        private void GUIMamalade()
-        {
-            GUILayout.BeginHorizontal();
-            {
-                GUILayout.Space(30);
-
-                GUILayout.Label("Marmalade",  GUILayout.Width(70));
-                bool s = false;
-                s = EditorGUILayout.Toggle(levelData.enableMarmalade, GUILayout.Width(50));
-                if (s != levelData.enableMarmalade)
-                {
-                    levelData.enableMarmalade = s;
-                    dirtyLevel = true;
-                    // SaveLevel();
-                }
-            }
-            GUILayout.EndHorizontal();
-        }
+        
 
         private void GUINoRegen()
         {
@@ -2673,7 +2655,7 @@ namespace FruitMatch.Scripts.Editor
 
         private void SaveToScriptable(int _levelNumber)
         {
-            levelData.InitTargetObjects();
+            levelData.InitTargetObjects(LIMIT.MOVES);
             SquareBlocks[] levelSquares = levelData.GetField(subLevelNumber - 1).levelSquares;
             for (int i = 0; i < levelSquares.Length; i++)
             {

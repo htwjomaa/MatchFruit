@@ -13,6 +13,7 @@ using Debug = UnityEngine.Debug;
 
 public sealed class LoadingHelper : MonoBehaviour
 {
+
   public GameObject[] BlockPrefabs;
  public GameObject[] ItemPrefabs;
  public ParticleSystem[] VanishParticleObjects;

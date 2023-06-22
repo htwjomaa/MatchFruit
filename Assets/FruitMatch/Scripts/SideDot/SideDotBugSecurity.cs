@@ -25,7 +25,6 @@ public sealed class SideDotBugSecurity : MonoBehaviour
             // if (dotComponentToAdd.Count - 1 == i)
            //  {
                  GameObject n = dotComponentToAdd[i].DotGameObject;
-                 SideDot.ItemEnableDisable( ref n, true);
                  dotComponentToAdd[i] = new DotObject(n, dotComponentToAdd[i].TargetSquare);
                  //     }
 
@@ -74,7 +73,7 @@ public sealed class SideDotBugSecurity : MonoBehaviour
                  //     dotComponentToAdd[i].TargetSquare.GetComponent<Square>().item = dotComponentToAdd[i].DotGameObject.GetComponent<Item>();
                  // }
              }
-                    
+             SideDot.ItemEnableDisable( ref n, true);      
          }
      }
      

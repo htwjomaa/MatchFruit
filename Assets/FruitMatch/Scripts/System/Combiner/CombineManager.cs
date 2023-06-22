@@ -36,10 +36,10 @@ namespace FruitMatch.Scripts.System.Combiner
 
         public List<List<Item>> GetCombinedItems(FieldBoard field, bool setNextItemType = false)
         {
-            var combinedItems = new List<List<Item>>();
+            List<List<Item>> combinedItems = new List<List<Item>>();
 
-            var combines = GetCombines(field);
-            foreach (var cmb in combines)
+            List<Combine> combines = GetCombines(field);
+            foreach (Combine cmb in combines)
             {
                 if (cmb.nextType != ItemsTypes.NONE)
                 {
@@ -396,8 +396,7 @@ namespace FruitMatch.Scripts.System.Combiner
                 if (item.square.row != PreviousItem().square.row)
                     return true;
             }
-            else
-                return true;
+            else return true;
 
             return false;
         }

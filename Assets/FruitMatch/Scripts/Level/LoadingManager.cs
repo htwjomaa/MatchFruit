@@ -362,12 +362,36 @@ namespace FruitMatch.Scripts.Level
 
             return squareBlocksList.ToArray();
         }
+
+        private static LIMIT TranslateLimitType(GameType gameType)
+        {
+            switch (gameType)
+            {
+                case GameType.Moves:
+                    return LIMIT.MOVES;
+                case GameType.Time:
+                    return LIMIT.TIME;
+                case GameType.Nothing:
+                    return LIMIT.MOVES;
+                case GameType.EmptyMoves:
+                    return LIMIT.AVOID;
+                case GameType.NoEmptyMoves:
+                    return LIMIT.MOVES;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(gameType), gameType, null);
+            }
+        }
+        
         public static LevelData LoadForPlay(int currentLevel, LevelData levelData)
         {
+        
+            
             Rl.goalManager.TranslateGoals();
             LevelConfig = Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[CurrentLevelToload-1];
             levelData = new LevelData(Application.isPlaying, CurrentLevelToload );
             levelData = LoadlLevel(CurrentLevelToload , levelData).DeepCopyForPlay(CurrentLevelToload );
+            GameType gameType = LevelConfig.BoardDimensionsConfig.GameTypeP1[0].GameType;
+            LIMIT limit = TranslateLimitType(gameType);
             TranslateData();
             List<TileSettingConfig> tileSettingConfigs = TranslateToRightDownDimension(LevelConfig.TileSettingFieldConfigs[0].TileSettingConfigs.ToList().ToArray());
             TranslateDirections(tileSettingConfigs,ref levelData);
@@ -375,7 +399,7 @@ namespace FruitMatch.Scripts.Level
             TranslateBlocks(tileSettingConfigs, ref levelData);
             levelData.LoadTargetObject();
 
-            levelData.InitTargetObjects(true);
+            levelData.InitTargetObjects(limit, true);
             Rl.adminLevelSettingsLookDev.SetBackgroundImage();
 
             for (int i = 0; i < levelData.fields.Count; i++)
@@ -391,18 +415,10 @@ namespace FruitMatch.Scripts.Level
                     LoadingHelper.THIS.height = LevelConfig.BoardDimensionsConfig.Height[i];
                     LoadingHelper.THIS.width = LevelConfig.BoardDimensionsConfig.Width[i];
                     levelData.fields[i].noRegenLevel = false;
+                   
                     levelData.fields[i].noMatches = LevelConfig.BoardDimensionsConfig.NoMatches[i];
                 }
                 
-            
-
-                LIMIT limit = LIMIT.MOVES;
-                GameType gameType = GameType.Moves;
-                if (LevelConfig.BoardDimensionsConfig.GameTypeP1[0].GameType == GameType.Time)
-                {
-                    limit = LIMIT.TIME;
-                    gameType = GameType.Time;
-                }
                 levelData.star1 =
                     GenericSettingsFunctions.GetConstvaluesMovesTime(LevelConfig.ScoreGoalsConfig.Star1Value,
                         gameType);
@@ -412,11 +428,18 @@ namespace FruitMatch.Scripts.Level
                 levelData.star3 =
                     GenericSettingsFunctions.GetConstvaluesMovesTime(LevelConfig.ScoreGoalsConfig.Star3Value,
                         gameType);
-                levelData.limit = GenericSettingsFunctions.GetConstvaluesMovesTime(LevelConfig.BoardDimensionsConfig.GameTypeP1[0].CounterValue, gameType);
-                
+
+                if (GenericFunctions.IsSubstractiveState(limit))
+                    levelData.limit = GenericSettingsFunctions.GetConstvaluesMovesTime(LevelConfig.BoardDimensionsConfig.GameTypeP1[0].CounterValue, gameType);
+                else
+                {
+                    LevelManager.THIS.LimitHelper = GenericSettingsFunctions.GetConstvaluesMovesTime(LevelConfig.BoardDimensionsConfig.GameTypeP1[0].CounterValue, gameType);
+                    levelData.limit = 0;
+                }
+                  
                 levelData.limitType = limit;
                 levelData.enableMarmalade = true;
-                
+
                 // levelData.Name = LevelConfig.LevelTextConfig[LevelManager.THIS.currentLevel-1].LevelName;
                 loadedSprites = GetLoadedSprites( LoadingHelper.THIS.Sprites);
                 loadedMarmaladeSprites = GetLoadedSprites(LoadingHelper.THIS.Marmalades);

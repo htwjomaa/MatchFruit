@@ -83,6 +83,7 @@ MonoBehaviour:
     - starWin3
     - gameOver1
     - gameOver2
+    - vanish
     m_Values:
     - clipName: Heart of the Jungle
       index: 0
@@ -223,6 +224,8 @@ MonoBehaviour:
       index: 67
     - clipName: Game_over_2
       index: 68
+    - clipName: comedy_bubble_pop_001
+      index: 69
   allAudioSettings:
   - audioClip: {fileID: 8300000, guid: 0bd23a3b387d9654ea99ae2c7afe31d9, type: 3}
     noPitching: 0
@@ -983,5 +986,16 @@ MonoBehaviour:
     - 0
     - 0.1
     - 0.2
-  input: showItems
-  audioClip: {fileID: 8300000, guid: a7c47126c938f814c88422c55c8ca026, type: 3}
+  - audioClip: {fileID: 8300000, guid: 681bd0f8741d35d4aafeb64c9e96e02b, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 29.8
+    fixedVolume: 0
+    pitch:
+    - -0.2
+    - -0.1
+    - 0
+    - 0.1
+    - 0.2
+  input: vanish
+  audioClip: {fileID: 8300000, guid: 681bd0f8741d35d4aafeb64c9e96e02b, type: 3}

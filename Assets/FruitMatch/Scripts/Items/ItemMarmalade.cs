@@ -43,7 +43,7 @@ namespace FruitMatch.Scripts.Items
             else if( switchItemType == ItemsTypes.MULTICOLOR)
                 item2?.DestroyBehaviour();
             else if(noMarmaladeLaunch) DestroyBehaviour();
-            GetParentItem().square.DestroyBlock();
+            if(GetParentItem() != null)GetParentItem().square.DestroyBlock();
         }
 
         private void DestroySecond(Item item1, Item item2)

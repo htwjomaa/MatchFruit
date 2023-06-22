@@ -266,7 +266,7 @@ using System.Linq;
           // targetLevel.targets[0].sprites[0].icon =  Rl.world.GetGoalSprite(objSettings[0].PhaseGoalArray[0].GoalFruit);
             return targetLevel;
         }
-        public void InitTargetObjects(bool forPlay = false)
+        public void InitTargetObjects(LIMIT limitType, bool forPlay = false)
         {
             if(forPlay)
             {
@@ -285,10 +285,22 @@ using System.Linq;
                 TargetCounters = _TargetCounters.ToList();//subTargetsContainers.ToArray();
                 TargetCounters.RemoveAll(i => i.targetLevel.setCount == SetCount.Manually && i.count == 0);
                 var Goals = Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[LoadingManager.CurrentLevelToload-1].GoalConfig.PhaseGoalsList[0].ObjectiveSettingsArray[0].PhaseGoalArray;
-                for (int i = 0; i < _TargetCounters.Count; i++)
+                
+                if (GenericFunctions.IsSubstractiveState(limitType))
                 {
-                    _TargetCounters[i].count = Mathf.Abs((int)Goals[i].CollectionAmount);
+                    for (int i = 0; i < _TargetCounters.Count; i++)
+                    {
+                        _TargetCounters[i].count = Mathf.Abs((int)Goals[i].CollectionAmount);
+                    }
                 }
+                else
+                {
+                    for (int i = 0; i < _TargetCounters.Count; i++)
+                    {
+                        _TargetCounters[i].count = Int32.MaxValue;
+                    }
+                }
+            
               
             }
             targetObject.subTargetContainers = subTargetsContainers.ToArray();

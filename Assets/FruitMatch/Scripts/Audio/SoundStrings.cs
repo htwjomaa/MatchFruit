@@ -60,6 +60,7 @@ public sealed class SoundStrings : MonoBehaviour
    public string BoostColorReplace = "boostColorReplace";
    public string BoostBomb = "boostBomb";
    public string Click = "click";
+   public string Vanish = "vanish";
    public string MenuBackgroundMusic = "menubgmusic";
    public string MenuBackgroundMusic2 = "curiosity";
 }

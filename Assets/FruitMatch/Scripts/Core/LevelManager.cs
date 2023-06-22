@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,6 +47,8 @@ namespace FruitMatch.Scripts.Core
     /// </summary>
     public class LevelManager : MonoBehaviour
     {
+           //public movePlayedtoSubstract;
+        public int LimitHelper = 0;
         public static LevelManager THIS;
         public bool enableInApps; //true if Unity in-apps is enable and imported
         public float squareWidth = 1.2f; //square width for border placement
@@ -428,7 +431,10 @@ namespace FruitMatch.Scripts.Core
         public GameObject FieldBoardPrefab;
         public LevelData levelData;
         internal bool tutorialTime;
-    
+
+        public static bool avoided;
+
+        public static bool avoidedLateUpdate;
         //Generate loaded level
         private void GenerateLevel()
         {
@@ -542,13 +548,9 @@ namespace FruitMatch.Scripts.Core
             }
         }
 
-        //Check win or lose conditions
-        public void CheckWinLose()
-        {
-            var lose = false;
-            var win = false;
-            Debug.Log("Win Limit is : " + levelData.limit);
 
+        private void SubtractiveLimitType(ref bool lose, ref bool win)
+        {
             if (levelData.limit <= 0)
             {
                 levelData.limit = 0;
@@ -567,6 +569,52 @@ namespace FruitMatch.Scripts.Core
                 else if (levelData.IsTargetReachedSublevel() && fieldBoards.Count>1)
                     gameStatus = GameState.ChangeSubLevel;
             }
+        }
+        
+        private void AdditiveLimitType(ref bool lose, ref bool win)
+        {
+            if (levelData.limit >= LimitHelper)
+            {
+                levelData.limit = 0;
+
+                if (!levelData.IsTotalTargetReached())
+                    lose = true;
+                else win = true;
+            }
+
+            else
+            {
+                if (levelData.IsTotalTargetReached() && !levelData.WaitForMoveOut())
+                {
+                    win = true;
+                }
+                else if (levelData.IsTargetReachedSublevel() && fieldBoards.Count>1)
+                    gameStatus = GameState.ChangeSubLevel;
+            }
+        }
+        //Check win or lose conditions
+        public void CheckWinLose()
+        {
+            var lose = false;
+            var win = false;
+            Debug.Log("Win Limit is : " + levelData.limit);
+
+
+            switch (levelData.limitType)
+            {
+                case LIMIT.MOVES:
+                    SubtractiveLimitType(ref lose, ref win);
+                    break;
+                case LIMIT.TIME:
+                    SubtractiveLimitType(ref lose, ref win);
+                    break;
+                case LIMIT.AVOID:
+                    AdditiveLimitType(ref lose, ref win);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+         
 
             if (lose)
             {
@@ -1029,7 +1077,12 @@ namespace FruitMatch.Scripts.Core
 
                 var destroyItemsListed = field.GetItems().Where(i => i.destroyNext).ToList();
                 if (destroyItemsListed.Count > 0)
+                {
+                    avoided = false;
                     yield return new WaitWhileDestroyPipeline(destroyItemsListed, new Delays());
+                }
+                  
+                else avoided = true;
                 yield return new WaitWhileDestroying();
                 yield return new WaitWhile(()=>StopFall);
                 yield return new WaitWhileFall();
@@ -1068,6 +1121,11 @@ namespace FruitMatch.Scripts.Core
             DragBlocked = false;
             findMatchesStarted = false;
             checkMatchesAgain = false;
+            if (avoided && !GenericFunctions.IsSubstractiveState(levelData.limitType))
+            {
+                avoided = false;
+                avoidedLateUpdate = true;
+            }
             if (gameStatus == GameState.Playing)
                 StartCoroutine(AI.THIS.CheckPossibleCombines());
 
@@ -1086,10 +1144,23 @@ namespace FruitMatch.Scripts.Core
                     THIS.CheckWinLose();
                 }
             }
+            
         }
+
+        private void LateUpdate()
+        {
+            if (avoidedLateUpdate)
+            {
+                levelData.limit++;
+                avoidedLateUpdate = false;
+            }
+            
+        }
+
         /// <summary>
         /// Get square by position
         /// </summary>
+        ///
         public Square GetSquare(int col, int row, bool safe = false)
         {
             return field.GetSquare(col, row, safe);

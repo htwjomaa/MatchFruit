@@ -50,11 +50,9 @@ public sealed class SideDot : MonoBehaviour
         }
        
     }
-    private void Start()
-    {
-//        Debug.Log("I have been added!!!");
+    private void Start() =>
+        //        Debug.Log("I have been added!!!");
         PrepareSideDotDelayed(0.33f);
-    }
 
     public void PrepareSideDotDelayed(float seconds)
     {
@@ -106,6 +104,7 @@ public sealed class SideDot : MonoBehaviour
         {
             if (LevelManager.THIS.levelData.limitType == LIMIT.MOVES)
                 LevelManager.THIS.levelData.limit--;
+            
             LevelManager.THIS.moveID++;
         }
 
@@ -138,7 +137,7 @@ public sealed class SideDot : MonoBehaviour
                 color = new Color(color.r, color.g, color.b, 0f);
                 t.color = color;
             }
-
+           
             playVanishParticle(0);
 
         }
@@ -151,6 +150,7 @@ public sealed class SideDot : MonoBehaviour
         if (!particlePlayed)
         {
             LoadingHelper.THIS.VanishParticleObjects[particleNumber].gameObject.SetActive(true);
+            Rl.GameManager.PlayAudio(Rl.soundStrings.Vanish, Random.Range(0,5), Rl.settings.GetSFXVolume, Rl.effects.audioSource);
             StartCoroutine(ParticleActiveSecurityCo(2f));
         }
     }
@@ -207,7 +207,16 @@ public sealed class SideDot : MonoBehaviour
        LevelManager.THIS.FindMatches();
        LoadingHelper.THIS.sideDotBool = true;
        //CheckIfItemsAreStillValid();
-   OtherSideDotForPrepapre.GetComponent<SideDot>().PrepareSideDot();
+       OtherSideDotForPrepapre.GetComponent<SideDot>().PrepareSideDot();
+     if(OtherSideDotForPrepapre != null && OtherSideDotForPrepapre.GetComponent<SideDot>() != null) OtherSideDotForPrepapre.GetComponent<SideDot>().PrepareSideDot();
+     // else
+     // {
+     //     SideDot[] n = FindObjectsOfType<SideDot>();
+     //     for (int i = 0; i < n.Length; i++)
+     //     {
+     //         if(n[i].iconObj == null) n[i].PrepareSideDot();
+     //     }
+     // }
       if(!onlyDot) Destroy(GetComponent<SideDot>());
       else collectedMovePositions = null;
     }

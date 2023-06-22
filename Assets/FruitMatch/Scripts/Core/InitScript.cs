@@ -157,11 +157,7 @@ namespace FruitMatch.Scripts.Core
     public enum LIMIT
     {
         MOVES,
-        TIME
-    }
-    /// reward type for rewarded ads watching
-    public enum RewardsType
-    {
-        FreeAction
+        TIME,
+        AVOID
     }
 }
