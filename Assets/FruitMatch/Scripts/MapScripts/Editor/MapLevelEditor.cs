@@ -8,5 +8,6 @@ namespace FruitMatch.Scripts.MapScripts.Editor
     [CustomEditor(typeof(MapLevel))]
     public class MapLevelEditor : LevelsEditorBase
     {
+        //empty
     }
 }

@@ -60,10 +60,7 @@ namespace FruitMatch.Scripts.GUI.Boost
             boostName.text = boost.GetName();
             callback = callbackL;
         }
-
-        /// <summary>
-        /// Purchase boost button function
-        /// </summary>
+        
         [UsedImplicitly]
         public void BuyBoost(GameObject button)
         {
