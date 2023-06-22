@@ -11,6 +11,7 @@ using FruitMatch.Scripts.System.Combiner;
 using FruitMatch.Scripts.TargetScripts.TargetSystem;
 using FruitMatch.Scripts.System.Pool;
 using FruitMatch.Scripts.TargetScripts.TargetEditor;
+using NaughtyAttributes;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -22,12 +23,12 @@ using Random = UnityEngine.Random;
      public class FieldBoard : MonoBehaviour
      {
          // public SquareBlocks[] fieldData.levelSquares = new SquareBlocks[81];
+      
          public GameObject squarePrefab;
          public Sprite squareSprite1;
          public GameObject outline1;
          public GameObject outline2;
          public GameObject outline3;
-
          // public int fieldData.maxRows = 9;
          // public int fieldData.maxCols = 9;
          public float squareWidth = 1.2f;
@@ -132,8 +133,45 @@ using Random = UnityEngine.Random;
              // LevelManager.This.gameStatus = GameState.WaitForPopup;
 
              // SetPos(Vector2.zero);
+           //  StartCoroutine(GetSequenceCO(0.15f));
          }
 
+         IEnumerator GetSequenceCO(float sec)
+         {
+             yield return new WaitForSeconds(sec);
+             GetSquence();
+         }
+
+         
+         public List<int> Sequence = new List<int>();
+         [Button()] private void GetSquence()
+         {
+             Sequence = new List<int>();
+             TargetGUI[] n = FindObjectsByType<TargetGUI>(FindObjectsSortMode.None);
+             List<Sprite> targetSprites = new List<Sprite>();
+             Dictionary<Sprite, int> allSpriteColors = new Dictionary<Sprite, int>();
+             for (int i = 0; i < fieldData.levelSquares.Length; i++)
+             {
+                 if (fieldData.levelSquares[i] != null && fieldData.levelSquares[i].item != null &&     fieldData.levelSquares[i].item.ItemType == ItemsTypes.NONE && fieldData.levelSquares[i].item.Item.GetComponent<IColorableComponent>() != null)
+                 {
+                     var colorableComponent = fieldData.levelSquares[i].item.Item.GetComponent<IColorableComponent>();
+                     var sprite = colorableComponent.directSpriteRenderer.sprite;
+                     var sprtColor = colorableComponent.color;
+                     allSpriteColors.TryAdd(sprite, sprtColor);
+                 }
+             }
+             for (int i = 0; i < n.Length; i++)
+             {
+                 targetSprites.Add(n[i].image.sprite);
+             }
+             
+             for (int i = 0; i < targetSprites.Count; i++)
+             {
+                 int value; 
+                 allSpriteColors.TryGetValue(targetSprites[i], out value);
+                 Sequence.Add(value);
+             }
+         }
          /// <summary>
          /// Set order for the squares sequience 
          /// </summary>

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class SwitchButtonFruits : MonoBehaviour
+public class SwitchButtonFruit : MonoBehaviour
 {
  [SerializeField] private Colors fruitColor;
 

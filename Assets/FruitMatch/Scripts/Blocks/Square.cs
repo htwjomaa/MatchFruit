@@ -745,6 +745,7 @@ namespace FruitMatch.Scripts.Blocks
                 matches++;
             return matches;
         }
+
         /// <summary>
         /// Match 3 search methods
         /// </summary>
@@ -753,6 +754,27 @@ namespace FruitMatch.Scripts.Blocks
         /// <param name="separating"></param>
         /// <param name="countedSquaresGlobal"></param>
         /// <returns></returns>
+
+
+        private bool SequenceCombiner(int spr_COLOR)
+        {
+            for (int i = 0; i < LoadingHelper.THIS.TargetSequence.Count; i++)
+            {
+                if (LoadingHelper.THIS.TargetSequence[i] == spr_COLOR)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private void GameTypeCheck(int spr_COLOR)
+        {
+          //  if(GenericFunctions.IsSubstractiveState())
+                
+        }
+
         Hashtable FindMoreMatches(int spr_COLOR, Hashtable countedSquares, FindSeparating separating, Hashtable countedSquaresGlobal = null)
         {
             var globalCounter = true;
@@ -765,8 +787,12 @@ namespace FruitMatch.Scripts.Blocks
             if (Item == null || Item.destroying || Item.falling)
                 return countedSquares;
             //    if (LevelManager.This.countedSquares.ContainsValue(this.item) && globalCounter) return countedSquares;
-            if (Item.color == spr_COLOR && !countedSquares.ContainsValue(Item) && Item.currentType != ItemsTypes.INGREDIENT && Item.currentType != ItemsTypes.MULTICOLOR && !Item
+            
+              if ((Item.color == spr_COLOR )&& !countedSquares.ContainsValue(Item) && Item.currentType != ItemsTypes.INGREDIENT && Item.currentType != ItemsTypes.MULTICOLOR && !Item
                     .falling && Item.Combinable)
+
+                  // if (SequenceCombiner(spr_COLOR) && !countedSquares.ContainsValue(Item) && Item.currentType != ItemsTypes.INGREDIENT && Item.currentType != ItemsTypes.MULTICOLOR && !Item
+              //      .falling && Item.Combinable)
             {
                 if (LevelManager.THIS.onlyFalling && Item.JustCreatedItem)
                     countedSquares.Add(countedSquares.Count - 1, Item);

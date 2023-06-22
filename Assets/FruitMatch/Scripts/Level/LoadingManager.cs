@@ -21,7 +21,7 @@ namespace FruitMatch.Scripts.Level
     public static class LoadingManager 
     {
         private static LevelData levelData;
-        static string levelPath = "Assets/SweetSugar/Resources/Levels/";
+        static string levelPath = "Assets/FruitMatch/Resources/Levels/";
         public static LevelConfig LevelConfig;
         public  static List<GameObject> allEnabledDots;
         public static Sprite[] loadedSprites;

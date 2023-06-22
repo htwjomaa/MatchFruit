@@ -246,7 +246,10 @@ namespace FruitMatch.Scripts.System.Combiner
             }
         }
 
-
+       // public void CheckSequence(int spr_COLOR)
+       // {
+       //     LevelData.THIS.
+       // }
         void AddItemToCombine(Combine combine, Item item, Dictionary<Item, Combine> d, List<Combine> lCombines)
         {
             //		if (lCombines.Any(i => i==combine)) return;

@@ -13,7 +13,7 @@ using Debug = UnityEngine.Debug;
 
 public sealed class LoadingHelper : MonoBehaviour
 {
-
+ [SerializeField] public List<int> TargetSequence = new List<int>(3);
   public GameObject[] BlockPrefabs;
  public GameObject[] ItemPrefabs;
  public ParticleSystem[] VanishParticleObjects;

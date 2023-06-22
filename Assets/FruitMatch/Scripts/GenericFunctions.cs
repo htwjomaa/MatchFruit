@@ -1,8 +1,12 @@
 using FruitMatch.Scripts.Core;
+using FruitMatch.Scripts.Level;
 using UnityEngine;
 
 public class GenericFunctions : MonoBehaviour
 {
+
+  public static bool IsSubstractiveState() => IsSubstractiveState(LevelData.THIS.limitType);
+
   public static bool IsSubstractiveState(LIMIT limitType)
   {
     switch (limitType)

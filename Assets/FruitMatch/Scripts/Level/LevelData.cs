@@ -33,7 +33,7 @@ using System.Linq;
         // public static TargetContainer targetContainer;
         /// moves or time
         public LIMIT limitType;
-
+       
         public int[] ingrCountTarget = new int[2];
         /// moves amount or seconds 
         public int limit = 25;
@@ -86,6 +86,10 @@ using System.Linq;
 
         }
 
+        // public List<int> GetTargetContainerColor()
+        // {
+        //     
+        // }
         public void LoadTargetObject()
         {
             targetEditorObject = Resources.Load("Levels/TargetEditorScriptable") as TargetEditorScriptable;

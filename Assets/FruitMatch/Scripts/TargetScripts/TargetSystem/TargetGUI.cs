@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using FruitMatch.Scripts.Core;
+using FruitMatch.Scripts.Items;
 using FruitMatch.Scripts.Level;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using NotImplementedException = System.NotImplementedException;
 
@@ -28,19 +30,32 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
             if(HideTargetIcon != null) HideTargetIcon.color = new Color(HideTargetIcon.color.r, HideTargetIcon.color.g, HideTargetIcon.color.b, 0f);
         }
 
+        public Sprite[] allIngameSprites;
+        [NaughtyAttributes.Button()] private void GetColor()
+        {
+
+           allIngameSprites = LoadingHelper.THIS.FieldParent.GetComponentInChildren<IColorableComponent>().Sprites[0].Sprites;
+            for (int i = 0; i < allIngameSprites.Length; i++)
+            {
+                if (image.sprite == allIngameSprites[i])
+                {
+                    color = i;
+                    if(LoadingHelper.THIS.TargetSequence.Count <3) LoadingHelper.THIS.TargetSequence.Add(i);
+                    return;
+                }
+            }
+        }
         private void Start()
         {
             if(HideTargetIcon != null)   TargetSettings.ShowItemEvent += ShowIcon;
+            GetColor();
         }
-
         private void OnDestroy()
         {
             if(HideTargetIcon != null) TargetSettings.ShowItemEvent -= ShowIcon;
         }
-
         IEnumerator HideIconsCo(float seconds)
         {
-             
             yield return new WaitForSeconds(seconds);
           if(HideTargetIcon != null)  HideTargetIcon.color = new Color(HideTargetIcon.color.r, HideTargetIcon.color.g, HideTargetIcon.color.b, 1f);
             yield return null;
