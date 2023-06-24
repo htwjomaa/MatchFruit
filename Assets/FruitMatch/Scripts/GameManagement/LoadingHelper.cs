@@ -198,9 +198,10 @@ public sealed class LoadingHelper : MonoBehaviour
   
  }
 
- public int ColorHelper(int colorableColor)
- {
+ public int ColorHelper(int colorableColor) => ColorHelper(ref colorableColor);
 
+ public int ColorHelper(ref int colorableColor)
+ {
   Sprite[] loadedSprites = LoadingManager.GetLoadedSprites(Sprites);
   if (colorableColor > loadedSprites.Length-1) colorableColor = loadedSprites.Length-1 ;
 
@@ -260,5 +261,10 @@ public sealed class LoadingHelper : MonoBehaviour
   }
 
   return spriteColor;
+ }
+
+ [Button()] private void LoadedSpritesDebug()
+ {
+  loadedSpritesDebug = LoadingManager.loadedSprites;
  }
 }

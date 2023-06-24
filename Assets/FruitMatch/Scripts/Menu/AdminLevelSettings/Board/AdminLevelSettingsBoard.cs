@@ -50,9 +50,11 @@ public class AdminLevelSettingsBoard : MonoBehaviour
 private void AddListener() => GenericSettingsFunctions.Addlisteners(delegate { ValueChangeCheck(); }, BoardHeightSlider, BoardWidthSlider, P1CounterValueSlider, P2CounterValueSlider);
     public void LoadBoardSettings(BoardDimensionsConfig boardDimensionsConfig)
     {
-        CheckArrays();
+       
         RemoveListeners();
+        CheckArrays();
         Rl.BoardPreview.RemoveBoardPreviewListeners();
+        CheckLoadingArrays(ref boardDimensionsConfig);
         LoadBoardSettingsToClipBoard(boardDimensionsConfig);
         ClipBoardToSlider();
         AddListener();
@@ -79,6 +81,17 @@ private void AddListener() => GenericSettingsFunctions.Addlisteners(delegate { V
             Array.Resize(ref Rl.saveClipBoard.GameTypeP1,4);
             
       //  }
+    }
+
+    public void CheckLoadingArrays(ref BoardDimensionsConfig boardDimensionsConfig)
+    {
+        boardDimensionsConfig.Width ??= new int[4];
+        boardDimensionsConfig.Height ??= new int[4];
+        boardDimensionsConfig.NoMatches ??= new bool[4];
+        
+        boardDimensionsConfig.P1P2 ??= new bool[4];
+        boardDimensionsConfig.GameTypeP1 ??= new EndGameRequirements[4];
+        boardDimensionsConfig.GameTypeP2 ??= new EndGameRequirements[4];
     }
     public void ClipBoardToSlider()
     {

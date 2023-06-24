@@ -317,10 +317,25 @@ namespace FruitMatch.Scripts.Blocks
                     break;
                 
                 case  ItemsTypes.PACKAGE:
-                    itemComponent.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite =
-                        LoadingManager.loadedSprites[itemComponent.color];
+                    try
+                    {
+                        itemComponent.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite =
+                            LoadingManager.loadedSprites[itemComponent.color];
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.Log("HIER STIMMT WAS NICHT!  ItemComponentColor: " + itemComponent.color);
+                    }
+                    if (itemComponent.color > LevelManager.THIS.levelData.colorLimit - 1)
+                    {
+                        itemComponent.colorableComponent.color = 0; 
+                        itemComponent.color = 0; 
+                        itemComponent.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite =
+                            LoadingManager.loadedSprites[0];
+                    }
                     break;
             }
+            
             return itemComponent;
         }
         /// <summary>

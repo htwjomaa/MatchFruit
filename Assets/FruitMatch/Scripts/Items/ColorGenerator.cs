@@ -32,7 +32,7 @@ namespace FruitMatch.Scripts.Items
             
             } while (exceptColors.Contains(randColor) && exceptColors.Count < thisColorLimit-1 );
             if (remainColors.Count > 0) randColor = remainColors[Random.Range(0, remainColors.Count)];
-            if (exceptColor == randColor) randColor = Mathf.Clamp( randColor++,0 , thisColorLimit);
+            if (exceptColor == randColor) randColor = Mathf.Clamp( randColor++,0 , thisColorLimit-1);
             if (randColor > thisColorLimit - 1) randColor = thisColorLimit;
             return randColor;
         }
