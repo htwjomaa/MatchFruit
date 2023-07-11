@@ -302,3 +302,5 @@ TeleportFrom,Teleport From,Teleporter von,Téléportation de,Teletransporte desd
 TeleportTo,Teleport To,Teleporter nach,Téléportation vers,Teletransportarse a,Teleport till,Işınlanma,Teleportuj się do,Teletrasporto a
 no_matches, No Matches shuffle, Mischen bei keinen Treffern,  Pas d'allumettes mélangées, No se barajan los partidos, Inga matchningar shuffle, Karışık Eşleşme Yok, Brak tasowania meczów, Nessuna partita mischiata
 AVOID, AVOID, VERMEIDE, ÉVITE, EVITE, UNDVIKA, KAÇININ, UNIKANIE, EVITARE
+activate_search_bombs, Search Bombs, Suchbomben, Bombes de recherche, Buscar bombas, Sökbomber, Bomba arama, Wyszukiwanie bomb, Ricerca bombe
+activate_package_bombs, Package Bombs, Packet Bomben, colis piégé, paquete bomba, Paketbomb, paket bomba, pakiet bombowy, pacchetto bomba

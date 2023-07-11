@@ -72,18 +72,33 @@ namespace FruitMatch.Scripts.Level
 
             return   LoadingHelper.THIS.Sprites[0];
         }
+        
         public static GameObject[] allDotPrefabs;
         public static Sprite[] GetLoadedSprites(Sprite[] sprites)
         {
             List<Sprite> allSprites = new List<Sprite>();
             allDotPrefabs  = GetDots(Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs
                 .LevelConfigs[LevelManager.THIS.currentLevel-1].BoardDimensionsConfig, Rl.world);
+            Debug.Log(allDotPrefabs.Length);
+            HashSet<GameObject> allDotPrefabsHashSet = new HashSet<GameObject>();
+            for (int i = 0; i < allDotPrefabs.Length; i++)
+            {
+                allDotPrefabsHashSet.Add(allDotPrefabs[i]);
+            }
+            
+            Array.Resize(ref  allDotPrefabs, allDotPrefabsHashSet.Count);
+            int counter = 0; 
+            foreach (var n in allDotPrefabsHashSet)
+            {
+                allDotPrefabs[counter] = n;
+                counter++;
+            }
+            
             for (int i = 0; i < allDotPrefabs.Length; i++)
             {
                 allSprites.Add(TranslateDotsToRandomColors(allDotPrefabs[i]
                     .GetComponent<Dot>(),sprites));
             }
-
             return allSprites.ToArray();
         }
 
@@ -252,10 +267,8 @@ namespace FruitMatch.Scripts.Level
                 {
                     levelData.fields[0].levelSquares[y+x].position = new Vector2Int(x, y);
                 }
-
             }
-
-
+            
            // levelData.fields[0].levelSquares[0].teleportCoordinatesLinked = new Vector2Int(5, 0);
             for (int i = 0; i < levelData.fields[0].levelSquares.Length; i++)
             {
@@ -325,7 +338,6 @@ namespace FruitMatch.Scripts.Level
 
                 }
             }
-
             return -1;
         }
 
@@ -349,7 +361,6 @@ namespace FruitMatch.Scripts.Level
                 counter++;
                 if(counter == 9) counter = 0;
             }
-            
             return squareBlocksList.ToArray();
         }
         private static SquareBlocks[] CutOutColumns(SquareBlocks[] sqrBlocks, int height)
@@ -382,10 +393,24 @@ namespace FruitMatch.Scripts.Level
             }
         }
         
+        private static  int GetBombEntry( BombConfig[] bombConfigs, Bomb bombToSearch)
+        {
+            for (int i = 0; i < bombConfigs.Length; i++)
+            {
+
+                if (bombConfigs[i].Bomb == bombToSearch)
+                {
+                    return i;
+                }
+            }
+
+            return 0;
+        }
+
+
+       
         public static LevelData LoadForPlay(int currentLevel, LevelData levelData)
         {
-        
-            
             Rl.goalManager.TranslateGoals();
             LevelConfig = Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[CurrentLevelToload-1];
             levelData = new LevelData(Application.isPlaying, CurrentLevelToload );
@@ -406,6 +431,8 @@ namespace FruitMatch.Scripts.Level
             {
                 levelData.fields[i].levelSquares = CutOutBlocks(levelData.fields[i].levelSquares, LevelConfig.BoardDimensionsConfig.Width[i], LevelConfig.BoardDimensionsConfig.Height[i]);
             }
+            
+    
             void TranslateData()
             {
                 for (int i = 0; i < levelData.fields.Count; i++)
@@ -415,7 +442,7 @@ namespace FruitMatch.Scripts.Level
                     LoadingHelper.THIS.height = LevelConfig.BoardDimensionsConfig.Height[i];
                     LoadingHelper.THIS.width = LevelConfig.BoardDimensionsConfig.Width[i];
                     levelData.fields[i].noRegenLevel = false;
-                   
+               
                     levelData.fields[i].noMatches = LevelConfig.BoardDimensionsConfig.NoMatches[i];
                 }
                 
@@ -438,7 +465,8 @@ namespace FruitMatch.Scripts.Level
                 }
                   
                 levelData.limitType = limit;
-                levelData.enableMarmalade = true;
+                
+                
 
                 // levelData.Name = LevelConfig.LevelTextConfig[LevelManager.THIS.currentLevel-1].LevelName;
                 loadedSprites = GetLoadedSprites( LoadingHelper.THIS.Sprites);
@@ -446,6 +474,9 @@ namespace FruitMatch.Scripts.Level
                 loadedHorStriped = GetLoadedSprites(LoadingHelper.THIS.HorStriped);
                 loadedVertStriped = GetLoadedSprites(LoadingHelper.THIS.VertStriped);
                 levelData.colorLimit = loadedSprites.Length;
+                LevelManager.THIS.LimitLength= loadedSprites.Length;
+                
+                Debug.Log("LOADED SPRITES LENGTH::: -- " + (loadedSprites.Length));
                     
                 LoadingHelper.THIS.loadedSpritesDebug = loadedSprites;
                 LoadingHelper.THIS.loadedSpritesDebugMarmalade = loadedMarmaladeSprites;
@@ -469,6 +500,8 @@ namespace FruitMatch.Scripts.Level
 
                    // editScope.prefabRoot.GetComponent<IColorableComponent>().Sprites[0].Sprites[n.Length] = n[^1];
                 }*/
+                BombsEnable();
+                BombsAllowed(LevelConfig.BombConfigs[GetBombEntry(LevelConfig.BombConfigs, Bomb.AllBombs)].Active);
             }
             /*
              
@@ -478,6 +511,45 @@ namespace FruitMatch.Scripts.Level
         bool bottomActive, bool leftActive, bool rightActive, bool topActive )
              */
             //LoadingManager.LoadSideDots(LoadingHelper.THIS.boardTransform);
+            
+            
+            
+            void BombsEnable()
+            {
+                //marmelade is the same as search bomb, just different name here. Need to rewrite it a bit
+                levelData.enableMarmalade = LevelConfig.BombConfigs[GetBombEntry(LevelConfig.BombConfigs, Bomb.Search)].Active;
+                levelData.enableHorBombs = LevelConfig.BombConfigs[GetBombEntry(LevelConfig.BombConfigs, Bomb.Horizontal)].Active;
+                levelData.enableVertBombs = LevelConfig.BombConfigs[GetBombEntry(LevelConfig.BombConfigs, Bomb.Vertical)].Active;
+                levelData.enableSameColorBomb = LevelConfig.BombConfigs[GetBombEntry(LevelConfig.BombConfigs, Bomb.Color)].Active;
+                levelData.enablePackageBomb = LevelConfig.BombConfigs[GetBombEntry(LevelConfig.BombConfigs, Bomb.Package)].Active;
+                
+                LevelManager.THIS.enableHorBombs = LevelConfig.BombConfigs[GetBombEntry(LevelConfig.BombConfigs, Bomb.Horizontal)].Active;
+                LevelManager.THIS.enableVertBombs = LevelConfig.BombConfigs[GetBombEntry(LevelConfig.BombConfigs, Bomb.Vertical)].Active;
+                LevelManager.THIS.enableSameColorBomb = LevelConfig.BombConfigs[GetBombEntry(LevelConfig.BombConfigs, Bomb.Color)].Active;
+                LevelManager.THIS.enablePackageBomb =LevelConfig.BombConfigs[GetBombEntry(LevelConfig.BombConfigs, Bomb.Package)].Active;
+                LevelManager.THIS.enableMarmalade = levelData.enableMarmalade;
+            }
+            void BombsAllowed(bool bombsAllowed)
+            {
+                if (bombsAllowed == false)
+                {
+                    levelData.enableMarmalade = false;
+                    levelData.enableHorBombs =  false;
+                    levelData.enableVertBombs = false;
+                    levelData.enableSameColorBomb = false;
+                    levelData.enablePackageBomb = false;
+                    
+                    LevelManager.THIS.enableMarmalade = false;
+                    LevelManager.THIS.enableHorBombs = false;
+                    LevelManager.THIS.enableVertBombs = false;
+                    LevelManager.THIS.enableSameColorBomb = false;
+                    LevelManager.THIS.enablePackageBomb = false;
+                }
+            
+            }
+
+           
+            
             return levelData;
         }
 

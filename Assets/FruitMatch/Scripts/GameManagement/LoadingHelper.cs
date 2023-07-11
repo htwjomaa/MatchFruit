@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using FruitMatch.Scripts.Blocks;
+using FruitMatch.Scripts.Core;
 using FruitMatch.Scripts.Items;
 using FruitMatch.Scripts.Level;
 using NaughtyAttributes;
@@ -13,6 +14,9 @@ using Debug = UnityEngine.Debug;
 
 public sealed class LoadingHelper : MonoBehaviour
 {
+ /// <summary>
+ /// This Class is for easy programming use. When refactoring this class should be nearly empty
+ /// </summary>
  [SerializeField] public List<int> TargetSequence = new List<int>(3);
   public GameObject[] BlockPrefabs;
  public GameObject[] ItemPrefabs;
@@ -54,7 +58,7 @@ public sealed class LoadingHelper : MonoBehaviour
   public GameObject ItemParent;
   public int testY = 0;
   public int testX = 0;
-  
+
   [Button] private void DebugTestRowColumn() => ScaleUpTest(testX, testY);
   public Sprite[] loadedSpritesDebug;
   public Sprite[] loadedSpritesDebugMarmalade;
@@ -198,12 +202,21 @@ public sealed class LoadingHelper : MonoBehaviour
   
  }
 
- public int ColorHelper(int colorableColor) => ColorHelper(ref colorableColor);
+
+ public int ColorBoundChecker(int colorableColor)
+ {
+  if (colorableColor > LevelManager.THIS.LimitLength-2) colorableColor = 0;
+  return colorableColor;
+ }
+ public int ColorHelper(int colorableColor)
+ {
+  return ColorHelper(ref colorableColor);
+ }
 
  public int ColorHelper(ref int colorableColor)
  {
   Sprite[] loadedSprites = LoadingManager.GetLoadedSprites(Sprites);
-  if (colorableColor > loadedSprites.Length-1) colorableColor = loadedSprites.Length-1 ;
+ 
 
   try
   {
@@ -211,6 +224,7 @@ public sealed class LoadingHelper : MonoBehaviour
   }
   catch (Exception e)
   {
+   Debug.Log(" PLEASE CHECK");
    return ColorHelper(loadedSprites[0]);   //IT SOMETIMES GOES OUT OF ARRAY. MAYBE NEED FIX SOMEWHERE?
   }
 

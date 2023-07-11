@@ -48,7 +48,8 @@ namespace FruitMatch.Scripts.Core
     public class LevelManager : MonoBehaviour
     {
            //public movePlayedtoSubstract;
-        public int LimitHelper = 0;
+           public int LimitLength;
+           public int LimitHelper = 0;
         public static LevelManager THIS;
         public bool enableInApps; //true if Unity in-apps is enable and imported
         public float squareWidth = 1.2f; //square width for border placement
@@ -76,7 +77,12 @@ namespace FruitMatch.Scripts.Core
         public int BoostPackage;
         public int BoostStriped;
         public int BoostMarmalade;  //put some marmalade bears to the field on start
-        public bool enableMarmalade => levelData.enableMarmalade;
+        public bool enableMarmalade;
+        public bool enableHorBombs;
+        public bool enableVertBombs;
+        public bool enableSameColorBomb;
+        public bool enablePackageBomb;
+
         public BoostIcon emptyBoostIcon;  //empty boost reference for system
         public DebugSettings DebugSettings; //debug settings reference
         public BoostIcon activatedBoost;  //activate boost in game
@@ -371,8 +377,6 @@ namespace FruitMatch.Scripts.Core
                     Destroy(item.gameObject);
             }
         }
-
-  
         private void Awake()
         {
             THIS = this;

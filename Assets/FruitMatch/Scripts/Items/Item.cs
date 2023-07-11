@@ -141,13 +141,17 @@ namespace FruitMatch.Scripts.Items
         {
             get
             {
-                if (colorableComponent != null) return colorableComponent.color;
+                if (colorableComponent != null) return colorableComponent.Color;
                 return GetHashCode();
             }
             set => colorableComponent?.SetColor(value);
         }
     
         //if true - item just created
+        public void CheckIfSpriteIsZeroButActive()
+        {
+            
+        }
         private bool justCreatedItem;
         public bool JustCreatedItem
         {
@@ -223,6 +227,7 @@ namespace FruitMatch.Scripts.Items
             anim.enabled = false;
             if(transform.childCount>0)
             {
+               // ------------------------------------------------------------------------------- I DISABLED THIS BECAUSE SPRITES GOT RANDOMLY SET TO ZERO. IF HAVE TIME ADD A REGULAR CHECK TO ENABLE
                 transform.GetChild(0).transform.localScale = Vector3.one;
                 transform.GetChild(0).transform.localPosition = Vector3.zero;
             }
@@ -543,6 +548,12 @@ namespace FruitMatch.Scripts.Items
                     {
                         if (combine.nextType != ItemsTypes.NONE)
                         {
+                            LevelManager.THIS.lastDraggedItem.color =
+                                LoadingHelper.THIS.ColorBoundChecker(LevelManager.THIS.lastDraggedItem.color);
+                            combine.color = LoadingHelper.THIS.ColorBoundChecker(combine.color);
+                            LevelManager.THIS.lastSwitchedItem.color =
+                                LoadingHelper.THIS.ColorBoundChecker(LevelManager.THIS.lastSwitchedItem.color);
+                            
                             if (combine.color == LoadingHelper.THIS.ColorHelper(LevelManager.THIS.lastDraggedItem.color))
                                 LevelManager.THIS.lastDraggedItem.NextType = combine.nextType;
                             else if (combine.color == LoadingHelper.THIS.ColorHelper(LevelManager.THIS.lastSwitchedItem.color))
@@ -949,7 +960,20 @@ namespace FruitMatch.Scripts.Items
                 ResetAnimTransform();
 
                 yield return new WaitForSeconds(0.2f);
-                if(!square.GetAllNeghborsCross().Any(i => (i.Item && i.Item.falling && LoadingHelper.THIS.ColorHelper(i.Item.color) == LoadingHelper.THIS.ColorHelper(color))))
+                bool any = false;
+                foreach (var i in square.GetAllNeghborsCross())
+                {
+                 
+                    if ((i.Item && i.Item.falling && LoadingHelper.THIS.ColorHelper(i.Item.color) == LoadingHelper.THIS.ColorHelper(color)))
+                    {
+                        i.Item.color = LoadingHelper.THIS.ColorBoundChecker(i.Item.color);
+                        color = LoadingHelper.THIS.ColorBoundChecker(color);
+                        any = true;
+                        break;
+                    }
+                }
+
+                if(!any)
                 {
                     var combines2 = GetMatchesAround();
 
@@ -1254,6 +1278,7 @@ namespace FruitMatch.Scripts.Items
                 if (partcl2 != null)
                 {
                     partcl2.transform.position = transform.position;
+                    color = LoadingHelper.THIS.ColorBoundChecker(color);
                     partcl2.GetComponent<SplashParticles>().SetColor(LoadingHelper.THIS.ColorHelper(color));
                     partcl2.GetComponent<SplashParticles>().SetColor(LoadingHelper.THIS.ColorHelper(color));
                 }

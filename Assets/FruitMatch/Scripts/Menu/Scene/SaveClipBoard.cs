@@ -85,7 +85,7 @@ public class SaveClipBoard : ScriptableObject
     [Header("Bombs Settings")]
     public bool horizontalBomb;
     public bool verticalBomb;
-    public bool diagonalBomb;
+    [FormerlySerializedAs("diagonalBomb")] public bool searchBomb;
     public bool fruitBomb;
     public bool colorBomb;
     public bool allBombs;
@@ -97,8 +97,8 @@ public class SaveClipBoard : ScriptableObject
     public MatchStyle matchStyleVertBomb;
     public ushort vertBombMatchNumber;
     
-    public MatchStyle matchStyleDiagonalBomb;
-    public ushort diagonalBombMatchNumber;
+    [FormerlySerializedAs("matchStyleDiagonalBomb")] public MatchStyle matchStyleSearchBomb;
+    [FormerlySerializedAs("diagonalBombMatchNumber")] public ushort searchBombMatchNumber;
     
     public MatchStyle matchStyleFruitBomb;
     public ushort fruitBombMatchNumber;

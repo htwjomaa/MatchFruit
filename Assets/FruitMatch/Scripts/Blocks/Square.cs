@@ -232,12 +232,69 @@ namespace FruitMatch.Scripts.Blocks
         /// <param name="color"></param>
         /// <param name="squareBlockItem"></param>
         ///
-     
+
+
+        private ItemsTypes CheckItemDisabled(ItemsTypes itemType, ref int color)
+        {
+            switch (itemType)
+            {
+                case ItemsTypes.NONE:
+                    return itemType;
+                case ItemsTypes.VERTICAL_STRIPED:
+                    if (!LevelManager.THIS.enableVertBombs)
+                    {
+                        color = -1;
+                        return ItemsTypes.NONE;
+                    }
+                        
+                    break;
+                case ItemsTypes.HORIZONTAL_STRIPED:
+                    if(!LevelManager.THIS.enableHorBombs)
+                    {
+                        color = -1;
+                        return ItemsTypes.NONE;
+                    }
+                    break;
+                case ItemsTypes.PACKAGE:
+                    if (!LevelManager.THIS.enablePackageBomb)
+                    {
+                        color = -1;
+                        return ItemsTypes.NONE;
+                    }
+                    break;
+                case ItemsTypes.MULTICOLOR:
+                    if (!LevelManager.THIS.levelData.enableSameColorBomb)
+                    {
+                        color = -1;
+                        return ItemsTypes.NONE;
+                    }
+                    break;
+                case ItemsTypes.INGREDIENT:
+                    return ItemsTypes.INGREDIENT;
+                case ItemsTypes.SPIRAL:
+                    return ItemsTypes.SPIRAL;
+                case ItemsTypes.MARMALADE:
+                    if(!LevelManager.THIS.enableMarmalade)
+                    {
+                        color = -1;
+                        return ItemsTypes.NONE;
+                    }
+                    break;
+                case ItemsTypes.TimeBomb:
+                    return ItemsTypes.TimeBomb;
+                default:
+                    return itemType;
+            }
+
+            return itemType;
+        }
         public Item GenItem(bool falling = true, ItemsTypes itemType = ItemsTypes.NONE, int color = -1, ItemForEditor squareBlockItem=null)
         {
+            if(LevelManager.THIS.levelLoaded )itemType = CheckItemDisabled(itemType, ref color);
             if (IsNone() && !CanGoInto())
                 return null;
             GameObject item = null;
+         
             if (itemType == ItemsTypes.NONE)
             {
                 if (LevelData.THIS.IsTargetByActionExist(CollectingTypes.ReachBottom) && !IsObstacle() && !field.IngredientsByEditor)
@@ -258,6 +315,7 @@ namespace FruitMatch.Scripts.Blocks
                 if(item==null)
                     Debug.LogError("there is no " + itemType + " in pool ");
             }
+         
             item.transform.localScale = Vector2.one * 0.42f;
             Item itemComponent = item.GetComponent<Item>();
             if(LevelManager.THIS.levelData.GetTargetCounters().Any(i=>i.collectingAction==CollectingTypes.Destroy && i.extraObject==itemComponent.GetSpriteRenderer().sprite))
@@ -328,7 +386,7 @@ namespace FruitMatch.Scripts.Blocks
                     }
                     if (itemComponent.color > LevelManager.THIS.levelData.colorLimit - 1)
                     {
-                        itemComponent.colorableComponent.color = 0; 
+                        itemComponent.colorableComponent.Color = 0; 
                         itemComponent.color = 0; 
                         itemComponent.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().sprite =
                             LoadingManager.loadedSprites[0];

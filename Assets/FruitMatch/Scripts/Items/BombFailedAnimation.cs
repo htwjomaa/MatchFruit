@@ -66,7 +66,7 @@ namespace FruitMatch.Scripts.Items
 				if (partcl2 != null)
 				{
 					partcl2.transform.position = obj.transform.position;
-					partcl2.GetComponent<SplashParticles>().SetColor(GetComponent<IColorableComponent>().color);
+					partcl2.GetComponent<SplashParticles>().SetColor(GetComponent<IColorableComponent>().Color);
 				}
 				GetComponent<itemTimeBomb>().square.Item = null;
 				GetComponent<itemTimeBomb>().square = null;

@@ -7,5 +7,5 @@ public enum MatchStyle
 [Serializable]
 public enum Bomb
 {
-    Horizontal, Vertical, Diagonal, Fruit, Color, AllBombs
+    Horizontal, Vertical, Search, Package, Color, AllBombs
 }

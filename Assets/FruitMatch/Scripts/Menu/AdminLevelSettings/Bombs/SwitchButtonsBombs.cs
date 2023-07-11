@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 public class SwitchButtonsBombs : MonoBehaviour
@@ -9,7 +10,7 @@ public class SwitchButtonsBombs : MonoBehaviour
     [Header("Bomb Swithes")] 
     [SerializeField] private Switch SwitchColorBomb;
     [SerializeField] private Switch SwitchFruitBomb;
-    [SerializeField] private Switch SwitchDiagonalBomb;
+    [FormerlySerializedAs("SwitchDiagonalBomb")] [SerializeField] private Switch SwitchSearchBomb;
     [SerializeField] private Switch SwitchVerticalBomb;
     [SerializeField] private Switch SwitchHorizontalBomb;
     [SerializeField] private Switch SwitchAllBombs;
@@ -17,7 +18,7 @@ public class SwitchButtonsBombs : MonoBehaviour
     [Header("Bomb Slider")] 
     [SerializeField] public Slider SameColorBombSlider;
     [SerializeField] public Slider SameFruitBombSlider;
-    [SerializeField] public Slider DiagonalBombSlider;
+    [FormerlySerializedAs("DiagonalBombSlider")] [SerializeField] public Slider SearchBombSlider;
     [SerializeField] public Slider VertBombSlider;
     [SerializeField] public Slider HorBombSlider;
     
@@ -28,7 +29,7 @@ public class SwitchButtonsBombs : MonoBehaviour
         if (GetBombSetting(Bomb.Color)) SwitchColorBombOn(true);
         else SwitchColorBombOff(true);
 
-        if (GetBombSetting(Bomb.Fruit)) SwitchFruitBombOn(true);
+        if (GetBombSetting(Bomb.Package)) SwitchFruitBombOn(true);
         else SwitchFruitBombOff(true);
 
         if (GetBombSetting(Bomb.Vertical)) SwitchVerticalBombOn(true);
@@ -37,8 +38,8 @@ public class SwitchButtonsBombs : MonoBehaviour
         if (GetBombSetting(Bomb.Horizontal)) SwitchHorizontalBombOn(true);
         else SwitchHorizontalBombOff(true);
         
-        if (GetBombSetting(Bomb.Diagonal)) SwitchDiagonalBombOn(true);
-        else SwitchDiagonalBombOff(true);
+        if (GetBombSetting(Bomb.Search)) SwitchSearchBombOn(true);
+        else SwitchSearchBombOff(true);
         
         if (GetBombSetting(Bomb.AllBombs)) SwitchAllBombsOn(true);
         else SwitchAllBombsOff(true);
@@ -65,13 +66,13 @@ public class SwitchButtonsBombs : MonoBehaviour
     }
     public void SwitchFruitBombOn(bool playNoSound)
     {
-        SetBombSettingsToClipBoard(Bomb.Fruit, true);
-        SwitchThings(Bomb.Fruit,true, playNoSound);
+        SetBombSettingsToClipBoard(Bomb.Package, true);
+        SwitchThings(Bomb.Package,true, playNoSound);
     }
     public void SwitchFruitBombOff(bool playNoSound)
     {
-        SetBombSettingsToClipBoard(Bomb.Fruit, false);
-        SwitchThings(Bomb.Fruit,false, playNoSound);
+        SetBombSettingsToClipBoard(Bomb.Package, false);
+        SwitchThings(Bomb.Package,false, playNoSound);
     }
     public void SwitchVerticalBombOn(bool playNoSound)
     {
@@ -93,15 +94,15 @@ public class SwitchButtonsBombs : MonoBehaviour
         SetBombSettingsToClipBoard(Bomb.Horizontal, false);
         SwitchThings(Bomb.Horizontal,false, playNoSound);
     }
-    public void SwitchDiagonalBombOn(bool playNoSound)
+    public void SwitchSearchBombOn(bool playNoSound)
     {
-        SetBombSettingsToClipBoard(Bomb.Diagonal, true);
-        SwitchThings(Bomb.Diagonal,true, playNoSound);
+        SetBombSettingsToClipBoard(Bomb.Search, true);
+        SwitchThings(Bomb.Search,true, playNoSound);
     }
-    public void SwitchDiagonalBombOff(bool playNoSound)
+    public void SwitchSearchBombOff(bool playNoSound)
     {
-        SetBombSettingsToClipBoard(Bomb.Diagonal, false);
-        SwitchThings(Bomb.Diagonal,false, playNoSound);
+        SetBombSettingsToClipBoard(Bomb.Search, false);
+        SwitchThings(Bomb.Search,false, playNoSound);
     }
     private bool GetBombSetting(Bomb bomb)
     {
@@ -133,7 +134,7 @@ public class SwitchButtonsBombs : MonoBehaviour
     {//-----------------
         GenericSettingsFunctions.RemoveListeners(SameColorBombSlider,
             SameFruitBombSlider,
-            DiagonalBombSlider,
+            SearchBombSlider,
             VertBombSlider,
             HorBombSlider);
         foreach (BombConfig bombconfig in bombConfigs)
@@ -147,18 +148,18 @@ public class SwitchButtonsBombs : MonoBehaviour
                     Rl.saveClipBoard.colorBombMatchNumber = bombconfig.Matchnumber;
                     break;
                 }
-                case Bomb.Fruit:
+                case Bomb.Package:
                 {
                     Rl.saveClipBoard.fruitBomb = bombconfig.Active;
                     Rl.saveClipBoard.matchStyleFruitBomb = bombconfig.MatchStyle;
                     Rl.saveClipBoard.fruitBombMatchNumber= bombconfig.Matchnumber;
                     break;
                 }
-                case Bomb.Diagonal:
+                case Bomb.Search:
                 {
-                    Rl.saveClipBoard.diagonalBomb = bombconfig.Active; 
-                    Rl.saveClipBoard.matchStyleDiagonalBomb = bombconfig.MatchStyle;
-                    Rl.saveClipBoard.diagonalBombMatchNumber = bombconfig.Matchnumber;
+                    Rl.saveClipBoard.searchBomb = bombconfig.Active; 
+                    Rl.saveClipBoard.matchStyleSearchBomb = bombconfig.MatchStyle;
+                    Rl.saveClipBoard.searchBombMatchNumber = bombconfig.Matchnumber;
                     break;
                 }
                 case Bomb.Vertical:
@@ -187,7 +188,7 @@ public class SwitchButtonsBombs : MonoBehaviour
         GenericSettingsFunctions.Addlisteners(delegate { ValueChangeCheck(); }, 
             SameColorBombSlider,
             SameFruitBombSlider,
-            DiagonalBombSlider,
+            SearchBombSlider,
             VertBombSlider,
             HorBombSlider);
        //-------------------
@@ -202,14 +203,14 @@ public class SwitchButtonsBombs : MonoBehaviour
                 break;
             }
 
-            case Bomb.Fruit:
+            case Bomb.Package:
             {
                 Rl.saveClipBoard.fruitBomb = active; 
                 break;
             }
-            case Bomb.Diagonal:
+            case Bomb.Search:
             {
-                Rl.saveClipBoard.diagonalBomb = active;
+                Rl.saveClipBoard.searchBomb = active;
                 break;
             }
             case Bomb.Vertical:
@@ -232,8 +233,8 @@ public class SwitchButtonsBombs : MonoBehaviour
     public void SaveBombSettings()
     {
         SaveBombHelperMethod(Bomb.Color, Rl.saveClipBoard.colorBomb, Rl.saveClipBoard.matchStyleColorBomb, Rl.saveClipBoard.colorBombMatchNumber);
-        SaveBombHelperMethod(Bomb.Fruit, Rl.saveClipBoard.fruitBomb, Rl.saveClipBoard.matchStyleFruitBomb, Rl.saveClipBoard.fruitBombMatchNumber);
-        SaveBombHelperMethod(Bomb.Diagonal, Rl.saveClipBoard.diagonalBomb,Rl.saveClipBoard.matchStyleDiagonalBomb, Rl.saveClipBoard.diagonalBombMatchNumber) ;
+        SaveBombHelperMethod(Bomb.Package, Rl.saveClipBoard.fruitBomb, Rl.saveClipBoard.matchStyleFruitBomb, Rl.saveClipBoard.fruitBombMatchNumber);
+        SaveBombHelperMethod(Bomb.Search, Rl.saveClipBoard.searchBomb,Rl.saveClipBoard.matchStyleSearchBomb, Rl.saveClipBoard.searchBombMatchNumber) ;
         
         SaveBombHelperMethod(Bomb.Vertical, Rl.saveClipBoard.verticalBomb, Rl.saveClipBoard.matchStyleVertBomb, Rl.saveClipBoard.vertBombMatchNumber);
         SaveBombHelperMethod(Bomb.Horizontal, Rl.saveClipBoard.horizontalBomb, Rl.saveClipBoard.matchStyleHorBomb, Rl.saveClipBoard.horBombMatchNumber);
@@ -267,12 +268,12 @@ public class SwitchButtonsBombs : MonoBehaviour
                     Rl.saveClipBoard.colorBombMatchNumber = (ushort)SameColorBombSlider.value;
                     break;
                 
-                case Bomb.Fruit:
+                case Bomb.Package:
                     Rl.saveClipBoard.fruitBombMatchNumber = (ushort)SameFruitBombSlider.value;
                     break;
                 
-                case Bomb.Diagonal:
-                    Rl.saveClipBoard.diagonalBombMatchNumber = (ushort)DiagonalBombSlider.value;
+                case Bomb.Search:
+                    Rl.saveClipBoard.searchBombMatchNumber = (ushort)SearchBombSlider.value;
                     break;
 
                 case Bomb.Vertical:
@@ -288,7 +289,7 @@ public class SwitchButtonsBombs : MonoBehaviour
             ref _valueDisplayList,
             SameColorBombSlider,
             SameFruitBombSlider,
-            DiagonalBombSlider,
+            SearchBombSlider,
             VertBombSlider,
             HorBombSlider);
     }
@@ -300,12 +301,12 @@ public class SwitchButtonsBombs : MonoBehaviour
                 SwitchColorBomb.SwitchButton(on, playNoSound);
                 break;
             
-            case Bomb.Fruit:
+            case Bomb.Package:
                 SwitchFruitBomb.SwitchButton(on, playNoSound);
                 break;
             
-            case Bomb.Diagonal:
-                SwitchDiagonalBomb.SwitchButton(on, playNoSound);
+            case Bomb.Search:
+                SwitchSearchBomb.SwitchButton(on, playNoSound);
                 break;
             case Bomb.Horizontal:
                 SwitchHorizontalBomb.SwitchButton(on, playNoSound);
@@ -358,15 +359,15 @@ public class SwitchButtonsBombs : MonoBehaviour
                         Rl.saveClipBoard.matchStyleColorBomb= matchStyle;
                         break;
                     
-                    case Bomb.Diagonal:
-                        if (nextMatchStyle) matchStyle = NextMatchStyle((int)Rl.saveClipBoard.matchStyleDiagonalBomb);
-                        else matchStyle = Rl.saveClipBoard.matchStyleDiagonalBomb;
+                    case Bomb.Search:
+                        if (nextMatchStyle) matchStyle = NextMatchStyle((int)Rl.saveClipBoard.matchStyleSearchBomb);
+                        else matchStyle = Rl.saveClipBoard.matchStyleSearchBomb;
                         bombMatchStyleLists[i].Button.text = GetLocalisedMatchStyleString(StringMatchStyle(matchStyle));
-                        bombMatchStyleLists[i].ValueTextField.text = Rl.saveClipBoard.diagonalBombMatchNumber.ToString();
-                        Rl.saveClipBoard.matchStyleDiagonalBomb = matchStyle;
+                        bombMatchStyleLists[i].ValueTextField.text = Rl.saveClipBoard.searchBombMatchNumber.ToString();
+                        Rl.saveClipBoard.matchStyleSearchBomb = matchStyle;
                         break;
                     
-                    case Bomb.Fruit:
+                    case Bomb.Package:
                         if (nextMatchStyle) matchStyle = NextMatchStyle((int)Rl.saveClipBoard.matchStyleFruitBomb);
                         else matchStyle = Rl.saveClipBoard.matchStyleFruitBomb;
                         bombMatchStyleLists[i].Button.text = GetLocalisedMatchStyleString(StringMatchStyle(matchStyle));

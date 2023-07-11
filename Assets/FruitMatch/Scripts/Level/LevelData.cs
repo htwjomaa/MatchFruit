@@ -45,7 +45,14 @@ using System.Linq;
         public int star2 = 300;
         /// score amount for reach 3 stars
         public int star3 = 500;
+
         /// pre generate marmalade
+        ///
+        public bool enableVertBombs;
+
+        public bool enableHorBombs;
+        public bool enableSameColorBomb;
+        public bool enablePackageBomb;
         public bool enableMarmalade;
         public int maxRows { get { return GetField().maxRows; } set { GetField().maxRows = value; } }
         public int maxCols { get { return GetField().maxCols; } set { GetField().maxCols = value; } }

@@ -156,7 +156,7 @@ using Random = UnityEngine.Random;
                  {
                      var colorableComponent = fieldData.levelSquares[i].item.Item.GetComponent<IColorableComponent>();
                      var sprite = colorableComponent.directSpriteRenderer.sprite;
-                     var sprtColor = colorableComponent.color;
+                     var sprtColor = colorableComponent.Color;
                      allSpriteColors.TryAdd(sprite, sprtColor);
                  }
              }

@@ -64,9 +64,9 @@ namespace FruitMatch.Scripts.Items
 
         private void Start()
         {
-            GetComponent<SpriteRenderer>().sprite = GetComponentInParent<IColorableComponent>().Sprites[1].Sprites[GetComponentInParent<IColorableComponent>().color];
+            GetComponent<SpriteRenderer>().sprite = GetComponentInParent<IColorableComponent>().Sprites[1].Sprites[GetComponentInParent<IColorableComponent>().Color];
             if (wrongSprite(GetComponent<SpriteRenderer>().sprite))
-                GetComponent<SpriteRenderer>().sprite =LoadingManager.loadedMarmaladeSprites[GetComponentInParent<IColorableComponent>().color];
+                GetComponent<SpriteRenderer>().sprite =LoadingManager.loadedMarmaladeSprites[GetComponentInParent<IColorableComponent>().Color];
         }
 
         private bool wrongSprite(Sprite sprite)

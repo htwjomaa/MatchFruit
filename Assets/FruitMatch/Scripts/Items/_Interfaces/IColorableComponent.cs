@@ -11,7 +11,18 @@ using Random = UnityEngine.Random;
 [ExecuteAlways]
 public class IColorableComponent : MonoBehaviour /* , IPoolable */
 {
-    public int color;
+    [SerializeField]private int color;
+
+    public int Color
+    {
+        get => color;
+        set
+        {
+            if (value > LevelManager.THIS.LimitLength-1)
+                value = 0;
+            color = value;
+        }
+    }
 
     public List<SpritePerLevel> Sprites;
 
@@ -27,7 +38,12 @@ public class IColorableComponent : MonoBehaviour /* , IPoolable */
       //  }
       //  else
       //  {
-           if(GetComponent<ItemSimple>())Sprites[0].Sprites = LoadingManager.loadedSprites;
+      if (GetComponent<ItemSimple>())
+      {
+          Sprites[0].Sprites = LoadingManager.loadedSprites;
+          Array.Resize(ref Sprites[0].Sprites , LevelManager.THIS.LimitLength);
+      }
+           
            else if (GetComponent<ItemMarmalade>())
            {
                Sprites[0].Sprites = LoadingManager.loadedMarmaladeSprites;
@@ -107,7 +123,7 @@ public class IColorableComponent : MonoBehaviour /* , IPoolable */
 
     public void SetColor(int _color)
     {
-        if (_color < 0 || _color >= GetSprites(LevelManager.THIS.currentLevel).Length) return;
+        if (_color < 0 || _color >= GetSprites(LevelManager.THIS.currentLevel).Length) _color = 0;
         // colorGenerated = true;
         var component = itemComponent;
         if (component != null && component.currentType != ItemsTypes.MULTICOLOR)
