@@ -422,7 +422,7 @@ namespace FruitMatch.Scripts.Blocks
                 {
                     if (restCount - fieldCount > 0)
                     {
-                        if (Random.Range(0, LevelManager.THIS.levelData.limit / 3) == 0)
+                        if (Random.Range(0, LevelManager.THIS.levelData.Limit / 3) == 0)
                         {
                             item = ObjectPooler.Instance.GetPooledObject(selectedTarget.targetPrefab.name, this);
                             item.GetComponent<Item>().sprRenderer[0].sprite = selectedTarget.extraObject;

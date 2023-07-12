@@ -15,6 +15,7 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
           public GameObject targetPrefab;
 
         public int count;
+        public int MaxCount;
         int Savecount;
         public int preCount;
         public Sprite extraObject;
@@ -23,6 +24,7 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
         public TargetGUI TargetGui;
         public TargetContainer targetLevel;
         public CollectingTypes collectingAction;
+        public CollectionStyle collectionStyle;
         public bool NotFinishUntilMoveOut;
         private bool showScores;
         private int countALlsquares;

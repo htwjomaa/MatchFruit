@@ -23,7 +23,7 @@ MAP,MAP,KARTE,MAP,MAPA,KARTA,HARİTA,MAPA,MAPPA
 AGAIN,AGAIN,WIEDER,ENCORE,OTRA VEZ,IGEN,TEKRAR,AGAIN,DI NUOVO
 goal,Goal,Ziel,Objectif,Objetivo,Mål,Hedef,Cel,Obiettivo
 refill_all_lives,Refill all lives!,Fülle alle Leben wieder auf!,Remplir toutes les vies !,¡Recarga todas las vidas!,Fyll på alla liv!,Tüm canları doldurun!,Uzupełnij wszystkie życia!,Riempi tutte le vite!
-your_target,Your Target:,Dein Ziel:,Votre cible :,Tu objetivo:,Ditt mål:,Hedefiniz:,Twój cel:,Il tuo obiettivo:
+your_target,Tasks:, Aufgaben:,Votre cible:, Tareas:, Uppgifter:,Görevler:,Zadania:,Compiti:
 thanks,Thanks!,Danke!,Merci !,¡Gracias!,Tack!,Teşekkürler!,Dzięki!,Grazie!
 congratulation,Congratulation!,Herzlichen Glückwunsch!,Félicitations !,¡Felicidades!,Grattis!,Tebrikler!,Gratulacje!,Congratulazioni!
 extra_moves,Extra moves,Extra Züge,Mouvements supplémentaires,Movimientos extra,Extra drag,Ekstra hareketler,Dodatkowe ruchy,Mosse extra
@@ -301,6 +301,10 @@ NoTeleport,No Teleport,Kein Teleporter,Pas de téléportation,Sin teletransporte
 TeleportFrom,Teleport From,Teleporter von,Téléportation de,Teletransporte desde,Teleport från,Işınlanma Noktası,Teleportuj się z,Teletrasporto da
 TeleportTo,Teleport To,Teleporter nach,Téléportation vers,Teletransportarse a,Teleport till,Işınlanma,Teleportuj się do,Teletrasporto a
 no_matches, No Matches shuffle, Mischen bei keinen Treffern,  Pas d'allumettes mélangées, No se barajan los partidos, Inga matchningar shuffle, Karışık Eşleşme Yok, Brak tasowania meczów, Nessuna partita mischiata
-AVOID, AVOID, VERMEIDE, ÉVITE, EVITE, UNDVIKA, KAÇININ, UNIKANIE, EVITARE
 activate_search_bombs, Search Bombs, Suchbomben, Bombes de recherche, Buscar bombas, Sökbomber, Bomba arama, Wyszukiwanie bomb, Ricerca bombe
 activate_package_bombs, Package Bombs, Packet Bomben, colis piégé, paquete bomba, Paketbomb, paket bomba, pakiet bombowy, pacchetto bomba
+MEIDE, AVOID, MEIDE, ÉVITER, EVITE, UNDVIK, Kaçının, UNIKAJ, EVITARE
+AVOID, AVOIDED, VERMIEDEN, ÉVITER, EVITE, UNDVIK, Kaçının, UNIKAJ, EVITARE
+GOAL, GOAl, ZIEL, OBJECTIV, OBJECTIVO, MAL, HEDEF, CEL, OBIETTIVO
+LEERZUG, EMPTY MOVE, LEERZUG, MOUVEMENT VIDE, MOVIMIENTO VACÍO, TOM RÖRELSE, BOŞ HAREKET, PUSTY RUCH, SPOSTAMENTO A VUOTO
+LEERZÜGE, EMPTY MOVES, LEERZÜGE, MOUVEMENT VIDE, MOVIMIENTO VACÍO, TOM RÖRELSE, BOŞ HAREKET, PUSTY RUCH, SPOSTAMENTO A VUOTO

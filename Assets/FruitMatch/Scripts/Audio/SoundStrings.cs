@@ -40,6 +40,8 @@ public sealed class SoundStrings : MonoBehaviour
     public string AdminSettingsButtonSound = "adminSettingsButtonSound";
     public string CloseAdminSettingsPanelSound = "closeAdminSettingsPanelSound";
    public string ExitButtonSound = "exitButtonSound";
+   public string AvoidedSuccessful = "avoidedSuccessful";
+   
    
    public string IncreaseSound = "increaseSound";
    public string DecreaseSound = "decreaseSound";

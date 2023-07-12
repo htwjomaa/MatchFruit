@@ -20,6 +20,7 @@ namespace FruitMatch.Scripts.GUI
         private float lastTime;
         bool alert;
         public bool isLabel;
+         public CollectionStyle CollectionStyle;
         private LevelData _thisLevelData;
 
         IEnumerator HideOnStartCo(float seconds)
@@ -59,7 +60,7 @@ namespace FruitMatch.Scripts.GUI
         private void Start()
         {
             ThisLevelData = LevelManager.THIS.levelData;
-            StartCoroutine(HideOnStartCo(0.2f));
+            StartCoroutine(HideOnStartCo(0.02f));
         }
 
         void OnEnable()
@@ -99,9 +100,10 @@ namespace FruitMatch.Scripts.GUI
                 switch (ThisLevelData.limitType)
                 {
                     case LIMIT.MOVES:
-                        txt.text = "" + Mathf.Clamp(ThisLevelData.limit, 0, ThisLevelData.limit);
+                        
+                        txt.text = "" + Mathf.Clamp(ThisLevelData.Limit, 0, ThisLevelData.Limit);
                         txt.transform.localScale = Vector3.one;
-                        if (ThisLevelData.limit <= 5)
+                        if (ThisLevelData.Limit <= 5)
                         {
                             txt.color = new Color(255f / 255f, 132f / 255, 222f / 255);
                             txt.outlineColor = Color.white;
@@ -119,12 +121,12 @@ namespace FruitMatch.Scripts.GUI
                         }
                         break;
                     case LIMIT.TIME:
-                        var minutes = Mathf.FloorToInt(ThisLevelData.limit / 60F);
-                        var seconds = Mathf.FloorToInt(ThisLevelData.limit - minutes * 60);
+                        var minutes = Mathf.FloorToInt(ThisLevelData.Limit / 60F);
+                        var seconds = Mathf.FloorToInt(ThisLevelData.Limit - minutes * 60);
                         txt.text = "" + $"{minutes:00}:{seconds:00}";
                         txt.transform.localScale = Vector3.one * 0.68f;
                         txt.fontSize = 80;
-                        if (ThisLevelData.limit <= 5 && LevelManager.THIS.gameStatus == GameState.Playing)
+                        if (ThisLevelData.Limit <= 5 && LevelManager.THIS.gameStatus == GameState.Playing)
                         {
                             // txt.color = new Color(216f / 255f, 0, 0);
                             // txt.outlineColor = Color.white;
@@ -145,9 +147,9 @@ namespace FruitMatch.Scripts.GUI
 
                         if (!isLabel)
                         {
-                            txt.text = "" + Mathf.Clamp(ThisLevelData.limit, 0, ThisLevelData.limit);
+                            txt.text = "" + Mathf.Clamp(ThisLevelData.Limit, 0, ThisLevelData.Limit);
                             txt.transform.localScale = Vector3.one;
-                            if (ThisLevelData.limit >= 5)
+                            if (ThisLevelData.Limit >= 5)
                             {
                                 txt.color = new Color(255f / 255f, 132f / 255, 222f / 255);
                                 txt.outlineColor = Color.white;
@@ -222,7 +224,7 @@ namespace FruitMatch.Scripts.GUI
                 {
                     if (_thisLevelData.limitType == LIMIT.TIME)
                     {
-                        _thisLevelData.limit--;
+                        _thisLevelData.Limit--;
                         if (!LevelManager.THIS.DragBlocked)
                             LevelManager.THIS.CheckWinLose();
                     }

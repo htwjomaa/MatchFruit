@@ -276,8 +276,8 @@ namespace FruitMatch.Scripts.Level
                     {
                         levelData.fields[0].levelSquares[i].isEnterTeleport = true;
                         int translatedTarget = TranslateTeleportTarget(tileSettingConfigs[i].TeleportTarget);
-                        Debug.Log("TranslatedTarget: " + translatedTarget);
-                        Debug.Log("TransformToXYCoords(translatedTarget): " + TransformToXYCoords(translatedTarget));
+                      //  Debug.Log("TranslatedTarget: " + translatedTarget);
+                       // Debug.Log("TransformToXYCoords(translatedTarget): " + TransformToXYCoords(translatedTarget));
                         linkBackList.Add(new TeleportTranslateStruct(i, translatedTarget));
                         levelData.fields[0].levelSquares[i].teleportCoordinatesLinked = TransformToXYCoords(translatedTarget);
                     }
@@ -287,9 +287,9 @@ namespace FruitMatch.Scripts.Level
               {
                   levelData.fields[0].levelSquares[linkBackList[i].TeleportTo].teleportCoordinatesLinkedBack =
                       TransformToXYCoords(linkBackList[i].TeleportFrom);
-                  Debug.Log(   "TransformToXYCoords(linkBackList[i].TeleportFrom::: " +    TransformToXYCoords(linkBackList[i].TeleportFrom));
-                  Debug.Log("LinkBackList: To: " + linkBackList[i].TeleportTo + " || From: " +
-                            linkBackList[i].TeleportFrom);
+                 // Debug.Log(   "TransformToXYCoords(linkBackList[i].TeleportFrom::: " +    TransformToXYCoords(linkBackList[i].TeleportFrom));
+                  //Debug.Log("LinkBackList: To: " + linkBackList[i].TeleportTo + " || From: " +
+                        //    linkBackList[i].TeleportFrom);
                   
                   levelData.fields[0].levelSquares[linkBackList[i].TeleportTo].enterSquare = true;
                  
@@ -425,6 +425,7 @@ namespace FruitMatch.Scripts.Level
             levelData.LoadTargetObject();
 
             levelData.InitTargetObjects(limit, true);
+           
             Rl.adminLevelSettingsLookDev.SetBackgroundImage();
 
             for (int i = 0; i < levelData.fields.Count; i++)
@@ -457,11 +458,11 @@ namespace FruitMatch.Scripts.Level
                         gameType);
 
                 if (GenericFunctions.IsSubstractiveState(limit))
-                    levelData.limit = GenericSettingsFunctions.GetConstvaluesMovesTime(LevelConfig.BoardDimensionsConfig.GameTypeP1[0].CounterValue, gameType);
+                    levelData.Limit = GenericSettingsFunctions.GetConstvaluesMovesTime(LevelConfig.BoardDimensionsConfig.GameTypeP1[0].CounterValue, gameType);
                 else
                 {
                     LevelManager.THIS.LimitHelper = GenericSettingsFunctions.GetConstvaluesMovesTime(LevelConfig.BoardDimensionsConfig.GameTypeP1[0].CounterValue, gameType);
-                    levelData.limit = 0;
+                    levelData.Limit = 0;
                 }
                   
                 levelData.limitType = limit;

@@ -67,6 +67,10 @@ namespace FruitMatch.Scripts.Core
                 levelData.currentSublevelIndex = currentSubLevel - 1;
             }
         }
+
+        public List<CollectionStyle> TargetCollectionStyle = new List<CollectionStyle>();
+        
+        
         //current field reference
         public FieldBoard field => fieldBoards[CurrentSubLevel - 1]; //EDITOR: cost of continue after failing 
         public int FailedCost; //EDITOR: moves gived to continue
@@ -111,9 +115,9 @@ namespace FruitMatch.Scripts.Core
                 if (activatedBoost == null) return;
                 if (activatedBoost.type != BoostType.ExtraMoves && activatedBoost.type != BoostType.ExtraTime) return;
                 if (THIS.levelData.limitType == LIMIT.MOVES)
-                    THIS.levelData.limit += 5;
+                    THIS.levelData.Limit += 5;
                 else
-                    THIS.levelData.limit += 30;
+                    THIS.levelData.Limit += 30;
 
                 ActivatedBoost = null;
             }
@@ -439,6 +443,10 @@ namespace FruitMatch.Scripts.Core
         public static bool avoided;
 
         public static bool avoidedLateUpdate;
+        public delegate void MoveMade();
+        public static event MoveMade MoveMadeEvent;
+        public void InvokeMoveMadeEvent() => MoveMadeEvent?.Invoke();
+   
         //Generate loaded level
         private void GenerateLevel()
         {
@@ -555,9 +563,9 @@ namespace FruitMatch.Scripts.Core
 
         private void SubtractiveLimitType(ref bool lose, ref bool win)
         {
-            if (levelData.limit <= 0)
+            if (levelData.Limit <= 0)
             {
-                levelData.limit = 0;
+                levelData.Limit = 0;
 
                 if (!levelData.IsTotalTargetReached())
                     lose = true;
@@ -577,9 +585,9 @@ namespace FruitMatch.Scripts.Core
         
         private void AdditiveLimitType(ref bool lose, ref bool win)
         {
-            if (levelData.limit >= LimitHelper)
+            if (levelData.Limit >= LimitHelper)
             {
-                levelData.limit = 0;
+                levelData.Limit = 0;
 
                 if (!levelData.IsTotalTargetReached())
                     lose = true;
@@ -601,7 +609,7 @@ namespace FruitMatch.Scripts.Core
         {
             var lose = false;
             var win = false;
-            Debug.Log("Win Limit is : " + levelData.limit);
+            Debug.Log("Win Limit is : " + levelData.Limit);
 
 
             switch (levelData.limitType)
@@ -634,7 +642,7 @@ namespace FruitMatch.Scripts.Core
 
             if (DebugSettings.AI && (win || lose))
             {
-                Debug.Log((win ? "win " : "lose ") + " score " + Score+ " stars " + stars + " moves/time rest " + THIS.levelData.limit);
+                Debug.Log((win ? "win " : "lose ") + " score " + Score+ " stars " + stars + " moves/time rest " + THIS.levelData.Limit);
                 RestartLevel();
             }
         }
@@ -649,7 +657,7 @@ namespace FruitMatch.Scripts.Core
             if (!InitScript.Instance.losingLifeEveryGame && InitScript.lifes < InitScript.Instance.CapOfLife)
                 InitScript.Instance.AddLife(1);
             CompleteWord.SetActive(true);
-            var limit = Mathf.Clamp(levelData.limit, 0, 5);
+            var limit = Mathf.Clamp(levelData.Limit, 0, 5);
 
             if(!skipWin)
             {
@@ -694,7 +702,7 @@ namespace FruitMatch.Scripts.Core
                 {
                     if (levelData.limitType == LIMIT.MOVES)
                     {
-                        levelData.limit--;
+                        levelData.Limit--;
                     }
 
                     if (target != null && target.gameObject.activeSelf)
@@ -713,7 +721,7 @@ namespace FruitMatch.Scripts.Core
                 if(skipWin) yield break;
                 yield return new WaitForListNull(list);
             }
-            levelData.limit = 0;
+            levelData.Limit = 0;
 
             do
             {
@@ -757,7 +765,7 @@ namespace FruitMatch.Scripts.Core
 
             if (Input.GetKeyDown(DebugSettings.Lose) && DebugSettings.enableHotkeys)
             {
-                levelData.limit = 1;
+                levelData.Limit = 1;
             }
 
             if (Input.GetKeyDown(DebugSettings.Restart) && DebugSettings.enableHotkeys)
@@ -1156,7 +1164,9 @@ namespace FruitMatch.Scripts.Core
             {
                 //levelData.limit--;
             }
-            else levelData.limit++;
+            else 
+                //levelData.Limit++
+                ;
 
             avoidedLateUpdate = false;
            // StartCoroutine(AvoidedCo(0.00001f));

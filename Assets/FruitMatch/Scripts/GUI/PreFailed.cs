@@ -99,9 +99,9 @@ namespace FruitMatch.Scripts.GUI
         private void ContinueFailed()
         {
             if (LevelManager.THIS.levelData.limitType == LIMIT.MOVES)
-                LevelManager.THIS.levelData.limit += LevelManager.THIS.ExtraFailedMoves;
+                LevelManager.THIS.levelData.Limit += LevelManager.THIS.ExtraFailedMoves;
             else
-                LevelManager.THIS.levelData.limit += LevelManager.THIS.ExtraFailedSecs;
+                LevelManager.THIS.levelData.Limit += LevelManager.THIS.ExtraFailedSecs;
         }
     }
 }

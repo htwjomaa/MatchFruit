@@ -46,7 +46,7 @@ namespace FruitMatch.Scripts.GUI
                     GetComponent<TextMeshProUGUI>().text = LocalisationSystem.GetLocalisedString("TIME");
                     break;
                 case LIMIT.AVOID:
-                    GetComponent<TextMeshProUGUI>().text = LocalisationSystem.GetLocalisedString("AVOID");
+                    GetComponent<TextMeshProUGUI>().text = LocalisationSystem.GetLocalisedString("LEERZÜGE");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

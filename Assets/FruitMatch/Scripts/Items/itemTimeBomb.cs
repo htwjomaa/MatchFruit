@@ -90,7 +90,7 @@ namespace FruitMatch.Scripts.Items
         public UnityAction OnExlodeAnimationFinished;
         public void ExlodeAnimation(bool hide, UnityAction callback)
         {
-            LevelManager.THIS.levelData.limit = 0;
+            LevelManager.THIS.levelData.Limit = 0;
 
             if(callback == null)
                 callback = OnExlodeAnimationFinished;

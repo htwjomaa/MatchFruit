@@ -528,7 +528,7 @@ namespace FruitMatch.Scripts.Items
                     if (LevelManager.THIS.ActivatedBoost.type != BoostType.FreeMove)
                     {
                         if (LevelManager.THIS.levelData.limitType == LIMIT.MOVES)
-                            LevelManager.THIS.levelData.limit--;
+                            LevelManager.THIS.levelData.Limit--;
                         LevelManager.THIS.moveID++;
                     }
 

@@ -653,7 +653,7 @@ public enum GoalSwitchButton
         return counter;
     }
     private string StringGoalColor(Colors goalColor) => Enum.GetName(typeof(Colors ), (int)goalColor);
-    private string StringCollectionStyle(CollectionStyle collectionStyle) => Enum.GetName(typeof(CollectionStyle ), (int)collectionStyle);
+    public string StringCollectionStyle(CollectionStyle collectionStyle) => Enum.GetName(typeof(CollectionStyle ), (int)collectionStyle);
     
     private FruitType NextFruitType(int fruitType)
     {

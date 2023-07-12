@@ -84,6 +84,7 @@ MonoBehaviour:
     - gameOver1
     - gameOver2
     - vanish
+    - avoidedSuccessful
     m_Values:
     - clipName: Heart of the Jungle
       index: 0
@@ -226,6 +227,8 @@ MonoBehaviour:
       index: 68
     - clipName: comedy_bubble_pop_001
       index: 69
+    - clipName: Vermieden
+      index: 70
   allAudioSettings:
   - audioClip: {fileID: 8300000, guid: 0bd23a3b387d9654ea99ae2c7afe31d9, type: 3}
     noPitching: 0
@@ -997,5 +1000,16 @@ MonoBehaviour:
     - 0
     - 0.1
     - 0.2
-  input: vanish
-  audioClip: {fileID: 8300000, guid: 681bd0f8741d35d4aafeb64c9e96e02b, type: 3}
+  - audioClip: {fileID: 8300000, guid: 79db49a8e7e4db640926059e3788ec2f, type: 3}
+    noPitching: 0
+    AddSomeRandomnessToEachPitchValue: 0
+    volume: 63.7
+    fixedVolume: 0
+    pitch:
+    - -0.127
+    - -0.078
+    - -0.029
+    - 0.056
+    - 0.108
+  input: avoidedSuccessful
+  audioClip: {fileID: 8300000, guid: 79db49a8e7e4db640926059e3788ec2f, type: 3}

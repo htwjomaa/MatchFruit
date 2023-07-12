@@ -29,6 +29,8 @@ public sealed class World : ScriptableObject
     public Sprite LimitedMoveImage;
     public Sprite SpriteNotFound;
     private bool[] levelnachSternenFreigeschaltet;
+    public List<CollectionStyleSet> CollectionStyleSet;
+    
 
 
     public  Dictionary<LevelCategory, BgImageSet> allBgImageSetDictionaries;

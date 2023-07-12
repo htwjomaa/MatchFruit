@@ -16,6 +16,7 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
     {
         public string name = "";
         public CollectingTypes collectAction;
+        public int CollectionMaxCount = 0;
         public SetCount setCount;
         [Tooltip("Can switch sublevel if target not complete")]
         public bool CanSwithSublevel;

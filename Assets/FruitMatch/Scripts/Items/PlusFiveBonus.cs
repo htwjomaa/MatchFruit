@@ -17,7 +17,7 @@ namespace FruitMatch.Scripts.Items
             animation.Play();
             Destroy(gameObject, 1);
             if (LevelManager.THIS.gameStatus == GameState.Playing)
-                LevelManager.THIS.levelData.limit += 5;
+                LevelManager.THIS.levelData.Limit += 5;
         }
     }
 }
