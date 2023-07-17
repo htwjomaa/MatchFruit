@@ -520,6 +520,7 @@ namespace FruitMatch.Scripts.Core
             }
         }
         /// Cloud effect animation for different direction levels
+        
         private IEnumerator IdleItemsDirection()
         {
             if (field.squaresArray.Select(i => i.direction).Distinct().Count() > 1)
@@ -529,30 +530,49 @@ namespace FruitMatch.Scripts.Core
                     yield return new WaitForSeconds(3);
                     if (gameStatus == GameState.Playing && !findMatchesStarted)
                     {
-
-                        // var orderedEnumerableCol = DirectionCloudEffect.GetItems();
-                        var orderedEnumerableCol = THIS.field.GetItems()
-                            .GroupBy(i => i.square.squaresGroup).ToList()
-                            .Select(x => new
-                            {
-                                items = x,
-                                Num = x.Max(i => i.square.orderInSequence),
-                                Count = x.Count(),
-                                x.Key
-                            }).OrderByDescending(i => i.Num).ToList();
-
-                        // Debug.WatchInstance(orderedEnumerableCol);
-                        foreach (var items in orderedEnumerableCol)
+                        var itemList = field.GetItems();
+                        for (int i = 0; i < itemList.Count; i++)
                         {
-                            var animationFinished = false;
-                            foreach (var item in items.items)
-                            {
-                                if(item.destroying) continue;
-                                StartCoroutine(item.DirectionAnimation(() => { animationFinished = true; }));
-                            }
+                            if (itemList[i].square == null)
+                                itemList.Remove(itemList[i]);
 
-                            yield return new WaitUntil(() => animationFinished);
                         }
+                        { var orderedEnumerableCol = itemList
+                                .GroupBy(i =>
+                                {
+
+                                    if ( i.square == null || i.square.squaresGroup == null)
+                                        return new List<Square>();
+                                    return i.square.squaresGroup;
+                                }).ToList()
+                                .Select(x => new
+                                {
+                                    items = x,
+                                    Num = x.Max(i =>
+                                    {
+                                        if (i.square == null)
+                                            return 0;
+                                        return i.square.orderInSequence;
+                                    }),
+                                    Count = x.Count(),
+                                    x.Key
+                                }).OrderByDescending(i => i.Num).ToList();
+
+                         
+                            foreach (var items in orderedEnumerableCol)
+                            {
+                                var animationFinished = false;
+                                foreach (var item in items.items)
+                                {
+                                    if (item.destroying) continue;
+                                    StartCoroutine(item.DirectionAnimation(() => { animationFinished = true; }));
+                                }
+
+                                yield return new WaitUntil(() => animationFinished);
+                            }
+                            
+                        }
+                      
                     }
 
                     yield return new WaitForSeconds(1);

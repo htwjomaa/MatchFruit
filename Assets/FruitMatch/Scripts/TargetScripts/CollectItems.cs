@@ -51,11 +51,15 @@ namespace FruitMatch.Scripts.TargetScripts
                     {
                         amount--;
                         item.preCount--;
-                        var pos = TargetGUI.GetTargetGUIPosition(obj.GetComponent<IColorableComponent>().directSpriteRenderer.sprite.name);
+                        CollectionStyle collectionStyle = CollectionStyle.Nothing;
+                        var pos = TargetGUI.GetTargetGUIPosition(obj.GetComponent<IColorableComponent>().directSpriteRenderer.sprite.name, ref collectionStyle);
+                        
+                        Vector3 localScale = obj.transform.localScale;
+                        if(collectionStyle== CollectionStyle.Avoid)  localScale = Vector3.zero;
                         var itemAnim = new GameObject();
                         var animComp = itemAnim.AddComponent<AnimateItems>();
                         LevelManager.THIS.animateItems.Add(animComp);
-                        animComp.InitAnimation(obj.gameObject, pos, obj.transform.localScale, () => { item.changeCount(-1); });
+                        animComp.InitAnimation(obj.gameObject, pos, localScale, () => { item.changeCount(-1); });
                     }
                 }
             }

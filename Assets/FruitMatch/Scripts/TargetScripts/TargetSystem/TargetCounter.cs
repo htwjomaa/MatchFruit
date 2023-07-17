@@ -24,7 +24,6 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
         public TargetGUI TargetGui;
         public TargetContainer targetLevel;
         public CollectingTypes collectingAction;
-        public CollectionStyle collectionStyle;
         public bool NotFinishUntilMoveOut;
         private bool showScores;
         private int countALlsquares;
@@ -115,13 +114,17 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
                 //     if (square.destroyedTarget) return;
                 //     square.destroyedTarget = true;
                 // }
-                Vector3 pos = TargetGUI.GetTargetGUIPosition(extraObject.name);
+                CollectionStyle collectionStyle = CollectionStyle.Destroy;
+                Vector3 pos = TargetGUI.GetTargetGUIPosition(extraObject.name, ref collectionStyle);
+                Vector3 localScale = obj.transform.localScale;
+               if(collectionStyle == CollectionStyle.Avoid)  localScale = Vector3.zero;
                 var itemAnim = new GameObject();
                 var animComp = itemAnim.AddComponent<AnimateItems>();
                 LevelManager.THIS.animateItems.Add(animComp);
                 if (square != null) animComp.linkObjectHash = square.hashCode;
                 animComp.target = true;
-                animComp.InitAnimation(animCompLinkObject, pos, obj.transform.localScale, () => { 
+               // if(animComp.target.GetComponent<TargetGUI>() != null && TargetItem.GetMarmaladeTarget.GetComponent<TargetGUI>().collectionStyle == CollectionStyle.Avoid)
+               animComp.InitAnimation(animCompLinkObject, pos, localScale , () => { 
                     // if(square != null)
                     // {
                     //     var component = square.transform.parent.GetComponent<Square>();

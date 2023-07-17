@@ -51,7 +51,12 @@ namespace FruitMatch.Scripts.TargetScripts
             if (_items.TryGetElement(0)?.GetType() != typeof(Square)) return;
             var items = _items as Square[];
             var sugarList = items?.Where(i => i.type.ToString() == GetType().Name.ToString());
-            var pos = TargetGUI.GetTargetGUIPosition(LevelData.THIS.GetFirstTarget(true).name);
+            CollectionStyle collectionStyle = CollectionStyle.Destroy;
+            var pos = TargetGUI.GetTargetGUIPosition(LevelData.THIS.GetFirstTarget(true).name, ref collectionStyle);
+            
+   
+          
+            
             foreach (var sugarBlock in sugarList)
             {
                 Square sugarBlockSubSquare = sugarBlock.GetSubSquare();
@@ -61,7 +66,17 @@ namespace FruitMatch.Scripts.TargetScripts
                 var itemAnim = new GameObject();
                 var animComp = itemAnim.AddComponent<AnimateItems>();
                 LevelManager.THIS.animateItems.Add(animComp);
-                animComp.InitAnimation(sugarBlockSubSquare.gameObject, pos, scale, () => { targetContainer.changeCount(-1); });
+
+                if (collectionStyle == CollectionStyle.Avoid)
+                {
+                    animComp.InitAnimation(sugarBlockSubSquare.gameObject, Vector3.zero, scale, () => { targetContainer.changeCount(-1); });
+                }
+                    
+                else
+                {
+                    animComp.InitAnimation(sugarBlockSubSquare.gameObject, pos, scale, () => { targetContainer.changeCount(-1); });
+                }
+         
                 // square.DestroyBlock();
             }
         }

@@ -320,6 +320,7 @@ using System.Linq;
                         _TargetCounters[i].count = Mathf.Abs((int)Goals[i].CollectionAmount);
                     
                         _TargetCounters[i].MaxCount = Mathf.Abs((int)Goals[i].CollectionAmount);
+                       // if (Goals[i].CollectionStyle == CollectionStyle.Avoid) _TargetCounters [i].count= Int32.MaxValue;
                       
                         LevelManager.THIS.TargetCollectionStyle.Add(Goals[i].CollectionStyle);
                     }

@@ -700,11 +700,12 @@ using Random = UnityEngine.Random;
          {
              if (exceptItems == null) exceptItems = new Item[] { };
 
-             var items = squaresArray.Where(i => i?.Item != null).Select(i => i.Item).Except(exceptItems);
+             IEnumerable<Item> items = squaresArray.Where(i => i?.Item != null).Select(i => i.Item).Except(exceptItems);
              if (onlySimple)
                  items = items?.Where(i => i.currentType == ItemsTypes.NONE && i.NextType == ItemsTypes.NONE);
              if (nonDestroying)
                  items = items?.Where(i => !i.destroying);
+             
              return items.ToList();
          }
 

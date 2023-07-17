@@ -63,11 +63,14 @@ namespace FruitMatch.Scripts.TargetScripts
                         fulledCountPerLevel[v]++;
                         amount--;
                         item.preCount--;
-                        var pos = TargetGUI.GetTargetGUIPosition(ingredientName);
+                        CollectionStyle collectionStyle = CollectionStyle.Destroy;
+                        var pos = TargetGUI.GetTargetGUIPosition(ingredientName, ref collectionStyle);
+                        Vector3 localScale = obj.transform.localScale;
+                        if(collectionStyle == CollectionStyle.Avoid)  localScale = Vector3.zero;
                         var itemAnim = new GameObject();
                         var animComp = itemAnim.AddComponent<AnimateItems>();
                         LevelManager.THIS.animateItems.Add(animComp);
-                        animComp.InitAnimation(obj.gameObject, pos, obj.transform.localScale, () => { item.changeCount(-1);
+                        animComp.InitAnimation(obj.gameObject, pos, localScale, () => { item.changeCount(-1);
 //                        obj.DestroyBehaviour();
                         });
                         obj.DestroyBehaviour();

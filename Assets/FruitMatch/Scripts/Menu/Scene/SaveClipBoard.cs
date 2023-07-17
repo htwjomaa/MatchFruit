@@ -31,6 +31,9 @@ public class SaveClipBoard : ScriptableObject
 
     [Button()]
     public void InitPhaseGoalList() => GenericSettingsFunctions.InitPhaseGoalList(ref PhaseGoalsList);
+
+    [Header("Config Settings")] 
+    public LevelConfig LevelConfig;
     
     [Header("Board Settings")]
     public int[] BoardWidth;

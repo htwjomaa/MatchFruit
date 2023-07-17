@@ -21,6 +21,7 @@ public sealed class LoadingHelper : MonoBehaviour
   public GameObject[] BlockPrefabs;
  public GameObject[] ItemPrefabs;
  public ParticleSystem[] VanishParticleObjects;
+ public Sprite[] HideSprites;
  public Sprite[] Sprites;
  public Sprite[] Marmalades;
  public Sprite[] HorStriped;
@@ -30,7 +31,7 @@ public sealed class LoadingHelper : MonoBehaviour
  public List<ObjectiveSettings> ObjectiveSettingsDebug;
  public static LoadingHelper THIS;
  public bool sideDotStart = true;
- public bool sideDotBool = true;
+ [FormerlySerializedAs("sideDotBool")] public bool sideDotAndSwitchFinished = true;
  public GameObject ItemPrefab;
  public GameObject tilePrefab;
  public Sprite tileBackgroundDark;

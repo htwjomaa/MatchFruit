@@ -36,10 +36,12 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
         private string _emptyColor = "#FFFFFF";
 
 
-        private Vector3 _borderLocalSize = new Vector3(1.063f, 1.063f, 1.063f);
+        private Vector3 _borderLocalSize = new Vector3(1.05f, 1.05f, 1.05f);
         private string _goalBorderColor = "#ADFF97";
         private string _avoidBorderColor = "#FF4643";
         private string _emptyBorderColor = "#FFFFFF";
+
+        private string _avoidTextColor = "#380505";
         private int _maxCount = 0;
         private void Awake()
         {
@@ -110,6 +112,7 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
                 if(BorderImage != null) BorderImage.color = new Color(BorderImage.color.r, BorderImage.color.g, BorderImage.color.b,
                     0.94f);
                 if(frame != null)   frame.color = new Color(frame.color.r, frame.color.g, frame.color.b, 0.94f);
+                if (text != null) text.color = new Color(text.color.r, text.color.g, text.color.b, 1f);
                 yield break;
             } 
             yield return new WaitForSeconds(waitInBetweenFramesSec);
@@ -118,7 +121,8 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
         if(BorderImage != null) BorderImage.color= new Color(BorderImage.color.r, BorderImage.color.g, BorderImage.color.b, BorderImage.color.a + 0.055f);
             GoalContraint.color = new Color(GoalContraint.color.r, GoalContraint.color.g, GoalContraint.color.b, GoalContraint.color.a+0.05f);
             
-           StartCoroutine(FadeIconsInCO(waitInBetweenFramesSec));
+            if(text != null) text.color= new Color(text.color.r, text.color.g, text.color.b, text.color.a + 0.055f);
+            StartCoroutine(FadeIconsInCO(waitInBetweenFramesSec));
         }
         
         private string GetTargetCollectionStyleText(CollectionStyle collectionStyle)
@@ -151,13 +155,17 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
             if(frame != null) SetFrameImage();
 
             Int32.TryParse(text.text, out _maxCount);
+            SetAvoidColor(-1);
         }
 
         private void SetFrameImage()
         {
             CollectionStyle collectionStyle = LevelManager.THIS.TargetCollectionStyle[
                 SiblingIndex];
-
+            if (HideTargetIcon != null)
+            {
+                HideTargetIcon.sprite = collectionStyle == CollectionStyle.Avoid ? LoadingHelper.THIS.HideSprites[1] : LoadingHelper.THIS.HideSprites[0];
+            }
             for (int i = 0; i < Rl.world.CollectionStyleSet.Count; i++)
             {
                 if (Rl.world.CollectionStyleSet[i].CollectionStyle == collectionStyle)
@@ -165,8 +173,10 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
                     frame.sprite = Rl.world.CollectionStyleSet[i].CollenctionStyleImage;
                     return;
                 }
-             
             }
+
+         
+           
         }
 
         public int SiblingIndex;
@@ -200,8 +210,26 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
             }
         }
 
-        
-        private void InvokeFadeIn() =>  StartCoroutine(FadeIconsInCO(0.09f));
+
+        private void SetAvoidColor(float alpha)
+        {
+            if (Math.Abs(alpha - (-1)) < 0.1f) alpha = text.color.a;
+            if (collectionStyle == CollectionStyle.Avoid)
+            {
+                if (alpha == 0) text.text = "0/" + _maxCount.ToString();
+                else text.text = _maxCount.ToString();
+                Color tempColor = Color.black;
+                ColorUtility.TryParseHtmlString(_avoidTextColor, out tempColor);
+                text.color = tempColor;
+                text.color = new Color(text.color.r, text.color.g, text.color.b, alpha);
+            }
+        }
+        private void InvokeFadeIn()
+        {
+            StartCoroutine(FadeIconsInCO(0.09f));
+            SetAvoidColor(0);
+        }
+
         private void Start()
         {
             if(HideTargetIcon != null)   TargetSettings.ShowItemEvent += ShowIcon;
@@ -222,6 +250,7 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
                 image.color = new Color(image.color.r, image.color.g, image.color.b, 0);
                 if(frame != null) frame.color = new Color(frame.color.r, frame.color.g, frame.color.b, 0);
                 if(BorderImage != null) BorderImage.color = new Color(BorderImage.color.r, BorderImage.color.g, BorderImage.color.b, 0);
+               
                 GoalContraint.color = new Color(GoalContraint.color.r, GoalContraint.color.g, GoalContraint.color.b, 0);
                 Invoke(nameof(InvokeFadeIn), 3.3f);
             }
@@ -245,6 +274,7 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
             HideTargetIcon.color = new Color(HideTargetIcon.color.r, HideTargetIcon.color.g, HideTargetIcon.color.b, 0f);
             if (frame != null) frame.color = new Color(frame.color.r, frame.color.g, frame.color.b, 0.94f);
             if(BorderImage != null) BorderImage.color = new Color(BorderImage.color.r, BorderImage.color.g, BorderImage.color.b, 0.94f);
+            if (text != null) text.color = new Color(text.color.r, text.color.g, text.color.b, 0.94f);
             yield return new WaitForSeconds(3.5f);
            // if (frame != null) frame.color = new Color(frame.color.r, frame.color.g, frame.color.b, 0f);
             HideTargetIcon.color = new Color(HideTargetIcon.color.r, HideTargetIcon.color.g, HideTargetIcon.color.b, 1f);
@@ -274,7 +304,8 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
             // UpdateText();
             StartCoroutine(Check());
             LevelManager.MoveMadeEvent += MoveMade;
-            StartCoroutine(HideIconsCo(9f));
+            StartCoroutine(HideIconsCo(8.5f));
+      
         }
 
         private void OnDisable()
@@ -298,7 +329,7 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
                 if (preventDoubleClick)
                 {
                     preventDoubleClick = false;
-                    StartCoroutine(ResetPreventDoubleClickCo(0.3f));
+                    StartCoroutine(ResetPreventDoubleClickCo(0.1f));
                     return true;
                 }
                 return false;
@@ -320,7 +351,7 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
         {
 
             yield return new WaitForSeconds(seconds);
-            if (LevelManager.GetGameStatus() == GameState.RegenLevel || LevelManager.THIS.findMatchesStarted || !LoadingHelper.THIS.sideDotBool)
+            if (LevelManager.GetGameStatus() == GameState.RegenLevel || LevelManager.THIS.findMatchesStarted || !LoadingHelper.THIS.sideDotAndSwitchFinished)
             {
                 StartCoroutine(MoveMadeCo(seconds));
             }
@@ -371,8 +402,9 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
                 int compareCount = subTargetContainer.GetCount(true);
                 if (_cashedCount != compareCount)
                 {
-                    _cashedCount = compareCount;
-                 //   FlashText();
+                    subTargetContainer.count = 200;
+                    _cashedCount = 200;
+                    //   FlashText();
                 }
 
                 else
@@ -386,7 +418,9 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
                         if(HideTargetIcon != null) GenericSettingsFunctions.SmallJumpAnimation(HideTargetIcon.transform);
                         Rl.GameManager.PlayAudio(Rl.soundStrings.AvoidedSuccessful, UnityEngine.Random.Range(0,5), true, Rl.settings.GetSFXVolume, Rl.effects.audioSource);
                     }
-                    text.text = _counterAvoid.ToString();
+
+                  
+                    text.text = _counterAvoid.ToString() + "/ " + _maxCount;
                 }
             }
         }
@@ -451,7 +485,7 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
             }
         }
         
-        public static Vector2 GetTargetGUIPosition(string SpriteName)
+        public static Vector2 GetTargetGUIPosition(string SpriteName, ref CollectionStyle collectionStyle)
         {
             if (!GenericFunctions.IsSubstractiveState())
                 LevelManager.avoidedLateUpdate = true;
@@ -460,20 +494,28 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
             foreach (var item in list)
             {
                 if (item.image.GetComponent<Image>().sprite.name == SpriteName && item.gameObject.activeSelf)
+                {
+                    collectionStyle = item.collectionStyle;
                     return item.transform.position;
+                }
+                 
             }
             if (list.Length > 0) pos = list[0].transform.position;
             return pos;
         }
         
-        public static Vector2 GetTargetGUIPosition(int color)
+        public static Vector2 GetTargetGUIPosition(int color, ref CollectionStyle collectionStyle)
         {
             var pos = Vector2.zero;
             var list = FindObjectsOfType(typeof(TargetGUI)) as TargetGUI[];
             foreach (var item in list)
             {
                 if (item.color == color && item.gameObject.activeSelf)
+                {
+                    collectionStyle = item.collectionStyle;
                     return item.transform.position;
+                }
+                  
             }
             if (list.Length > 0) pos = list[0].transform.position;
             return pos;

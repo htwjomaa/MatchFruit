@@ -89,8 +89,8 @@ public sealed class SideDot : MonoBehaviour
     public void OnMouseDown()
     {
         LoadingHelper.THIS.sideDotStart = false;
-       if (LevelManager.GetGameStatus() == GameState.RegenLevel || LevelManager.THIS.findMatchesStarted || !LoadingHelper.THIS.sideDotBool) return;
-       LoadingHelper.THIS.sideDotBool = false;
+       if (LevelManager.GetGameStatus() == GameState.RegenLevel || LevelManager.THIS.findMatchesStarted || !LoadingHelper.THIS.sideDotAndSwitchFinished) return;
+       LoadingHelper.THIS.sideDotAndSwitchFinished = false;
        // if (GetComponent<AnimationItem>() != null) GetComponent<AnimationItem>().MoveUp(0.33f);
 
         if (LoadingHelper.THIS.FieldBoard == null)
@@ -121,7 +121,7 @@ public sealed class SideDot : MonoBehaviour
     private bool particlePlayed = false;
     private IEnumerator CheckIfOtherSideDotStoppedMovingCo(float sec)
     {
-        Debug.Log("Checking");
+//        Debug.Log("Checking");
         var pos = OtherSideDotForPrepapre.transform.position;
         yield return new WaitForSeconds(sec);
         if (OtherSideDotForPrepapre.transform.position != pos)
@@ -129,7 +129,7 @@ public sealed class SideDot : MonoBehaviour
         else
         {
             if(sideDotTeleported) yield break;
-            Debug.Log("Same Pos");
+          //  Debug.Log("Same Pos");
             sprtRendererOtherSideDot = otherSideDot.GetComponentsInChildren<SpriteRenderer>();
             foreach (var t in sprtRendererOtherSideDot)
             {
@@ -205,7 +205,7 @@ public sealed class SideDot : MonoBehaviour
            }
        }
        LevelManager.THIS.FindMatches();
-       LoadingHelper.THIS.sideDotBool = true;
+       LoadingHelper.THIS.sideDotAndSwitchFinished = true;
        //CheckIfItemsAreStillValid();
        OtherSideDotForPrepapre.GetComponent<SideDot>().PrepareSideDot();
      if(OtherSideDotForPrepapre != null && OtherSideDotForPrepapre.GetComponent<SideDot>() != null) OtherSideDotForPrepapre.GetComponent<SideDot>().PrepareSideDot();

@@ -79,7 +79,7 @@ namespace FruitMatch.Scripts.Level
             List<Sprite> allSprites = new List<Sprite>();
             allDotPrefabs  = GetDots(Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs
                 .LevelConfigs[LevelManager.THIS.currentLevel-1].BoardDimensionsConfig, Rl.world);
-            Debug.Log(allDotPrefabs.Length);
+           // Debug.Log(allDotPrefabs.Length);
             HashSet<GameObject> allDotPrefabsHashSet = new HashSet<GameObject>();
             for (int i = 0; i < allDotPrefabs.Length; i++)
             {
