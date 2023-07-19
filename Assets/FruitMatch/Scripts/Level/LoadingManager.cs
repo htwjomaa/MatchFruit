@@ -481,6 +481,8 @@ namespace FruitMatch.Scripts.Level
                     
                 LoadingHelper.THIS.loadedSpritesDebug = loadedSprites;
                 LoadingHelper.THIS.loadedSpritesDebugMarmalade = loadedMarmaladeSprites;
+                LoadingHelper.THIS.SideFruitsSettings =
+                    LevelConfig.SideFruitsFieldConfig.SideFruitsConfig[0].SideFruitsSettings;
                 //levelData.fields[0].
                 // GoalManager goalManager = Rl.goalManager;
                 //  goalManager. TranslateGoals();
@@ -581,7 +583,9 @@ namespace FruitMatch.Scripts.Level
                 LoadingHelper.THIS.bottomActive,
                 LoadingHelper.THIS.leftActive,
                 LoadingHelper.THIS.rightActive,
-                LoadingHelper.THIS.topActive
+                LoadingHelper.THIS.topActive,
+                LoadingHelper.THIS.SideFruitsSettings
+                
             );
             float yWert = 0.35f;
             yWert -= (LoadingHelper.THIS.height * 0.4f);

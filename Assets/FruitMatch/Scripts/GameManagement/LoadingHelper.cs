@@ -30,6 +30,7 @@ public sealed class LoadingHelper : MonoBehaviour
  public Sprite[] TargetIcon;
  public List<ObjectiveSettings> ObjectiveSettingsDebug;
  public static LoadingHelper THIS;
+ public List<SideFruitsSetting> SideFruitsSettings;
  public bool sideDotStart = true;
  [FormerlySerializedAs("sideDotBool")] public bool sideDotAndSwitchFinished = true;
  public GameObject ItemPrefab;

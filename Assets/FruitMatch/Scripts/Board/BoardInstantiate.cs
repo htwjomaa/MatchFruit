@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using FruitMatch.Scripts.Items;
 using FruitMatch.Scripts.System.Pool;
 using UnityEngine;
@@ -9,61 +10,81 @@ using Random = UnityEngine.Random;
 public sealed class BoardInstantiate : MonoBehaviour
 {
     public static void InstantiateLeftSideDots(int rowLength, float leftOffSet, GameObject tilePrefab, ref BackgroundTile[,] alltiles,ref List<BackGroundTileSideList> allSideBackGroundTiles,
-        Sprite tileBackgroundBright, Sprite tileBackgroundDark, Transform boardTransform)
+        Sprite tileBackgroundBright, Sprite tileBackgroundDark, Transform boardTransform, SideFruitsSetting[] sideFruitsSetting)
     {
+        
         for (int i = 0; i < rowLength; i++)
         {
-            Vector2 tempPosition = new Vector2(0 - leftOffSet, i);
-            InstantiateTile(tempPosition, -1, i, Directions.left,tilePrefab,  ref  alltiles, ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, boardTransform);
-            InstantiateSideDot(tempPosition, -1, i, boardTransform);
+            if (sideFruitsSetting[i].IsActivate)
+            {
+                Vector2 tempPosition = new Vector2(0 - leftOffSet, i);
+                InstantiateTile(tempPosition, -1, i, Directions.left, tilePrefab, ref alltiles,
+                    ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, boardTransform);
+                InstantiateSideDot(tempPosition, -1, i, boardTransform);
+            }
         }
     }
 
     public static void InstantiateRightSideDots(int columnLength, int rowLength, float rightOffset, GameObject tilePrefab, ref BackgroundTile[,] alltiles, ref List<BackGroundTileSideList> allSideBackGroundTiles,
-        Sprite tileBackgroundBright, Sprite tileBackgroundDark, Transform boardTransform)
+        Sprite tileBackgroundBright, Sprite tileBackgroundDark, Transform boardTransform, SideFruitsSetting[] sideFruitsSetting)
     {
         for (int i = 0; i < rowLength; i++)
         {
-            Vector2 tempPosition = new Vector2(columnLength - 1 + rightOffset, i);
-            InstantiateTile(tempPosition, columnLength, i, Directions.right, tilePrefab,  ref  alltiles,ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, boardTransform);
-            InstantiateSideDot(tempPosition, columnLength, i, boardTransform);
+            if (sideFruitsSetting[i].IsActivate)
+            {
+
+                Vector2 tempPosition = new Vector2(columnLength - 1 + rightOffset, i);
+                InstantiateTile(tempPosition, columnLength, i, Directions.right, tilePrefab, ref alltiles,
+                    ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, boardTransform);
+                InstantiateSideDot(tempPosition, columnLength, i, boardTransform);
+
+            }
         }
     }
 
     public static void InstantiateBottomSideDots(int columnLength, float bottomOffset, GameObject tilePrefab, ref BackgroundTile[,] alltiles, ref List<BackGroundTileSideList> allSideBackGroundTiles,
-        Sprite tileBackgroundBright, Sprite tileBackgroundDark, Transform boardTransform)
+        Sprite tileBackgroundBright, Sprite tileBackgroundDark, Transform boardTransform, SideFruitsSetting[] sideFruitsSetting)
     {
+        
         for (int i = 0; i < columnLength; i++)
         {
-            Vector2 tempPosition = new Vector2(i, 0 - bottomOffset);
-            InstantiateTile(tempPosition, i, -1, Directions.bottom, tilePrefab,  ref  alltiles,ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, boardTransform);
-            InstantiateSideDot(tempPosition, i, -1, boardTransform);
+            if (sideFruitsSetting[i].IsActivate)
+            {
+                Vector2 tempPosition = new Vector2(i, 0 - bottomOffset);
+                InstantiateTile(tempPosition, i, -1, Directions.bottom, tilePrefab,  ref  alltiles,ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, boardTransform);
+                InstantiateSideDot(tempPosition, i, -1, boardTransform);
+            }
+         
         }
     }
     public static void InstantiateTopSideDots(int columnLength, int rowLength,float topOffset, GameObject tilePrefab, ref List<BackGroundTileSideList> allSideBackGroundTiles,
-        Sprite tileBackgroundBright, Sprite tileBackgroundDark, ref GameObject[,] allDots, ref BackgroundTile[,] allTiles, Transform boardTransform)
+        Sprite tileBackgroundBright, Sprite tileBackgroundDark, ref GameObject[,] allDots, ref BackgroundTile[,] allTiles, Transform boardTransform, SideFruitsSetting[] sideFruitsSetting)
     {
         ModifyTopSideDots(columnLength, rowLength, topOffset, DestroyOrInstantiate.instantiate, tilePrefab,  ref allTiles, ref allSideBackGroundTiles, tileBackgroundBright,
-            tileBackgroundDark, ref  allDots, ref  allTiles, boardTransform);
+            tileBackgroundDark, ref  allDots, ref  allTiles, boardTransform, sideFruitsSetting);
     }
 
     public static void ModifyTopSideDots(int columnLength, int rowLength, float topOffset,
         DestroyOrInstantiate destroyOrInstantiate, GameObject tilePrefab,ref BackgroundTile[,] alltiles, ref List<BackGroundTileSideList> allSideBackGroundTiles,
         Sprite tileBackgroundBright, Sprite tileBackgroundDark, ref GameObject[,] allDots, ref BackgroundTile[,] allTiles,
-        Transform boardTransform)
+        Transform boardTransform, SideFruitsSetting[] sideFruitsSetting)
     {
         for (int i = 0; i < columnLength; i++)
         {
-            Vector2 tempPosition = new Vector2(i, rowLength - 1 + topOffset);
-            if (destroyOrInstantiate == DestroyOrInstantiate.destroy)
+            if (sideFruitsSetting[i].IsActivate)
             {
-                Destroy(allDots[i, rowLength]);
-                Destroy(allTiles[i, rowLength]);
-            }
-            else if (destroyOrInstantiate == DestroyOrInstantiate.instantiate)
-            {
-                InstantiateTile(tempPosition, i, rowLength, Directions.top, tilePrefab, ref  alltiles,ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, boardTransform);
-                InstantiateSideDot(tempPosition, i, rowLength, boardTransform);
+                Vector2 tempPosition = new Vector2(i, rowLength - 1 + topOffset);
+                if (destroyOrInstantiate == DestroyOrInstantiate.destroy)
+                {
+                    Destroy(allDots[i, rowLength]);
+                    Destroy(allTiles[i, rowLength]);
+                }
+                else if (destroyOrInstantiate == DestroyOrInstantiate.instantiate)
+                {
+                    InstantiateTile(tempPosition, i, rowLength, Directions.top, tilePrefab, ref alltiles,
+                        ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, boardTransform);
+                    InstantiateSideDot(tempPosition, i, rowLength, boardTransform);
+                }
             }
         }
     }
@@ -140,23 +161,32 @@ public sealed class BoardInstantiate : MonoBehaviour
     public static void CreateOffSetTiles(int columnLength, int rowLength, float leftOffSet, float rightOffset, float bottomOffset,
         float topOffset, GameObject tilePrefab, ref BackgroundTile[,] alltiles, ref List<BackGroundTileSideList> allSideBackGroundTiles,
         Sprite tileBackgroundBright, Sprite tileBackgroundDark, ref GameObject[,] allDots, ref BackgroundTile[,] allTiles, Transform boardTransform,
-        bool bottomActive, bool leftActive, bool rightActive, bool topActive)
-    {
+        bool bottomActive, bool leftActive, bool rightActive, bool topActive, List<SideFruitsSetting> sideFruitsSettings)
+    { 
+   
+            //   0 - bottom | 1 - top | 2 - right | 3 - left
+            var t = sideFruitsSettings.ToArray();
+            SideFruitsSetting[] bottom = t[0..9];
+            SideFruitsSetting[] top = t[9..18];
+            SideFruitsSetting[] right = t[18..27];
+            SideFruitsSetting[] left = t[27..36];
+            
+       
         if (bottomActive) InstantiateBottomSideDots(columnLength, bottomOffset, tilePrefab, ref alltiles, ref allSideBackGroundTiles,
-                tileBackgroundBright, tileBackgroundDark, boardTransform);
+                tileBackgroundBright, tileBackgroundDark, boardTransform, bottom);
         if (leftActive) InstantiateLeftSideDots(rowLength, leftOffSet, tilePrefab, ref alltiles, ref allSideBackGroundTiles,
-                tileBackgroundBright, tileBackgroundDark, boardTransform);
+                tileBackgroundBright, tileBackgroundDark, boardTransform, left);
         if (rightActive) InstantiateRightSideDots(columnLength, rowLength, rightOffset, tilePrefab, ref alltiles,
-                ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, boardTransform);
+                ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, boardTransform, right);
         if (topActive) InstantiateTopSideDots(columnLength, rowLength, topOffset, tilePrefab,
                 ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, ref allDots, ref allTiles,
-                boardTransform);
+                boardTransform, top);
     }
 
     public static List<Vector3> InstaniteEverythingAtStart(int width, int height, float leftOffset, float rightOffset, float bottomOffset,
         float topOffset, GameObject tilePrefab, BackgroundTile[,] alltiles, ref List<BackGroundTileSideList> allSideBackGroundTiles,
         Sprite tileBackgroundBright, Sprite tileBackgroundDark, GameObject[,] allDots, ref BackgroundTile[,] allTiles, Transform boardTransform,
-        bool bottomActive, bool leftActive, bool rightActive, bool topActive )
+        bool bottomActive, bool leftActive, bool rightActive, bool topActive, List<SideFruitsSetting> sideFruitsSettings)
     {
         List<Vector3> posBlankspaces = new List<Vector3>();
         /*for (int i = 0; i < width; i ++)
@@ -195,7 +225,7 @@ public sealed class BoardInstantiate : MonoBehaviour
             }
         }*/
           CreateOffSetTiles(width, height, leftOffset, rightOffset, bottomOffset, topOffset, tilePrefab, ref alltiles,ref allSideBackGroundTiles,
-            tileBackgroundBright, tileBackgroundDark, ref allDots, ref allTiles, boardTransform, bottomActive, leftActive, rightActive, topActive);
+            tileBackgroundBright, tileBackgroundDark, ref allDots, ref allTiles, boardTransform, bottomActive, leftActive, rightActive, topActive, sideFruitsSettings);
           return posBlankspaces;
     }
 }

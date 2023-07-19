@@ -289,8 +289,8 @@ public sealed class Board : MonoBehaviour
         get => topActive;
         set
         {
-            if (value && allSideBackGroundTiles[(int)Directions.top].gameObjectList.Count == 0) 
-                BoardInstantiate.InstantiateTopSideDots(width, height, topOffset, tilePrefab, ref allSideBackGroundTiles, tileBackgroundBright,  tileBackgroundDark, ref  AllDots, ref _allTiles, transform);
+            if (value && allSideBackGroundTiles[(int)Directions.top].gameObjectList.Count == 0) ;
+            //    BoardInstantiate.InstantiateTopSideDots(width, height, topOffset, tilePrefab, ref allSideBackGroundTiles, tileBackgroundBright,  tileBackgroundDark, ref  AllDots, ref _allTiles, transform);
             else if(!value && allSideBackGroundTiles[(int)Directions.top].gameObjectList.Count > 0) DestroyOnBoard.DestroyLine(width, height, ref allSideBackGroundTiles,Directions.top);
             topActive = value;
         }
@@ -300,8 +300,8 @@ public sealed class Board : MonoBehaviour
         get => bottomActive;
         set
         {
-            if (value && allSideBackGroundTiles[(int)Directions.bottom].gameObjectList.Count == 0) 
-                BoardInstantiate.InstantiateBottomSideDots(width, bottomOffset, tilePrefab,ref _allTiles,  ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, transform);
+            if (value && allSideBackGroundTiles[(int)Directions.bottom].gameObjectList.Count == 0) ;
+              //  BoardInstantiate.InstantiateBottomSideDots(width, bottomOffset, tilePrefab,ref _allTiles,  ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, transform);
             else if(!value && allSideBackGroundTiles[(int)Directions.bottom].gameObjectList.Count > 0) DestroyOnBoard.DestroyLine(width, height, ref allSideBackGroundTiles,Directions.bottom);
             bottomActive = value;
         }
@@ -312,8 +312,8 @@ public sealed class Board : MonoBehaviour
         get => leftActive;
         set
         {
-            if (value && allSideBackGroundTiles[(int)Directions.left].gameObjectList.Count == 0) 
-                BoardInstantiate.InstantiateLeftSideDots(height, leftOffset, tilePrefab, ref _allTiles, ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, transform);
+            if (value && allSideBackGroundTiles[(int)Directions.left].gameObjectList.Count == 0) ;
+               // BoardInstantiate.InstantiateLeftSideDots(height, leftOffset, tilePrefab, ref _allTiles, ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, transform);
             else if(!value && allSideBackGroundTiles[(int)Directions.left].gameObjectList.Count > 0) DestroyOnBoard.DestroyLine(width, height, ref allSideBackGroundTiles,Directions.left);
             leftActive = value;
         }
@@ -323,8 +323,8 @@ public sealed class Board : MonoBehaviour
         get => rightActive;
         set
         {
-            if (value && allSideBackGroundTiles[(int)Directions.right].gameObjectList.Count == 0) 
-                BoardInstantiate.InstantiateRightSideDots(width, height, rightOffset, tilePrefab,ref _allTiles,  ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, this.transform);
+            if (value && allSideBackGroundTiles[(int)Directions.right].gameObjectList.Count == 0) ;
+               // BoardInstantiate.InstantiateRightSideDots(width, height, rightOffset, tilePrefab,ref _allTiles,  ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, this.transform);
             else if(!value && allSideBackGroundTiles[(int)Directions.right].gameObjectList.Count > 0) DestroyOnBoard.DestroyLine(width, height, ref allSideBackGroundTiles,Directions.right);
             rightActive = value;
         }
