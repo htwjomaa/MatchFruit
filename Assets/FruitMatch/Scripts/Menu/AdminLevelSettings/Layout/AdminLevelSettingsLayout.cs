@@ -35,14 +35,13 @@ public sealed class AdminLevelSettingsLayout : MonoBehaviour
         if(layoutFieldConfigs.LayoutConfig == null || layoutFieldConfigs.LayoutConfig.Length != SaveFileLevelConfigs.Fields)
             Array.Resize(ref layoutFieldConfigs.LayoutConfig, SaveFileLevelConfigs.Fields);
         RemoveListeners();
-        LoadMatchFinderConfigToClipBoard(layoutFieldConfigs);
+        LoadLevelSettingsConfigToClipBoard(layoutFieldConfigs);
         ClipBoardToSlider();
         Addlisteners();
         ValueChangeCheck();
     }
-    private void LoadMatchFinderConfigToClipBoard(LayoutFieldConfig layoutFieldsConfigs)
+    private void LoadLevelSettingsConfigToClipBoard(LayoutFieldConfig layoutFieldsConfigs)
     {
-        
         //The list to Array memory overhead is okay with those small numbers. It looks bad I know.
         //Keep it this way to be more flexible
         List<float> zoomOutValue = new List<float>();

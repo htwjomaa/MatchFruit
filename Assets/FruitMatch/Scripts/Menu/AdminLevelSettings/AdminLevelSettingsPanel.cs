@@ -300,7 +300,7 @@ public sealed class AdminLevelSettingsPanel : MonoBehaviour
       Rl.adminLevelSettingsGoalConfig.LoadGoalConfig(saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[level].GoalConfig);
       Rl.adminLevelSettingsLookDev.LoadFromDisk(saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[level].GraphicConfig);
       Rl.adminLevelSettingsTiles.LoadFromDisk(saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[level].TileSettingFieldConfigs);
-      
+      Rl.adminlevelSettingsConfig.LoadLayoutSettings();
       AnimationConfig animationConfig = saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[level].AnimationConfig;
       DateInformation dateInformation = SaveUtil.GetDateInformation();
   }

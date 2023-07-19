@@ -62,6 +62,7 @@ public sealed class Rl : MonoBehaviour
     [SerializeField] private AdminLevelSettingsSideDots adminLevelSettingsSideDotsRef;
     [SerializeField] private AdminLevelSettingsGoalConfig adminLevelSettingsGoalConfigRef;
     [SerializeField] private AdminLevelSettingsLookDev adminLevelSettingsLookDevRef;
+    [SerializeField] private AdminLevelSettingsConfig adminlevelSettingsConfigRef;
     [SerializeField] private SoundStrings soundStringsRef;
     [SerializeField] private WorldMap worldMapRef;
     [SerializeField] private WorldMapSaveManagement worldMapSaveManagementRef;
@@ -98,6 +99,7 @@ public sealed class Rl : MonoBehaviour
     public static AdminLevelSettingsTiles adminLevelSettingsTiles;
     public static BoardPreview BoardPreview;
     public static FadeControllerSplashMenu fadeControllerSplashMenu;
+    public static AdminLevelSettingsConfig adminlevelSettingsConfig;
     [Space]
     public static World world;
     public static SaveFileLevelConfigManagement saveFileLevelConfigManagement ;
@@ -176,6 +178,7 @@ public sealed class Rl : MonoBehaviour
         worldMapSaveManagement = worldMapSaveManagementRef;
         boardPreviewDragNDrop = boardPreviewDragNDropRef;
         targetSettings = targetSettingsRef;
+        adminlevelSettingsConfig = adminlevelSettingsConfigRef;
     }
     
     //----------------   Null  -------------------//
@@ -214,7 +217,7 @@ public sealed class Rl : MonoBehaviour
             switchButtonsBombsRef, saveClipBoardRef, uiSoundsRef, archievmentButtonsRef, localiserManagerRef, adminLevelLuckSettingsRef, adminLevelSettingsBoardRef,
             adminLevelTilesRef, boardPreviewRef, fadeControllerSplashMenuRef, adminLevelSettingsMatchFinderRef, adminLevelSettingsLayoutRef,
             adminLevelSettingsSideDotsRef, adminLevelSettingsGoalConfigRef, adminLevelSettingsLookDevRef, soundStringsRef, worldMapRef, worldMapSaveManagementRef,
-            boardPreviewDragNDropRef, targetSettingsRef);
+            boardPreviewDragNDropRef, targetSettingsRef,adminlevelSettingsConfigRef);
     
     //----------------   Editor Assign  -------------------//
     [NaughtyAttributes.Button()] public void PopulateList()
@@ -256,5 +259,6 @@ public sealed class Rl : MonoBehaviour
         worldMapRef = FindObjectOfType<WorldMap>();
         boardPreviewDragNDrop = FindObjectOfType<BoardPreviewDragNDrop>();
         targetSettingsRef = FindObjectOfType<TargetSettings>();
+        adminlevelSettingsConfigRef = FindObjectOfType<AdminLevelSettingsConfig>();
     }
 }

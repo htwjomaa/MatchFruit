@@ -1,4 +1,3 @@
-/*
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,33 +10,45 @@ public class AdminLevelSettingsConfig : MonoBehaviour
     [SerializeField] public Slider CopyAllDataFromSlider;
 
     [SerializeField] public TextMeshProUGUI CopyAllDataFromValueDisplay;
-    private TextMeshProUGUI _valueDisplayList;
-    void Start()
-    {
-        
-    }
+    private List<TextMeshProUGUI> _valueDisplayList = new List<TextMeshProUGUI>();
+    private void Awake() => _valueDisplayList = 
+        GenericSettingsFunctions.AddToValueDisplayList(CopyAllDataFromValueDisplay);
+
     public void ValueChangeCheck()
     {
         GenericSettingsFunctions.UpdateTextFields(
             ref _valueDisplayList,
             CopyAllDataFromSlider);
-    }
-    private void AddListeners()
-    {
-        GenericSettingsFunctions.Addlisteners(delegate { ValueChangeCheck(); }, 
-            CopyAllDataFromSlider);
-    }
-    // Update is called once per frame
-    void Update()
-    {
         
+        GenericSettingsFunctions.UpdateTextFields(ref _valueDisplayList, CopyAllDataFromSlider);
     }
-    public void 
-        
-    public void ClickCopyButton()
+    public void LoadLayoutSettings()
     {
+        RemoveListeners();
+        Addlisteners();
+        ValueChangeCheck();
+    }
+    private void RemoveListeners() => GenericSettingsFunctions.RemoveListeners(CopyAllDataFromSlider);
+    
+    private void Addlisteners() => GenericSettingsFunctions.Addlisteners(delegate { ValueChangeCheck(); }, CopyAllDataFromSlider);
+    
+    private void LoadConfigsToClipBoard(LayoutFieldConfig layoutFieldsConfigs)
+    {
+        // Rl.saveClipBoard.ZoomOutValue = zoomOutValue.ToArray();
+        // Rl.saveClipBoard.TopPaddingValue = topPaddingValue.ToArray();
+        // Rl.saveClipBoard.BottomPaddingValue = bottomPaddingValue.ToArray();
+        // Rl.saveClipBoard.LeftPaddingValue = leftPaddingValue.ToArray();
+        // Rl.saveClipBoard.RightPaddingValue = rightPaddingValue.ToArray();
+    }
+
+    public void ClickCopyButton(Transform buttonTransform)
+    {
+        if(buttonTransform != null) GenericSettingsFunctions.SmallJumpAnimation(buttonTransform);
+        Rl.GameManager.PlayAudio(Rl.soundStrings.MakeBubbleSound, Random.Range(0,5), Rl.settings.GetUISoundVolume, Rl.uiSounds.audioSource);
         Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[Rl.adminLevelSettingsPanel.LevelAdminLevelSettingsLevelNumber] =
-            Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[targetFrom-1];
+            (LevelConfig)GenericSettingsFunctions.GetDeepCopy(Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[((int)CopyAllDataFromSlider.value )-1]);
+        Rl.adminLevelSettingsPanel.RevertChanges(true);
+        Rl.saveFileManagerInMenu.SaveGame();
     }
 }
-*/
+
