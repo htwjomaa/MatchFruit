@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -12,7 +13,13 @@ public sealed class  AdminLevelSettingsMatchFinderAcceptSwitch : MonoBehaviour
          AdminLevelSettingsMatchFinder.matchFinderLoadTriggerDebug += ClickOnSwitchNoAddValue;
      }
 
-     public void GetSwitchValue()
+    private void OnDestroy()
+    {
+         AdminLevelSettingsMatchFinder.matchFinderLoadTrigger -= GetSwitchValue;
+               AdminLevelSettingsMatchFinder.matchFinderLoadTriggerDebug -= ClickOnSwitchNoAddValue;
+    }
+
+    public void GetSwitchValue()
      {
          Phase phase = Phase.NotInP2;
 

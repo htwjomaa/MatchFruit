@@ -54,7 +54,10 @@ public sealed class Settings : ScriptableObject
    if ((MusicMuted || MasterMuted) && Rl.GameManager != null && Rl.GameManager.gameManagerAudioSource) Rl.GameManager.gameManagerAudioSource.Pause();
    else 
    {
-if(Rl.GameManager != null && Rl.GameManager.gameManagerAudioSource !=null )    Rl.GameManager.gameManagerAudioSource.UnPause();
+if(Rl.GameManager != null && Rl.GameManager.gameManagerAudioSource !=null ) 
+
+ {
+   Rl.GameManager.gameManagerAudioSource.UnPause();
     if (Rl.GameManager.gameManagerAudioSource.clip == null)
     {
      if (FindObjectOfType<PlayMenuBGMusic>() != null)
@@ -67,6 +70,7 @@ if(Rl.GameManager != null && Rl.GameManager.gameManagerAudioSource !=null )    R
      }
     }
    }
+    }
   }
   [SerializeField] public bool SFXMuted;
  [SerializeField] public bool UIMuted;
