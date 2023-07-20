@@ -776,7 +776,8 @@ namespace FruitMatch.Scripts.Blocks
                 if (!square.IsFree())
                     return null;
             }
-            if (list.Count() == 0) return GetPreviousSquare().Item;
+            if (list != null && list.Count() == 0 && item != null && GetPreviousSquare().Item != null) 
+                return GetPreviousSquare().Item;
             return null;
         }
         /// <summary>

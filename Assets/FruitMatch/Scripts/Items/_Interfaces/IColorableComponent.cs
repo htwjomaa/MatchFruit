@@ -38,7 +38,7 @@ public class IColorableComponent : MonoBehaviour /* , IPoolable */
       //  }
       //  else
       //  {
-      if (GetComponent<ItemSimple>())
+      if (GetComponent<ItemSimple>() || GetComponent<ItemPackage>())
       {
           Sprites[0].Sprites = LoadingManager.loadedSprites;
           Array.Resize(ref Sprites[0].Sprites , LevelManager.THIS.LimitLength);

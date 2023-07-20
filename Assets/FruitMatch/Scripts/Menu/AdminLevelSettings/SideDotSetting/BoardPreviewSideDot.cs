@@ -128,20 +128,14 @@ public sealed class BoardPreviewSideDot : MonoBehaviour
            break;
 
          default:
-           if (((int)sideFruitSettingConfigs[i].SideDotTile < 5))
-         {
            tiles[i].transform.GetChild(0).GetComponent<Image>().sprite =
              Rl.adminLevelSettingsSideDots.SideDotSpriteList[(int)sideFruitSettingConfigs[i].SideDotTile];
            tiles[i].transform.GetChild(0).GetComponent<RectTransform>().localRotation = RotateSideDotChild(direction,
              tiles[i].transform.GetChild(0).GetComponent<RectTransform>().transform);
            tiles[i].transform.GetChild(0).GetComponent<RectTransform>().localScale = ScaleSideDotChild(direction,
              tiles[i].transform.GetChild(0).GetComponent<RectTransform>().transform);
-         }
-           else
-         {
-           tiles[i].transform.GetChild(0).GetComponent<Image>().sprite =
-             Rl.adminLevelSettingsTiles.TTypeSprites[(int)sideFruitSettingConfigs[i].SideDotTile-3];
-         }
+         
+    
            tiles[i].transform.GetChild(0).GetComponent<Image>().color = new Color(255, 255, 255, 1);
            break;
        }

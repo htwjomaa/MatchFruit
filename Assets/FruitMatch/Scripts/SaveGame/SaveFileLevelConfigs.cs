@@ -301,6 +301,12 @@ public struct SideDotTypeSetting
         SpawnRate = spawnRate;
         ChangeSpawnRateOverTimeOrMoves = changeSpawnRateOverTimeOrMoves;
     }
+    public SideDotTypeSetting(SideDotType sideDotType)
+    {
+        SideDotType = sideDotType;
+        SpawnRate = 1;
+        ChangeSpawnRateOverTimeOrMoves = 1;
+    }
 }
 [Serializable]
 public struct SideFruitsSetting

@@ -2,25 +2,63 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using FruitMatch.Scripts.Blocks;
 using FruitMatch.Scripts.Items;
 using FruitMatch.Scripts.System.Pool;
 using UnityEngine;
+using Object = System.Object;
 using Random = UnityEngine.Random;
 
 public sealed class BoardInstantiate : MonoBehaviour
 {
+    public static ItemsTypes TranslateSideDotTileToItem(SideDotTile sideDotTile)
+    {
+        switch (sideDotTile)
+        {
+            case SideDotTile.Normal:
+                return ItemsTypes.NONE;
+            case SideDotTile.EmptyTile:
+                return ItemsTypes.NONE;
+            case SideDotTile.Package:
+                return ItemsTypes.PACKAGE;
+            case SideDotTile.HorizontalBomb:
+                return ItemsTypes.HORIZONTAL_STRIPED;
+            case SideDotTile.VerticalBomb:
+                return ItemsTypes.VERTICAL_STRIPED;
+            case SideDotTile.SuchBombe:
+                return ItemsTypes.MARMALADE;
+            case SideDotTile.Jelly:
+                return ItemsTypes.NONE;
+            case SideDotTile.Lock:
+                return ItemsTypes.NONE;
+            case SideDotTile.Chest:
+                return ItemsTypes.NONE;
+            case SideDotTile.LockedChest:
+                return ItemsTypes.NONE;
+            case SideDotTile.Fruit:
+                return ItemsTypes.NONE;
+            case SideDotTile.Ingredient:
+                return ItemsTypes.INGREDIENT;
+            case SideDotTile.SameColorBomb:
+                return ItemsTypes.MULTICOLOR;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(sideDotTile), sideDotTile, null);
+        }
+    }
+    
     public static void InstantiateLeftSideDots(int rowLength, float leftOffSet, GameObject tilePrefab, ref BackgroundTile[,] alltiles,ref List<BackGroundTileSideList> allSideBackGroundTiles,
         Sprite tileBackgroundBright, Sprite tileBackgroundDark, Transform boardTransform, SideFruitsSetting[] sideFruitsSetting)
     {
         
         for (int i = 0; i < rowLength; i++)
         {
-            if (sideFruitsSetting[i].IsActivate)
+            
+            if (sideFruitsSetting[i].SideDotTile != SideDotTile.EmptyTile)
             {
                 Vector2 tempPosition = new Vector2(0 - leftOffSet, i);
                 InstantiateTile(tempPosition, -1, i, Directions.left, tilePrefab, ref alltiles,
                     ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, boardTransform);
-                InstantiateSideDot(tempPosition, -1, i, boardTransform);
+                InstantiateSideDot(tempPosition, -1, i, boardTransform, TranslateSideDotTileToItem(sideFruitsSetting[i].SideDotTile));
             }
         }
     }
@@ -30,15 +68,15 @@ public sealed class BoardInstantiate : MonoBehaviour
     {
         for (int i = 0; i < rowLength; i++)
         {
-            if (sideFruitsSetting[i].IsActivate)
+            if (sideFruitsSetting[i].SideDotTile != SideDotTile.EmptyTile)
             {
 
                 Vector2 tempPosition = new Vector2(columnLength - 1 + rightOffset, i);
                 InstantiateTile(tempPosition, columnLength, i, Directions.right, tilePrefab, ref alltiles,
                     ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, boardTransform);
-                InstantiateSideDot(tempPosition, columnLength, i, boardTransform);
+                InstantiateSideDot(tempPosition, columnLength, i, boardTransform, TranslateSideDotTileToItem(sideFruitsSetting[i].SideDotTile));
 
-            }
+           }
         }
     }
 
@@ -48,11 +86,11 @@ public sealed class BoardInstantiate : MonoBehaviour
         
         for (int i = 0; i < columnLength; i++)
         {
-            if (sideFruitsSetting[i].IsActivate)
+            if (sideFruitsSetting[i].SideDotTile != SideDotTile.EmptyTile)
             {
                 Vector2 tempPosition = new Vector2(i, 0 - bottomOffset);
                 InstantiateTile(tempPosition, i, -1, Directions.bottom, tilePrefab,  ref  alltiles,ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, boardTransform);
-                InstantiateSideDot(tempPosition, i, -1, boardTransform);
+                InstantiateSideDot(tempPosition, i, -1, boardTransform, TranslateSideDotTileToItem(sideFruitsSetting[i].SideDotTile));
             }
          
         }
@@ -71,8 +109,8 @@ public sealed class BoardInstantiate : MonoBehaviour
     {
         for (int i = 0; i < columnLength; i++)
         {
-            if (sideFruitsSetting[i].IsActivate)
-            {
+          // if (sideFruitsSetting[i].IsActivate)
+          //  {
                 Vector2 tempPosition = new Vector2(i, rowLength - 1 + topOffset);
                 if (destroyOrInstantiate == DestroyOrInstantiate.destroy)
                 {
@@ -83,8 +121,8 @@ public sealed class BoardInstantiate : MonoBehaviour
                 {
                     InstantiateTile(tempPosition, i, rowLength, Directions.top, tilePrefab, ref alltiles,
                         ref allSideBackGroundTiles, tileBackgroundBright, tileBackgroundDark, boardTransform);
-                    InstantiateSideDot(tempPosition, i, rowLength, boardTransform);
-                }
+                    InstantiateSideDot(tempPosition, i, rowLength, boardTransform, TranslateSideDotTileToItem(sideFruitsSetting[i].SideDotTile));
+              //  }
             }
         }
     }
@@ -122,34 +160,58 @@ public sealed class BoardInstantiate : MonoBehaviour
         allSideBackGroundTiles = null;
 
     }
-    public static Item GenItemSimple()
-    {
-        GameObject item = null;
-        item = ObjectPooler.Instance.GetPooledObject("Item");
-        item.transform.localScale = Vector2.one * 0.42f;
-      
-        IColorableComponent colorableComponent = item.GetComponent<IColorableComponent>();
-        Item itemComponent = item.GetComponent<Item>();
-        itemComponent.GenColor();
-        itemComponent.needFall = false;
-        return itemComponent;
-    }
-
-  
-    private static void InstantiateSideDot(Vector2 tempPos, int column, int row, Transform boardTransform)
+    
+    private static void InstantiateSideDot(Vector2 tempPos, int column, int row, Transform boardTransform, ItemsTypes itemType)
     {
      //   int dotToUse = Random.Range(0, dots.Length);
        // GameObject dot = Instantiate(dots[dotToUse], tempPos, Quaternion.identity);
-        GameObject dot = ObjectPooler.Instance.GetPooledObject("Item");
-        Item itemComponent = dot.GetComponent<Item>();
-        itemComponent.GenColor();
-        itemComponent.needFall = false;
+       string itemTypeString = itemType.ToString();
+       if (itemType == ItemsTypes.NONE)
+       {
+           itemTypeString = "Item";
+       }
+       GameObject dot = ObjectPooler.Instance.GetPooledObject(itemTypeString);
+
+
+       switch (itemType)
+       {
+           case ItemsTypes.NONE:
+               Item itemComponent = dot.GetComponent<Item>();
+               itemComponent.GenColor();
+               itemComponent.needFall = false;
+               break;
+           case ItemsTypes.VERTICAL_STRIPED:
+               break;
+           case ItemsTypes.HORIZONTAL_STRIPED:
+               break;
+           case ItemsTypes.PACKAGE:
+               Item itemPackage = dot.GetComponent<ItemPackage>();
+               itemPackage.GenColor();
+               itemPackage.needFall = false;
+               break;
+           case ItemsTypes.MULTICOLOR:
+               break;
+           case ItemsTypes.INGREDIENT:
+               break;
+           case ItemsTypes.SPIRAL:
+               break;
+           case ItemsTypes.MARMALADE:
+               break;
+           case ItemsTypes.TimeBomb:
+               break;
+           default:
+               throw new ArgumentOutOfRangeException(nameof(itemType), itemType, null);
+       }
+  
+  
         
         dot.transform.position = tempPos;
         dot.transform.parent = boardTransform;
        // dot.name = "( X:" + column + ", Y:" + row + " )";
       // dot.name = dot.GetComponent<ItemSimple>().
        // Destroy(dot.GetComponent<Dot>());
+       dot.AddComponent<ThrivingBlock>();
+       
         dot.AddComponent<SideDot>();
         dot.GetComponent<SideDot>().columnSideDot = column;
         dot.GetComponent<SideDot>().rowSideDot = row;
@@ -166,10 +228,10 @@ public sealed class BoardInstantiate : MonoBehaviour
    
             //   0 - bottom | 1 - top | 2 - right | 3 - left
             var t = sideFruitsSettings.ToArray();
-            SideFruitsSetting[] bottom = t[0..9];
-            SideFruitsSetting[] top = t[9..18];
-            SideFruitsSetting[] right = t[18..27];
-            SideFruitsSetting[] left = t[27..36];
+            SideFruitsSetting[] top = t[0..9];
+            SideFruitsSetting[] bottom = t[9..18];
+            SideFruitsSetting[] left = t[18..27];
+            SideFruitsSetting[] right = t[27..36];
             
        
         if (bottomActive) InstantiateBottomSideDots(columnLength, bottomOffset, tilePrefab, ref alltiles, ref allSideBackGroundTiles,

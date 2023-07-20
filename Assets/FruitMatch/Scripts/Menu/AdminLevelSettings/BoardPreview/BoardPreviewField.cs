@@ -239,22 +239,18 @@ public class BoardPreviewField : MonoBehaviour
                 return SideDotTile.Chest;
             case "lockedchest":
                 return SideDotTile.LockedChest;
-            case "bubble":
-                return SideDotTile.Bubble;
-            case "bigblock":
-                return SideDotTile.BigBlock;
             case "ingredient":
                 return SideDotTile.Ingredient;
             case "onlyline":
-                return SideDotTile.OnlyLine;
+                return SideDotTile.Package;
             case "onlyturna":
-                return SideDotTile.OnlyTurnA;
+                return SideDotTile.HorizontalBomb;
             case "onlyturnb":
-                return SideDotTile.OnlyTurnB;
+                return SideDotTile.VerticalBomb;
             case "samecolorbomb":
                 return SideDotTile.SameColorBomb;
             case "undestroyable":
-                return SideDotTile.Undestroyable;
+                return SideDotTile.SuchBombe;
         }
 
         return SideDotTile.Normal;

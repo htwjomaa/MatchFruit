@@ -207,15 +207,26 @@ public sealed class SideDot : MonoBehaviour
        LevelManager.THIS.FindMatches();
        LoadingHelper.THIS.sideDotAndSwitchFinished = true;
        //CheckIfItemsAreStillValid();
-       OtherSideDotForPrepapre.GetComponent<SideDot>().PrepareSideDot();
-     if(OtherSideDotForPrepapre != null && OtherSideDotForPrepapre.GetComponent<SideDot>() != null) OtherSideDotForPrepapre.GetComponent<SideDot>().PrepareSideDot();
+
+       if (OtherSideDotForPrepapre.GetComponent<SideDot>() == null)
+       {
+           OtherSideDotForPrepapre.AddComponent<SideDot>();
+           OtherSideDotForPrepapre.GetComponent<SideDot>().columnSideDot = columnSideDot;
+           OtherSideDotForPrepapre.GetComponent<SideDot>().rowSideDot = rowSideDot;
+       }
+       else
+       {
+           OtherSideDotForPrepapre.GetComponent<SideDot>().PrepareSideDot();
+       }
+      
+    // if(OtherSideDotForPrepapre != null && OtherSideDotForPrepapre.GetComponent<SideDot>() != null) OtherSideDotForPrepapre.GetComponent<SideDot>().PrepareSideDot();
      // else
-     // {
-     //     SideDot[] n = FindObjectsOfType<SideDot>();
-     //     for (int i = 0; i < n.Length; i++)
-     //     {
-     //         if(n[i].iconObj == null) n[i].PrepareSideDot();
-     //     }
+    //  {
+       //   SideDot[] n = FindObjectsOfType<SideDot>();
+       //   for (int i = 0; i < n.Length; i++)
+       //  {
+         //     if(n[i].iconObj == null) n[i].PrepareSideDot();
+         // }
      // }
       if(!onlyDot) Destroy(GetComponent<SideDot>());
       else collectedMovePositions = null;

@@ -72,6 +72,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: b579f2532165c4d38afda6332b8af6cb, type: 3}
   - {fileID: 21300000, guid: 8bff9453e483b4a6ea2bc4713ce58542, type: 3}
   - {fileID: 21300000, guid: 785653637a49447bd92900c47e139a3c, type: 3}
+  - {fileID: 21300000, guid: bd444c83ab423ea4ba8569934352b909, type: 3}
   - {fileID: 21300000, guid: b15b24a33f69c4710a9a9093e5312bab, type: 3}
   - {fileID: -5675809204895331624, guid: 103584e3198a67e4e8b2241589e21287, type: 3}
   - {fileID: 21300000, guid: 76484204c1ee945419d016f44240797b, type: 3}
@@ -149,6 +150,7 @@ SpriteAtlas:
   - ingredient_02
   - item_06_stripes_horiz
   - item_05_stripes_vert
+  - game_item_visible_g
   - teleport_00
   - item_mar_08_0
   - item_02_stripes_vert

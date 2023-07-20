@@ -265,8 +265,16 @@ public bool PreventDoubleClick
             Rl.saveClipBoard.TileSettingFieldConfigs[FieldState.CurrentField].TileSettingConfigs[i].TileType =
                 TT.Normal;
         }
+        for (int i = 0; i < Rl.saveClipBoard.SideFruitsFieldConfigs.SideFruitsConfig[0].SideFruitsSettings.Count;i++)
+        {
+            Rl.saveClipBoard.SideFruitsFieldConfigs.SideFruitsConfig[0].SideFruitsSettings[i] =
+                new SideFruitsSetting(SideDotTile.Normal, true, 0, new SideDotTypeSetting[4]);
+        }
+        
+        Rl.adminLevelSettingsTiles.InvokeLoadCurrentRowEvent();
+        AdminLevelSettingsSideDots.InvokeLoadFromDisk();
         Rl.boardPreviewDragNDrop.CurrentSpecialSelected = this; 
-        Rl.boardPreviewDragNDrop.CurrentSelectedItem = null; 
+        Rl.boardPreviewDragNDrop.CurrentSelectedItem = null;
         Rl.BoardPreview.StartDrawBoard();
     }
     

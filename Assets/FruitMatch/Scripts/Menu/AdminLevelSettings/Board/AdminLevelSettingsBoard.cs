@@ -10,11 +10,9 @@ public class AdminLevelSettingsBoard : MonoBehaviour
     [SerializeField] public Slider BoardWidthSlider;
     [SerializeField] public Slider BoardHeightSlider;
     [SerializeField] public Slider P1CounterValueSlider;
-    [SerializeField] public Slider P2CounterValueSlider;
     [SerializeField] private TextMeshProUGUI BoardWidthText;
     [SerializeField] private TextMeshProUGUI BoardHeightText;
     [SerializeField] private TextMeshProUGUI P1CounterValueText;
-    [SerializeField] private TextMeshProUGUI P2CounterValueText;
 
     [Header("Graphic Button")]
     [SerializeField] private GameObject SwitchGraphicOn;
@@ -35,7 +33,7 @@ public class AdminLevelSettingsBoard : MonoBehaviour
     private void Awake()
     {
         _valueDisplayList = GenericSettingsFunctions.AddToValueDisplayList(BoardWidthText, BoardHeightText,
-            P1CounterValueText, P2CounterValueText);
+            P1CounterValueText);
     }
 
     public void SetP1P2(bool p1)
@@ -43,11 +41,11 @@ public class AdminLevelSettingsBoard : MonoBehaviour
         P1.SetActive(!p1);
         P1P2.SetActive(p1);
         Rl.saveClipBoard.P1P2[FieldState.CurrentField] = p1;
-        if(!playNoSoundAcceptSwitch)  Rl.GameManager.PlayAudio(Rl.soundStrings.AcceptSwitchSound, Random.Range(0,4), Rl.settings.GetUISoundVolume, Rl.uiSounds.audioSource);
+        if(!playNoSoundAcceptSwitch)  Rl.GameManager.PlayAudio(Rl.soundStrings.AcceptSwitchSound, Random.Range(0,5), Rl.settings.GetUISoundVolume, Rl.uiSounds.audioSource);
     }
 
-    private void RemoveListeners() => GenericSettingsFunctions.RemoveListeners(BoardHeightSlider, BoardWidthSlider, P1CounterValueSlider, P2CounterValueSlider);
-private void AddListener() => GenericSettingsFunctions.Addlisteners(delegate { ValueChangeCheck(); }, BoardHeightSlider, BoardWidthSlider, P1CounterValueSlider, P2CounterValueSlider);
+    private void RemoveListeners() => GenericSettingsFunctions.RemoveListeners(BoardHeightSlider, BoardWidthSlider, P1CounterValueSlider);
+private void AddListener() => GenericSettingsFunctions.Addlisteners(delegate { ValueChangeCheck(); }, BoardHeightSlider, BoardWidthSlider, P1CounterValueSlider);
     public void LoadBoardSettings(BoardDimensionsConfig boardDimensionsConfig)
     {
        
@@ -99,7 +97,7 @@ private void AddListener() => GenericSettingsFunctions.Addlisteners(delegate { V
         BoardWidthSlider.value =  Rl.saveClipBoard.BoardWidth[FieldState.CurrentField];
         BoardHeightSlider.value = Rl.saveClipBoard.BoardHeight[FieldState.CurrentField];
         P1CounterValueSlider.value = Rl.saveClipBoard.GameTypeP1[FieldState.CurrentField].CounterValue;
-        P2CounterValueSlider.value = Rl.saveClipBoard.GameTypeP2[FieldState.CurrentField].CounterValue;
+  
 
         if (Rl.saveClipBoard.NoMatches[FieldState.CurrentField]) ActivateSwitch(true);
         else DeactivateSwitch(true);
@@ -146,8 +144,7 @@ private void AddListener() => GenericSettingsFunctions.Addlisteners(delegate { V
         Rl.saveClipBoard.BoardWidth[FieldState.CurrentField] = (int)BoardWidthSlider.value;
         
         Rl.saveClipBoard.GameTypeP1[FieldState.CurrentField].CounterValue = P1CounterValueSlider.value;
-        Rl.saveClipBoard.GameTypeP2[FieldState.CurrentField].CounterValue = P2CounterValueSlider.value;
-        
+
         GenericSettingsFunctions.UpdateTextFields(
             ref _valueDisplayList, 
             ((int)BoardHeightSlider.value).ToString(),
@@ -225,10 +222,6 @@ private void AddListener() => GenericSettingsFunctions.Addlisteners(delegate { V
                 break;
             
             case false:
-                if (nextGameType) gameType = NextGameType((int)Rl.saveClipBoard.GameTypeP2[FieldState.CurrentField].GameType);
-                else gameType = Rl.saveClipBoard.GameTypeP2[FieldState.CurrentField].GameType;
-                gameTypeP2Button.text = LocalisationSystem.GetLocalisedString(StringMatchStyle(gameType));
-                Rl.saveClipBoard.GameTypeP2[FieldState.CurrentField].GameType = gameType;
                 break;
         }
         ValueChangeCheck();

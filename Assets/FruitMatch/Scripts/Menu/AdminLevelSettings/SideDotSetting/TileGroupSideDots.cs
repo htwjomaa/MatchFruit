@@ -147,12 +147,9 @@ public class TileGroupSideDots : MonoBehaviour
   private void Click(SideDotTile tile)
   {
     label.text = LocalisationSystem.GetLocalisedString(tile.ToString());
-    if ((int)tile < 5)
-    {
+  
       image.sprite = Rl.adminLevelSettingsSideDots.SideDotSpriteList[(int)tile];
       SetImageRoation(ref image, tile );
-    }
-    else image.sprite = Rl.adminLevelSettingsTiles.TTypeSprites[(int)tile-3];
   }
 
   private void SetImageRoation(ref Image image, SideDotTile tile)

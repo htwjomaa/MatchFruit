@@ -77,7 +77,8 @@ public sealed class AdminLevelSettingsTiles : MonoBehaviour
         Rl.BoardPreview.StartDrawBoard();
         LoadFromDisk(Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[Rl.adminLevelSettingsPanel.LevelAdminLevelSettingsLevelNumber].TileSettingFieldConfigs);
     }
-
+    public void InvokeLoadCurrentRowEvent() => LoadCurrentRow?.Invoke();
+    
     public void ClipBoardToTiles(byte column, ref TT tileType, ref Directions directions, ref sbyte teleportTarget)
     {
         tileType = Rl.saveClipBoard.TileSettingFieldConfigs[FieldState.CurrentField].TileSettingConfigs[GetID(_currentRow, column)].TileType;

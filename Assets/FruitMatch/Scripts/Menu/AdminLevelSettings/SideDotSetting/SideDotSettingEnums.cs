@@ -4,18 +4,15 @@ public enum SideDotTile
 {
     Normal,
     EmptyTile,
-    OnlyLine,
-    OnlyTurnA,
-    OnlyTurnB,
-    Undestroyable,
+    Package,
+    HorizontalBomb,
+    VerticalBomb,
+    SuchBombe,
+    SameColorBomb,
     Jelly,
     Lock,
     Chest,
     LockedChest,
-    Bubble,
-    BigBlock,
     Fruit,
-    Bomb,
-    Ingredient,
-    SameColorBomb
+    Ingredient
 }

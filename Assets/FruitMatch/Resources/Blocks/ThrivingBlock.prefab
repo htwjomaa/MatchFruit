@@ -13,6 +13,22 @@ GameObject:
   - component: {fileID: 114323987329456566}
   - component: {fileID: 11165436}
   - component: {fileID: -7845718064564358635}
+  - component: {fileID: 5399340515579661524}
+  - component: {fileID: -5433510471843350933}
+  - component: {fileID: 81143986961968890}
+  - component: {fileID: -9215128160319965225}
+  - component: {fileID: -2268389959055179161}
+  - component: {fileID: -2658416383375862204}
+  - component: {fileID: 2221977444190162046}
+  - component: {fileID: 8910885498303539199}
+  - component: {fileID: 128116079483458073}
+  - component: {fileID: -3640044012986479112}
+  - component: {fileID: 4695384587009419698}
+  - component: {fileID: -7358203269844877269}
+  - component: {fileID: -3156364470217794020}
+  - component: {fileID: -5078370977728619585}
+  - component: {fileID: 1158189178003555407}
+  - component: {fileID: -5796784275256963946}
   m_Layer: 0
   m_Name: ThrivingBlock
   m_TagString: Untagged
@@ -28,7 +44,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 8, y: 9.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -162,3 +178,307 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order: 4
+--- !u!114 &5399340515579661524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b26ac361ecb794db0d87def6b0931d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columnSideDot: 8
+  rowSideDot: 9
+  sideDotType: 1
+  ClickonsidedotSound: clickonsidedot
+  noSideDotMovementPossibleSound: clickonsidedot
+  iconObj: {fileID: 0}
+  FirstSquareWayPoints: []
+--- !u!114 &-5433510471843350933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b26ac361ecb794db0d87def6b0931d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columnSideDot: 0
+  rowSideDot: 0
+  sideDotType: 1
+  ClickonsidedotSound: clickonsidedot
+  noSideDotMovementPossibleSound: clickonsidedot
+  iconObj: {fileID: 0}
+  FirstSquareWayPoints: []
+--- !u!114 &81143986961968890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b26ac361ecb794db0d87def6b0931d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columnSideDot: 0
+  rowSideDot: 0
+  sideDotType: 1
+  ClickonsidedotSound: clickonsidedot
+  noSideDotMovementPossibleSound: clickonsidedot
+  iconObj: {fileID: 0}
+  FirstSquareWayPoints: []
+--- !u!114 &-9215128160319965225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b26ac361ecb794db0d87def6b0931d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columnSideDot: 0
+  rowSideDot: 0
+  sideDotType: 1
+  ClickonsidedotSound: clickonsidedot
+  noSideDotMovementPossibleSound: clickonsidedot
+  iconObj: {fileID: 0}
+  FirstSquareWayPoints: []
+--- !u!114 &-2268389959055179161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b26ac361ecb794db0d87def6b0931d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columnSideDot: 0
+  rowSideDot: 0
+  sideDotType: 1
+  ClickonsidedotSound: clickonsidedot
+  noSideDotMovementPossibleSound: clickonsidedot
+  iconObj: {fileID: 0}
+  FirstSquareWayPoints: []
+--- !u!114 &-2658416383375862204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b26ac361ecb794db0d87def6b0931d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columnSideDot: 0
+  rowSideDot: 0
+  sideDotType: 1
+  ClickonsidedotSound: clickonsidedot
+  noSideDotMovementPossibleSound: clickonsidedot
+  iconObj: {fileID: 0}
+  FirstSquareWayPoints: []
+--- !u!114 &2221977444190162046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b26ac361ecb794db0d87def6b0931d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columnSideDot: 0
+  rowSideDot: 0
+  sideDotType: 1
+  ClickonsidedotSound: clickonsidedot
+  noSideDotMovementPossibleSound: clickonsidedot
+  iconObj: {fileID: 0}
+  FirstSquareWayPoints: []
+--- !u!114 &8910885498303539199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b26ac361ecb794db0d87def6b0931d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columnSideDot: 0
+  rowSideDot: 0
+  sideDotType: 1
+  ClickonsidedotSound: clickonsidedot
+  noSideDotMovementPossibleSound: clickonsidedot
+  iconObj: {fileID: 0}
+  FirstSquareWayPoints: []
+--- !u!114 &128116079483458073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b26ac361ecb794db0d87def6b0931d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columnSideDot: 0
+  rowSideDot: 0
+  sideDotType: 1
+  ClickonsidedotSound: clickonsidedot
+  noSideDotMovementPossibleSound: clickonsidedot
+  iconObj: {fileID: 0}
+  FirstSquareWayPoints: []
+--- !u!114 &-3640044012986479112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b26ac361ecb794db0d87def6b0931d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columnSideDot: 0
+  rowSideDot: 0
+  sideDotType: 1
+  ClickonsidedotSound: clickonsidedot
+  noSideDotMovementPossibleSound: clickonsidedot
+  iconObj: {fileID: 0}
+  FirstSquareWayPoints: []
+--- !u!114 &4695384587009419698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b26ac361ecb794db0d87def6b0931d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columnSideDot: 0
+  rowSideDot: 0
+  sideDotType: 1
+  ClickonsidedotSound: clickonsidedot
+  noSideDotMovementPossibleSound: clickonsidedot
+  iconObj: {fileID: 0}
+  FirstSquareWayPoints: []
+--- !u!114 &-7358203269844877269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b26ac361ecb794db0d87def6b0931d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columnSideDot: 0
+  rowSideDot: 0
+  sideDotType: 1
+  ClickonsidedotSound: clickonsidedot
+  noSideDotMovementPossibleSound: clickonsidedot
+  iconObj: {fileID: 0}
+  FirstSquareWayPoints: []
+--- !u!114 &-3156364470217794020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b26ac361ecb794db0d87def6b0931d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columnSideDot: 0
+  rowSideDot: 0
+  sideDotType: 1
+  ClickonsidedotSound: clickonsidedot
+  noSideDotMovementPossibleSound: clickonsidedot
+  iconObj: {fileID: 0}
+  FirstSquareWayPoints: []
+--- !u!114 &-5078370977728619585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b26ac361ecb794db0d87def6b0931d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columnSideDot: 0
+  rowSideDot: 0
+  sideDotType: 1
+  ClickonsidedotSound: clickonsidedot
+  noSideDotMovementPossibleSound: clickonsidedot
+  iconObj: {fileID: 0}
+  FirstSquareWayPoints: []
+--- !u!114 &1158189178003555407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b26ac361ecb794db0d87def6b0931d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columnSideDot: 0
+  rowSideDot: 0
+  sideDotType: 1
+  ClickonsidedotSound: clickonsidedot
+  noSideDotMovementPossibleSound: clickonsidedot
+  iconObj: {fileID: 0}
+  FirstSquareWayPoints: []
+--- !u!114 &-5796784275256963946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b26ac361ecb794db0d87def6b0931d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columnSideDot: 0
+  rowSideDot: 0
+  sideDotType: 1
+  ClickonsidedotSound: clickonsidedot
+  noSideDotMovementPossibleSound: clickonsidedot
+  iconObj: {fileID: 0}
+  FirstSquareWayPoints: []

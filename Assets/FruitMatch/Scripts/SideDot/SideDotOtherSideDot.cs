@@ -225,7 +225,7 @@ public class SideDotOtherSideDot : MonoBehaviour
             //    }
 
         }
-        if (otherSideDot.GetComponent<Square>())
+        if (otherSideDot.GetComponent<Square>() && otherSideDot.GetComponent<Square>().item != null)
         {
             otherSideDot = otherSideDot.GetComponent<Square>().item.gameObject;
         }
