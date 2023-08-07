@@ -16,6 +16,7 @@ using FruitMatch.Scripts.System.Orientation;
 using FruitMatch.Scripts.TargetScripts.TargetSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -51,13 +52,24 @@ namespace FruitMatch.Scripts.Core
            public int LimitLength;
            public int LimitHelper = 0;
         public static LevelManager THIS;
-        public bool enableInApps; //true if Unity in-apps is enable and imported
+        public float MaxLimit;
+        public HashSet<int> DestroyColorIDs = new HashSet<int>();
+        public HashSet<int> AvoidColorIDs = new HashSet<int>();
+        public int ColorLimit;
+        public int PlayCounter = 0;
+        public int Vcount = 3;
+        public int Hcount = 3;
+        public int PenaltyValue = 1;
+        public bool BlockCombineAllowed = true;
+        public bool[] DestroyOnlyTarget = new bool[SaveFileLevelConfigs.Fields];
         public float squareWidth = 1.2f; //square width for border placement
         public Item lastDraggedItem;  //item which was dragged recently 
         public Item lastSwitchedItem;  //item which was switched succesfully recently 
         public GameObject popupScore; //makes scores visible in the game
         public int currentLevel = 1;  //current game level
-        private int currentSubLevel = 1;   //current sub-level
+        private int currentSubLevel = 1; //current sub-level
+
+        public bool AllowBorder;
         public int CurrentSubLevel
         {
             get { return currentSubLevel; }
@@ -131,7 +143,6 @@ namespace FruitMatch.Scripts.Core
         public Color[] scoresColorsOutline; //popup score outline
         public GameObject[] gratzWords;  //congratulation words popup reference
         public GameObject Level;   //Level gameobject reference
-        public GameObject LevelsMap;  //Gameobject reference
         public GameObject FieldsParent; //Gameobject reference
         public GameObject NoMoreMatches;  //Gameobject reference
         public GameObject CompleteWord;  //Gameobject reference
@@ -199,7 +210,6 @@ namespace FruitMatch.Scripts.Core
             set
             {
                 GameStatus = value;
-                //AdsManager.THIS.CheckAdsEvents(value);
                 switch (value)
                 {
                     case GameState.PrepareGame://preparing and initializing  the game
@@ -258,7 +268,6 @@ namespace FruitMatch.Scripts.Core
                                 PlayerPrefs.SetInt("OpenLevelTest", 0);
                             PlayerPrefs.Save();
                         }
-                      
                         break;
                     case GameState.Playing://playing state
                         StartCoroutine(AI.THIS.CheckPossibleCombines());
@@ -290,7 +299,7 @@ namespace FruitMatch.Scripts.Core
         {
             get
             {
-                if(combineManager == null)         combineManager = new CombineManager();
+                if(combineManager == null) combineManager = new CombineManager();
                 return combineManager;
             }
         }
@@ -344,6 +353,15 @@ namespace FruitMatch.Scripts.Core
             LoadingManager.LoadSideDots();
         }
         //enable map
+
+        public void InvokeLoadLuckTargets()
+        {
+            Invoke(nameof(LoadLuckTargets),0.005f);
+        }
+        public void LoadLuckTargets()
+        {
+            Rl.luckCalculator.LoadCurrentTargets(DestroyColorIDs, AvoidColorIDs, ColorLimit);
+        }
         public void EnableMap(bool enable)
         {
             Rl.splashMenu.LevelCanvasObj.SetActive(true);
@@ -445,8 +463,23 @@ namespace FruitMatch.Scripts.Core
         public static bool avoidedLateUpdate;
         public delegate void MoveMade();
         public static event MoveMade MoveMadeEvent;
-        public void InvokeMoveMadeEvent() => MoveMadeEvent?.Invoke();
-   
+        public void InvokeMoveMadeEvent()
+        {
+            MoveMadeEvent?.Invoke();
+            PlayCounter++;
+
+            if (PlayCounter == 10)
+            {
+                DestroyOnlyTarget[0] = true;
+
+                findMatchesStarted = false;
+                FindMatches();
+                StartCoroutine(NoMatchesCor());
+                PlayCounter = 0;
+            }
+              
+        }
+
         //Generate loaded level
         private void GenerateLevel()
         {
@@ -470,7 +503,6 @@ namespace FruitMatch.Scripts.Core
         
             transform.position = latestFieldPos + Vector3.right * 10 + Vector3.back * 10 - (Vector3)orientationGameCameraHandle.offsetFieldPosition;
             SetPreBoosts();
-           
         }
         
         private bool animStarted;
@@ -662,7 +694,7 @@ namespace FruitMatch.Scripts.Core
 
             if (DebugSettings.AI && (win || lose))
             {
-                Debug.Log((win ? "win " : "lose ") + " score " + Score+ " stars " + stars + " moves/time rest " + THIS.levelData.Limit);
+                Debug.Log((win ? "win " : "lose ") + " score " + Score+ " stars " + stars + " moves/time restList " + THIS.levelData.Limit);
                 RestartLevel();
             }
         }
@@ -1084,6 +1116,7 @@ namespace FruitMatch.Scripts.Core
 
         private IEnumerator FallingDown()
         {
+            AI.THIS.ResetTimer();
            // avoided = false;
             findMatchesStarted = true;
 //        Debug.Log("@@@ Next Move search matches @@@");
@@ -1107,6 +1140,16 @@ namespace FruitMatch.Scripts.Core
                 checkMatchesAgain = false;
 
                 var destroyItemsListed = field.GetItems().Where(i => i.destroyNext).ToList();
+                // if (IgnoreDestroyColorIDS)
+                // {
+                //     for (int i = 0; i < field.squaresArray.Length;i++)
+                //     {
+                //         if (Random.Range(0, 3) == 2) destroyItemsListed.Add(field.squaresArray[i].Item);
+                //
+                //     }
+                // }
+                //
+                // IgnoreDestroyColorIDS = false;
                 if (destroyItemsListed.Count > 0)
                 {
                   //  avoided = false;
@@ -1119,15 +1162,14 @@ namespace FruitMatch.Scripts.Core
                 yield return new WaitWhileFall();
                 yield return new WaitWhileCollect();
 //            yield return new WaitWhileFallSide();
-                var combineCount = CombineManager.GetCombines(field);
+                List<Combine> combineCount = CombineManager.GetCombines(field);
                 if ((combineCount.Count <= 0 || !combineCount.SelectMany(i => i.items).Any()) &&
                     !field.DestroyingItemsExist() && !field.GetEmptySquares().Any() &&
                     !checkMatchesAgain)
                 {
                     break;
                 }
-              
-
+                
                 if(destLoopIterations > 1)
                 {
                   //  avoided = false;
@@ -1189,7 +1231,8 @@ namespace FruitMatch.Scripts.Core
                 ;
 
             avoidedLateUpdate = false;
-           // StartCoroutine(AvoidedCo(0.00001f));
+            DestroyOnlyTarget[0] = false;
+            // StartCoroutine(AvoidedCo(0.00001f));
         }
 
         private IEnumerator AvoidedCo(float sec)

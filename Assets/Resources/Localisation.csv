@@ -307,4 +307,5 @@ MEIDE, AVOID, MEIDE, ÉVITER, EVITE, UNDVIK, Kaçının, UNIKAJ, EVITARE
 AVOID, AVOIDED, VERMIEDEN, ÉVITER, EVITE, UNDVIK, Kaçının, UNIKAJ, EVITARE
 GOAL, GOAl, ZIEL, OBJECTIV, OBJECTIVO, MAL, HEDEF, CEL, OBIETTIVO
 LEERZUG, EMPTY MOVE, LEERZUG, MOUVEMENT VIDE, MOVIMIENTO VACÍO, TOM RÖRELSE, BOŞ HAREKET, PUSTY RUCH, SPOSTAMENTO A VUOTO
-LEERZÜGE, EMPTY MOVES, LEERZÜGE, MOUVEMENT VIDE, MOVIMIENTO VACÍO, TOM RÖRELSE, BOŞ HAREKET, PUSTY RUCH, SPOSTAMENTO A VUOTO
+only_destroy_targets,Only Destroy targets get destroyed,Nur Zerstörungsziele werden zerstört,Seules les cibles de destruction sont détruites,Sólo se destruyen los objetivos de destrucción,Endast förstörda mål förstörs,Sadece imha hedefleri imha edilir,Niszczone są tylko cele zniszczenia,Vengono distrutti solo i bersagli di distruzione
+LEERZÜGE, EMPTY MOVES, LEERZÜGE, MOUVEMENT VIDE, MOVIMIENTO VACÍO, TOM RÖRELSE, BOŞ HAREKET, PUSTY RUCH, SPOSTAMENTO A VUO

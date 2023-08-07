@@ -21,7 +21,7 @@ public sealed class MatchHelper : MonoBehaviour
             string color = matchCopy[i].tag;
             int columnMatch = 0;
             int rowMatch = 0;
-            //Cycle through the rest of the pieces and compare
+            //Cycle through the restList of the pieces and compare
             for (int j = 0; j < matchCopy.Count; j ++)
             {
                 //Store the next dot

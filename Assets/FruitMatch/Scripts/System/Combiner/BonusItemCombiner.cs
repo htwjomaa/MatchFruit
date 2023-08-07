@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using FruitMatch.Scripts.Items;
 using FruitMatch.Scripts.Level;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace FruitMatch.Scripts.System.Combiner
     /// </summary>
     public class BonusItemCombiner
     {
+        
         static int maxCols = 5;
         static int maxRows = 5;
         // public static ItemTemplate[,] strippedCombine = new ItemTemplate[maxCols, maxRows];
@@ -156,6 +158,7 @@ namespace FruitMatch.Scripts.System.Combiner
 
         private bool IsCombineFound(ItemTemplate[] compare, ItemTemplate[] pattern, TypeMatrix typePattern, ref List<ItemsTypes> types, out ItemTemplate[] foundItems)
         {
+           
             var found = CompareMatrix(compare, pattern, out foundItems);
 
             if (!found) return false;

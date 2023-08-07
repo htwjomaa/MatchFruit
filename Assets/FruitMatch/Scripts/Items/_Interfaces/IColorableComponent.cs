@@ -137,21 +137,16 @@ public class IColorableComponent : MonoBehaviour /* , IPoolable */
 
     public void RandomizeColor()
     {
-
-
-   // color = Random.Range(0, 2);
-       color = ColorGenerator.GenColor(itemComponent.square);
-        
+        color = ColorGenerator.GenColor(itemComponent.square);
+      //    int randomNumber = Random.Range(0, 3);
+        // if ( randomNumber == 2 || randomNumber == 1 ) color = 3;
+       // color = Rl.luckCalculator.GetColor();
         SetColor(color);
         foreach (IColorableComponent i in iColorableComponents) i.SetColor(color);
     }
     
-    
-
     private Sprite TranslateDotsToRandomColors(Dot dot)
     {
-    
-        
         switch (dot.tag)
         {
             case "Green Dot":

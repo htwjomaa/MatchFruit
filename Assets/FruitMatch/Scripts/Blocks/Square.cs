@@ -895,6 +895,7 @@ namespace FruitMatch.Scripts.Blocks
 
         public List<Item> FindMatchesAround(FindSeparating separating = FindSeparating.NONE, int matches = 3, Hashtable countedSquaresGlobal = null)
         {
+            matches = LevelManager.THIS.Hcount;
             var globalCounter = true;
             var newList = new List<Item>();
             if (countedSquaresGlobal == null)
@@ -923,6 +924,7 @@ namespace FruitMatch.Scripts.Blocks
                 field.countedSquares.Add(field.countedSquares.Count - 1, de.Value);
             }
 
+            
             if (countedSquares.Count < matches)
                 countedSquares.Clear();
 
@@ -1492,6 +1494,7 @@ namespace FruitMatch.Scripts.Blocks
 
         public void SetOutline()
         {
+            if (!LevelManager.THIS.AllowBorder) return;
             if (GetNeighborBottom()?.IsNone() ?? true) Instantiate(border, transform.position, Quaternion.Euler(0, 0, 90), transform);
             if (GetNeighborTop()?.IsNone() ?? true) Instantiate(border, transform.position, Quaternion.Euler(0, 0, -90), transform);
             if (GetNeighborLeft()?.IsNone() ?? true) Instantiate(border, transform.position, Quaternion.Euler(0, 0, 0), transform);

@@ -10,7 +10,7 @@ namespace FruitMatch.Scripts.System.Combiner.Editor
         float myFloat = 1.23f;
 
         // Add menu named "My Window" to the Window menu
-        // [MenuItem("Sweet Sugar/Fill Matrices")]
+        // [MenuItem("FruitMatch/Fill Matrices")]
         static void Init()
         {
             // Get existing open window or if none, make a new one:

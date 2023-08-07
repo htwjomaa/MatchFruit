@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using FruitMatch.Scripts.Core;
 using FruitMatch.Scripts.GUI;
@@ -125,7 +126,7 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
             StartCoroutine(FadeIconsInCO(waitInBetweenFramesSec));
         }
         
-        private string GetTargetCollectionStyleText(CollectionStyle collectionStyle)
+        public static  string GetTargetCollectionStyleText(CollectionStyle collectionStyle)
         {
        
             switch (collectionStyle)
@@ -147,7 +148,7 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
             }
         }
 
-        IEnumerator ChangeCollectionStyleText_CO(float seconds)
+        private IEnumerator ChangeCollectionStyleText_CO(float seconds)
         {
             yield return new WaitForSeconds(seconds);
             
@@ -156,8 +157,19 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
 
             Int32.TryParse(text.text, out _maxCount);
             SetAvoidColor(-1);
-        }
+            switch (collectionStyle)
+            {
+                case CollectionStyle.Destroy:
+                    LevelManager.THIS.DestroyColorIDs.Add(color);
+                    break;
+                case CollectionStyle.Avoid:
+                    LevelManager.THIS.AvoidColorIDs.Add(color);
+                    break;
+            }
 
+            LevelManager.THIS.InvokeLoadLuckTargets();
+        }
+    
         private void SetFrameImage()
         {
             CollectionStyle collectionStyle = LevelManager.THIS.TargetCollectionStyle[
@@ -174,9 +186,7 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
                     return;
                 }
             }
-
-         
-           
+            
         }
 
         public int SiblingIndex;
@@ -234,6 +244,7 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
         {
             if(HideTargetIcon != null)   TargetSettings.ShowItemEvent += ShowIcon;
             GetColor();
+      
             if (BorderImage != null)
             {
                 BorderImage.sprite = image.sprite;
@@ -283,9 +294,30 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
 
           public void ShowIcon()
           {
+              ShowItemPenalty(LevelManager.THIS.PenaltyValue);
               GenericSettingsFunctions.SmallJumpAnimation();
               StopCoroutine(ShowIconCo());
               StartCoroutine(ShowIconCo());
+          }
+
+          private void ShowItemPenalty(int penalty)
+          {
+              if (collectionStyle == CollectionStyle.Avoid)
+              {
+                  _counterAvoid -= penalty;
+                  if (_counterAvoid < 0) _counterAvoid = 0;
+                  text.text = _counterAvoid.ToString() + "/ " + _maxCount;
+              }
+              else
+              {
+                  subTargetContainer.count += penalty;
+                  text.text = ChangeNumbersToCollectionStyle(collectionStyle, subTargetContainer.GetCount(true));
+              }
+              GenericSettingsFunctions.SmallJumpAnimation(frame.transform);
+              GenericSettingsFunctions.SmallJumpAnimation(GoalContraint.transform);
+              GenericSettingsFunctions.SmallJumpAnimation(text.transform);
+              if (HideTargetIcon != null) GenericSettingsFunctions.SmallJumpAnimation(HideTargetIcon.transform);
+              // Rl.GameManager.PlayAudio(Rl.soundStrings.bub, UnityEngine.Random.Range(0,5), true, Rl.settings.GetSFXVolume, Rl.effects.audioSource);
           }
         public void SetSprite(Sprite spr)
         {
@@ -305,13 +337,9 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
             StartCoroutine(Check());
             LevelManager.MoveMadeEvent += MoveMade;
             StartCoroutine(HideIconsCo(8.5f));
-      
         }
 
-        private void OnDisable()
-        {
-            LevelManager.MoveMadeEvent -= MoveMade;
-        }
+        private void OnDisable() => LevelManager.MoveMadeEvent -= MoveMade;
 
         private void Update()
         {

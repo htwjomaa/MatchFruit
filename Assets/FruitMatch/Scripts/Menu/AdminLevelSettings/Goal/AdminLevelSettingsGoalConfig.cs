@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -43,6 +44,19 @@ public class AdminLevelSettingsGoalConfig : MonoBehaviour
     public delegate void LoadCurrentObjectiveEvent();
     public static event LoadCurrentObjectiveEvent LoadCurrentObjective;
 
+    [SerializeField] private AdminLevelGoalStates adminLevelGoalStatesOne;
+    public  void InvokeLoadCurrentObjectiveDelayed()
+    {
+        StartCoroutine(InvokeLoadCurrentObjectiveDelayed_CO(0.00001f));
+    }
+
+    IEnumerator InvokeLoadCurrentObjectiveDelayed_CO(float waitForSec)
+    {
+        yield return new WaitForSeconds(waitForSec);
+        adminLevelGoalStatesOne.ChangeObjectiveNumberState(true);
+        yield return new WaitForSeconds(0.000005f);
+        adminLevelGoalStatesOne.ChangeObjectiveNumberState(true);
+    }
     // Phase1Goal1Fruit
 
     [SerializeField] private TextMeshProUGUI goalText;

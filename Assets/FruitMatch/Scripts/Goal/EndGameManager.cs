@@ -37,7 +37,7 @@ public sealed class EndGameManager : MonoBehaviour
 
     public void GetGameTypeP2()
     {
-        Debug.Log("P2-Started");
+        /*Debug.Log("P2-Started");
         GameType gameTypeP2 =  Rl.saveFileLevelConfigManagement
             .AllSaveFileLevelConfigs.LevelConfigs[Rl.board.level]
             .BoardDimensionsConfig.GameTypeP2[0].GameType;
@@ -48,7 +48,7 @@ public sealed class EndGameManager : MonoBehaviour
         
         Rl.world.levels[Rl.board.level].endGameRequirements.CounterValue = GenericSettingsFunctions.GetConstvaluesMovesTime(counterValueP2, gameTypeP2);
         Rl.world.levels[Rl.board.level].endGameRequirements.GameType = gameTypeP2;
-        requirements.GameType = gameTypeP2;
+        requirements.GameType = gameTypeP2;*/
         
         //Removes this once it is implemented-----------
         if (Rl.world.levels[Rl.board.level].endGameRequirements.GameType is GameType.Nothing

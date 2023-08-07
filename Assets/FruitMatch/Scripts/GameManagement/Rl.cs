@@ -68,6 +68,10 @@ public sealed class Rl : MonoBehaviour
     [SerializeField] private WorldMapSaveManagement worldMapSaveManagementRef;
     [SerializeField] private BoardPreviewDragNDrop boardPreviewDragNDropRef;
     [SerializeField] private TargetSettings targetSettingsRef;
+
+    [SerializeField] private AdminlevelSettingsFruit adminlevelSettingsFruitRef;
+
+    [SerializeField] private LuckCalculator luckCalculatorRef;
     //----------------   statics  -------------------//
     public static Camera Cam;
     public static Settings settings;
@@ -115,7 +119,8 @@ public sealed class Rl : MonoBehaviour
     public static WorldMapSaveManagement worldMapSaveManagement;
     public static BoardPreviewDragNDrop boardPreviewDragNDrop;
     public static TargetSettings targetSettings;
-    
+    public static AdminlevelSettingsFruit adminlevelSettingsFruit;
+    public static LuckCalculator luckCalculator;
     [ShowNonSerializedField] public static string Game = "game";
     [ShowNonSerializedField] public static string GameScene = "GameScene";
     [ShowNonSerializedField] public static string LevelButtons = "LevelButtton";
@@ -179,6 +184,8 @@ public sealed class Rl : MonoBehaviour
         boardPreviewDragNDrop = boardPreviewDragNDropRef;
         targetSettings = targetSettingsRef;
         adminlevelSettingsConfig = adminlevelSettingsConfigRef;
+        adminlevelSettingsFruit = adminlevelSettingsFruitRef;
+        luckCalculator = luckCalculatorRef;
     }
     
     //----------------   Null  -------------------//
@@ -217,7 +224,7 @@ public sealed class Rl : MonoBehaviour
             switchButtonsBombsRef, saveClipBoardRef, uiSoundsRef, archievmentButtonsRef, localiserManagerRef, adminLevelLuckSettingsRef, adminLevelSettingsBoardRef,
             adminLevelTilesRef, boardPreviewRef, fadeControllerSplashMenuRef, adminLevelSettingsMatchFinderRef, adminLevelSettingsLayoutRef,
             adminLevelSettingsSideDotsRef, adminLevelSettingsGoalConfigRef, adminLevelSettingsLookDevRef, soundStringsRef, worldMapRef, worldMapSaveManagementRef,
-            boardPreviewDragNDropRef, targetSettingsRef,adminlevelSettingsConfigRef);
+            boardPreviewDragNDropRef, targetSettingsRef,adminlevelSettingsConfigRef, adminlevelSettingsFruitRef, luckCalculatorRef);
     
     //----------------   Editor Assign  -------------------//
     [NaughtyAttributes.Button()] public void PopulateList()
@@ -260,5 +267,7 @@ public sealed class Rl : MonoBehaviour
         boardPreviewDragNDrop = FindObjectOfType<BoardPreviewDragNDrop>();
         targetSettingsRef = FindObjectOfType<TargetSettings>();
         adminlevelSettingsConfigRef = FindObjectOfType<AdminLevelSettingsConfig>();
+        adminlevelSettingsFruitRef = FindObjectOfType<AdminlevelSettingsFruit>();
+        luckCalculatorRef = FindObjectOfType<LuckCalculator>();
     }
 }

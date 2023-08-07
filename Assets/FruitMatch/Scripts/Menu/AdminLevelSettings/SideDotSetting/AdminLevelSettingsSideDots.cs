@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
@@ -13,6 +14,7 @@ public class AdminLevelSettingsSideDots : MonoBehaviour
    public byte currentNumberField;
    public byte currentSetting;
    private byte currentBar = 0;
+[SerializeField] private SideDotSettingButton FirstSideDotSettingButton;
 
    public byte CurrentBar
    {
@@ -24,6 +26,16 @@ public class AdminLevelSettingsSideDots : MonoBehaviour
       }
    }
 
+   public void InvokeFirstSideDotSettingButton()
+   {
+      StartCoroutine(FirstSideDotSettingButton_CO(0.00002f));
+   }
+
+   IEnumerator FirstSideDotSettingButton_CO(float waitForSec)
+   {
+      yield return new WaitForSeconds(waitForSec);
+      FirstSideDotSettingButton.ClickButton();
+   }
    private SideDotSettingButton currentSideDotSettingButton;
    public SideDotSettingButton fallBackDotSettingButton;
    public List<Sprite> SideDotSpriteList = new();
@@ -114,12 +126,15 @@ public class AdminLevelSettingsSideDots : MonoBehaviour
    }
    public void LoadSideDotSettings(SideFruitsFieldConfig  sideFruitsFieldConfig)
    {
-      if(sideFruitsFieldConfig.SideFruitsConfig == null || sideFruitsFieldConfig.SideFruitsConfig.Length != SaveFileLevelConfigs.Fields)
-         Array.Resize(ref sideFruitsFieldConfig.SideFruitsConfig, SaveFileLevelConfigs.Fields);
+      SideFruitsFieldConfig n = (SideFruitsFieldConfig)GenericSettingsFunctions.GetDeepCopy(sideFruitsFieldConfig);
+      if(n.SideFruitsConfig == null || n.SideFruitsConfig.Length != SaveFileLevelConfigs.Fields)
+         Array.Resize(ref n.SideFruitsConfig, SaveFileLevelConfigs.Fields);
 
-      ResizeTileConfig(ref sideFruitsFieldConfig.SideFruitsConfig);
-      LoadBoardActive(sideFruitsFieldConfig);
+      ResizeTileConfig(ref n.SideFruitsConfig);
+      LoadBoardActive(n);
+      Rl.saveClipBoard.SideFruitsFieldConfigs = n;
       SwitchBar(true);
+      CurrenSideDotSettingButtonChanged();
    }
    public SideDotTile ClipBoardToTiles(byte column)
    {

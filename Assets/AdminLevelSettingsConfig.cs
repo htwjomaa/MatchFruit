@@ -44,11 +44,11 @@ public class AdminLevelSettingsConfig : MonoBehaviour
     public void ClickCopyButton(Transform buttonTransform)
     {
         if(buttonTransform != null) GenericSettingsFunctions.SmallJumpAnimation(buttonTransform);
-        Rl.GameManager.PlayAudio(Rl.soundStrings.MakeBubbleSound, Random.Range(0,5), Rl.settings.GetUISoundVolume, Rl.uiSounds.audioSource);
+        Rl.GameManager.PlayAudio(Rl.soundStrings.AcceptSwitchSound, Random.Range(0,5), Rl.settings.GetUISoundVolume, Rl.uiSounds.audioSource);
         Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[Rl.adminLevelSettingsPanel.LevelAdminLevelSettingsLevelNumber] =
             (LevelConfig)GenericSettingsFunctions.GetDeepCopy(Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[((int)CopyAllDataFromSlider.value )-1]);
         Rl.adminLevelSettingsPanel.RevertChanges(true);
-        Rl.saveFileManagerInMenu.SaveGame();
+        Rl.saveFileLevelConfigManagement.Save();
     }
 }
 

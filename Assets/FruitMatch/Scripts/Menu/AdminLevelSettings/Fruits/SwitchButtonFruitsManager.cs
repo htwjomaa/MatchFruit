@@ -9,11 +9,12 @@ public static class SwitchButtonFruitsManager
   //  public static List<Delegate> loadFunctions = new List<Delegate>(); 
   public delegate void DoSomething();
   public static event DoSomething LoadFruitEvent;
-
+  
   public static void InvokeLoadEvent()
   {
       LoadFruitEvent?.Invoke();
   }
+  
   
   public static void LoadEnableDisableFruitColorFromClipBoard(GameObject SwitchBackgroundOn, GameObject SwitchButtonOn, GameObject SwitchButtonOff, GameObject SwitchBackgroundOff, bool isEnabled)
   {

@@ -425,7 +425,6 @@ namespace FruitMatch.Scripts.Level
             levelData.LoadTargetObject();
 
             levelData.InitTargetObjects(limit, true);
-           
             Rl.adminLevelSettingsLookDev.SetBackgroundImage();
 
             for (int i = 0; i < levelData.fields.Count; i++)
@@ -475,6 +474,7 @@ namespace FruitMatch.Scripts.Level
                 loadedHorStriped = GetLoadedSprites(LoadingHelper.THIS.HorStriped);
                 loadedVertStriped = GetLoadedSprites(LoadingHelper.THIS.VertStriped);
                 levelData.colorLimit = loadedSprites.Length;
+                LevelManager.THIS.ColorLimit = levelData.colorLimit;
                 LevelManager.THIS.LimitLength= loadedSprites.Length;
                 
                 Debug.Log("LOADED SPRITES LENGTH::: -- " + (loadedSprites.Length));
@@ -504,6 +504,17 @@ namespace FruitMatch.Scripts.Level
                 }*/
                 BombsEnable();
                 BombsAllowed(LevelConfig.BombConfigs[GetBombEntry(LevelConfig.BombConfigs, Bomb.AllBombs)].Active);
+                AI.THIS.showTipEnabled = LevelConfig.BoardDimensionsConfig.AllowTip[0];
+                AI.THIS.showTipDelay = LevelConfig.BoardDimensionsConfig.TipDelay[0];
+                LevelManager.THIS.AllowBorder = LevelConfig.GraphicConfig.AllowBorderGraphic;
+                LevelManager.THIS.BlockCombineAllowed = LevelConfig.matchFinderConfig.BlockCombinedAllowed;
+                LevelManager.THIS.Vcount = (int)LevelConfig.matchFinderConfig.RowValue;
+                LevelManager.THIS.Hcount = (int)LevelConfig.matchFinderConfig.RowValue;
+                LevelManager.THIS.PenaltyValue  = LevelConfig.matchFinderConfig.PenaltyValue;
+                LevelManager.THIS.DestroyOnlyTarget = LevelConfig.BoardDimensionsConfig.DestroyOnlyTarget;
+                LevelManager.THIS.MaxLimit= levelData.limit;
+                Rl.luckCalculator.LoadNumbers(LevelConfig.LuckConfig);
+             
             }
             /*
              

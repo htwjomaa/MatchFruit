@@ -20,17 +20,20 @@ public class AdminLevelSettingsMatchFinder : MonoBehaviour
    public TextMeshProUGUI Pattern1String;
    public TextMeshProUGUI Pattern2String;
    public TextMeshProUGUI RowValueDisplay;
-   public TextMeshProUGUI DiagonalValueDisplay;
-   public TextMeshProUGUI Pattern1ValueDisplay;
-   public TextMeshProUGUI Pattern2ValueDisplay;
+   public TextMeshProUGUI PenaltyDisplay;
+   //public TextMeshProUGUI DiagonalValueDisplay;
+  // public TextMeshProUGUI Pattern1ValueDisplay;
+   //public TextMeshProUGUI Pattern2ValueDisplay;
    [SerializeField] private Slider rowSlider;
+   [SerializeField] private Slider penaltySlider;
+   
    [SerializeField] private Slider diagonalSlider;
    [SerializeField] private Slider pattern1Slider;
    [SerializeField] private Slider pattern2Slider;
 
 
-   [SerializeField] private AdminLevelSettingsMatchFinderAcceptSwitch rowSwitch;
-   [SerializeField] private AdminLevelSettingsMatchFinderAcceptSwitch diagonalSwitch;
+   //[SerializeField] private AdminLevelSettingsMatchFinderAcceptSwitch rowSwitch;
+  // [SerializeField] private AdminLevelSettingsMatchFinderAcceptSwitch diagonalSwitch;
    [SerializeField] private AdminLevelSettingsMatchFinderAcceptSwitch pattern1Switch;
    [SerializeField] private AdminLevelSettingsMatchFinderAcceptSwitch pattern2Switch;
    private List<TextMeshProUGUI> _valueDisplayList = new List<TextMeshProUGUI>(); 
@@ -75,9 +78,9 @@ public class AdminLevelSettingsMatchFinder : MonoBehaviour
 
         return skipToValue;
     }
-    private void RemoveListeners() => GenericSettingsFunctions.RemoveListeners(rowSlider, diagonalSlider, pattern1Slider, pattern2Slider);
-    
-    private void Addlisteners() => GenericSettingsFunctions.Addlisteners(delegate { ValueChangeCheck(); }, rowSlider, diagonalSlider, pattern1Slider, pattern2Slider);
+    private void RemoveListeners() => GenericSettingsFunctions.RemoveListeners(rowSlider, penaltySlider);
+
+    private void Addlisteners() => GenericSettingsFunctions.Addlisteners(delegate { ValueChangeCheck(); }, rowSlider, penaltySlider);
 
     private void LoadMatchFinderConfigToClipBoard(MatchFinderConfig matchFinderConfig)
     {
@@ -96,8 +99,21 @@ public class AdminLevelSettingsMatchFinder : MonoBehaviour
         Rl.saveClipBoard.Pattern1Phase = matchFinderConfig.Pattern1Phase;
         Rl.saveClipBoard.Pattern2Phase = matchFinderConfig.Pattern2Phase;
 
-       // InvokeDebugLoadEvent();
+        Rl.saveClipBoard.penalty = matchFinderConfig.PenaltyValue;
+
+        // InvokeDebugLoadEvent();
         InvokeLoadEvent();
+    }
+
+    [SerializeField] private Switch BlockCombineSwitch;
+    public void ClickOnBlockSwitch(bool on) => ClickBlockSwitch(on, false, false);
+    
+    public void ClickBlockSwitch(bool on, bool playNoSound, bool animation)
+    {
+        
+        BlockCombineSwitch.SwitchButton(on, playNoSound, animation);
+        BlockCombineSwitch.SwitchButton(on, playNoSound, animation);
+        Rl.saveClipBoard.BlockCombine = on;
     }
 
     public void ClickLoadRowValue(Transform transform)
@@ -115,9 +131,19 @@ public class AdminLevelSettingsMatchFinder : MonoBehaviour
           .matchFinderConfig.RowPhase;
       
       
-      RowString.text = LocalisationSystem.GetLocalisedValue(Rl.saveClipBoard.Row.ToString());
-      rowSwitch.ClickOnSwitch(false);
+     // RowString.text = LocalisationSystem.GetLocalisedValue(Rl.saveClipBoard.Row.ToString());
+     // rowSwitch.ClickOnSwitch(false);
      GenericSettingsFunctions.SmallJumpAnimation(transform);
+    }
+    public void ClickLoadPenaltyValue(Transform transform)
+    { 
+        Rl.GameManager.PlayAudio(Rl.soundStrings.ResetToMidValueSound , Random.Range(0,4), Rl.settings.GetUISoundVolume, Rl.uiSounds.audioSource);
+        int level = Rl.adminLevelSettingsPanel.LevelAdminLevelSettingsLevelNumber;
+        Rl.saveClipBoard.penalty =  Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[level].matchFinderConfig.PenaltyValue;
+        penaltySlider.value = Rl.saveClipBoard.penalty;
+        // RowString.text = LocalisationSystem.GetLocalisedValue(Rl.saveClipBoard.Row.ToString());
+        // rowSwitch.ClickOnSwitch(false);
+        GenericSettingsFunctions.SmallJumpAnimation(transform);
     }
     
     public void ClickLoadDiagonalValue(Transform transform)
@@ -133,8 +159,8 @@ public class AdminLevelSettingsMatchFinder : MonoBehaviour
         Rl.saveClipBoard.DiagonalPhase = Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[level]
             .matchFinderConfig.DiagonalPhase;
         
-        DiagonalString.text = LocalisationSystem.GetLocalisedValue(Rl.saveClipBoard.Diagonal.ToString());
-        diagonalSwitch.ClickOnSwitch(false);
+       // DiagonalString.text = LocalisationSystem.GetLocalisedValue(Rl.saveClipBoard.Diagonal.ToString());
+       // diagonalSwitch.ClickOnSwitch(false);
         GenericSettingsFunctions.SmallJumpAnimation(transform);
     }
     
@@ -176,10 +202,10 @@ public class AdminLevelSettingsMatchFinder : MonoBehaviour
 
     private void InitStringValues()
     {
-        RowString.text = LocalisationSystem.GetLocalisedValue(Rl.saveClipBoard.Row.ToString());
-        DiagonalString.text = LocalisationSystem.GetLocalisedValue(Rl.saveClipBoard.Diagonal.ToString());
-        Pattern1String.text = LocalisationSystem.GetLocalisedValue(Rl.saveClipBoard.Pattern1.ToString());
-        Pattern2String.text = LocalisationSystem.GetLocalisedValue(Rl.saveClipBoard.Pattern2.ToString());
+      //  RowString.text = LocalisationSystem.GetLocalisedValue(Rl.saveClipBoard.Row.ToString());
+       // DiagonalString.text = LocalisationSystem.GetLocalisedValue(Rl.saveClipBoard.Diagonal.ToString());
+      //  Pattern1String.text = LocalisationSystem.GetLocalisedValue(Rl.saveClipBoard.Pattern1.ToString());
+       // Pattern2String.text = LocalisationSystem.GetLocalisedValue(Rl.saveClipBoard.Pattern2.ToString());
     }
     public MatchFinderConfig SaveMatchFinderSettings()
     {
@@ -187,7 +213,9 @@ public class AdminLevelSettingsMatchFinder : MonoBehaviour
             Rl.saveClipBoard.Row, Rl.saveClipBoard.RowMatchValue, Rl.saveClipBoard.RowPhase,
             Rl.saveClipBoard.Diagonal, Rl.saveClipBoard.DiagonalMatchValue, Rl.saveClipBoard.DiagonalPhase,
             Rl.saveClipBoard.Pattern1, Rl.saveClipBoard.Pattern1MatchValue, Rl.saveClipBoard.Pattern1Phase,
-            Rl.saveClipBoard.Pattern2, Rl.saveClipBoard.Pattern2MatchValue, Rl.saveClipBoard.Pattern2Phase
+            Rl.saveClipBoard.Pattern2, Rl.saveClipBoard.Pattern2MatchValue, Rl.saveClipBoard.Pattern2Phase,
+            Rl.saveClipBoard.BlockCombine,
+            Rl.saveClipBoard.penalty
         );
     }
     public void LoadMatchFinderSettings(MatchFinderConfig matchfinderConfig)
@@ -204,26 +232,28 @@ public class AdminLevelSettingsMatchFinder : MonoBehaviour
         //  LoadGameType(true, false);
         //  LoadGameType(false, false);
     }
-    private void Awake() => _valueDisplayList = GenericSettingsFunctions.AddToValueDisplayList(RowValueDisplay,
-        DiagonalValueDisplay, Pattern1ValueDisplay, Pattern2ValueDisplay);
+    private void Awake() => _valueDisplayList = GenericSettingsFunctions.AddToValueDisplayList(RowValueDisplay, PenaltyDisplay);
     
     private void ClipBoardToSlider()
     {
+        ClickBlockSwitch(Rl.saveClipBoard.BlockCombine, true, false);
         rowSlider.value =    Rl.saveClipBoard.RowMatchValue;
-      diagonalSlider.value = Rl.saveClipBoard.DiagonalMatchValue;
-      pattern1Slider.value =  Rl.saveClipBoard.Pattern1MatchValue;
-      pattern2Slider.value =  Rl.saveClipBoard.Pattern2MatchValue;
+        penaltySlider.value = Rl.saveClipBoard.penalty;
+//      diagonalSlider.value = Rl.saveClipBoard.DiagonalMatchValue;
+//      pattern1Slider.value =  Rl.saveClipBoard.Pattern1MatchValue;
+        //   pattern2Slider.value =  Rl.saveClipBoard.Pattern2MatchValue;
     }
     public void ValueChangeCheck()
     {
         Rl.saveClipBoard.RowMatchValue =  (uint)CheckIfValueIsNotViable(IsMatchStyle.IsRow, Pattern.Block, (int)rowSlider.value);
-        Rl.saveClipBoard.DiagonalMatchValue = (uint)CheckIfValueIsNotViable(IsMatchStyle.IsDiagonal, Pattern.Block, (int)diagonalSlider.value);
-        Rl.saveClipBoard.Pattern1MatchValue = (uint)CheckIfValueIsNotViable(IsMatchStyle.IsPattern1, Rl.saveClipBoard.Pattern1, (int)pattern1Slider.value);
-        Rl.saveClipBoard.Pattern2MatchValue = (uint)CheckIfValueIsNotViable(IsMatchStyle.IsPattern2, Rl.saveClipBoard.Pattern2, (int)pattern2Slider.value);
+        Rl.saveClipBoard.penalty = (int)penaltySlider.value;
+//        Rl.saveClipBoard.DiagonalMatchValue = (uint)CheckIfValueIsNotViable(IsMatchStyle.IsDiagonal, Pattern.Block, (int)diagonalSlider.value);
+      //  Rl.saveClipBoard.Pattern1MatchValue = (uint)CheckIfValueIsNotViable(IsMatchStyle.IsPattern1, Rl.saveClipBoard.Pattern1, (int)pattern1Slider.value);
+    //    Rl.saveClipBoard.Pattern2MatchValue = (uint)CheckIfValueIsNotViable(IsMatchStyle.IsPattern2, Rl.saveClipBoard.Pattern2, (int)pattern2Slider.value);
 
         
         ClipBoardToSlider();
-        GenericSettingsFunctions.UpdateTextFields(ref _valueDisplayList, rowSlider, diagonalSlider, pattern1Slider, pattern2Slider);
+        GenericSettingsFunctions.UpdateTextFields(ref _valueDisplayList, rowSlider,penaltySlider);
     }
     private void LoadIsMatchStyle(IsMatchStyle isMatchStyle, ref Row row, ref Diagonal diagonal, ref Pattern pattern, bool next)
     {

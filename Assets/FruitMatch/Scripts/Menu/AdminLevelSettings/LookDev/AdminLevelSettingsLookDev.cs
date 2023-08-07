@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using FruitMatch.Scripts.Core;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 public sealed class AdminLevelSettingsLookDev : MonoBehaviour
@@ -12,6 +13,7 @@ public sealed class AdminLevelSettingsLookDev : MonoBehaviour
   [SerializeField] private TextMeshProUGUI BGImageName;
   [SerializeField] private TextMeshProUGUI CurrentLevelCounter;
   [SerializeField] private TextMeshProUGUI MaxLevelCounter;
+  [SerializeField] private Switch BorderSwitch;
   private int _currentImagePointer = 0;
   private BgImageSet _currentBgImageSet;
   [SerializeField] private GameObject BackgroundImage;
@@ -19,14 +21,18 @@ public sealed class AdminLevelSettingsLookDev : MonoBehaviour
   public GraphicConfig SaveBorderGraphicSetting()
   {
     return new GraphicConfig(
-      Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs
-        .LevelConfigs[Rl.adminLevelSettingsPanel.LevelAdminLevelSettingsLevelNumber].GraphicConfig.AllowBorderGraphic,
+      Rl.saveClipBoard.BorderGraphic,
       Rl.saveClipBoard.LevelCategory,
       Rl.saveClipBoard.BGName,
       Rl.saveClipBoard.WholeCategory
     );
   }
-  
+  public void ClickOnBorderSwitch(bool on) => ClickBorderSwitch(on, false, true);
+  private void ClickBorderSwitch(bool on, bool playNoSound, bool animation)
+  {
+    BorderSwitch.SwitchButton(on, playNoSound, animation);
+    Rl.saveClipBoard.BorderGraphic = on;
+  }
   public void ClickGetNextLevel()
   {
     CurrentlevelImage.sprite = GetNextImageFromBgImage(_currentBgImageSet, ref _currentImagePointer);
@@ -53,10 +59,12 @@ public sealed class AdminLevelSettingsLookDev : MonoBehaviour
  
   public void LoadFromDisk(GraphicConfig graphicConfig)
   {
+    Rl.saveClipBoard.BorderGraphic = graphicConfig.AllowBorderGraphic;
     Rl.saveClipBoard.LevelCategory = graphicConfig.LevelCategory;
     Rl.saveClipBoard.WholeCategory = graphicConfig.WholeCategory;
     Rl.saveClipBoard.BGName = graphicConfig.BGName;
     LoadLevelCategory(Load.Only, graphicConfig.BGName);
+    ClickBorderSwitch(Rl.saveClipBoard.BorderGraphic, true, false);
   }
 
   public void SetBackgroundImage()

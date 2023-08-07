@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using FruitMatch.Scripts.Blocks;
@@ -8,6 +9,7 @@ using FruitMatch.Scripts.System;
 using FruitMatch.Scripts.System.Combiner;
 using FruitMatch.Scripts.System.Pool;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace FruitMatch.Scripts
 {
@@ -16,7 +18,6 @@ namespace FruitMatch.Scripts
         LShape,
         VShape
     }
-
     /// <summary>
     /// Searches tips and automatic player for debugger
     /// </summary>
@@ -72,15 +73,8 @@ namespace FruitMatch.Scripts
 
         public Item TipItem
         {
-            get
-            {
-                return tipItem;
-            }
-
-            set
-            {
-                tipItem = value;
-            }
+            get => tipItem;
+            set => tipItem = value;
         }
 
         /// <summary>
@@ -727,10 +721,29 @@ namespace FruitMatch.Scripts
 
             return v;
         }
-
+        
+        [SerializeField] public bool canShowTip;
+        [SerializeField] public bool showTipEnabled;
+        [SerializeField] public int showTipDelay = 3;
         //show tip function calls coroutine for
+        public void ResetTimer() => canShowTip = false;
+
+        IEnumerator showTipDelayed(List<Item> nextMoveItems)
+        {
+            yield return new WaitForSeconds(showTipDelay);
+            canShowTip = true;
+            showTip(nextMoveItems);
+            
+        }
         void showTip(List<Item> nextMoveItems)
         {
+            if (!showTipEnabled) return;
+            if (!canShowTip)
+            {
+                StartCoroutine(showTipDelayed(nextMoveItems));
+                return;
+            }
+            
             StopCoroutine(showTipCor(nextMoveItems));
             StartCoroutine(showTipCor(nextMoveItems));
         }
@@ -816,6 +829,7 @@ namespace FruitMatch.Scripts
         
         public Combine GetMarmaladeCombines()
         {
+            
             for (var COLOR = 0; COLOR < 6; COLOR++)
             {
                 for (var col = 0; col < LevelManager.THIS.levelData.maxCols; col++)

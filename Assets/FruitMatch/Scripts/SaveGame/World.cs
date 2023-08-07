@@ -171,6 +171,16 @@ public sealed class World : ScriptableObject
 
         return SpriteNotFound;
     }
+    public Sprite GetGoalBGSprite(FruitType fruitType)
+    {
+        foreach(GoalLookUpTable lookUp in  GoalLookUpTable)
+            if (lookUp.Tag == GetTagFromFruitType(fruitType))
+            {
+                return lookUp.BackGroundImage;
+            }
+
+        return SpriteNotFound;
+    }
     
     public double GetHighScore(Level level)
     {

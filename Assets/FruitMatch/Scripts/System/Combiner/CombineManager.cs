@@ -118,7 +118,8 @@ namespace FruitMatch.Scripts.System.Combiner
                     }
                 }
             }
-
+            
+            //if(match3Combines.Count < 4) match3Combines.Clear();
             allFoundCombines = match3Combines;
             //		Debug.Log (" test combines detected " + tempCombines.Count);
             return CheckCombines(dic, match3Combines);
@@ -137,11 +138,11 @@ namespace FruitMatch.Scripts.System.Combiner
                     foreach (var item in comb.items)
                     {
                         var newComb = FindCombineInDic(item, d);
-                        if (comb != newComb && countedCombines.IndexOf(newComb) < 0 && countedCombines.IndexOf(comb) < 0 && IsCombineMatchThree(newComb))
+                        if (comb != newComb && countedCombines.IndexOf(newComb) < 0 && countedCombines.IndexOf(comb) < 0 && IsCombineMatchThree(newComb) && IsColorCombine(newComb))
                         {
                             countedCombines.Add(newComb);
                             countedCombines.Add(comb);
-                            var mergedCombine = MergeCombines(comb, newComb);
+                            Combine mergedCombine = MergeCombines(comb, newComb);
                             combines.Add(mergedCombine);
                             foreach (var item_ in comb.items)
                             {
@@ -163,14 +164,18 @@ namespace FruitMatch.Scripts.System.Combiner
             {
                 if (combines.IndexOf(comb) < 0 /*&& IsCombineMatchThree(comb)*/ && countedCombines.IndexOf(comb) < 0 && comb.items.Any())
                 {
-                    ItemTemplate[] foundBonusCombine;
-                    comb.nextType = SetNextItemType(comb, out foundBonusCombine);
-                    if (comb.nextType != ItemsTypes.NONE)
-                    {
-                        comb.items = foundBonusCombine.Where(i => i.item).Select(i => i.itemRef).ToList();
-                        combines.Add(comb);
-                    }
-                    else if (IsCombineMatchThree(comb))
+                     
+                      if (LevelManager.THIS.BlockCombineAllowed)
+                      { ItemTemplate[] foundBonusCombine;
+                          comb.nextType = SetNextItemType(comb, out foundBonusCombine);
+                          if (comb.nextType != ItemsTypes.NONE)
+                          {
+                              comb.items = foundBonusCombine.Where(i => i.item).Select(i => i.itemRef).ToList();
+                              combines.Add(comb);
+                          }
+                      }
+                 
+                    else if (IsCombineMatchThree(comb) && IsColorCombine(comb))
                     {
                         if (comb.hCount > comb.vCount)
                         {
@@ -256,7 +261,7 @@ namespace FruitMatch.Scripts.System.Combiner
             combine.AddingItem = item;
             d[item] = combine;
 
-            if (IsCombineMatchThree(combine))
+            if (IsCombineMatchThree(combine) && IsColorCombine(combine))
             {
                 combine.color = item.color;
                 if (lCombines.IndexOf(combine) < 0)
@@ -267,9 +272,12 @@ namespace FruitMatch.Scripts.System.Combiner
             }
         }
 
-        bool IsCombineMatchThree(Combine combine)
+
+        private bool IsColorCombine(Combine combine) => LevelManager.THIS.DestroyOnlyTarget[0] && LevelManager.THIS.DestroyColorIDs.Contains(combine.color);
+
+        public bool IsCombineMatchThree(Combine combine)
         {
-            if (combine.hCount > 2 || combine.vCount > 2 /*|| combine.vCount + combine.hCount > 3*/)
+            if (combine.hCount > LevelManager.THIS.Hcount-1 || combine.vCount > LevelManager.THIS.Vcount-1 /*|| combine.vCount + combine.hCount > 3*/)
             {
                 return true;
             }

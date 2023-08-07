@@ -467,7 +467,7 @@ namespace FruitMatch.Scripts.Items
             }
         }
 
-        //switching animation and check rest conditions
+        //switching animation and check restList conditions
         private IEnumerator Switching()
         {
             if (switchDirection != Vector3.zero && neighborSquare)
@@ -678,12 +678,12 @@ namespace FruitMatch.Scripts.Items
         ///get mathes around this item, local check
         public List<Combine> GetMatchesAround()
         {
-            var list = square.FindMatchesAround();
-            var combine = new Combine().ConvertToCombine(list);
-            var combineManager = LevelManager.THIS.CombineManager;
-            var dic = new Dictionary<Item, Combine>();
+            List<Item> list = square.FindMatchesAround();
+            Combine combine = new Combine().ConvertToCombine(list);
+            CombineManager combineManager = LevelManager.THIS.CombineManager;
+            Dictionary<Item, Combine> dic = new Dictionary<Item, Combine>();
             foreach (var item in combine.items) dic.Add(item, combine);
-            var combines2 = combineManager.CheckCombines(dic, new List<Combine> { combine });
+            List<Combine> combines2 = combineManager.CheckCombines(dic, new List<Combine> { combine });
             LevelManager.THIS.combo += combines2.Count;
             return combines2;
         }
@@ -1097,7 +1097,6 @@ namespace FruitMatch.Scripts.Items
                 if (sq.Item != null)
                     return sq.Item;
             }
-
             return null;
         }
 

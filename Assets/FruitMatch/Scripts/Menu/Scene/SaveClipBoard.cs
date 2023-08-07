@@ -38,11 +38,13 @@ public class SaveClipBoard : ScriptableObject
     [Header("Board Settings")]
     public int[] BoardWidth;
     public int[] BoardHeight;
-    public bool[] P1P2;
+    public bool[] AllowTip;
+    public bool[] DestroyTargetOnly;
+    public bool[] AddToLastField;
     public bool[] NoMatches;
     public EndGameRequirements[] GameTypeP1;
-    public EndGameRequirements[] GameTypeP2;
-    public bool[] BorderGraphic;
+     public int[] TipDelay;
+    public bool BorderGraphic;
     
     [Header("TileKinds")] 
     
@@ -54,7 +56,8 @@ public class SaveClipBoard : ScriptableObject
     public Diagonal Diagonal;
     public Pattern Pattern1;
     public Pattern Pattern2;
-
+    public bool BlockCombine;
+    public int penalty;
     public uint RowMatchValue;
     public uint DiagonalMatchValue;
     public uint Pattern1MatchValue;

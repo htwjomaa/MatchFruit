@@ -214,7 +214,7 @@ public sealed class AudioDatabase : ScriptableObject
    {
        if (audioClip == null)
        {
-           Debug.Log("Please insert first an AudioClip to rest the Element in the List All Audio Settings.");
+           Debug.Log("Please insert first an AudioClip to restList the Element in the List All Audio Settings.");
            return;
        }
        

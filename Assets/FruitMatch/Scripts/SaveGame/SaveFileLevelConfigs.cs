@@ -9,7 +9,7 @@ public class SaveFileLevelConfigs
     public LevelConfig[] LevelConfigs ;
     public DateInformation DateInformation;
     public double UniqueIdentifier;
-    public static byte Fields = 4;
+    public static byte Fields = 5;
     public SaveFileLevelConfigs(LevelConfig[] levelConfigs, DateInformation dateInformation, double uniqueIdentifier)
     {
         LevelConfigs = levelConfigs;
@@ -384,7 +384,7 @@ public struct MatchFinderConfig
     public Row Row;
     public uint RowValue;
     public Phase RowPhase;
-    
+   
     public Diagonal Diagonal;
     public uint DiagonalValue;
     public Phase DiagonalPhase;
@@ -396,8 +396,11 @@ public struct MatchFinderConfig
     public Pattern Pattern2;
     public uint Pattern2Value;
     public Phase Pattern2Phase;
+    public bool BlockCombinedAllowed;
+    public int PenaltyValue;
 
-    public MatchFinderConfig(Row row, uint rowValue, Phase rowPhase, Diagonal diagonal, uint diagonalValue, Phase diagonalPhase, Pattern pattern1, uint pattern1Value, Phase pattern1Phase, Pattern pattern2, uint pattern2Value, Phase pattern2Phase)
+    public MatchFinderConfig(Row row, uint rowValue, Phase rowPhase, Diagonal diagonal, uint diagonalValue,
+        Phase diagonalPhase, Pattern pattern1, uint pattern1Value, Phase pattern1Phase, Pattern pattern2, uint pattern2Value, Phase pattern2Phase, bool blockCombinedAllowed, int penaltyValue)
     {
         Row = row;
         RowValue = rowValue;
@@ -411,6 +414,8 @@ public struct MatchFinderConfig
         Pattern2 = pattern2;
         Pattern2Value = pattern2Value;
         Pattern2Phase = pattern2Phase;
+        BlockCombinedAllowed = blockCombinedAllowed;
+        PenaltyValue = penaltyValue;
     }
 }
 
@@ -453,19 +458,23 @@ public struct BoardDimensionsConfig
     public int[] Height;
     public bool[] NoMatches;
     public FruitsConfigParent[] FruitsConfigParent;
-    public bool[] P1P2;
     public EndGameRequirements[] GameTypeP1;
-    public EndGameRequirements[] GameTypeP2;
+    public bool[] AllowTip;
+    public int[] TipDelay;
+    public bool[] DestroyOnlyTarget;
+    public bool[] AddToLastField;
 
-    public BoardDimensionsConfig(int[] width, int[] height, bool[] noMatches, FruitsConfigParent[] fruitsConfigParent, bool[] p1P2, EndGameRequirements[] gameTypeP1, EndGameRequirements[] gameTypeP2)
+    public BoardDimensionsConfig(int[] width, int[] height, bool[] noMatches, FruitsConfigParent[] fruitsConfigParent, EndGameRequirements[] gameTypeP1, bool[] allowTip, int[] tipDelay, bool[] destroyOnlyTarget, bool[] addToLastField)
     {
         Width = width;
         Height = height;
         NoMatches = noMatches;
         FruitsConfigParent = fruitsConfigParent;
-        P1P2 = p1P2;
         GameTypeP1 = gameTypeP1;
-        GameTypeP2 = gameTypeP2;
+        AllowTip = allowTip;
+        TipDelay = tipDelay;
+        DestroyOnlyTarget = destroyOnlyTarget;
+        AddToLastField = addToLastField;
     }
 }
 

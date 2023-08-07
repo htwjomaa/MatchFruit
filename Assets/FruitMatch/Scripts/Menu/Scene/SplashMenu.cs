@@ -9,6 +9,8 @@ using System.Linq;
 using NaughtyAttributes;
 using FruitMatch.Scripts.Core;
 using FruitMatch.Scripts.Level;
+using FruitMatch.Scripts.TargetScripts.TargetSystem;
+
 public sealed class SplashMenu : MonoBehaviour
 {
  public World world;
@@ -336,7 +338,7 @@ public sealed class SplashMenu : MonoBehaviour
    ActivateLevelSelectedImage(level);
    UpdatePrevNextLevelArrows(level);
    
-   ChangeLevelInfoPanel(ChangeIntToLevel(level));
+   ChangeLevelInfoPanel(ChangeIntToLevel(level), level-1);
    PanelOnLeft = IsPanelLeft(LevelButtons[level-1]);
    if(PanelOnLeft)CloseSplashSettingsMenu();
    LoadLevelData(level);
@@ -526,17 +528,17 @@ CrosssceneData.passLevelCounter = LevelManager.THIS.currentLevel;
 LevelManager.THIS.gameStatus = GameState.PrepareGame;
 LevelCanvasObj.SetActive(false);
 }
- private void ChangeLevelInfoPanel(Level level)
+ private void ChangeLevelInfoPanel(Level level, int levelInt)
  {
   GetLevelNameText(level);
   GetLevelDescriptionText(level);
   GetGameTypeLevelType(level);
   GetLevelScoreGoals(level);
-  GetLevelGoalImages(level);
+  GetLevelGoalImages(levelInt);
   GetLevelGoalImagesOverlay(level);
   GetLevelStars(level);
   GetLevelHighScore(level);
-  UpdateGoalSprites(ref level);
+  //UpdateGoalSprites(ref level);
   UpdateNewLabel(level);
   GetPerfectRun(level);
  }
@@ -609,15 +611,70 @@ LevelCanvasObj.SetActive(false);
    }
 
  }
- [SerializeField] private List<String> allLevelGoalTags= new List<String>();
- private void GetLevelGoalImages(Level level)
+ //[SerializeField] private List<String> allLevelGoalTags= new List<String>();
+ private List<FruitType> allLevelGoals= new List<FruitType>();
+ private List<CollectionStyle> allCollectionStyles= new List<CollectionStyle>();
+ private string _goalColor = "#63FF4F";
+ private string _avoidColor = "#FB226B";
+ private string _emptyColor = "#FFFFFF";
+ 
+ private void GetLevelGoalImages(int level)
  {
-allLevelGoalTags.Clear();
-foreach(BlankGoal n in level.levelGoals)
-   allLevelGoalTags.Add(world.GetTagFromFruitType(n.fruitType));
+allLevelGoals.Clear();
 
-  int levelGoalCount = allLevelGoalTags.Count;
+var g = Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[level].GoalConfig.PhaseGoalsList[0].ObjectiveSettingsArray[0].PhaseGoalArray;
+for (int i = 0; i < g.Length; i++)
+{
+ allCollectionStyles.Add(g[i].CollectionStyle);
+ allLevelGoals.Add(g[i].GoalFruit);
+ 
+}
+
+int levelGoalCount = allLevelGoals.Count;
   
+
+int counter = 0;
+foreach(var f in allLevelGoals)
+{
+ if (counter < 3)
+ {
+  if (f == FruitType.Nothing)
+  {
+   
+   goalImages[counter].color = new Color(goalImages[counter].color.r, goalImages[counter].color.g,goalImages[counter].color.b, 0);
+   goalImages[counter].transform.gameObject.transform.parent.GetComponent<Image>().color = new Color(
+    goalImages[counter].transform.gameObject.transform.parent.GetComponent<Image>().color.r,
+    goalImages[counter].transform.gameObject.transform.parent.GetComponent<Image>().color.g,
+    goalImages[counter].transform.gameObject.transform.parent.GetComponent<Image>().color.b, 0);
+
+   goalImages[counter].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "";
+  }
+
+  else
+  {
+   
+   goalImages[counter].color = new Color(goalImages[counter].color.r, goalImages[counter].color.g,goalImages[counter].color.b, 0.72f);
+   goalImages[counter].transform.gameObject.transform.parent.GetComponent<Image>().color = new Color(
+    goalImages[counter].transform.gameObject.transform.parent.GetComponent<Image>().color.r,
+    goalImages[counter].transform.gameObject.transform.parent.GetComponent<Image>().color.g,
+    goalImages[counter].transform.gameObject.transform.parent.GetComponent<Image>().color.b, 0.77f);
+   
+   goalImages[counter].sprite =  Rl.world.GetGoalSprite(f);
+   goalImages[counter].transform.gameObject.transform.parent.GetComponent<Image>().sprite = Rl.world.GetGoalBGSprite(f);
+   goalImages[counter].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = TargetGUI.GetTargetCollectionStyleText(allCollectionStyles[counter]);
+
+   Color color = new Color(255,255,0.9f);
+   if(allCollectionStyles[counter] == CollectionStyle.Destroy)      ColorUtility.TryParseHtmlString(_goalColor, out color);
+   else if (allCollectionStyles[counter] == CollectionStyle.Avoid)  ColorUtility.TryParseHtmlString(_avoidColor, out color);
+
+   goalImages[counter].transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = color;
+  }
+
+ counter++;
+ }
+
+
+}
   switch (levelGoalCount)
   {
    case 1:
@@ -626,20 +683,7 @@ foreach(BlankGoal n in level.levelGoals)
     break;
    
    case 3:
-    int counter = 0;
-    foreach(var f in allLevelGoalTags)
-    {
-     foreach (var t in world.GoalLookUpTable)
-     {
-      if (f == t.Tag)
-      {
-       goalImages[counter].sprite = t.Image;
-       goalImages[counter].transform.gameObject.transform.parent.GetComponent<Image>().sprite = t.BackGroundImage;
-       counter++;
-      }
-     }
-     
-    }
+  
     break;
    default:
     break;
@@ -717,13 +761,13 @@ void GetLevelGoalImagesOverlay(Level level)
     break;
   }
  }
- private void UpdateGoalSprites(ref Level level)
- {
-  foreach (BlankGoal blankGoal in level.levelGoals)
-  {
-   blankGoal.goalSprite  = world.GetGoalSprite(blankGoal.fruitType);
-  }
- }
+ // private void UpdateGoalSprites(ref Level level, Level)
+ // {
+ //  foreach (BlankGoal blankGoal in level.levelGoals)
+ //  {
+ //   blankGoal.goalSprite  = world.GetGoalSprite(blankGoal.fruitType);
+ //  }
+ // }
 
  private void SetupProgressOnLoad()
  {

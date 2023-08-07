@@ -1,8 +1,10 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using Newtonsoft.Json.Serialization;
 
 [RequireComponent(typeof(UnityEngine.UIElements.Image))]
 public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler
@@ -55,7 +57,8 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     //     }
     //     
     // }
-    
+
+
     private void SecurityScaleDown()
     {
         for (int i = 0; i < tabGroup.animationObjects.Count; i++)
@@ -92,14 +95,31 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
         if(SplashMenu.TabGroupState == tabGroupState) 
             
         Invoke(nameof(delayedInvoke), 0.005f);
+        DeactivateObject();
     }
 
+    [SerializeField]private GameObject objToDeactivate;
+  
     private void delayedInvoke()
     {
         tabGroup.ClickNoSound = true;
         tabGroup.OnTabSelected(CheckForChildren());
+
     }
 
+    public void DeactivateObject()
+    {
+        if (objToDeactivate != null)
+        {
+            StartCoroutine(DeactiveObject_CO(0.05f));
+        }
+    }
+
+    IEnumerator DeactiveObject_CO(float waitForSec)
+    {
+       yield return new WaitForSeconds(waitForSec);
+       objToDeactivate.SetActive(false);
+    }
     public bool ParentTabExist()
     {
         if (this.transform.parent.GetComponent<TabButton>()) return true;

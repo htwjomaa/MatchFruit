@@ -29,13 +29,13 @@ namespace FruitMatch.Scripts.Core
         //EDITOR: max amount of life
         public int CapOfLife = 9999999;
 
-        //EDITOR: time for rest life
+        //EDITOR: time for restList life
         public float TotalTimeForRestLifeHours;
 
-        //EDITOR: time for rest life
+        //EDITOR: time for restList life
         public float TotalTimeForRestLifeMin = 15;
 
-        //EDITOR: time for rest life
+        //EDITOR: time for restList life
         public float TotalTimeForRestLifeSec = 60;
 
         //amount of coins
