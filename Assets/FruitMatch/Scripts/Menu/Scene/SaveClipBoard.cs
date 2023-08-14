@@ -119,13 +119,16 @@ public class SaveClipBoard : ScriptableObject
 
     [Header("Luck Settings ")]
     
-    [Range(0, 1)] public float NeededPieces;
-    [Range(0, 1)] public float NeededPiecesOverTime;
-    [Range(0, 1)] public float BeneficialExtras;
-    [Range(0, 1)] public float BeneficialExtrasOverTime;
-    [Range(0, 1)] public float MaliciousExtras;
-    [Range(0, 1)] public float MaliciousExtrasOverTime;
-
+    [Range(0, 1)] public float[] NeededPieces;
+    [Range(0, 1)] public float[] NeededPiecesOverTime;
+    [Range(0, 1)] public float[] BeneficialExtras;
+    [Range(0, 1)] public float[] BeneficialExtrasOverTime;
+    [Range(0, 1)] public float[] MaliciousExtras;
+    [Range(0, 1)] public float[] MaliciousExtrasOverTime;
+    [Range(0, 1)] public float[] Overall;
+    public bool[] NeededPiecesOnlyStart;
+    public bool[] BeneficialExtrasOnlyStart;
+    public bool[] MaliciousExtrasOnlyStart;
 
     [Header("Layout Settings ")] 
     [Range(0, 100)] public float[] ZoomOutValue;

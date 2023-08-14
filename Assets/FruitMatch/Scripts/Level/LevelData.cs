@@ -333,15 +333,41 @@ using System.Linq;
                         LevelManager.THIS.TargetCollectionStyle.Add(Goals[i].CollectionStyle);
                     }
                 }
-            
-              
+            //SetIdsForCollectionStyles and Luckcalculator
+                Sprite[] targetSprites = GetTargetSprites();
+                for (int i = 0; i < targetSprites.Length; i++)
+                {
+                    switch (LevelManager.THIS.TargetCollectionStyle[i])
+                    {
+                        case CollectionStyle.Destroy:
+                            LevelManager.THIS.DestroyColorIDs.Add(GetColor(targetSprites[i]));
+                            break;
+                        case CollectionStyle.Avoid:
+                            LevelManager.THIS.AvoidColorIDs.Add(GetColor(targetSprites[i]));
+                            break;
+                    }
+                }
+
+                LevelManager.THIS.LoadLuckTargets();
+
             }
             targetObject.subTargetContainers = subTargetsContainers.ToArray();
             if (targetObject.subTargetContainers.Length > 0)
                 targetObject.InitTarget(this);
             else Debug.LogError( "set " + target.name + " more than 0" );
         }
+        
+        private int GetColor(Sprite image)
+        {
+            
+            for (int i = 0; i < LoadingManager.loadedSprites.Length; i++)
+            {
+                if (image == LoadingManager.loadedSprites[i])
+                    return i;
+            }
 
+            return 0;
+        }
         public void SetItemTarget(Item item)
         {
             foreach (var _subTarget in TargetCounters)

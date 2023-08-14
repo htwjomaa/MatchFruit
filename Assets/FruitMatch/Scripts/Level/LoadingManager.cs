@@ -424,6 +424,7 @@ namespace FruitMatch.Scripts.Level
             TranslateBlocks(tileSettingConfigs, ref levelData);
             levelData.LoadTargetObject();
 
+            Rl.luckCalculator.LoadNumbers(LevelConfig.LuckConfig);
             levelData.InitTargetObjects(limit, true);
             Rl.adminLevelSettingsLookDev.SetBackgroundImage();
 
@@ -506,6 +507,7 @@ namespace FruitMatch.Scripts.Level
                 BombsAllowed(LevelConfig.BombConfigs[GetBombEntry(LevelConfig.BombConfigs, Bomb.AllBombs)].Active);
                 AI.THIS.showTipEnabled = LevelConfig.BoardDimensionsConfig.AllowTip[0];
                 AI.THIS.showTipDelay = LevelConfig.BoardDimensionsConfig.TipDelay[0];
+                LevelManager.THIS.NoMatchesBool= LevelConfig.BoardDimensionsConfig.NoMatches;
                 LevelManager.THIS.AllowBorder = LevelConfig.GraphicConfig.AllowBorderGraphic;
                 LevelManager.THIS.BlockCombineAllowed = LevelConfig.matchFinderConfig.BlockCombinedAllowed;
                 LevelManager.THIS.Vcount = (int)LevelConfig.matchFinderConfig.RowValue;
@@ -513,8 +515,6 @@ namespace FruitMatch.Scripts.Level
                 LevelManager.THIS.PenaltyValue  = LevelConfig.matchFinderConfig.PenaltyValue;
                 LevelManager.THIS.DestroyOnlyTarget = LevelConfig.BoardDimensionsConfig.DestroyOnlyTarget;
                 LevelManager.THIS.MaxLimit= levelData.limit;
-                Rl.luckCalculator.LoadNumbers(LevelConfig.LuckConfig);
-             
             }
             /*
              

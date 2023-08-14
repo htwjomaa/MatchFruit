@@ -7,6 +7,9 @@ using FruitMatch.Scripts.Level;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 
+
+
+//This class is half depricated, but still needed for the code to function. It is for the TargetGoals
 public sealed class GoalManager : MonoBehaviour
 {
     public Queue<BlankGoal[]> _goalsP1Queue;

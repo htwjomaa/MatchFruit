@@ -202,19 +202,7 @@ public sealed class SaveFileLevelConfigManagement : ScriptableObject
        Save();
     }
 
-   [SerializeField] private float LuckConfigValue = 0.5f;
-    [Button()] public void SetAllLuckConfigsToSpecificValue()
-    {
-        for (int index = 0; index < AllSaveFileLevelConfigs.LevelConfigs.Length; index++)
-        {
-            AllSaveFileLevelConfigs.LevelConfigs[index].LuckConfig.NeededPieces = LuckConfigValue;
-            AllSaveFileLevelConfigs.LevelConfigs[index].LuckConfig.NeededPiecesOverTime = LuckConfigValue;
-            AllSaveFileLevelConfigs.LevelConfigs[index].LuckConfig.BeneficialExtras = LuckConfigValue;
-            AllSaveFileLevelConfigs.LevelConfigs[index].LuckConfig.BeneficialExtrasOverTime = LuckConfigValue;
-            AllSaveFileLevelConfigs.LevelConfigs[index].LuckConfig.MaliciousExtras = LuckConfigValue;
-            AllSaveFileLevelConfigs.LevelConfigs[index].LuckConfig.MaliciousExtrasOverTime = LuckConfigValue;
-        }
-    }
+
 
     [Button()]
     public void GenerateLanguageTextLists()

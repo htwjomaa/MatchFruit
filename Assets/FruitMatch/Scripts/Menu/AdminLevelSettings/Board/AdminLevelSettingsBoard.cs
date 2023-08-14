@@ -282,4 +282,19 @@ private void AddListener() => GenericSettingsFunctions.Addlisteners(delegate { V
         AddListener();
         EnableDisableExtraSwitches();
     }
+
+    public void CopyField(byte fieldOne, byte fieldTwo)
+    {
+        Rl.saveClipBoard.BoardWidth[fieldTwo] = Rl.saveClipBoard.BoardWidth[fieldOne];
+        Rl.saveClipBoard.BoardHeight[fieldTwo]  = Rl.saveClipBoard.BoardHeight[fieldOne];
+        Rl.saveClipBoard.NoMatches[fieldTwo]  = Rl.saveClipBoard.NoMatches[fieldOne];
+        
+        //Fruitsconfig parent missing her???  
+        
+        Rl.saveClipBoard.GameTypeP1[fieldTwo] =  Rl.saveClipBoard.GameTypeP1[fieldOne];
+        Rl.saveClipBoard.AllowTip[fieldTwo] = Rl.saveClipBoard.AllowTip[fieldOne];
+        Rl.saveClipBoard.TipDelay[fieldTwo] = Rl.saveClipBoard.TipDelay[fieldOne];
+        Rl.saveClipBoard.DestroyTargetOnly[fieldTwo] = Rl.saveClipBoard.DestroyTargetOnly[fieldOne];
+        Rl.saveClipBoard.AddToLastField[fieldTwo] = Rl.saveClipBoard.AddToLastField[fieldOne];
+    }
 }

@@ -140,7 +140,14 @@ public class IColorableComponent : MonoBehaviour /* , IPoolable */
         color = ColorGenerator.GenColor(itemComponent.square);
       //    int randomNumber = Random.Range(0, 3);
         // if ( randomNumber == 2 || randomNumber == 1 ) color = 3;
-       // color = Rl.luckCalculator.GetColor();
+        if (LevelManager.THIS.levelLoaded)
+        {
+            color = Rl.luckCalculator.GetColor();
+        }
+        else
+        {
+           color = Rl.luckCalculator.GetColor();
+        }
         SetColor(color);
         foreach (IColorableComponent i in iColorableComponents) i.SetColor(color);
     }

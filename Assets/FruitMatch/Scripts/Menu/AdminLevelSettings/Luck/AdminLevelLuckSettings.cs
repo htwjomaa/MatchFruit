@@ -1,6 +1,8 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class AdminLevelLuckSettings : MonoBehaviour
 {
@@ -10,6 +12,12 @@ public class AdminLevelLuckSettings : MonoBehaviour
     [SerializeField] public Slider BeneficialExtrasOverTime;
     [SerializeField] public Slider MaliciousExtras;
     [SerializeField] public Slider MaliciousExtrasOverTime;
+    [SerializeField] public Slider Overall;
+
+
+    [SerializeField] private AcceptSwitchSimple NeededPiecesAcceptSwitch;
+    [SerializeField] private AcceptSwitchSimple  BeneficialExtrasAcceptSwitch;
+    [SerializeField] private AcceptSwitchSimple  MaliciousExtrasAcceptSwitch;
     private void RemoveListeners()
     {
         NeededPieces.onValueChanged.RemoveAllListeners();
@@ -18,6 +26,7 @@ public class AdminLevelLuckSettings : MonoBehaviour
         BeneficialExtrasOverTime.onValueChanged.RemoveAllListeners();
         MaliciousExtras.onValueChanged.RemoveAllListeners();
         MaliciousExtrasOverTime.onValueChanged.RemoveAllListeners();
+        Overall.onValueChanged.RemoveAllListeners();
     }
     private void Addlisteners()
     {
@@ -27,26 +36,67 @@ public class AdminLevelLuckSettings : MonoBehaviour
         BeneficialExtrasOverTime.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
         MaliciousExtras.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
         MaliciousExtrasOverTime.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
+        Overall.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
     }
     public void LoadLuckSettings(LuckConfig luckConfig)
     {
         RemoveListeners();
         LoadLuckSettingsToClipBoard(luckConfig);
+        ResizeFieldArrays();
         ClipBoardToSlider();
+        LoadAcceptSwitches();
         Addlisteners();
         ValueChangeCheck();
     }
-    public void ClipBoardToSlider()
+
+    private static void ResizeFieldArrays()
     {
-        NeededPieces.value = Rl.saveClipBoard.NeededPieces;
-        NeededPiecesOverTime.value = Rl.saveClipBoard.NeededPiecesOverTime;
-        BeneficialExtras.value = Rl.saveClipBoard.BeneficialExtras;
-        BeneficialExtrasOverTime.value = Rl.saveClipBoard.BeneficialExtrasOverTime;
-        MaliciousExtras.value = Rl.saveClipBoard.MaliciousExtras;
-        MaliciousExtrasOverTime.value = Rl.saveClipBoard.MaliciousExtrasOverTime;
+        if (Rl.saveClipBoard.NeededPieces == null || Rl.saveClipBoard.NeededPiecesOverTime == null ||
+            Rl.saveClipBoard.BeneficialExtras == null || Rl.saveClipBoard.BeneficialExtrasOverTime == null ||
+            Rl.saveClipBoard.MaliciousExtras == null ||
+            Rl.saveClipBoard.MaliciousExtrasOverTime == null || Rl.saveClipBoard.Overall == null ||
+            Rl.saveClipBoard.NeededPiecesOnlyStart == null || Rl.saveClipBoard.BeneficialExtrasOnlyStart == null ||
+            Rl.saveClipBoard.MaliciousExtrasOnlyStart == null)
+        {
+            Array.Resize(ref Rl.saveClipBoard.NeededPieces, SaveFileLevelConfigs.Fields);
+            Array.Resize(ref Rl.saveClipBoard.NeededPiecesOverTime, SaveFileLevelConfigs.Fields);
+            Array.Resize(ref Rl.saveClipBoard.BeneficialExtras, SaveFileLevelConfigs.Fields);
+            Array.Resize(ref Rl.saveClipBoard.BeneficialExtrasOverTime, SaveFileLevelConfigs.Fields);
+            Array.Resize(ref Rl.saveClipBoard.MaliciousExtras, SaveFileLevelConfigs.Fields);
+            Array.Resize(ref Rl.saveClipBoard.MaliciousExtrasOverTime, SaveFileLevelConfigs.Fields);
+            Array.Resize(ref Rl.saveClipBoard.Overall, SaveFileLevelConfigs.Fields);
+            Array.Resize(ref Rl.saveClipBoard.NeededPiecesOnlyStart, SaveFileLevelConfigs.Fields);
+            Array.Resize(ref Rl.saveClipBoard.BeneficialExtrasOnlyStart, SaveFileLevelConfigs.Fields);
+            Array.Resize(ref Rl.saveClipBoard.MaliciousExtrasOnlyStart, SaveFileLevelConfigs.Fields);
+
+
+            SetTo05(ref Rl.saveClipBoard.NeededPieces);
+            SetTo05(ref Rl.saveClipBoard.NeededPiecesOverTime);
+            SetTo05(ref Rl.saveClipBoard.BeneficialExtras);
+            SetTo05(ref Rl.saveClipBoard.BeneficialExtrasOverTime);
+            SetTo05(ref Rl.saveClipBoard.MaliciousExtras);
+            SetTo05(ref Rl.saveClipBoard.MaliciousExtrasOverTime);
+            SetTo05(ref Rl.saveClipBoard.Overall);
+        }
     }
 
-    public void LoadLuckSettingsToClipBoard(LuckConfig luckConfig)
+    private static void SetTo05(ref float[] array)
+    {
+        for (int i = 0; i < array.Length; i++) array[i] = 0.5f;
+    }
+
+    private void ClipBoardToSlider()
+    {
+        NeededPieces.value = Rl.saveClipBoard.NeededPieces[FieldState.CurrentField] ;
+        NeededPiecesOverTime.value = Rl.saveClipBoard.NeededPiecesOverTime[FieldState.CurrentField] ;
+        BeneficialExtras.value = Rl.saveClipBoard.BeneficialExtras[FieldState.CurrentField] ;
+        BeneficialExtrasOverTime.value = Rl.saveClipBoard.BeneficialExtrasOverTime[FieldState.CurrentField] ;
+        MaliciousExtras.value = Rl.saveClipBoard.MaliciousExtras[FieldState.CurrentField] ;
+        MaliciousExtrasOverTime.value = Rl.saveClipBoard.MaliciousExtrasOverTime[FieldState.CurrentField] ;
+        Overall.value = Rl.saveClipBoard.Overall[FieldState.CurrentField] ;
+    }
+
+    private void LoadLuckSettingsToClipBoard(LuckConfig luckConfig)
     {
         Rl.saveClipBoard.NeededPieces =  luckConfig.NeededPieces;
         Rl.saveClipBoard.NeededPiecesOverTime = luckConfig.NeededPiecesOverTime;
@@ -54,16 +104,22 @@ public class AdminLevelLuckSettings : MonoBehaviour
         Rl.saveClipBoard.BeneficialExtrasOverTime = luckConfig.BeneficialExtrasOverTime;
         Rl.saveClipBoard.MaliciousExtras = luckConfig.MaliciousExtras;
         Rl.saveClipBoard.MaliciousExtrasOverTime = luckConfig.MaliciousExtrasOverTime;
+        Rl.saveClipBoard.Overall = luckConfig.Overall;
+
+        Rl.saveClipBoard.NeededPiecesOnlyStart = luckConfig.NeededPiecesOnlyStart;
+        Rl.saveClipBoard.BeneficialExtrasOnlyStart = luckConfig.BeneficialExtrasOnlyStart;
+        Rl.saveClipBoard.MaliciousExtrasOnlyStart = luckConfig.MaliciousExtrasOnlyStart;
     }
 
-    public void ValueChangeCheck()
+    private void ValueChangeCheck()
     {
-       Rl.saveClipBoard.NeededPieces =  NeededPieces.value;
-       Rl.saveClipBoard.NeededPiecesOverTime = NeededPiecesOverTime.value;
-       Rl.saveClipBoard.BeneficialExtras = BeneficialExtras.value;
-       Rl.saveClipBoard.BeneficialExtrasOverTime = BeneficialExtrasOverTime.value; 
-       Rl.saveClipBoard.MaliciousExtras = MaliciousExtras.value;
-       Rl.saveClipBoard.MaliciousExtrasOverTime = MaliciousExtrasOverTime.value;
+       Rl.saveClipBoard.NeededPieces[FieldState.CurrentField] =  NeededPieces.value;
+       Rl.saveClipBoard.NeededPiecesOverTime[FieldState.CurrentField]  = NeededPiecesOverTime.value;
+       Rl.saveClipBoard.BeneficialExtras[FieldState.CurrentField]  = BeneficialExtras.value;
+       Rl.saveClipBoard.BeneficialExtrasOverTime[FieldState.CurrentField]  = BeneficialExtrasOverTime.value; 
+       Rl.saveClipBoard.MaliciousExtras[FieldState.CurrentField]  = MaliciousExtras.value;
+       Rl.saveClipBoard.MaliciousExtrasOverTime[FieldState.CurrentField]  = MaliciousExtrasOverTime.value;
+       Rl.saveClipBoard.Overall[FieldState.CurrentField]  = Overall.value;
        UpdateTextFields();
     }
     
@@ -74,16 +130,46 @@ public class AdminLevelLuckSettings : MonoBehaviour
             Rl.saveClipBoard.BeneficialExtras,
             Rl.saveClipBoard.BeneficialExtrasOverTime,
             Rl.saveClipBoard.MaliciousExtras,
-            Rl.saveClipBoard.MaliciousExtrasOverTime
+            Rl.saveClipBoard.MaliciousExtrasOverTime,
+            Rl.saveClipBoard.Overall,
+            Rl.saveClipBoard.NeededPiecesOnlyStart,
+            Rl.saveClipBoard.BeneficialExtrasOnlyStart,
+            Rl.saveClipBoard.MaliciousExtrasOnlyStart
         );
 
 
-    public void SetNeededPiecesToMidValue() => SetToMidvalue(NeededPieces, NeededPiecesOverTime);
-    public void SetBeneficialExtrasToMidValue() => SetToMidvalue(BeneficialExtras, BeneficialExtrasOverTime);
-    public void SetMaliciousExtrasToMidValue() => SetToMidvalue(MaliciousExtras, MaliciousExtrasOverTime);
-    
-    private void SetToMidvalue(params Slider[] slider)
+    private void LoadAcceptSwitches()
     {
+        NeededPiecesAcceptSwitch.SwitchButton(Rl.saveClipBoard.NeededPiecesOnlyStart[FieldState.CurrentField] ,true,false);
+        BeneficialExtrasAcceptSwitch.SwitchButton(Rl.saveClipBoard.BeneficialExtrasOnlyStart[FieldState.CurrentField] ,true,false);
+        MaliciousExtrasAcceptSwitch.SwitchButton(Rl.saveClipBoard.MaliciousExtrasOnlyStart[FieldState.CurrentField] ,true,false);
+    }
+
+    public void ClickSwitchNeededPiecesAcceptSwitch(bool on)
+    {
+        NeededPiecesAcceptSwitch.SwitchButton(on, false, true);
+        Rl.saveClipBoard.NeededPiecesOnlyStart[FieldState.CurrentField]  = on;
+    }
+
+    public void ClickSwitchBeneficialExtrasAcceptSwitch(bool on)
+    {
+        BeneficialExtrasAcceptSwitch.SwitchButton(on, false, true);
+        Rl.saveClipBoard.BeneficialExtrasOnlyStart[FieldState.CurrentField]  = on;
+    }
+
+    public void ClickSwitchMaliciousExtrasAcceptSwitch(bool on)
+    {
+        MaliciousExtrasAcceptSwitch.SwitchButton(on, false, true);
+        Rl.saveClipBoard.MaliciousExtrasOnlyStart[FieldState.CurrentField]  = on;
+    }
+    public void SetOverallToMidValue(Transform buttonTransform) => SetToMidvalue(buttonTransform, Overall);
+    public void SetNeededPiecesToMidValue(Transform buttonTransform) => SetToMidvalue(buttonTransform, NeededPieces, NeededPiecesOverTime);
+    public void SetBeneficialExtrasToMidValue(Transform buttonTransform) => SetToMidvalue(buttonTransform,BeneficialExtras, BeneficialExtrasOverTime);
+    public void SetMaliciousExtrasToMidValue(Transform buttonTransform) => SetToMidvalue(buttonTransform, MaliciousExtras, MaliciousExtrasOverTime);
+    
+    private void SetToMidvalue(Transform buttonTransform, params Slider[] slider)
+    {
+        if(transform != null) GenericSettingsFunctions.SmallJumpAnimation(buttonTransform);
         Rl.GameManager.PlayAudio(Rl.soundStrings.ResetToMidValueSound , Random.Range(0,4), Rl.settings.GetUISoundVolume, Rl.uiSounds.audioSource);
         foreach (Slider s in slider) s.value = s.maxValue / 2;
     }
@@ -96,6 +182,7 @@ public class AdminLevelLuckSettings : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI MaliciousExtrasText;
     [SerializeField] private TextMeshProUGUI MaliciousExtrasOverTimeText;
+    [SerializeField] private TextMeshProUGUI OverallText;
     private void UpdateTextFields()
     {
         NeededPiecesText.text = HundredString(NeededPieces.value);
@@ -106,7 +193,32 @@ public class AdminLevelLuckSettings : MonoBehaviour
         
         MaliciousExtrasText.text = HundredString(MaliciousExtras.value);
         MaliciousExtrasOverTimeText.text = HundredString(MaliciousExtrasOverTime.value);
+
+        OverallText.text = HundredString(Overall.value);
     }
 
     private string HundredString (float value) => ((int)MathLibrary.Remap(0, 1f, -100f, 100f, value)).ToString();
+
+    public void LoadCurrentField()
+    {
+        RemoveListeners();
+        ClipBoardToSlider();
+        LoadAcceptSwitches();
+        Addlisteners();
+        ValueChangeCheck();
+    }
+
+    public void CopyField(byte fieldOne, byte fieldTwo)
+    {
+        Rl.saveClipBoard.NeededPieces[fieldTwo] = Rl.saveClipBoard.NeededPieces[fieldOne];
+        Rl.saveClipBoard.NeededPiecesOverTime[fieldTwo] = Rl.saveClipBoard.NeededPiecesOverTime[fieldOne];
+        Rl.saveClipBoard.BeneficialExtras[fieldTwo] = Rl.saveClipBoard.BeneficialExtras[fieldOne];
+        Rl.saveClipBoard.BeneficialExtrasOverTime[fieldTwo] = Rl.saveClipBoard.BeneficialExtrasOverTime[fieldOne];
+        Rl.saveClipBoard.MaliciousExtras[fieldTwo] = Rl.saveClipBoard.MaliciousExtras[fieldOne];
+        Rl.saveClipBoard.MaliciousExtrasOverTime[fieldTwo] = Rl.saveClipBoard.MaliciousExtrasOverTime[fieldOne];
+        Rl.saveClipBoard.Overall[fieldTwo] = Rl.saveClipBoard.Overall[fieldOne];
+        Rl.saveClipBoard.NeededPiecesOnlyStart[fieldTwo] = Rl.saveClipBoard.NeededPiecesOnlyStart[fieldOne];
+        Rl.saveClipBoard.BeneficialExtrasOnlyStart[fieldTwo] = Rl.saveClipBoard.BeneficialExtrasOnlyStart[fieldOne];
+        Rl.saveClipBoard.MaliciousExtrasOnlyStart[fieldTwo] = Rl.saveClipBoard.MaliciousExtrasOnlyStart[fieldOne];
+    }
 }

@@ -68,7 +68,7 @@ namespace FruitMatch.Scripts.Core
         public GameObject popupScore; //makes scores visible in the game
         public int currentLevel = 1;  //current game level
         private int currentSubLevel = 1; //current sub-level
-
+        public bool[] NoMatchesBool;
         public bool AllowBorder;
         public int CurrentSubLevel
         {
@@ -107,6 +107,7 @@ namespace FruitMatch.Scripts.Core
             get { return activatedBoost == null ? emptyBoostIcon : activatedBoost; }
             set
             {
+                // booost are not yet fully implement but I have done a bit if they ask me if I can make "cheat items"
                 if (value == null)
                 {
                     if (activatedBoost != null && gameStatus == GameState.Playing)
@@ -353,15 +354,9 @@ namespace FruitMatch.Scripts.Core
             LoadingManager.LoadSideDots();
         }
         //enable map
+        
+        public void LoadLuckTargets() => Rl.luckCalculator.LoadCurrentTargets(DestroyColorIDs, AvoidColorIDs, ColorLimit);
 
-        public void InvokeLoadLuckTargets()
-        {
-            Invoke(nameof(LoadLuckTargets),0.005f);
-        }
-        public void LoadLuckTargets()
-        {
-            Rl.luckCalculator.LoadCurrentTargets(DestroyColorIDs, AvoidColorIDs, ColorLimit);
-        }
         public void EnableMap(bool enable)
         {
             Rl.splashMenu.LevelCanvasObj.SetActive(true);
@@ -466,6 +461,8 @@ namespace FruitMatch.Scripts.Core
         public void InvokeMoveMadeEvent()
         {
             MoveMadeEvent?.Invoke();
+
+            if (!NoMatchesBool[0]) return;
             PlayCounter++;
 
             if (PlayCounter == 10)
@@ -483,6 +480,7 @@ namespace FruitMatch.Scripts.Core
         //Generate loaded level
         private void GenerateLevel()
         {
+            Debug.Log("GENERATING LEVEL");
             var fieldPos = new Vector3(-0.9f, 0, -10);
             var latestFieldPos = Vector3.right * ((GetLastSubLevel() - 1) * 10) + Vector3.back * 10;
 

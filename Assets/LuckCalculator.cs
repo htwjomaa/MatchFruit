@@ -15,50 +15,97 @@ public class LuckCalculator : MonoBehaviour
     [SerializeField] public float BeneficialExtrasOverTime;
     [SerializeField] public float MaliciousExtras;
     [SerializeField] public float MaliciousExtrasOverTime;
+    [SerializeField] public float overallMultiplicator;
+    [SerializeField] public float overallMultiplicatorForOverTime;
+
+    public bool NeededPiecesOnlyStart;
+    public bool BeneficialExtrasOnlyStart;
+    public bool MaliciousExtrasOnlyStart;
 
 
-    public HashSet<int> neededList;
-    public HashSet<int> avoidedList;
-    public HashSet<int> restList;
+    private HashSet<int> neededList;
+    private HashSet<int> avoidedList;
+    private HashSet<int> restList;
 
 
-    private readonly float _spawnRateMultiplier = 2.5f;
-    private readonly float _spawnRateMultiplierOverTime = 1f;
+    [SerializeField] private  float _spawnRateMultiplier = 2.5f;
+    [SerializeField]  private float _spawnRateMultiplierOverTime = 1f;
 
     private void Start()
     {
         LevelManager.MoveMadeEvent += TickOverTime;
+        
+        if(LevelManager.THIS?.levelData == null || !LevelManager.THIS.levelLoaded)
+                LevelManager.OnLevelLoaded += CheckOnlyStart;
     }
+
 
     private void OnDestroy()
     {
         LevelManager.MoveMadeEvent -= TickOverTime;
+        LevelManager.OnLevelLoaded -= CheckOnlyStart;
     }
 
-    private float TranslateFloats(float v, float multiplier)
+    private float TranslateFloats(float v, float _spawnRateMultiplier)
     {
-        if(v > 0.5f)
-            return MathLibrary.Remap(0.5f,1f,0f,_spawnRateMultiplier,v);
-     return MathLibrary.Remap(0.5f,0,0f,-_spawnRateMultiplier,v);
+        return v > 0.5f
+            ? MathLibrary.Remap(0.5f, 1f, 0f, _spawnRateMultiplier, v)
+            : MathLibrary.Remap(0.5f, 0, 0f, -_spawnRateMultiplier, v);
+    }
+
+    public void CheckOnlyStart()
+    { 
+        if (NeededPiecesOnlyStart) NeededPieces = 0;
+       if (BeneficialExtrasOnlyStart) BeneficialExtras = 0;
+       if (MaliciousExtrasOnlyStart) MaliciousExtras = 0;
     }
     private void TranslateTo100S()
     {
-        NeededPieces = TranslateFloats(NeededPieces, _spawnRateMultiplier);
-       NeededPiecesOverTime = TranslateFloats(NeededPiecesOverTime, _spawnRateMultiplierOverTime);
+        _spawnRateMultiplier = 2.5f;
+        _spawnRateMultiplierOverTime = 1f;
+
+        overallMultiplicator = TranslateFloats(overallMultiplicator, 40);
+        overallMultiplicatorForOverTime = TranslateFloats(overallMultiplicatorForOverTime, 7);
+        
+        if (overallMultiplicator >= 0) 
+            _spawnRateMultiplier += overallMultiplicator;
+        else
+        {
+            overallMultiplicator /= 16;
+            _spawnRateMultiplier -= overallMultiplicator;
+        }
+        if (overallMultiplicatorForOverTime >= 0) 
+            _spawnRateMultiplierOverTime += overallMultiplicatorForOverTime;
+        else
+        {
+            overallMultiplicatorForOverTime /= 10;
+            _spawnRateMultiplierOverTime -= overallMultiplicatorForOverTime;
+        }
+        
+        NeededPieces = TranslateFloats(NeededPieces, _spawnRateMultiplier); 
+        NeededPiecesOverTime = TranslateFloats(NeededPiecesOverTime, _spawnRateMultiplierOverTime);
      BeneficialExtras =  TranslateFloats(BeneficialExtras, _spawnRateMultiplier); 
      BeneficialExtrasOverTime = TranslateFloats(BeneficialExtrasOverTime, _spawnRateMultiplierOverTime);
     MaliciousExtras = TranslateFloats(MaliciousExtras, _spawnRateMultiplier);
     MaliciousExtrasOverTime = TranslateFloats(MaliciousExtrasOverTime, _spawnRateMultiplierOverTime);
     }
-
+    
     public void LoadNumbers(LuckConfig luckConfig)
     {
-        NeededPieces = luckConfig.NeededPieces;
-        NeededPiecesOverTime =  luckConfig.NeededPiecesOverTime;
-        BeneficialExtras =   luckConfig.BeneficialExtras;
-        BeneficialExtrasOverTime =  luckConfig.BeneficialExtrasOverTime;
-        MaliciousExtras =  luckConfig.MaliciousExtras;
-        MaliciousExtrasOverTime =  luckConfig.MaliciousExtrasOverTime;
+        //[0]  ==  currentField
+        NeededPieces = luckConfig.NeededPieces[0];
+        NeededPiecesOverTime =  luckConfig.NeededPiecesOverTime[0];
+        BeneficialExtras =   luckConfig.BeneficialExtras[0];
+        BeneficialExtrasOverTime =  luckConfig.BeneficialExtrasOverTime[0];
+        MaliciousExtras =  luckConfig.MaliciousExtras[0];
+        MaliciousExtrasOverTime =  luckConfig.MaliciousExtrasOverTime[0];
+        overallMultiplicator = luckConfig.Overall[0];
+        overallMultiplicatorForOverTime = luckConfig.Overall[0];
+
+
+        NeededPiecesOnlyStart = luckConfig.BeneficialExtrasOnlyStart[0];
+        BeneficialExtrasOnlyStart = luckConfig.BeneficialExtrasOnlyStart[0];
+        MaliciousExtrasOnlyStart = luckConfig.MaliciousExtrasOnlyStart[0];
         
         TranslateTo100S();
         TranslateToTickRate(LevelManager.THIS.MaxLimit, ref NeededPiecesOverTime, ref BeneficialExtrasOverTime, ref MaliciousExtrasOverTime);
@@ -84,17 +131,17 @@ public class LuckCalculator : MonoBehaviour
         for (int i = 0; i < colorLimit + 1; i++)  //really colorlimit +1=?????
         {
             bool nothingFound = true;
-            for (int j = 0; j < neededList.Count; j++)
+            foreach (var t in neededList)
             {
                 if (neededList.Contains(i)) nothingFound = false;
             }
             
-            for (int k = 0; k < avoidedList.Count; k++)
+            foreach (var t in avoidedList)
             {
                 if (avoidedList.Contains(i)) nothingFound = false;
             }
 
-            if (!nothingFound) restList.Add(i);
+            if (nothingFound) restList.Add(i);
         }
     }
     private void  TranslateToTickRate(float MaxMoves, ref float NeededPiecesOvertime, ref float BeneficialExtrasOverTime, ref float MaliciousExtrasOverTime)
@@ -158,6 +205,21 @@ public class LuckCalculator : MonoBehaviour
         var n = GetColor();
     }
 
+    [NaughtyAttributes.Button()] private void TestRestList()
+    {
+        foreach( var n in restList)
+            Debug.Log(n);
+    }
+    [NaughtyAttributes.Button()] private void TestNeededList()
+    {
+        foreach( var n in neededList)
+            Debug.Log(n);
+    }
+    [NaughtyAttributes.Button()] private void TestAvoidedList()
+    {
+        foreach( var n in avoidedList)
+            Debug.Log(n);
+    }
     public int GetColor()
     {
         (float, float) spawnRates = GetSpawnrateItems();

@@ -6,21 +6,17 @@ using UnityEngine.UI;
 
 public class AdminLevelSettingsConfig : MonoBehaviour
 {
-    private int targetFrom = 0;
     [SerializeField] public Slider CopyAllDataFromSlider;
-
+    [SerializeField] public Slider CopyAllFieldDataFromSlider;
     [SerializeField] public TextMeshProUGUI CopyAllDataFromValueDisplay;
+    [SerializeField] public TextMeshProUGUI CopyAllFieldDataFromValueDisplay;
     private List<TextMeshProUGUI> _valueDisplayList = new List<TextMeshProUGUI>();
     private void Awake() => _valueDisplayList = 
-        GenericSettingsFunctions.AddToValueDisplayList(CopyAllDataFromValueDisplay);
+        GenericSettingsFunctions.AddToValueDisplayList(CopyAllDataFromValueDisplay, CopyAllFieldDataFromValueDisplay);
 
     public void ValueChangeCheck()
     {
-        GenericSettingsFunctions.UpdateTextFields(
-            ref _valueDisplayList,
-            CopyAllDataFromSlider);
-        
-        GenericSettingsFunctions.UpdateTextFields(ref _valueDisplayList, CopyAllDataFromSlider);
+        GenericSettingsFunctions.UpdateTextFields(ref _valueDisplayList, CopyAllDataFromSlider, CopyAllFieldDataFromSlider);
     }
     public void LoadLayoutSettings()
     {
@@ -28,18 +24,10 @@ public class AdminLevelSettingsConfig : MonoBehaviour
         Addlisteners();
         ValueChangeCheck();
     }
-    private void RemoveListeners() => GenericSettingsFunctions.RemoveListeners(CopyAllDataFromSlider);
+    private void RemoveListeners() => GenericSettingsFunctions.RemoveListeners(CopyAllDataFromSlider, CopyAllFieldDataFromSlider);
     
-    private void Addlisteners() => GenericSettingsFunctions.Addlisteners(delegate { ValueChangeCheck(); }, CopyAllDataFromSlider);
+    private void Addlisteners() => GenericSettingsFunctions.Addlisteners(delegate { ValueChangeCheck(); }, CopyAllDataFromSlider, CopyAllFieldDataFromSlider);
     
-    private void LoadConfigsToClipBoard(LayoutFieldConfig layoutFieldsConfigs)
-    {
-        // Rl.saveClipBoard.ZoomOutValue = zoomOutValue.ToArray();
-        // Rl.saveClipBoard.TopPaddingValue = topPaddingValue.ToArray();
-        // Rl.saveClipBoard.BottomPaddingValue = bottomPaddingValue.ToArray();
-        // Rl.saveClipBoard.LeftPaddingValue = leftPaddingValue.ToArray();
-        // Rl.saveClipBoard.RightPaddingValue = rightPaddingValue.ToArray();
-    }
 
     public void ClickCopyButton(Transform buttonTransform)
     {
@@ -49,6 +37,13 @@ public class AdminLevelSettingsConfig : MonoBehaviour
             (LevelConfig)GenericSettingsFunctions.GetDeepCopy(Rl.saveFileLevelConfigManagement.AllSaveFileLevelConfigs.LevelConfigs[((int)CopyAllDataFromSlider.value )-1]);
         Rl.adminLevelSettingsPanel.RevertChanges(true);
         Rl.saveFileLevelConfigManagement.Save();
+    }
+    
+    public void ClickCopyFieldButton(Transform buttonTransform)
+    {
+        if(buttonTransform != null) GenericSettingsFunctions.SmallJumpAnimation(buttonTransform);
+        Rl.GameManager.PlayAudio(Rl.soundStrings.AcceptSwitchSound, Random.Range(0,5), Rl.settings.GetUISoundVolume, Rl.uiSounds.audioSource);
+        FieldState.CopyAllFields((byte)(CopyAllFieldDataFromSlider.value-1));
     }
 }
 

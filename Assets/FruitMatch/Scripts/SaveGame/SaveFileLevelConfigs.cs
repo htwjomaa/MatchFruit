@@ -80,14 +80,18 @@ public struct GraphicConfig
 [Serializable]
 public struct LuckConfig
 {
-    [Range(0, 1)] public float NeededPieces;
-    [Range(0, 1)] public float NeededPiecesOverTime;
-    [Range(0, 1)] public float BeneficialExtras;
-    [Range(0, 1)] public float BeneficialExtrasOverTime;
-    [Range(0, 1)] public float MaliciousExtras;
-    [Range(0, 1)] public float MaliciousExtrasOverTime;
+    [Range(0, 1)] public float[] NeededPieces;
+    [Range(0, 1)] public float[] NeededPiecesOverTime;
+    [Range(0, 1)] public float[] BeneficialExtras;
+    [Range(0, 1)] public float[] BeneficialExtrasOverTime;
+    [Range(0, 1)] public float[] MaliciousExtras;
+    [Range(0, 1)] public float[] MaliciousExtrasOverTime;
+    [Range(0, 1)] public float[] Overall;
+    public bool[] NeededPiecesOnlyStart;
+    public bool[] BeneficialExtrasOnlyStart;
+    public bool[] MaliciousExtrasOnlyStart;
 
-    public LuckConfig(float neededPieces, float neededPiecesOverTime, float beneficialExtras, float beneficialExtrasOverTime, float maliciousExtras, float maliciousExtrasOverTime)
+    public LuckConfig(float[] neededPieces, float[] neededPiecesOverTime, float[] beneficialExtras, float[] beneficialExtrasOverTime, float[] maliciousExtras, float[] maliciousExtrasOverTime, float[] overall, bool[] neededPiecesOnlyStart, bool[] beneficialExtrasOnlyStart, bool[] maliciousExtrasOnlyStart)
     {
         NeededPieces = neededPieces;
         NeededPiecesOverTime = neededPiecesOverTime;
@@ -95,6 +99,10 @@ public struct LuckConfig
         BeneficialExtrasOverTime = beneficialExtrasOverTime;
         MaliciousExtras = maliciousExtras;
         MaliciousExtrasOverTime = maliciousExtrasOverTime;
+        Overall = overall;
+        NeededPiecesOnlyStart = neededPiecesOnlyStart;
+        BeneficialExtrasOnlyStart = beneficialExtrasOnlyStart;
+        MaliciousExtrasOnlyStart = maliciousExtrasOnlyStart;
     }
 }
 

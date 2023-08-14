@@ -29,10 +29,7 @@ namespace FruitMatch.Scripts.System.Combiner
         bool vChecking; //check by vertical
         private BonusItemCombiner bonusItemCombiner;
 
-        public CombineManager()
-        {
-            bonusItemCombiner = new BonusItemCombiner();
-        }
+        public CombineManager() => bonusItemCombiner = new BonusItemCombiner();
 
         public List<List<Item>> GetCombinedItems(FieldBoard field, bool setNextItemType = false)
         {
@@ -273,11 +270,16 @@ namespace FruitMatch.Scripts.System.Combiner
         }
 
 
-        private bool IsColorCombine(Combine combine) => LevelManager.THIS.DestroyOnlyTarget[0] && LevelManager.THIS.DestroyColorIDs.Contains(combine.color);
-
+        public bool IsColorCombine(Combine combine)
+        {
+            if(LevelManager.THIS.DestroyOnlyTarget[0] && LevelManager.THIS.DestroyColorIDs.Contains(combine.color)) return true;
+            return false;
+        }
         public bool IsCombineMatchThree(Combine combine)
         {
-            if (combine.hCount > LevelManager.THIS.Hcount-1 || combine.vCount > LevelManager.THIS.Vcount-1 /*|| combine.vCount + combine.hCount > 3*/)
+            
+            if (combine.hCount > 2 || combine.vCount > 2 /*|| combine.vCount + combine.hCount > 3*/)
+           // if (combine.hCount > LevelManager.THIS.Hcount-1 || combine.vCount > LevelManager.THIS.Vcount-1 /*|| combine.vCount + combine.hCount > 3*/)
             {
                 return true;
             }

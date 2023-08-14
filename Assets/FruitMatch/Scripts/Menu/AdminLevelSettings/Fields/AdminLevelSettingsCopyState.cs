@@ -1,5 +1,6 @@
 
 using System;
+using UnityEngine;
 
 public static class FieldState
 {
@@ -47,6 +48,7 @@ public static class FieldState
             case CopySection.MatchSettings:
                 break;
             case CopySection.LuckSettings:
+                Rl.adminLevelLuckSettings.LoadCurrentField();
                 break;
             case CopySection.DisplaySettings:
                 Rl.adminLevelSettingsLayout.LoadCurrentField();
@@ -69,6 +71,7 @@ public static class FieldState
             case CopySection.NotApplicable:
                 break;
             case CopySection.BoardSettings:
+                Rl.adminLevelSettingsBoard.CopyField(fieldOne, fieldTwo);
                 break;
             case CopySection.TileSettings:
                 Rl.adminLevelSettingsTiles.CopyField(fieldOne, fieldTwo);
@@ -85,6 +88,7 @@ public static class FieldState
             case CopySection.MatchSettings:
                 break;
             case CopySection.LuckSettings:
+                Rl.adminLevelLuckSettings.CopyField(fieldOne, fieldTwo);
                 break;
             case CopySection.DisplaySettings:
                 Rl.adminLevelSettingsLayout.CopyField(fieldOne, fieldTwo);
@@ -101,5 +105,21 @@ public static class FieldState
         
         Rl.splashMenu.ChangeWorldText("Field Copied from:"," "+ (fieldOne+1) +" -> " + (fieldTwo+1), true);
     }
-    
+
+    public static void CopyAllFields(byte fieldOne)
+    {
+        Debug.Log("FIELD ONE IS " + fieldOne);
+        for (byte i = 0; i < SaveFileLevelConfigs.Fields; i++)
+        {
+            if (i != fieldOne)
+            {
+                Rl.adminLevelSettingsBoard.CopyField(fieldOne, i);
+                Rl.adminLevelSettingsTiles.CopyField(fieldOne, i);
+                Rl.adminLevelSettingsSideDots.CopyField(fieldOne, i);
+                Rl.adminLevelLuckSettings.CopyField(fieldOne, i);
+                Rl.adminLevelSettingsLayout.CopyField(fieldOne, i);
+            }
+      
+        }
+    }
 }

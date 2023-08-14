@@ -157,17 +157,12 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
 
             Int32.TryParse(text.text, out _maxCount);
             SetAvoidColor(-1);
-            switch (collectionStyle)
-            {
-                case CollectionStyle.Destroy:
-                    LevelManager.THIS.DestroyColorIDs.Add(color);
-                    break;
-                case CollectionStyle.Avoid:
-                    LevelManager.THIS.AvoidColorIDs.Add(color);
-                    break;
-            }
+            
+            
+            //This one add it somewhere else
+         
 
-            LevelManager.THIS.InvokeLoadLuckTargets();
+           // LevelManager.THIS.InvokeLoadLuckTargets();
         }
     
         private void SetFrameImage()
@@ -240,6 +235,7 @@ namespace FruitMatch.Scripts.TargetScripts.TargetSystem
             SetAvoidColor(0);
         }
 
+  
         private void Start()
         {
             if(HideTargetIcon != null)   TargetSettings.ShowItemEvent += ShowIcon;
