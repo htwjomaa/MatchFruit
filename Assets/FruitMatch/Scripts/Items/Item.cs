@@ -678,12 +678,32 @@ namespace FruitMatch.Scripts.Items
         ///get mathes around this item, local check
         public List<Combine> GetMatchesAround()
         {
-            List<Item> list = square.FindMatchesAround();
+            List<Item> list = square.FindMatchesAround(FindSeparating.VERTICAL);
+            Debug.Log("List length: " + list.Count);
             Combine combine = new Combine().ConvertToCombine(list);
+            combine.RemoveDuplicateInSequence();
+            
+            List<Item> list2 = square.FindMatchesAround(FindSeparating.HORIZONTAL);
+            Debug.Log("List2 length: " + list2.Count);
+            Combine combine2 = new Combine().ConvertToCombine(list2);
+            combine2.RemoveDuplicateInSequence();
+            
+            
             CombineManager combineManager = LevelManager.THIS.CombineManager;
             Dictionary<Item, Combine> dic = new Dictionary<Item, Combine>();
-            foreach (var item in combine.items) dic.Add(item, combine);
+            Dictionary<Item, Combine> dic2 = new Dictionary<Item, Combine>();
+            foreach (var item in combine.items)
+            {
+                dic.Add(item, combine);
+            }
+            foreach (var item in combine2.items)
+            {
+                dic2.Add(item, combine2);
+            }
             List<Combine> combines2 = combineManager.CheckCombines(dic, new List<Combine> { combine });
+            List<Combine> combines3 = combineManager.CheckCombines(dic2, new List<Combine> { combine2 });
+            
+            combines2.AddRange(combines3);
             LevelManager.THIS.combo += combines2.Count;
             return combines2;
         }
@@ -1091,7 +1111,7 @@ namespace FruitMatch.Scripts.Items
         public Item GetLeftItem()
         {
             Square sq = null;
-             if(square.GetNeighborLeft()!= null) sq = square.GetNeighborLeft();
+             if(square != null && square.GetNeighborLeft()!= null) sq = square.GetNeighborLeft();
             if (sq != null)
             {
                 if (sq.Item != null)

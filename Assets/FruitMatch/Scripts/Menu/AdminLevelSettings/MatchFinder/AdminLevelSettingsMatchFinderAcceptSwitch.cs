@@ -26,16 +26,16 @@ public sealed class  AdminLevelSettingsMatchFinderAcceptSwitch : MonoBehaviour
          switch (isMatchStyle)
          {
              case IsMatchStyle.IsRow:
-                 phase = Rl.saveClipBoard.RowPhase;
+                 phase = Rl.saveClipBoard.RowPhase[FieldState.CurrentField];
                  break;
              case IsMatchStyle.IsDiagonal: 
-                 phase = Rl.saveClipBoard.DiagonalPhase;
+                 phase = Rl.saveClipBoard.DiagonalPhase[FieldState.CurrentField];
                  break;
              case IsMatchStyle.IsPattern1:
-                 phase = Rl.saveClipBoard.Pattern1Phase;
+                 phase = Rl.saveClipBoard.Pattern1Phase[FieldState.CurrentField];
                  break;
              case IsMatchStyle.IsPattern2:
-                 phase = Rl.saveClipBoard.Pattern2Phase;
+                 phase = Rl.saveClipBoard.Pattern2Phase[FieldState.CurrentField];
                  break;
          }
          switch (phase)
@@ -78,16 +78,16 @@ public sealed class  AdminLevelSettingsMatchFinderAcceptSwitch : MonoBehaviour
             switch (isMatchStyle)
             {
                 case IsMatchStyle.IsRow:
-                    Rl.saveClipBoard.RowPhase = phase;
+                    Rl.saveClipBoard.RowPhase[FieldState.CurrentField] = phase;
                     break;
                 case IsMatchStyle.IsDiagonal: 
-                    Rl.saveClipBoard.DiagonalPhase = phase;
+                    Rl.saveClipBoard.DiagonalPhase[FieldState.CurrentField] = phase;
                     break;
                 case IsMatchStyle.IsPattern1:
-                    Rl.saveClipBoard.Pattern1Phase = phase;
+                    Rl.saveClipBoard.Pattern1Phase[FieldState.CurrentField] = phase;
                     break;
                 case IsMatchStyle.IsPattern2:
-                    Rl.saveClipBoard.Pattern2Phase = phase;
+                    Rl.saveClipBoard.Pattern2Phase[FieldState.CurrentField] = phase;
                     break;
             }
             Rl.GameManager.PlayAudio(Rl.soundStrings.AcceptSwitchSound, Random.Range(0,4), Rl.settings.GetUISoundVolume, Rl.uiSounds.audioSource);
@@ -98,16 +98,16 @@ public sealed class  AdminLevelSettingsMatchFinderAcceptSwitch : MonoBehaviour
             switch (isMatchStyle)
             {
                 case IsMatchStyle.IsRow:
-                    phase =  Rl.saveClipBoard.RowPhase;
+                    phase =  Rl.saveClipBoard.RowPhase[FieldState.CurrentField];
                     break;
                 case IsMatchStyle.IsDiagonal: 
-                     phase = Rl.saveClipBoard.DiagonalPhase;
+                     phase = Rl.saveClipBoard.DiagonalPhase[FieldState.CurrentField];
                     break;
                 case IsMatchStyle.IsPattern1:
-                    phase = Rl.saveClipBoard.Pattern1Phase ;
+                    phase = Rl.saveClipBoard.Pattern1Phase[FieldState.CurrentField] ;
                     break;
                 case IsMatchStyle.IsPattern2:
-                  phase =   Rl.saveClipBoard.Pattern2Phase ;
+                  phase =   Rl.saveClipBoard.Pattern2Phase [FieldState.CurrentField];
                     break;
             }
             switch (phase)

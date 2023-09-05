@@ -46,6 +46,7 @@ public static class FieldState
             case CopySection.BombSettings:
                 break;
             case CopySection.MatchSettings:
+                Rl.AdminLevelSettingsMatchFinder.LoadCurrentField();
                 break;
             case CopySection.LuckSettings:
                 Rl.adminLevelLuckSettings.LoadCurrentField();
@@ -86,6 +87,7 @@ public static class FieldState
             case CopySection.BombSettings:
                 break;
             case CopySection.MatchSettings:
+                Rl.AdminLevelSettingsMatchFinder.CopyField(fieldOne, fieldTwo);
                 break;
             case CopySection.LuckSettings:
                 Rl.adminLevelLuckSettings.CopyField(fieldOne, fieldTwo);

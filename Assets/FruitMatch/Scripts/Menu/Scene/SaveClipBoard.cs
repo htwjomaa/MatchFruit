@@ -52,21 +52,29 @@ public class SaveClipBoard : ScriptableObject
 
 
     [Header("Match rules")] 
-    public Row Row;
-    public Diagonal Diagonal;
-    public Pattern Pattern1;
-    public Pattern Pattern2;
-    public bool BlockCombine;
-    public int penalty;
-    public uint RowMatchValue;
-    public uint DiagonalMatchValue;
-    public uint Pattern1MatchValue;
-    public uint Pattern2MatchValue;
+    public Row[] Row;
+    public Diagonal[] Diagonal;
+    public Pattern[] Pattern1;
+    public Pattern[] Pattern2;
+    public bool[] BlockCombine;
+    public int[] penalty;
+    public bool[] SequenceEnabled;
+    public uint[] RowMatchValue;
+    public uint[] DiagonalMatchValue;
+    public uint[] Pattern1MatchValue;
+    public uint[] Pattern2MatchValue;
     
-    public Phase RowPhase;
-    public Phase DiagonalPhase;
-    public Phase Pattern1Phase;
-    public Phase Pattern2Phase;
+    public Phase[] RowPhase;
+    public Phase[] DiagonalPhase;
+    public Phase[] Pattern1Phase;
+    public Phase[] Pattern2Phase;
+
+    public FruitType[] GoalFruitOne;
+    public Colors[] GoalColorOne;
+    public FruitType[] GoalFruitTwo;
+    public Colors[] GoalColorTwo;
+    public FruitType[] GoalFruitThree;
+    public Colors[] GoalColorThree;
 
     [Header("Archievment Settings")]
     public bool Star1Enabled;

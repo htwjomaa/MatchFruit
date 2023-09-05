@@ -7,6 +7,7 @@ using FruitMatch.Scripts.Effects;
 using FruitMatch.Scripts.Items;
 using FruitMatch.Scripts.Level;
 using FruitMatch.Scripts.System;
+using FruitMatch.Scripts.System.Combiner;
 using FruitMatch.Scripts.System.Pool;
 using FruitMatch.Scripts.TargetScripts.TargetSystem;
 using UnityEngine;
@@ -851,22 +852,48 @@ namespace FruitMatch.Scripts.Blocks
 
         Hashtable FindMoreMatches(int spr_COLOR, Hashtable countedSquares, FindSeparating separating, Hashtable countedSquaresGlobal = null)
         {
+            bool checkCombine = false;
             var globalCounter = true;
             if (countedSquaresGlobal == null)
             {
                 globalCounter = false;
                 countedSquaresGlobal = new Hashtable();
             }
+            else
+            {
+                if (LevelManager.THIS.IsSequenceMatching)
+                {
+                    checkCombine = true;
+                }
+            }
 
             if (Item == null || Item.destroying || Item.falling)
                 return countedSquares;
             //    if (LevelManager.This.countedSquares.ContainsValue(this.item) && globalCounter) return countedSquares;
-            
-              if ((Item.color == spr_COLOR )&& !countedSquares.ContainsValue(Item) && Item.currentType != ItemsTypes.INGREDIENT && Item.currentType != ItemsTypes.MULTICOLOR && !Item
-                    .falling && Item.Combinable)
 
-                  // if (SequenceCombiner(spr_COLOR) && !countedSquares.ContainsValue(Item) && Item.currentType != ItemsTypes.INGREDIENT && Item.currentType != ItemsTypes.MULTICOLOR && !Item
-              //      .falling && Item.Combinable)
+
+     
+
+            if (LevelManager.THIS.IsSequenceMatching)
+            {
+                if (CombineManager.IsPartOfSequence(Item.color, spr_COLOR) && !countedSquares.ContainsValue(Item) &&
+                    Item.currentType != ItemsTypes.INGREDIENT && Item.currentType != ItemsTypes.MULTICOLOR && !Item
+                        .falling && Item.Combinable)
+                {
+                    checkCombine = true;
+                }
+            }
+            else
+            {
+                if ((Item.color == spr_COLOR) && !countedSquares.ContainsValue(Item) &&
+                    Item.currentType != ItemsTypes.INGREDIENT && Item.currentType != ItemsTypes.MULTICOLOR && !Item
+                        .falling && Item.Combinable)
+                {
+                    checkCombine = true;
+                }
+            }
+
+            if (checkCombine)
             {
                 if (LevelManager.THIS.onlyFalling && Item.JustCreatedItem)
                     countedSquares.Add(countedSquares.Count - 1, Item);
@@ -875,25 +902,49 @@ namespace FruitMatch.Scripts.Blocks
                 else
                     return countedSquares;
 
-                //			if (separating == FindSeparating.VERTICAL)
+
+                if (LevelManager.THIS.IsSequenceMatching)
+                {
+                    
+                    switch (separating)
+                    {
+                        case FindSeparating.VERTICAL:
+                        {
+                            if (GetNeighborTop() != null)
+                                countedSquares = GetNeighborTop().FindMoreMatches(spr_COLOR, countedSquares, FindSeparating.VERTICAL);
+                            if (GetNeighborBottom() != null)
+                                countedSquares = GetNeighborBottom().FindMoreMatches(spr_COLOR, countedSquares, FindSeparating.VERTICAL);
+                            break;
+                        }
+                        case FindSeparating.HORIZONTAL:
+                        {
+                            if (GetNeighborLeft() != null)
+                                countedSquares = GetNeighborLeft().FindMoreMatches(spr_COLOR, countedSquares, FindSeparating.HORIZONTAL);
+                            if (GetNeighborRight() != null)
+                                countedSquares = GetNeighborRight().FindMoreMatches(spr_COLOR, countedSquares, FindSeparating.HORIZONTAL);
+                            break;
+                        }
+                }
+                }
+                else
                 {
                     if (GetNeighborTop() != null)
                         countedSquares = GetNeighborTop().FindMoreMatches(spr_COLOR, countedSquares, FindSeparating.VERTICAL);
                     if (GetNeighborBottom() != null)
                         countedSquares = GetNeighborBottom().FindMoreMatches(spr_COLOR, countedSquares, FindSeparating.VERTICAL);
-                }
-                //			else if (separating == FindSeparating.HORIZONTAL)
-                {
                     if (GetNeighborLeft() != null)
                         countedSquares = GetNeighborLeft().FindMoreMatches(spr_COLOR, countedSquares, FindSeparating.HORIZONTAL);
                     if (GetNeighborRight() != null)
                         countedSquares = GetNeighborRight().FindMoreMatches(spr_COLOR, countedSquares, FindSeparating.HORIZONTAL);
+                    
                 }
+
+         
             }
             return countedSquares;
         }
 
-        public List<Item> FindMatchesAround(FindSeparating separating = FindSeparating.NONE, int matches = 3, Hashtable countedSquaresGlobal = null)
+        public List<Item> FindMatchesAround(FindSeparating separating = FindSeparating.VERTICAL, int matches = 3, Hashtable countedSquaresGlobal = null)
         {
             matches = LevelManager.THIS.Hcount;
             var globalCounter = true;
@@ -911,27 +962,22 @@ namespace FruitMatch.Scripts.Blocks
                 return newList;
             //		if (separating != FindSeparating.HORIZONTAL)
             //		{
-            countedSquares = FindMoreMatches(Item.color, countedSquares, FindSeparating.VERTICAL, countedSquaresGlobal);
+            countedSquares = FindMoreMatches(Item.color, countedSquares, separating, countedSquaresGlobal);
             //		}
 
             foreach (DictionaryEntry de in countedSquares)
-            {
                 field.countedSquares.Add(field.countedSquares.Count - 1, de.Value);
-            }
-
-            foreach (DictionaryEntry de in countedSquares)
-            {
-                field.countedSquares.Add(field.countedSquares.Count - 1, de.Value);
-            }
-
             
-            if (countedSquares.Count < matches)
+            foreach (DictionaryEntry de in countedSquares) 
+                field.countedSquares.Add(field.countedSquares.Count - 1, de.Value);
+            
+            
+            if (countedSquares.Count < matches) 
                 countedSquares.Clear();
 
             foreach (DictionaryEntry de in countedSquares)
-            {
                 newList.Add((Item)de.Value);
-            }
+            
             // print(countedSquares.Count);
             return newList.Distinct().ToList();
         }

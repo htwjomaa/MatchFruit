@@ -509,12 +509,14 @@ namespace FruitMatch.Scripts.Level
                 AI.THIS.showTipDelay = LevelConfig.BoardDimensionsConfig.TipDelay[0];
                 LevelManager.THIS.NoMatchesBool= LevelConfig.BoardDimensionsConfig.NoMatches;
                 LevelManager.THIS.AllowBorder = LevelConfig.GraphicConfig.AllowBorderGraphic;
-                LevelManager.THIS.BlockCombineAllowed = LevelConfig.matchFinderConfig.BlockCombinedAllowed;
-                LevelManager.THIS.Vcount = (int)LevelConfig.matchFinderConfig.RowValue;
-                LevelManager.THIS.Hcount = (int)LevelConfig.matchFinderConfig.RowValue;
-                LevelManager.THIS.PenaltyValue  = LevelConfig.matchFinderConfig.PenaltyValue;
+                LevelManager.THIS.BlockCombineAllowed = LevelConfig.matchFinderConfig.BlockCombinedAllowed[0];
+                LevelManager.THIS.Vcount = (int)LevelConfig.matchFinderConfig.RowValue[0];
+                LevelManager.THIS.Hcount = (int)LevelConfig.matchFinderConfig.RowValue[0];
+                LevelManager.THIS.PenaltyValue  = LevelConfig.matchFinderConfig.PenaltyValue[0];
                 LevelManager.THIS.DestroyOnlyTarget = LevelConfig.BoardDimensionsConfig.DestroyOnlyTarget;
                 LevelManager.THIS.MaxLimit= levelData.limit;
+                LevelManager.THIS.MatchSequence = GetMatchSequence(LevelConfig.matchFinderConfig);
+                LevelManager.THIS.IsSequenceMatching = LevelConfig.matchFinderConfig.SequenceEnabled[0];
             }
             /*
              
@@ -558,14 +560,33 @@ namespace FruitMatch.Scripts.Level
                     LevelManager.THIS.enableSameColorBomb = false;
                     LevelManager.THIS.enablePackageBomb = false;
                 }
-            
             }
 
-           
-            
             return levelData;
         }
 
+
+        private static List<int> GetMatchSequence(MatchFinderConfig matchFinderConfig)
+        {
+            List<int> MatchSequences = new List<int>();
+            MatchSequences.Add(GetMatchNumber(matchFinderConfig.GoalFruitTwo));
+            MatchSequences.Add(GetMatchNumber(matchFinderConfig.GoalFruitOne));
+            MatchSequences.Add(GetMatchNumber(matchFinderConfig.GoalFruitThree));
+
+            return MatchSequences;
+        }
+
+        private static int GetMatchNumber(FruitType[] fruitTypes)
+        {
+            var n = Rl.world.GetGoalSprite(fruitTypes[0]);
+            for (int i = 0; i < loadedSprites.Length; i++)
+            {
+                if (n == loadedSprites[i])
+                    return i;
+            }
+
+            return 0;
+        }
         public static void SetSideDotActive(SideFruitsConfig sideFruitsConfig)
         {
             LoadingHelper.THIS.bottomActive= sideFruitsConfig.BottomActive;

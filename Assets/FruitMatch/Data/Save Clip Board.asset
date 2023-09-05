@@ -23,17 +23,17 @@ MonoBehaviour:
   PhaseGoalsList:
   - ObjectiveSettingsArray:
     - PhaseGoalArray:
-      - GoalFruit: 1
+      - GoalFruit: 13
         GoalColor: 0
         GoalNumber: 0
-        CollectionAmount: 30
+        CollectionAmount: 42
         CollectionStyle: 1
       - GoalFruit: 1
         GoalColor: 0
         GoalNumber: 1
         CollectionAmount: 33
-        CollectionStyle: 2
-      - GoalFruit: 13
+        CollectionStyle: 1
+      - GoalFruit: 2
         GoalColor: 0
         GoalNumber: 2
         CollectionAmount: 11
@@ -219,6 +219,7 @@ MonoBehaviour:
       AllowTip: 
       TipDelay: 
       DestroyOnlyTarget: 
+      AddToLastField: 
     ScoreGoalsConfig:
       Star1Value: 0
       Star2Value: 0
@@ -253,75 +254,93 @@ MonoBehaviour:
       Year: 0
     BombConfigs: []
     LuckConfig:
-      NeededPieces: 0
-      NeededPiecesOverTime: 0
-      BeneficialExtras: 0
-      BeneficialExtrasOverTime: 0
-      MaliciousExtras: 0
-      MaliciousExtrasOverTime: 0
+      NeededPieces: []
+      NeededPiecesOverTime: []
+      BeneficialExtras: []
+      BeneficialExtrasOverTime: []
+      MaliciousExtras: []
+      MaliciousExtrasOverTime: []
+      Overall: []
+      NeededPiecesOnlyStart: 
+      BeneficialExtrasOnlyStart: 
+      MaliciousExtrasOnlyStart: 
     GraphicConfig:
       AllowBorderGraphic: 0
       LevelCategory: 0
       BGName: 
       WholeCategory: 0
     matchFinderConfig:
-      Row: 0
-      RowValue: 0
-      RowPhase: 0
-      Diagonal: 0
-      DiagonalValue: 0
-      DiagonalPhase: 0
-      Pattern1: 0
-      Pattern1Value: 0
-      Pattern1Phase: 0
-      Pattern2: 0
-      Pattern2Value: 0
-      Pattern2Phase: 0
-      BlockCombinedAllowed: 0
-      PenaltyValue: 0
+      Row: 
+      RowValue: 
+      RowPhase: 
+      Diagonal: 
+      DiagonalValue: 
+      DiagonalPhase: 
+      Pattern1: 
+      Pattern1Value: 
+      Pattern1Phase: 
+      Pattern2: 
+      Pattern2Value: 
+      Pattern2Phase: 
+      BlockCombinedAllowed: 
+      PenaltyValue: 
+      SequenceEnabled: 
+      GoalFruitOne: 
+      GoalColorOne: 
+      GoalFruitTwo: 
+      GoalColorTwo: 
+      GoalFruitThree: 
+      GoalColorThree: 
     LayoutFieldConfigs:
       LayoutConfig: []
     TileSettingFieldConfigs: []
     ExtraSettings:
       HideTargets: 0
-  BoardWidth: 0900000009000000060000000400000003000000
-  BoardHeight: 0900000009000000090000000300000003000000
-  AllowTip: 0101000001
-  DestroyTargetOnly: 0000000000
-  AddToLastField: 
-  NoMatches: 0000000100
+  BoardWidth: 0600000009000000090000000900000009000000
+  BoardHeight: 0600000009000000090000000900000009000000
+  AllowTip: 0001010101
+  DestroyTargetOnly: 0001010101
+  AddToLastField: 0000000000
+  NoMatches: 0000000000
   GameTypeP1:
   - GameType: 0
     CounterValue: 0.25517875
-  - GameType: 3
-    CounterValue: 0.6774823
-  - GameType: 3
+  - GameType: 0
     CounterValue: 0.25517875
   - GameType: 0
-    CounterValue: 0
+    CounterValue: 0.25517875
   - GameType: 0
-    CounterValue: 0
-  TipDelay: 0a00000006000000010000000100000001000000
+    CounterValue: 0.25517875
+  - GameType: 0
+    CounterValue: 0.25517875
+  TipDelay: 0a0000000a0000000a0000000a0000000a000000
   BorderGraphic: 1
-  Row: 0
-  Diagonal: 0
-  Pattern1: 0
-  Pattern2: 0
-  BlockCombine: 1
-  penalty: 1
-  RowMatchValue: 3
-  DiagonalMatchValue: 0
-  Pattern1MatchValue: 0
-  Pattern2MatchValue: 0
-  RowPhase: 0
-  DiagonalPhase: 0
-  Pattern1Phase: 0
-  Pattern2Phase: 0
+  Row: 0000000000000000000000000000000000000000
+  Diagonal: 0000000000000000000000000000000000000000
+  Pattern1: 0000000000000000000000000000000000000000
+  Pattern2: 0000000000000000000000000000000000000000
+  BlockCombine: 0000000000
+  penalty: 0000000000000000000000000000000000000000
+  SequenceEnabled: 0000000000
+  RowMatchValue: 0000000000000000000000000000000000000000
+  DiagonalMatchValue: 0000000000000000000000000000000000000000
+  Pattern1MatchValue: 0000000000000000000000000000000000000000
+  Pattern2MatchValue: 0000000000000000000000000000000000000000
+  RowPhase: 0000000000000000000000000000000000000000
+  DiagonalPhase: 0000000000000000000000000000000000000000
+  Pattern1Phase: 0000000000000000000000000000000000000000
+  Pattern2Phase: 0000000000000000000000000000000000000000
+  GoalFruitOne: 0300000000000000000000000000000000000000
+  GoalColorOne: 0000000000000000000000000000000000000000
+  GoalFruitTwo: 0400000000000000000000000000000000000000
+  GoalColorTwo: 0000000000000000000000000000000000000000
+  GoalFruitThree: 0100000000000000000000000000000000000000
+  GoalColorThree: 0000000000000000000000000000000000000000
   Star1Enabled: 0
   Star1NeededNextLevel: 0
   Star1Value: 0
   Star2Enabled: 0
-  Star2NeededNextLevel: 1
+  Star2NeededNextLevel: 0
   Star2Value: 0
   Star3Enabled: 0
   Star3NeededNextLevel: 0
@@ -649,7 +668,7 @@ MonoBehaviour:
       SpawnChanceNegative: 0
       phase: 2
   - FruitType: 4
-    FruitEnabled: 1
+    FruitEnabled: 0
     fruitClipboards:
     - FruitColor: 0
       IsEnabled: 0
@@ -724,7 +743,7 @@ MonoBehaviour:
       SpawnChanceNegative: 0
       phase: 2
   - FruitType: 5
-    FruitEnabled: 1
+    FruitEnabled: 0
     fruitClipboards:
     - FruitColor: 0
       IsEnabled: 0
@@ -951,12 +970,51 @@ MonoBehaviour:
   - FruitType: 0
     FruitEnabled: 1
     fruitClipboards: []
-  NeededPieces: 0
-  NeededPiecesOverTime: 0.5
-  BeneficialExtras: 0.66711605
-  BeneficialExtrasOverTime: 0.5172057
-  MaliciousExtras: 1
-  MaliciousExtrasOverTime: 0.47025612
+  NeededPieces:
+  - 0.5
+  - 0
+  - 0
+  - 0
+  - 0
+  NeededPiecesOverTime:
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  BeneficialExtras:
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  BeneficialExtrasOverTime:
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  MaliciousExtras:
+  - 0.5
+  - 1
+  - 1
+  - 1
+  - 1
+  MaliciousExtrasOverTime:
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  - 0.5
+  Overall:
+  - 0.5
+  - 0
+  - 0
+  - 0
+  - 0
+  NeededPiecesOnlyStart: 0000000000
+  BeneficialExtrasOnlyStart: 0000000000
+  MaliciousExtrasOnlyStart: 0000000000
   ZoomOutValue:
   - 0
   - 0
@@ -1474,7 +1532,7 @@ MonoBehaviour:
         BottomBarPadding: 0
       SideFruitsSettings:
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1487,7 +1545,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1500,7 +1558,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1513,7 +1571,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1526,7 +1584,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1539,7 +1597,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1552,7 +1610,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1565,7 +1623,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1578,7 +1636,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1591,7 +1649,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1604,7 +1662,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1617,7 +1675,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1630,7 +1688,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1643,7 +1701,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1656,7 +1714,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1669,7 +1727,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1682,7 +1740,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1695,7 +1753,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1708,7 +1766,72 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 2
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1721,7 +1844,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1734,7 +1857,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1747,7 +1870,72 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 6
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 3
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1760,7 +1948,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1773,7 +1961,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1786,7 +1974,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1799,137 +1987,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings:
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings:
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings:
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings:
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings:
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings:
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings:
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings:
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings:
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings:
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-        - SideDotType: 0
-          SpawnRate: 0
-          ChangeSpawnRateOverTimeOrMoves: 0
-      - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -1952,43 +2010,7 @@ MonoBehaviour:
         BottomBarPadding: 0
       SideFruitsSettings:
       - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2001,7 +2023,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2014,7 +2036,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2027,7 +2049,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2040,7 +2062,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2053,7 +2075,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2066,7 +2088,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2079,7 +2101,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2092,7 +2114,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2105,7 +2127,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2118,7 +2140,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2131,7 +2153,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2144,7 +2166,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2157,7 +2179,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2170,7 +2192,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2183,7 +2205,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2196,7 +2218,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2209,7 +2231,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2222,45 +2244,243 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 2
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 6
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 3
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      TopActive: 0
-      BottomActive: 0
-      LeftActive: 0
-      RightActive: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      TopActive: 1
+      BottomActive: 1
+      LeftActive: 1
+      RightActive: 1
     - SideFruitsPadding:
         LeftBarPadding: 0
         RightBarPadding: 0
@@ -2268,43 +2488,7 @@ MonoBehaviour:
         BottomBarPadding: 0
       SideFruitsSettings:
       - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2317,7 +2501,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2330,7 +2514,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2343,7 +2527,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2356,7 +2540,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2369,7 +2553,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2382,7 +2566,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2395,7 +2579,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2408,7 +2592,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2421,7 +2605,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2434,7 +2618,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2447,7 +2631,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2460,7 +2644,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2473,7 +2657,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2486,7 +2670,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2499,7 +2683,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2512,7 +2696,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2525,7 +2709,7 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
         SideDotTypeSettings:
         - SideDotType: 0
@@ -2538,45 +2722,243 @@ MonoBehaviour:
           SpawnRate: 0
           ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 2
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 6
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 3
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      TopActive: 0
-      BottomActive: 0
-      LeftActive: 0
-      RightActive: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      TopActive: 1
+      BottomActive: 1
+      LeftActive: 1
+      RightActive: 1
     - SideFruitsPadding:
         LeftBarPadding: 0
         RightBarPadding: 0
@@ -2584,156 +2966,1210 @@ MonoBehaviour:
         BottomBarPadding: 0
       SideFruitsSettings:
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 2
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 6
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 1
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      - SideDotTile: 3
+        IsActivate: 1
+        ActivatesAfterTimeOrMoves: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
       - SideDotTile: 0
-        IsActivate: 0
+        IsActivate: 1
         ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      - SideDotTile: 0
-        IsActivate: 0
-        ActivatesAfterTimeOrMoves: 0
-        SideDotTypeSettings: []
-      TopActive: 0
-      BottomActive: 0
-      LeftActive: 0
-      RightActive: 0
+        SideDotTypeSettings:
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+        - SideDotType: 0
+          SpawnRate: 0
+          ChangeSpawnRateOverTimeOrMoves: 0
+      TopActive: 1
+      BottomActive: 1
+      LeftActive: 1
+      RightActive: 1
   TileSettingFieldConfigs:
   - TileSettingConfigs:
     - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 0
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 0
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+  - TileSettingConfigs:
+    - TileType: 1
       TileTypeUnderneath: 0
       TeleportTarget: -1
       Direction: 1
@@ -3463,36 +4899,36 @@ MonoBehaviour:
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
   - TileSettingConfigs:
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3501,7 +4937,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3510,7 +4946,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3519,7 +4955,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3528,7 +4964,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3537,7 +4973,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3546,7 +4982,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: 67
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3555,25 +4991,25 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: 68
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3582,7 +5018,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3591,7 +5027,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3600,7 +5036,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3609,7 +5045,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3618,7 +5054,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3627,7 +5063,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3636,25 +5072,25 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3663,7 +5099,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3672,7 +5108,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3681,7 +5117,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3690,7 +5126,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3699,7 +5135,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3708,7 +5144,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3717,25 +5153,25 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3744,7 +5180,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3753,7 +5189,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3762,7 +5198,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3771,7 +5207,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3780,7 +5216,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3789,7 +5225,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3798,25 +5234,25 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3825,7 +5261,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3834,7 +5270,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3843,7 +5279,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3852,7 +5288,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3861,7 +5297,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3870,7 +5306,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3879,7 +5315,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3888,16 +5324,16 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3906,7 +5342,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3915,7 +5351,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3924,7 +5360,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3933,7 +5369,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3942,7 +5378,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3951,7 +5387,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3960,7 +5396,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3969,16 +5405,16 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3987,7 +5423,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -3996,7 +5432,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -4005,7 +5441,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -4014,7 +5450,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -4023,7 +5459,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -4032,7 +5468,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -4041,7 +5477,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -4050,16 +5486,16 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -4068,7 +5504,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -4077,7 +5513,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -4086,7 +5522,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -4095,7 +5531,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -4104,7 +5540,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 0
       IsActive: 0
@@ -4113,7 +5549,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 1
       IsActive: 0
@@ -4122,7 +5558,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 1
       IsActive: 0
@@ -4131,7 +5567,34 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 1
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 1
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
+      IsActive: 0
+      IsActivate: 0
+      SpawnRate: 0
+      ChangeSpawnRateOverTimeOrMoves: 0
+    - TileType: 1
+      TileTypeUnderneath: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 1
       IsActive: 0
@@ -4140,7 +5603,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 1
       IsActive: 0
@@ -4149,7 +5612,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 1
       IsActive: 0
@@ -4158,34 +5621,7 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 1
-      IsDirectionStart: 1
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 1
-      IsDirectionStart: 1
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 1
-      IsDirectionStart: 1
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
+      TeleportTarget: -1
       Direction: 1
       IsDirectionStart: 1
       IsActive: 0
@@ -4193,37 +5629,37 @@ MonoBehaviour:
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
   - TileSettingConfigs:
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4231,8 +5667,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4240,8 +5676,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4249,8 +5685,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4258,8 +5694,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4267,8 +5703,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4276,8 +5712,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: 67
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4285,26 +5721,26 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: 68
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4312,8 +5748,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4321,8 +5757,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4330,8 +5766,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4339,8 +5775,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4348,8 +5784,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4357,8 +5793,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4366,26 +5802,26 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4393,8 +5829,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4402,8 +5838,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4411,8 +5847,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4420,8 +5856,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4429,8 +5865,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4438,8 +5874,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4447,26 +5883,26 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4474,8 +5910,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4483,8 +5919,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4492,8 +5928,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4501,8 +5937,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4510,8 +5946,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4519,8 +5955,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4528,26 +5964,26 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4555,8 +5991,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4564,8 +6000,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4573,8 +6009,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4582,8 +6018,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4591,8 +6027,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4600,8 +6036,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4609,8 +6045,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4618,17 +6054,17 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4636,8 +6072,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4645,8 +6081,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4654,8 +6090,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4663,8 +6099,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4672,8 +6108,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4681,8 +6117,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4690,8 +6126,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4699,17 +6135,17 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4717,8 +6153,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4726,8 +6162,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4735,8 +6171,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4744,8 +6180,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4753,8 +6189,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4762,8 +6198,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4771,8 +6207,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4780,17 +6216,17 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4798,8 +6234,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4807,8 +6243,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4816,8 +6252,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4825,8 +6261,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4834,8 +6270,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -4843,847 +6279,117 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
   - TileSettingConfigs:
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-  - TileSettingConfigs:
-    - TileType: 0
-      TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
-      IsActive: 0
-      IsActivate: 0
-      SpawnRate: 0
-      ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5691,8 +6397,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5700,8 +6406,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5709,8 +6415,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5718,8 +6424,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5727,8 +6433,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5736,8 +6442,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: 67
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5745,26 +6451,26 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: 68
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5772,8 +6478,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5781,8 +6487,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5790,8 +6496,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5799,8 +6505,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5808,8 +6514,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5817,8 +6523,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5826,26 +6532,26 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5853,8 +6559,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5862,8 +6568,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5871,8 +6577,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5880,8 +6586,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5889,8 +6595,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5898,8 +6604,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5907,26 +6613,26 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5934,8 +6640,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5943,8 +6649,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5952,8 +6658,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5961,8 +6667,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5970,8 +6676,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5979,8 +6685,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -5988,26 +6694,26 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6015,8 +6721,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6024,8 +6730,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6033,8 +6739,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6042,8 +6748,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6051,8 +6757,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6060,8 +6766,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6069,8 +6775,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6078,17 +6784,17 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6096,8 +6802,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6105,8 +6811,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6114,8 +6820,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6123,8 +6829,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6132,8 +6838,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6141,8 +6847,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6150,8 +6856,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6159,17 +6865,17 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6177,8 +6883,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6186,8 +6892,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6195,8 +6901,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6204,8 +6910,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6213,8 +6919,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6222,8 +6928,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6231,8 +6937,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6240,17 +6946,17 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6258,8 +6964,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6267,8 +6973,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6276,8 +6982,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6285,8 +6991,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6294,8 +7000,8 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
+      TeleportTarget: -1
+      Direction: 1
       IsDirectionStart: 0
       IsActive: 0
       IsActivate: 0
@@ -6303,81 +7009,81 @@ MonoBehaviour:
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
-    - TileType: 0
+    - TileType: 1
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0
       ChangeSpawnRateOverTimeOrMoves: 0
     - TileType: 0
       TileTypeUnderneath: 0
-      TeleportTarget: 0
-      Direction: 0
-      IsDirectionStart: 0
+      TeleportTarget: -1
+      Direction: 1
+      IsDirectionStart: 1
       IsActive: 0
       IsActivate: 0
       SpawnRate: 0

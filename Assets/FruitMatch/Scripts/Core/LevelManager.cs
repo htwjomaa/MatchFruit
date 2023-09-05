@@ -49,6 +49,24 @@ namespace FruitMatch.Scripts.Core
     public class LevelManager : MonoBehaviour
     {
            //public movePlayedtoSubstract;
+
+           [NaughtyAttributes.Button()] public void SerializeDictionary()
+           {
+               Dictionary<Item, Combine> n = CombineManager.GetDic();
+               allCombines?.Clear();
+               allItems?.Clear();
+
+               allCombines = new List<Combine>();
+               allItems = new List<Item>();
+               
+               
+               foreach (var t in n)
+               {
+                   if(t.Value.items.Count > 1 )allCombines.Add(t.Value);
+               }
+           }
+        
+           
            public int LimitLength;
            public int LimitHelper = 0;
         public static LevelManager THIS;
@@ -70,6 +88,9 @@ namespace FruitMatch.Scripts.Core
         private int currentSubLevel = 1; //current sub-level
         public bool[] NoMatchesBool;
         public bool AllowBorder;
+        
+        public bool IsSequenceMatching = false;
+        public List<int> MatchSequence = new List<int>(){};
         public int CurrentSubLevel
         {
             get { return currentSubLevel; }
@@ -197,6 +218,9 @@ namespace FruitMatch.Scripts.Core
         public static event GameStateEvents OnLose;
         public static event GameStateEvents OnTurnEnd;
         public static event GameStateEvents OnCombo;
+        public List<KeyValuePair<Item, Combine>> test;
+        public List<Item> allItems;
+        public List<Combine> allCombines;
 
         IEnumerator DelayGenerateLevelCo(float newSec)
         {
@@ -467,7 +491,7 @@ namespace FruitMatch.Scripts.Core
 
             if (PlayCounter == 10)
             {
-                DestroyOnlyTarget[0] = true;
+               // DestroyOnlyTarget[0] = true;
 
                 findMatchesStarted = false;
                 FindMatches();
@@ -1229,7 +1253,7 @@ namespace FruitMatch.Scripts.Core
                 ;
 
             avoidedLateUpdate = false;
-            DestroyOnlyTarget[0] = false;
+          //  DestroyOnlyTarget[0] = false;
             // StartCoroutine(AvoidedCo(0.00001f));
         }
 

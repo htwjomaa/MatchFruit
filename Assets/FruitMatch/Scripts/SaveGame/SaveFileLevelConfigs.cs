@@ -389,26 +389,33 @@ public struct AnimationConfig
 [Serializable]
 public struct MatchFinderConfig
 {
-    public Row Row;
-    public uint RowValue;
-    public Phase RowPhase;
+    public Row[] Row;
+    public uint[] RowValue;
+    public Phase[] RowPhase;
    
-    public Diagonal Diagonal;
-    public uint DiagonalValue;
-    public Phase DiagonalPhase;
+    public Diagonal[] Diagonal;
+    public uint[] DiagonalValue;
+    public Phase[] DiagonalPhase;
     
-    public Pattern Pattern1;
-    public uint Pattern1Value;
-    public Phase Pattern1Phase;
+    public Pattern[] Pattern1;
+    public uint[] Pattern1Value;
+    public Phase[] Pattern1Phase;
     
-    public Pattern Pattern2;
-    public uint Pattern2Value;
-    public Phase Pattern2Phase;
-    public bool BlockCombinedAllowed;
-    public int PenaltyValue;
+    public Pattern[] Pattern2;
+    public uint[] Pattern2Value;
+    public Phase[] Pattern2Phase;
+    public bool[] BlockCombinedAllowed;
+    public int[] PenaltyValue;
+    public bool[] SequenceEnabled;
+    
+    public FruitType[] GoalFruitOne;
+    public Colors[]  GoalColorOne;
+    public FruitType[]  GoalFruitTwo;
+    public Colors[]  GoalColorTwo;
+    public FruitType[]  GoalFruitThree;
+    public Colors[]  GoalColorThree;
 
-    public MatchFinderConfig(Row row, uint rowValue, Phase rowPhase, Diagonal diagonal, uint diagonalValue,
-        Phase diagonalPhase, Pattern pattern1, uint pattern1Value, Phase pattern1Phase, Pattern pattern2, uint pattern2Value, Phase pattern2Phase, bool blockCombinedAllowed, int penaltyValue)
+    public MatchFinderConfig(Row[] row, uint[] rowValue, Phase[] rowPhase, Diagonal[] diagonal, uint[] diagonalValue, Phase[] diagonalPhase, Pattern[] pattern1, uint[] pattern1Value, Phase[] pattern1Phase, Pattern[] pattern2, uint[] pattern2Value, Phase[] pattern2Phase, bool[] blockCombinedAllowed, int[] penaltyValue, bool[] sequenceEnabled, FruitType[] goalFruitOne, Colors[] goalColorOne, FruitType[] goalFruitTwo, Colors[] goalColorTwo, FruitType[] goalFruitThree, Colors[] goalColorThree)
     {
         Row = row;
         RowValue = rowValue;
@@ -424,6 +431,13 @@ public struct MatchFinderConfig
         Pattern2Phase = pattern2Phase;
         BlockCombinedAllowed = blockCombinedAllowed;
         PenaltyValue = penaltyValue;
+        SequenceEnabled = sequenceEnabled;
+        GoalFruitOne = goalFruitOne;
+        GoalColorOne = goalColorOne;
+        GoalFruitTwo = goalFruitTwo;
+        GoalColorTwo = goalColorTwo;
+        GoalFruitThree = goalFruitThree;
+        GoalColorThree = goalColorThree;
     }
 }
 

@@ -35,6 +35,8 @@ public sealed class AdminLevelSingleGoalSetting : MonoBehaviour
        => Rl.adminLevelSettingsGoalConfig.LoadSame(goalNumber, isFruit, ref _enumText, ref _sibling );
    
    
+   
+   
    public void ClickNextCollectionStyle()
        => Rl.adminLevelSettingsGoalConfig.ClickNextCollectionStyle(goalNumber, ref _enumText);
    public void LoadSameCollectionStyle()
