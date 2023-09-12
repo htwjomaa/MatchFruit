@@ -48,11 +48,18 @@ namespace FruitMatch.Scripts.Core
     /// </summary>
     public class LevelManager : MonoBehaviour
     {
-           //public movePlayedtoSubstract;
-
+        //public movePlayedtoSubstract;
+           [NaughtyAttributes.Button()]
+           public void SequencePreview()
+           {
+               SequencePreviewGUILoadTrigger?.Invoke();
+           }
            [NaughtyAttributes.Button()] public void SerializeDictionary()
            {
                Dictionary<Item, Combine> n = CombineManager.GetDic();
+             
+
+           
                allCombines?.Clear();
                allItems?.Clear();
 
@@ -66,7 +73,11 @@ namespace FruitMatch.Scripts.Core
                }
            }
         
+           public delegate void SequencePreviewGUILoadEvent();
+           public static event SequencePreviewGUILoadEvent SequencePreviewGUILoadTrigger;
+
            
+         
            public int LimitLength;
            public int LimitHelper = 0;
         public static LevelManager THIS;
@@ -248,6 +259,7 @@ namespace FruitMatch.Scripts.Core
                       //  StartCoroutine(DelayGenerateLevelCo(1f));
                         levelLoaded = true;
                         OnLevelLoaded?.Invoke();
+                      
                         break;
                     case GameState.WaitForPopup://waiting for pre game banners
                         StopCoroutine(IdleItemsDirection());

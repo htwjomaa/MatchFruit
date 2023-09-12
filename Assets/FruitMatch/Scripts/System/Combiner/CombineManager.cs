@@ -351,7 +351,7 @@ namespace FruitMatch.Scripts.System.Combiner
 
         private void CorrectCombineList(ref Combine combine)
         {
-            if (combine == null || combine.items == null) return;
+            if (!LevelManager.THIS.IsSequenceMatching || combine == null || combine.items == null) return;
             if (combine.items.Count > 2 && combine.items[0].color == combine.items[2].color)
             {
                 if (combine.items[0].color == LevelManager.THIS.MatchSequence[0])
@@ -364,11 +364,6 @@ namespace FruitMatch.Scripts.System.Combiner
         }
        public static bool IsPartOfSequence(int firstColor, int secondColor)
         {
-
-            if (false)
-            {
-                
-            }
             if (firstColor == LevelManager.THIS.MatchSequence[0] && secondColor == LevelManager.THIS.MatchSequence[1]
                 ||
                 firstColor == LevelManager.THIS.MatchSequence[1] && secondColor == LevelManager.THIS.MatchSequence[0])
@@ -440,7 +435,6 @@ namespace FruitMatch.Scripts.System.Combiner
                     vCount = 1;
                 }
 
-
               
                 items.Add(addingItem);
                 CorrectCombine();
@@ -452,6 +446,7 @@ namespace FruitMatch.Scripts.System.Combiner
 
         public void RemoveDuplicateInSequence()
         {
+            if (!LevelManager.THIS.IsSequenceMatching) return;
            // if ((vCount == 3 || hCount == 3 )&& items.Count > 2 && items[0].color == items[2].color)
            // if (items.Count > 3)
            // {

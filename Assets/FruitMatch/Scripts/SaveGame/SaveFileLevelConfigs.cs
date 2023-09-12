@@ -367,6 +367,7 @@ public struct SideFruitsConfig
     }
 }
 
+
 [Serializable]
 public struct AnimationConfig
 {

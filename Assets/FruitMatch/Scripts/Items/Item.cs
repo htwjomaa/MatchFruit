@@ -479,7 +479,7 @@ namespace FruitMatch.Scripts.Items
                 square.Item = switchItem;
                 switchItem.square = backupSquares[0];
                 square = backupSquares[1];
-                var combines2 = GetMatchesAround().Concat(backupSquares.First().Item.GetMatchesAround());
+                IEnumerable<Combine> combines2 = GetMatchesAround().Concat(backupSquares.First().Item.GetMatchesAround());
                 var startTime = Time.time;
                 var startPos = transform.position;
                 float speed = 5;
@@ -678,34 +678,49 @@ namespace FruitMatch.Scripts.Items
         ///get mathes around this item, local check
         public List<Combine> GetMatchesAround()
         {
-            List<Item> list = square.FindMatchesAround(FindSeparating.VERTICAL);
-            Debug.Log("List length: " + list.Count);
-            Combine combine = new Combine().ConvertToCombine(list);
-            combine.RemoveDuplicateInSequence();
-            
-            List<Item> list2 = square.FindMatchesAround(FindSeparating.HORIZONTAL);
-            Debug.Log("List2 length: " + list2.Count);
-            Combine combine2 = new Combine().ConvertToCombine(list2);
-            combine2.RemoveDuplicateInSequence();
-            
-            
-            CombineManager combineManager = LevelManager.THIS.CombineManager;
-            Dictionary<Item, Combine> dic = new Dictionary<Item, Combine>();
-            Dictionary<Item, Combine> dic2 = new Dictionary<Item, Combine>();
-            foreach (var item in combine.items)
+            if (!LevelManager.THIS.IsSequenceMatching)
             {
-                dic.Add(item, combine);
+                var list = square.FindMatchesAround();
+                var combine = new Combine().ConvertToCombine(list);
+                var combineManager = LevelManager.THIS.CombineManager;
+                var dic = new Dictionary<Item, Combine>();
+                foreach (var item in combine.items) dic.Add(item, combine);
+                var combines2 = combineManager.CheckCombines(dic, new List<Combine> { combine });
+                LevelManager.THIS.combo += combines2.Count;
+                return combines2;
             }
-            foreach (var item in combine2.items)
+            else
             {
-                dic2.Add(item, combine2);
-            }
-            List<Combine> combines2 = combineManager.CheckCombines(dic, new List<Combine> { combine });
-            List<Combine> combines3 = combineManager.CheckCombines(dic2, new List<Combine> { combine2 });
+                List<Item> list = square.FindMatchesAround(FindSeparating.VERTICAL);
+                Debug.Log("List length: " + list.Count);
+                Combine combine = new Combine().ConvertToCombine(list);
+                combine.RemoveDuplicateInSequence();
             
-            combines2.AddRange(combines3);
-            LevelManager.THIS.combo += combines2.Count;
-            return combines2;
+                List<Item> list2 = square.FindMatchesAround(FindSeparating.HORIZONTAL);
+                Debug.Log("List2 length: " + list2.Count);
+                Combine combine2 = new Combine().ConvertToCombine(list2);
+                combine2.RemoveDuplicateInSequence();
+            
+            
+                CombineManager combineManager = LevelManager.THIS.CombineManager;
+                Dictionary<Item, Combine> dic = new Dictionary<Item, Combine>();
+                Dictionary<Item, Combine> dic2 = new Dictionary<Item, Combine>();
+                foreach (var item in combine.items)
+                {
+                    dic.Add(item, combine);
+                }
+                foreach (var item in combine2.items)
+                {
+                    dic2.Add(item, combine2);
+                }
+                List<Combine> combines2 = combineManager.CheckCombines(dic, new List<Combine> { combine });
+                List<Combine> combines3 = combineManager.CheckCombines(dic2, new List<Combine> { combine2 });
+            
+                combines2.AddRange(combines3);
+                LevelManager.THIS.combo += combines2.Count;
+                return combines2;
+            }
+
         }
 
         ///is switching item is bonus
